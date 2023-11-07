@@ -7,8 +7,19 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parser: '@babel/eslint-parser',
+  ignorePatterns: ['dist', '.eslintrc.cjs', '.github/*'],
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    }
+  },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
