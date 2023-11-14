@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.22.15",
-    "@babel/preset-react": "^7.22.15",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,6 +19,7 @@
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
