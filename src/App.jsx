@@ -5,14 +5,14 @@ import Document from '@/pages/Document';
 
 function App() {
   return (
-    <div>
+    <div className="h-full w-full">
       <Router>
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='/document' element={<Document />} />
         </Routes>
       </Router>
-    </div>
+    </div >
   );
 }
 
