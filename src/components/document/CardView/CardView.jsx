@@ -25,7 +25,7 @@ const CardView = ({ text }) => {
     }
 
     return <div className="h-full w-full">
-        <div className="w-80 h-full float-left">
+        <div className="w-80 float-left">
             <CardSelector cards={cards} selectedIdx={selectedIdx} setSelectedIdx={setSelectedIdx} />
         </div>
         <div className="bg-gray-100 h-full ml-80 px-8 flex flex-col justify-items-stretch">
