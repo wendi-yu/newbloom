@@ -62,7 +62,7 @@ function Document() {
           Card View
         </ViewToggleButton>
       </div>
-      <h1 className="bg-red-500">Document Viewsss</h1>
+      <div className='bg-gray-200 h-10'></div>
       <ViewComponent />
     </div>
   );
