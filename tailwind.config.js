@@ -13,6 +13,7 @@ export default {
         'emphasis-secondary': '#B1EDE8',
         'background-primary': '#E5DDF2',
         'success': '#43AA8B',
+        'danger': "#E83151"
       }
     },
   },
