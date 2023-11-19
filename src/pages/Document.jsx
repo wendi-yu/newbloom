@@ -8,6 +8,7 @@ import CardSVG from "@/assets/pie_chart.svg"
 import DocumentView from '../components/document/DocumentView/DocumentView';
 import CardView from '../components/document/CardView/CardView';
 import TableView from '../components/document/TableView/TableView';
+import docText from "@/assets/example_document"
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -18,11 +19,11 @@ function Document() {
 
   const ViewComponent = () => {
     if (documentView == "document") {
-      return <DocumentView />
+      return <DocumentView text={docText} />
     } else if (documentView == "card") {
-      return <CardView />
+      return <CardView text={docText} />
     } else {
-      return <TableView />
+      return <TableView text={docText} />
     }
   }
 
