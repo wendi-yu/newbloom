@@ -2,9 +2,13 @@ import Navbar from "@/components/Navbar";
 
 function Home() {
   return (
-    <div className='home'>
-      <Navbar/>
-      <h1>Home</h1>
+    <div className='grid grid-cols-2'>
+      <div>
+        <Navbar/>
+      </div>
+      <div className=''>
+        HOME
+      </div>
     </div>
   );
 }

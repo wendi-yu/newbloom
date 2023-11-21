@@ -1,44 +1,44 @@
-import { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import './Navbar.css';
-import { IconContext } from 'react-icons';
+import UserProfile from "@/components/document/Header/UserProfile";
+
+const NavbarSubSection = ({ subsectionName }) => {
+  return <div 
+    className='px-3 p-2 hover:bg-[#5C00B8] rounded'
+    onClick={(e) => {
+      print(e)
+      // TODO: Do some routing here
+    }}>
+    {subsectionName}
+  </div>
+}
+
+const NavbarSection = ({ title, subsections }) => {
+  return <div className=' text-lg font-bold py-3'>
+    {title}
+    <div className='ml-3 my-2 text-base font-light'>
+      <NavbarSubSection subsectionName={subsections[0]}/>
+      <NavbarSubSection subsectionName={subsections[1]}/>
+    </div>
+  </div>
+
+}
 
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
-
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
+      <div className='fixed w-[350px] h-screen bg-[#340068] text-white'>
+        <div className='grid grid-cols-1 divide-y divide-gray-400 m-[30px]'>
+          <div className='h-[80px] text-2xl font-bold'>
+            [redacted]
+          </div>
+          <NavbarSection title={"My Documents"} subsections={["To Redact", "In Progress"]}/>
+          <NavbarSection title={"Shared"} subsections={["Review", "Completed"]}/>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
+        <footer className='absolute bottom-2 inset-x-2'>
+          <div className='w-full bg-[#5C00B8] rounded p-2'>
+            <UserProfile/>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }
