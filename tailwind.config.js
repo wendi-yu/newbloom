@@ -11,8 +11,9 @@ export default {
         'primary-light': '#5C00B8',
         'emphasis-primary': '#5C00B8',
         'emphasis-secondary': '#B1EDE8',
-        'background-primary': '#DDD6E8',
+        'background-primary': '#E5DDF2',
         'success': '#43AA8B',
+        'danger': "#E83151"
       }
     },
   },
