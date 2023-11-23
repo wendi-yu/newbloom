@@ -1,6 +1,8 @@
 import Navbar from "@/components/homepage/navbar/Navbar";
 import DocFileIcon from "@/assets/home_doc_file_icon.svg";
 import DocSortingIcon from "@/assets/home_doc_sorting_icon.svg";
+import DocApi from "@/util/document_apis";
+import Moment from 'moment';
 import { Link } from "react-router-dom";
 
 // import DocSortingExpandIcon from "@/assets/home_doc_sorting_expand_icon.svg";
@@ -81,37 +83,39 @@ const DocumentsSelectionTopBar = () => {
   </div>
 }
 
-const DocumentFileText = ({doc}) => {
+const DocumentFileText = ({docInfo}) => {
   return <div className="flex flex-col h-14">
     <div className="flex-1 text-gray-600">
-      Doc Title {doc}
+      {docInfo.name}
     </div>
     <div className="w-full text-right text-gray-400 text-xs">
-      Date
+      {Moment(docInfo.dateLastModified).format('MMM D, YYYY')}
     </div>
   </div>
 }
 
-const DocumentFile = ({doc}) => {
+const DocumentFile = ({docInfo}) => {
   return <Link to="/document">
     <div className="w-[200px] h-[200px] bg-gray-100 rounded-xl">
       <div className="flex flex-col p-2 divide-y divide-black">
         <img src={DocFileIcon} className="flex-1 w-[140px] m-auto"/>
-        <DocumentFileText doc={doc}/>
+        <DocumentFileText docInfo={docInfo}/>
       </div>
     </div>
   </Link>
 }
 
-const DocumentSelector = ({docs}) => {
-  const docFiles = docs.map(doc => { return <DocumentFile key={doc} doc={doc}/>})
+const DocumentSelector = ({docInfos}) => {
+  const docFiles = docInfos.map((docInfo) => { return <DocumentFile key={docInfo.id} docInfo={docInfo}/>})
   
   return <div className="flex flex-row flex-wrap p-2 mt-2 pt-5 gap-10">
-    {docFiles}
+    {docFiles} 
   </div>
 }
 
-function Home() {
+const Home = () => {
+  const docInfos = DocApi.getAllDocIdsAndMetadata()
+  docInfos.sort((a, b) => a.dateLastModified < b.dateLastModified ? 1 : -1)
 
   return (
     <div className='flex flex-row'>
@@ -120,7 +124,7 @@ function Home() {
       </div>
       <div className='flex-1 p-8 divide-y divide-black'>
         <DocumentsSelectionTopBar/>
-        <DocumentSelector docs={Array(8).fill(1)}/>
+        <DocumentSelector docInfos={docInfos}/>
       </div>
     </div>
   );

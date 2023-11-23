@@ -1,7 +1,7 @@
 import UserProfile from "@/components/document/Header/UserProfile";
 import NavbarSection from "@/components/homepage/navbar/NavbarSection";
 
-function Navbar() {
+const Navbar = () => {
   const sections = {
     // TODO: When you implement the actions for clicking the subsections, change this structure
     'My Documents': ['To Redact', 'In Progress'],
