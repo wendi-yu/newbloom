@@ -1,13 +1,16 @@
 import { Editable, Slate, withReact } from "slate-react";
+import useEditorConfig from "../hooks/useEditorConfig";
 
 import { createEditor } from "slate";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
-export default function TextEditor({ document, onChange }) {
+export default function TextEditor({ document=[], onChange }) {
   const editor = useMemo(() => withReact(createEditor()), []);
+  
+  const { renderElement, renderLeaf } = useEditorConfig(editor);
   return (
-    <Slate editor={editor} value={document} onChange={onChange}>
-      <Editable />
+    <Slate editor={editor} initialValue={document} onChange={onChange}>
+      <Editable renderElement={renderElement} renderLeaf={renderLeaf} />
     </Slate>
   );
 }

@@ -21,12 +21,9 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.18.0",
-<<<<<<< HEAD
     "slate": "^0.101.1",
     "slate-react": "^0.101.1",
-=======
     "styled-components": "^6.1.1",
->>>>>>> b452d8a7b5650b0e3abec8c760cfcf307eec9787
     "util-deprecate": "^1.0.2"
   },
   "devDependencies": {
