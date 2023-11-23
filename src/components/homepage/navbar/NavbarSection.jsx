@@ -1,13 +1,13 @@
 const NavbarSubSection = ({ subsectionName }) => {
-    return <div
-      className='px-3 p-2 hover:bg-violet-600 rounded'
-      onClick={(e) => {
-        print(e)
-        // TODO: Do some routing here
-      }}>
-      {subsectionName}
-    </div>
-  }
+  return <div
+    className='px-3 p-2 hover:bg-violet-600 rounded'
+    onClick={(e) => {
+      print(e)
+      // TODO: Do some routing here
+    }}>
+    {subsectionName}
+  </div>
+}
 
 const NavbarSection = ({ title, subsections }) => {
   return <div className=' text-lg font-bold py-3'>
