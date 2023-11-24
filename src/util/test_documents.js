@@ -31,7 +31,7 @@ const randomDate = (start, end) => {
 const AllDocs = () => {
     const docs = texts.map((text, i) => {
         return {
-            id: {i},
+            id: i,
             name: 'doc ' + i,
             dateLastModified: randomDate(new Date(2012, 0, 1), new Date()),
             body: DocumentBody(text)
