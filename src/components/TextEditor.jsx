@@ -24,8 +24,12 @@ export default function TextEditor({ document=[], onChange }){
     <div className={"flex flex-col"}>
       <Slate editor={editor} initialValue={document} onChange={onChange}>
         <ToolBar selection={selection} />
-        <div className={"flex flex-row"}>
-          <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex justify-self-center w-1/2 bg-grey" />
+        <div className={"bg-document-background flex justify-center h-full"}>
+         <div className={"bg-white w-1/2 bg-grey h-1/3"}>
+            <div className={""}>
+              <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col" />
+            </div>
+          </div>
         </div>
       </Slate>
     </div>
