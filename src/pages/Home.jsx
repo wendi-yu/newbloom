@@ -119,10 +119,8 @@ const Home = () => {
 
   return (
     <div className='flex flex-row'>
-      <div className='w-[350px]'>
-        <Navbar />
-      </div>
-      <div className='flex-1 p-8 divide-y divide-black'>
+      <Navbar />
+      <div className='ml-80 flex-1 p-8 divide-y divide-black'>
         <DocumentsSelectionTopBar resort={resort} />
         <DocumentSelector docInfos={docInfos} />
       </div>
