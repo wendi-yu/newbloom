@@ -22,3 +22,18 @@ export function getCommentThreadIDFromMark(mark) {
 function isCommentThreadIDMark(mayBeCommentThread) {
   return mayBeCommentThread.indexOf(COMMENT_THREAD_PREFIX) === 0;
 }
+
+export function insertCommentThread(editor, addCommentThreadToState) {
+  const threadID = uuidv4();
+  const newCommentThread = {
+      // comments as added would be appended to the thread here.
+      comments: [],
+      creationTime: new Date(),
+      // Newly created comment threads are OPEN. We deal with statuses
+      // later in the article.
+      status: "open",
+  };
+  addCommentThreadToState(threadID, newCommentThread);
+  Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
+  return threadID;
+}

@@ -9,7 +9,7 @@ const DocumentView = () => {
 
     return (
         <RecoilRoot>
-            <div className="flex justify-content-center w-80 bg-grey">
+            <div>
                 <TextEditor document={document} onChange={updateDocument} />
             </div>
         </RecoilRoot>

@@ -8,7 +8,7 @@ import CardSVG from "@/assets/pie_chart.svg"
 import DocumentView from '../components/document/DocumentView/DocumentView';
 import CardView from '../components/document/CardView/CardView';
 import TableView from '../components/document/TableView/TableView';
-import docText from "@/assets/example_document"
+import docText from "@/assets/example_document";
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -62,7 +62,7 @@ function Document() {
           Card View
         </ViewToggleButton>
       </div>
-      <div className='bg-gray-200 h-10'></div>
+      
       <ViewComponent />
     </div>
   );
