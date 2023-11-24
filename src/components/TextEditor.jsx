@@ -4,7 +4,7 @@ import useEditorConfig from "../hooks/useEditorConfig";
 import { createEditor } from "slate";
 import { useMemo, useState } from "react";
 
-export default function TextEditor({ document=[], onChange }) {
+export default function TextEditor({ document=[], onChange }){
   const editor = useMemo(() => withReact(createEditor()), []);
   
   const { renderElement, renderLeaf } = useEditorConfig(editor);
@@ -14,3 +14,8 @@ export default function TextEditor({ document=[], onChange }) {
     </Slate>
   );
 }
+
+function DebugObserver() {
+  // see API link above for implementation.
+}
+

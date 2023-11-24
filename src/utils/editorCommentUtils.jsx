@@ -4,9 +4,9 @@ export function getMarkForCommentThreadID(threadID) {
   return `${COMMENT_THREAD_PREFIX}${threadID}`;
 }
 
-export function getCommentThreadsOnTextNode(textNode) {
+export function getCommentThreadsOnTextNode(textnode) {
   return new Set(
-    Object.keys(textNode)
+    Object.keys(textnode)
       .filter(isCommentThreadIDMark)
       .map(getCommentThreadIDFromMark)
   );

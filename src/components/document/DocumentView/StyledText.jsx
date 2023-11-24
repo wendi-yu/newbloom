@@ -1,40 +1,27 @@
 import { getCommentThreadsOnTextNode } from "../../../utils/editorCommentUtils";
-
-// export default function StyledText({ attributes, children, leaf }) {
-
-//   const commentThreads = getCommentThreadsOnTextNode(leaf);
-
-//   if (commentThreads.size > 0) {
-//     return (
-//       <CommentedText
-//       {...attributes}
-//       commentThreads={commentThreads}
-//       textNode={leaf}
-//       >
-//         {children}
-//       </CommentedText>
-//     );
-//   }
-
-//   return <span {...attributes}>{children}</span>;
-// }
+import CommentedText from "./CommentedText";
 
 export default function StyledText({ attributes, children, leaf }) {
-    // if (leaf.bold) {
-    //   children = <strong {...attributes}>{children}</strong>;
-    // }
-  
-    // if (leaf.code) {
-    //   children = <code {...attributes}>{children}</code>;
-    // }
-  
-    // if (leaf.italic) {
-    //   children = <em {...attributes}>{children}</em>;
-    // }
-  
-    // if (leaf.underline) {
-    //   children = <u {...attributes}>{children}</u>;
-    // }
+
+    if (leaf.current) {
+    }
+    
+    if (leaf.suggested) {
+    }
+
+    if (leaf.redacted) {
+    }
+
+    if (leaf.rejected) {
+    }
+
+    if (leaf.underline) {
+    el = <u>{el}</u>;
+    }
+
+    if (leaf.bold) {
+        el = <strong>{el}</strong>;
+    }
   
     const commentThreads = getCommentThreadsOnTextNode(leaf);
   
@@ -43,7 +30,7 @@ export default function StyledText({ attributes, children, leaf }) {
         <CommentedText
           {...attributes}
           commentThreads={commentThreads}
-          textNode={leaf}
+          textnode={leaf}
         >
           {children}
         </CommentedText>
@@ -52,3 +39,5 @@ export default function StyledText({ attributes, children, leaf }) {
   
     return <span {...attributes}>{children}</span>;
   }
+
+  

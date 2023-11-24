@@ -19,3 +19,20 @@ export default function CommentedText(props) {
     </span>
   );
 }
+
+//current suggested redacted rejected
+export default function RedactedText(props){
+const { redactThreads, ...otherProps } = props;
+
+  return (
+    <span
+      {...otherProps}
+      className={classNames({
+        redacted: true,
+      })}
+      style={"backgroundColor: '#000'"}
+    >
+      {props.children}
+    </span>
+  );
+}
