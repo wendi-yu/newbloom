@@ -34,6 +34,7 @@ const AllDocs = () => {
             id: i,
             name: 'doc ' + i,
             dateLastModified: randomDate(new Date(2012, 0, 1), new Date()),
+            owner: i,
             body: DocumentBody(text)
         }
     })

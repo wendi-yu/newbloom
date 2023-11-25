@@ -3,3 +3,8 @@ export const SORTING_OPTIONS = {
     date: "dateLastModified",
     file: "file_type"
 }
+
+export const HOMEPAGE_DOC_LAYOUTS = {
+    list: "list",
+    grid: "grid"
+}
