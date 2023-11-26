@@ -6,7 +6,7 @@ const randomDate = (start, end) => {
 }
 
 const AllDocs = () => {
-    const docs = [...Array(5).keys()].map((i) => {
+    const docs = [...Array(15).keys()].map((i) => {
         return {
             id: i,
             name: 'doc ' + i,
