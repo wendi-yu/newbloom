@@ -13,7 +13,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ListIcon from "@/assets/list.svg"
 import GridIcon from "@/assets/grid.svg"
-import ListSelector from "../components/homepage/doc_selectors/ListSelector";
+import ListSelector from "@/components/homepage/doc_selectors/ListSelector";
 
 const SORTING_OPTIONS = {
   name: "name",
@@ -109,7 +109,7 @@ const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
 }
 
 const Home = () => {
-  const docInfosRaw = DocApi.getAllDocIdsAndMetadata()
+  const docInfosRaw = DocApi.getAllDocsMetadata()
 
   // state management for customizing sort key
   const sorter = (currentDocInfos, newSortKey) => {

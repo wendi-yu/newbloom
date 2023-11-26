@@ -1,5 +1,50 @@
-const text = {
-    body: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Donec tincidunt a sapien ornare mollis. Ut mattis eros nisi, sed posuere tortor cursus eget. Curabitur aliquet est libero, eget dapibus quam lobortis in. Etiam porta, sem nec hendrerit aliquam, dolor tellus pellentesque lorem, vel tincidunt nunc dui sit amet quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis auctor sem in pellentesque. Nulla gravida maximus vehicula. Phasellus et quam ut odio egestas scelerisque. Fusce in neque ac metus convallis vulputate. Nulla porttitor, odio sed efficitur egestas, velit est blandit lectus, sit amet condimentum tortor nisl at risus. Vestibulum lacinia euismod diam, sit amet pretium elit tempor a.\n\n Morbi eu libero felis. Quisque id fermentum dui. Integer viverra aliquet turpis, sed pellentesque mauris porttitor vel. Donec sodales dictum viverra. Etiam molestie, mi eu sodales porta, turpis augue mollis lorem, vitae pulvinar tellus turpis a neque. Curabitur pulvinar lorem ut turpis elementum facilisis. Pellentesque ut libero eu ante cursus placerat vitae eget magna. Nulla at viverra eros. Integer eget sapien ex. Morbi sit amet porttitor quam. Suspendisse potenti. Donec consequat, mi non ultrices dignissim, nisi lacus tempor tellus, nec varius erat est ut lacus. Aenean mattis tortor ut nisl ultricies cursus. Mauris vestibulum, dolor non viverra tempus, est risus rhoncus nulla, et ornare lectus odio faucibus ex. Curabitur posuere vulputate lectus, eget efficitur massa luctus nec.\n\nAliquam blandit ipsum eros, at iaculis metus eleifend id. Praesent ut sollicitudin nisl. Duis at justo tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam feugiat vel nisi non posuere. Nulla accumsan quis neque eu aliquam. Phasellus id ante lectus. Maecenas eu turpis suscipit, luctus massa at, hendrerit massa. Suspendisse maximus augue diam, ac tincidunt odio efficitur vel. Vestibulum ultrices felis leo, tincidunt egestas neque ultricies in. In arcu magna, blandit consectetur mi a, viverra aliquet arcu. Integer quis tortor pretium, varius ante condimentum, aliquam neque. Mauris facilisis nulla et facilisis rutrum.\n\nMauris mi lacus, dictum eget tincidunt ac, tincidunt vel sapien. Nam quis sem placerat, tempus diam nec, vestibulum sem. Maecenas eu augue eleifend, fringilla quam nec, lobortis quam. Vestibulum id egestas elit. Sed vel ex ut mauris pretium fermentum vitae eget lorem. Phasellus eget metus tellus. Suspendisse sagittis dignissim nisl sit amet mollis.\n\nFusce a nisl dui. Praesent molestie, justo at dignissim blandit, velit ex volutpat metus, ut blandit velit ex eget ligula. Mauris suscipit leo magna, vel condimentum neque tempor aliquet. Ut et nisl interdum, vestibulum augue at, cursus nulla. Integer ornare ullamcorper metus, in laoreet velit rutrum nec. Morbi nec odio velit. Praesent eget sem magna. Nullam nisl tellus, porttitor in ex sed, mollis pretium dolor."
-}
+import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
+import { v4 as uuid } from "uuid";
 
-export default text
+const overlappingCommentThreadID = uuid();
+
+const ExampleDocument = [
+    {
+        type: "paragraph",
+        children: [
+            {
+                text: "Text 1",
+                [getMarkForCommentThreadID(uuid())]: true,
+            },
+            {
+                text: "Text 2",
+                [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
+            },
+            {
+                text: "Text 3",
+                [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
+                [getMarkForCommentThreadID(uuid())]: true,
+            },
+            {
+                text: "Text 4",
+                [getMarkForCommentThreadID(uuid())]: true,
+            },
+            {
+                text:
+                    " in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            },
+            { text: " massa." },
+        ],
+    },
+    {
+        type: "paragraph",
+        children: [
+            {
+                [getMarkForCommentThreadID(uuid())]: true,
+                text:
+                    "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
+            },
+            {
+                text:
+                    "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
+            },
+        ],
+    },
+];
+
+export default ExampleDocument;

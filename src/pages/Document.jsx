@@ -1,14 +1,15 @@
 import '@/App.css'
 import { useState } from 'react'
 import Header from "@/components/document/Header/Header"
-import ViewToggleButton from '../components/document/Header/ViewToggleButton';
+import ViewToggleButton from '@/components/document/Header/ViewToggleButton';
 import DocumentSVG from "@/assets/document.svg"
 import TableSVG from "@/assets/table.svg"
 import CardSVG from "@/assets/pie_chart.svg"
-import DocumentView from '../components/document/DocumentView/DocumentView';
-import CardView from '../components/document/CardView/CardView';
-import TableView from '../components/document/TableView/TableView';
-import docText from "@/assets/example_document"
+import DocumentView from '@/components/document/DocumentView/DocumentView';
+import CardView from '@/components/document/CardView/CardView';
+import TableView from '@/components/document/TableView/TableView';
+import { useSearchParams } from 'react-router-dom';
+import docApi from "@/util/document_apis";
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -17,13 +18,18 @@ function Document() {
   const TableIcon = <img src={TableSVG} className="h-6" />
   const CardIcon = <img src={CardSVG} className="h-6" />
 
+  const [searchParams,] = useSearchParams();
+  const docId = searchParams.get("id") ?? 0
+
+  const fullDocument = docApi.getDocById(docId)
+
   const ViewComponent = () => {
     if (documentView == "document") {
-      return <DocumentView text={docText} />
+      return <DocumentView document={fullDocument} />
     } else if (documentView == "card") {
-      return <CardView text={docText} />
+      return <CardView document={fullDocument} />
     } else {
-      return <TableView text={docText} />
+      return <TableView document={fullDocument} />
     }
   }
 
