@@ -1,20 +1,9 @@
-export const toText = node => {
-    return toTextRecursive("", node)
-}
+import { Node } from "slate"
 
-// DFS through the node tree and concatenate all the text
-const toTextRecursive = (text, node) => {
-    // leaf nodes
-    if (node.text) {
-        text += node.text
-        return text
+export const toText = node => {
+    let s = ""
+    for (const t of Node.texts(node)) {
+        s += t[0].text
     }
-    if (node.children) {// intermediate nodes (paragraphs??)
-        text += '\n'
-        node.children.forEach(child => {
-            text = toTextRecursive(text, child)
-        })
-        return text
-    }
-    return text
+    return s
 }
