@@ -8,13 +8,23 @@ import DocSortingExpandIcon from "@/assets/expand_right.svg"
 import Popover from '@mui/material/Popover';
 import { useReducer, useState } from "react";
 import Clickable from "@/components/common/Clickable";
-import { HOMEPAGE_DOC_LAYOUTS, SORTING_OPTIONS } from "../util/constants";
 
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ListIcon from "@/assets/list.svg"
 import GridIcon from "@/assets/grid.svg"
 import ListSelector from "../components/homepage/doc_selectors/ListSelector";
+
+const SORTING_OPTIONS = {
+  name: "name",
+  date: "dateLastModified",
+  file: "file_type"
+}
+
+const HOMEPAGE_DOC_LAYOUTS = {
+  list: "list",
+  grid: "grid"
+}
 
 
 const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
