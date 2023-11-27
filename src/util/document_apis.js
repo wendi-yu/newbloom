@@ -10,7 +10,7 @@ const getAllDocs = () => {
 /*
     Gets ids, name, and dateLastModified (and other metadata) info about all docs
 */
-const getAllDocIdsAndMetadata = () => {
+const getAllDocsMetadata = () => {
     return AllDocs.map(doc => {
         var docMetadata = doc
         delete docMetadata['body']
@@ -20,9 +20,9 @@ const getAllDocIdsAndMetadata = () => {
 }
 
 /*
-    Get metadata of doc given its id
+    Get full document given its id
 */
-const getDocMetadataById = (id) => {
+const getDocById = (id) => {
     return AllDocs.find((e) => {
         return e.id == id;
     })
@@ -30,6 +30,6 @@ const getDocMetadataById = (id) => {
 
 export default {
     getAllDocs,
-    getAllDocIdsAndMetadata,
-    getDocMetadataById
+    getAllDocsMetadata,
+    getDocById
 }

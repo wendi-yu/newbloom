@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DocFileIcon from "@/assets/home_doc_file_icon.svg";
 
 const DocumentFile = ({ docInfo }) => {
-    return <Link to="/document">
+    return <Link to={`/document/${docInfo.id}`}>
         <div className="w-56 bg-gray-100 rounded-md flex flex-col">
             <div className="flex flex-col p-2 divide-y divide-black">
                 <img src={DocFileIcon} className="w-24 my-8 m-auto" />

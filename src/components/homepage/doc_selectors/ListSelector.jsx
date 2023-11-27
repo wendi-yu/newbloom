@@ -50,7 +50,7 @@ const ListSelector = ({ docInfos }) => {
     }))
     const navigateToDoc = (record) => {
         return {
-            onClick: () => navigate({ pathname: "/document", search: `?id=${record.id}` })
+            onClick: () => navigate({ pathname: `/document/${record.id}` })
         }
     }
 
