@@ -46,6 +46,20 @@ const ExampleDocument = {
                 },
             ],
         },
+        {
+            type: "paragraph",
+            children: [
+                {
+                    [getMarkForCommentThreadID(uuid())]: true,
+                    text:
+                        "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
+                },
+                {
+                    text:
+                        "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
+                },
+            ],
+        },
     ]
 };
 
