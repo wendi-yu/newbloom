@@ -8,8 +8,9 @@ import CardSVG from "@/assets/pie_chart.svg"
 import DocumentView from '@/components/document/DocumentView/DocumentView';
 import CardView from '@/components/document/CardView/CardView';
 import TableView from '@/components/document/TableView/TableView';
-import { useSearchParams } from 'react-router-dom';
 import docApi from "@/util/document_apis";
+import { useParams } from 'react-router-dom';
+import { DOC_ID_PARAM } from '@/util/constants';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -18,8 +19,7 @@ function Document() {
   const TableIcon = <img src={TableSVG} className="h-6" />
   const CardIcon = <img src={CardSVG} className="h-6" />
 
-  const [searchParams,] = useSearchParams();
-  const docId = searchParams.get("id") ?? 0
+  const docId = useParams()[DOC_ID_PARAM];
 
   const fullDocument = docApi.getDocById(docId)
 

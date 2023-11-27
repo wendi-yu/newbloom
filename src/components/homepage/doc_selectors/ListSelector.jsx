@@ -5,7 +5,6 @@ import DocumentIcon from "@/assets/home_doc_file_icon.svg"
 import PfpIcon from "@/assets/pfp.svg"
 import TimeIcon from "@/assets/time.svg"
 import { useNavigate } from 'react-router-dom';
-import { DOC_ID_QS } from '../../../util/constants';
 
 const ListSelector = ({ docInfos }) => {
     const userIds = docInfos.map(di => di.owner)
@@ -51,7 +50,7 @@ const ListSelector = ({ docInfos }) => {
     }))
     const navigateToDoc = (record) => {
         return {
-            onClick: () => navigate({ pathname: "/document", search: `?${DOC_ID_QS}=${record.id}` })
+            onClick: () => navigate({ pathname: `/document/${record.id}` })
         }
     }
 
