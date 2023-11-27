@@ -1,3 +1,5 @@
+import { toText } from "@/util/slateUtil"
+
 const CardSelector = ({ cards, selectedIdx, setSelectedIdx }) => {
 
     return <div className="bg-white h-full w-full p-4 overflow-y-scroll">
@@ -13,7 +15,7 @@ const CardSelector = ({ cards, selectedIdx, setSelectedIdx }) => {
                     e.currentTarget.blur()
                 }}>
                 <div>{idx + 1}.</div>
-                <div className="truncate">{card.text}</div>
+                <div className="truncate">{toText(card.text)}</div>
             </button>
         })}
     </div>

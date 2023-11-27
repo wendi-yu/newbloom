@@ -7,12 +7,12 @@ import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
 
 // this is a stub, replace it with an API call or something later
-const splitText = (text) => {
-    return text.body.split('\n\n')
+const splitText = (document) => {
+    return document.body.children
 }
 
-const CardView = ({ text }) => {
-    const paragraphs = splitText(text)
+const CardView = ({ document }) => {
+    const paragraphs = splitText(document)
     const [cards, setCards] = useState(paragraphs.map(par => { return { text: par, completed: false } }))
     const [selectedIdx, setSelectedIdx] = useState(0)
 
