@@ -1,8 +1,15 @@
 import { v4 as uuid } from "uuid";
 import { Editor } from 'slate'
 
+// Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
+// Reference links here: 
+// Slate docs: https://docs.slatejs.org/concepts/01-interfaces
+// Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
+
 const COMMENT_THREAD_PREFIX = "commentThread_";
 
+// In this context, a mark is similar to a "bold" or "italic" tag that marks
+// a node as having the comment thread corresponding to threadID
 export function getMarkForCommentThreadID(threadID) {
     return `${COMMENT_THREAD_PREFIX}${threadID}`;
 }
