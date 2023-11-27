@@ -1,6 +1,5 @@
 import ExampleDocument from "@/assets/example_document";
 
-
 const randomDate = (start, end) => {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
