@@ -14,6 +14,7 @@ import { DOC_ID_PARAM } from '@/util/constants';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
+  // const [documentView, setDocumentView] = useState("document")
 
   const DocumentIcon = <img src={DocumentSVG} className="h-6" />
   const TableIcon = <img src={TableSVG} className="h-6" />
