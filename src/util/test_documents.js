@@ -1,8 +1,6 @@
 import ExampleDocument from "@/assets/example_document";
+import { randomDate } from "./util_functions";
 
-const randomDate = (start, end) => {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-}
 
 const AllDocs = () => {
     const docs = [...Array(15).keys()].map((i) => {

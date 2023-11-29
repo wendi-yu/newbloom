@@ -5,6 +5,9 @@ import CheckIcon from "@/assets/check_ring.svg";
 import CloseIcon from "@/assets/close_ring.svg";
 import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
+import { getAllChildCommentThreads } from "@/util/editorCommentUtils";
+import { getCommentById } from "@/util/comment_apis";
+import { CommentSection } from "./CommentSection";
 
 // this is a stub, replace it with an API call or something later
 const splitText = (document) => {
@@ -13,7 +16,13 @@ const splitText = (document) => {
 
 const CardView = ({ document }) => {
     const paragraphs = splitText(document)
-    const [cards, setCards] = useState(paragraphs.map(par => { return { text: par, completed: false } }))
+    const [cards, setCards] = useState(paragraphs.map(par => (
+        {
+            body: par,
+            completed: false,
+            comments: Object.keys(getAllChildCommentThreads(par)).map(id => getCommentById(id))
+        }
+    )))
     const [selectedIdx, setSelectedIdx] = useState(0)
 
     const getNextIncomplete = () => {
@@ -69,9 +78,7 @@ const CardView = ({ document }) => {
                     <img src={NextIcon} />
                 </button>
             </div>
-            <div className="bg-white m-8 p-8 mb-0 pb0 rounded-t-3xl grow">
-                comments
-            </div>
+            <CommentSection comments={cards[selectedIdx].comments} />
         </div>
     </div>
 }
