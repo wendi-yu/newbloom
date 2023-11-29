@@ -3,42 +3,35 @@ import CommentRow from "./CommentRow";
 
 import { useState, useCallback } from "react";
 
-import { commentThreadIDsState, commentThreadsState} from "../../../../utils/CommentState";
+import { commentThreadIDsState, commentThreadsState } from "../../../../utils/CommentState";
 import { useRecoilValue } from "recoil";
 
-import { Card, CardHeader, Avatar, IconButton} from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { Card, CardHeader, Avatar, IconButton } from '@mui/material';
 
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345
-    }
-});
 
 export default function CommentsSidebar(params) {
   const allCommentThreadIDs = useRecoilValue(commentThreadIDsState);
 
-  const classes = useStyles();
 
   return (
-    Array.from(allCommentThreadIDs).map((id) =>
-        <Card className={classes.root}>
-        <CardHeader
-            avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-                :)
-            </Avatar>
-            }
-            action={
-            <IconButton aria-label="settings">
-                Resolve
-            </IconButton>
-            }
-            title="Soliyana"
-            subheader={ <CommentThread key={id} id={id} />}
-        />
-        </Card>
-    )
+    <div>card</div>
+    // Array.from(allCommentThreadIDs).map((id) =>
+    //   <Card className={classes.root}>
+    //     <CardHeader
+    //       avatar={
+    //         <Avatar aria-label="recipe" className={classes.avatar}>
+    //           :)
+    //         </Avatar>
+    //       }
+    //       action={
+    //         <IconButton aria-label="settings">
+    //           Resolve
+    //         </IconButton>
+    //       }
+    //       title="Soliyana"
+    //       subheader={<CommentThread key={id} id={id} />}
+    //     />
+    //   </Card>
   );
 
 }
