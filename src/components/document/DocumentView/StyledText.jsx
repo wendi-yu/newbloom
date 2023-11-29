@@ -4,15 +4,19 @@ import CommentedText from "./CommentedText";
 export default function StyledText({ attributes, children, leaf }) {
 
     if (leaf.current) {
+      e1=<div className="bg-curr-redaction">{e1}</div>
     }
     
     if (leaf.suggested) {
+      e1=<div className="bg-suggested-redaction">{e1}</div>
     }
 
-    if (leaf.redacted) {
+    if (leaf.accepted) {
+      e1=<div className="bg-accepted-redaction">{e1}</div>
     }
 
     if (leaf.rejected) {
+      e1=<div className="bg-rejected-redaction">{e1}</div>
     }
 
     if (leaf.underline) {
