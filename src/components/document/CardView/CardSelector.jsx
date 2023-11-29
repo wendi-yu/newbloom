@@ -15,7 +15,7 @@ const CardSelector = ({ cards, selectedIdx, setSelectedIdx }) => {
                     e.currentTarget.blur()
                 }}>
                 <div>{idx + 1}.</div>
-                <div className="truncate">{toText(card.text)}</div>
+                <div className="truncate">{toText(card.body)}</div>
             </button>
         })}
     </div>
