@@ -7,16 +7,19 @@ import useSelection from "../hooks/useSelection";
 import { createEditor } from "slate";
 import { useMemo, useState, useEffect, useCallback } from "react";
 
+import { activeCommentThreadIDAtom } from "../utils/CommentState";
+import { useRecoilValue} from "recoil";
+
 import { initializeStateWithAllCommentThreads } from "../utils/editorCommentUtils";
-import useAddCommentThreadToState from "../hooks/useAddCommenttoState";
+import useAddCommentThreadCallback from "../hooks/useAddCommentThreadCallback";
 
 export default function TextEditor({ document=[], onChange }){
   const editor = useMemo(() => withReact(createEditor()), []);
   const [selection, setSelection] = useSelection(editor);
   
   const { renderElement, renderLeaf } = useEditorConfig(editor);
-
-  const addCommentThread = useAddCommentThreadToState();
+  const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
+  const addCommentThread = useAddCommentThreadCallback();
 
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
@@ -39,6 +42,13 @@ export default function TextEditor({ document=[], onChange }){
           <div className={"bg-document-background flex justify-center h-full"}>
           <div className={"bg-white w-1/2 bg-grey h-1/3"}>
               <div className={""}>
+                {activeCommentThreadID != null ? (
+                    <CommentThreadPopover
+                      editorOffsets={editorOffsets}
+                      selection={selection ?? previousSelection}
+                      threadID={activeCommentThreadID}
+                    />
+                  ) : null}
                 <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col" />
               </div>
             </div>

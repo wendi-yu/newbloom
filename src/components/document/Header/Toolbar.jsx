@@ -1,4 +1,4 @@
-import useAddCommentThreadToState from "../../../hooks/useAddCommenttoState";
+import useAddCommentThreadToState from "../../../hooks/useAddCommentThreadCallback";
 import { useCallback } from "react";
 import { useEditor } from "slate-react";
 import { useSetRecoilState } from "recoil";

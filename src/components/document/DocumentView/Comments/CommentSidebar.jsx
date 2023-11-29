@@ -1,10 +1,13 @@
-import "./CommentSidebar.css";
+import classNames from "classnames";
+
 import CommentRow from "./CommentRow";
 
+import { Editor, Path, Text, Transforms } from "slate";
+import { useEditor } from "slate-react";
 import { useState, useCallback } from "react";
 
-import { commentThreadIDsState, commentThreadsState} from "../../../../utils/CommentState";
-import { useRecoilValue } from "recoil";
+import { commentThreadIDsState, commentThreadsState, activeCommentThreadIDAtom} from "../../../../utils/CommentState";
+import { useRecoilValue, useRecoilState } from "recoil";
 
 import { Card, CardHeader, Avatar, IconButton} from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -46,9 +49,48 @@ export default function CommentsSidebar(params) {
 //TODO: need to refactor this to use material UI
 
 function CommentThread({ id }) {
+  const editor = useEditor();
   const { comments } = useRecoilValue(commentThreadsState(id));
 
   const [shouldShowReplies, setShouldShowReplies] = useState(false);
+
+  const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
+    activeCommentThreadIDAtom
+  );
+
+  const onClick = useCallback(() => {
+
+    const textNodesWithThread = Editor.nodes(editor, {
+      at: [],
+      mode: "lowest",
+      match: (n) => Text.isText(n) && getCommentThreadsOnTextNode(n).has(id),
+    });
+
+    let textNodeEntry = textNodesWithThread.next().value;
+    const allTextNodePaths = [];
+
+    while (textNodeEntry != null) {
+      allTextNodePaths.push(textNodeEntry[1]);
+      textNodeEntry = textNodesWithThread.next().value;
+    }
+
+    // sort the text nodes
+    allTextNodePaths.sort((p1, p2) => Path.compare(p1, p2));
+
+    // set the selection on the editor
+    Transforms.select(editor, {
+      anchor: Editor.point(editor, allTextNodePaths[0], { edge: "start" }),
+      focus: Editor.point(
+        editor,
+        allTextNodePaths[allTextNodePaths.length - 1],
+        { edge: "end" }
+      ),
+    });
+
+    // Update the Recoil atom value.
+    setActiveCommentThreadID(id);
+  }, [editor, id, setActiveCommentThreadID]);
+    
   const onBtnClick = useCallback(() => {
     setShouldShowReplies(!shouldShowReplies);
   }, [shouldShowReplies, setShouldShowReplies]);
@@ -83,6 +125,15 @@ function CommentThread({ id }) {
     //     </Button>
     //   ) : null}
     // </Card>
-    <CommentRow comment={firstComment} showConnector={false} />
+    <Card
+        className={classNames({
+          "comment-thread-container": true,
+          "is-active": activeCommentThreadID === id,      
+        })}
+        onClick={onClick}
+      >
+      <CommentRow comment={firstComment} showConnector={false} />
+    </Card>
+    
   );
 }
