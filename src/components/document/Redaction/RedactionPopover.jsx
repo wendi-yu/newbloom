@@ -1,4 +1,4 @@
-import React from "react";
+import {useState, React} from "react";
 import { Button, Popover } from "antd";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
@@ -13,7 +13,7 @@ export default function RedactionPopover() {
     };
 
     const content = (
-        <div>
+        <div className="flex flex-row">
             <img src={CheckIcon} onClick={hide}/>
             <img src={CloseIcon} onClick={hide}/>
             <img src={CommentIcon} onClick={hide}/>
@@ -33,6 +33,7 @@ export default function RedactionPopover() {
                 onOpenChange={handleOpenChange}
                 placement="topRight"
                 arrow={false}
+                style={{padding:0, paddingSM:0}}
             >
                 <Button type="primary">Click me</Button>
             </Popover>
