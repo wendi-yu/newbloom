@@ -1,7 +1,7 @@
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
-import { v4 as uuid } from "uuid";
+import { comments } from "./example_comments";
 
-const overlappingCommentThreadID = uuid();
+const overlappingCommentThreadID = comments[0].id;
 
 const ExampleDocument = {
     children: [
@@ -10,7 +10,7 @@ const ExampleDocument = {
             children: [
                 {
                     text: "Text 1",
-                    [getMarkForCommentThreadID(uuid())]: true,
+                    [getMarkForCommentThreadID(comments[1].id)]: true,
                 },
                 {
                     text: "Text 2",
@@ -19,11 +19,11 @@ const ExampleDocument = {
                 {
                     text: "Text 3",
                     [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
-                    [getMarkForCommentThreadID(uuid())]: true,
+                    [getMarkForCommentThreadID(comments[2].id)]: true,
                 },
                 {
                     text: "Text 4",
-                    [getMarkForCommentThreadID(uuid())]: true,
+                    [getMarkForCommentThreadID(comments[3].id)]: true,
                 },
                 {
                     text:
@@ -36,7 +36,7 @@ const ExampleDocument = {
             type: "paragraph",
             children: [
                 {
-                    [getMarkForCommentThreadID(uuid())]: true,
+                    [getMarkForCommentThreadID(comments[4].id)]: true,
                     text:
                         "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
                 },
@@ -50,7 +50,7 @@ const ExampleDocument = {
             type: "paragraph",
             children: [
                 {
-                    [getMarkForCommentThreadID(uuid())]: true,
+                    [getMarkForCommentThreadID(comments[5].id)]: true,
                     text:
                         "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
                 },
