@@ -1,29 +1,36 @@
 import '@/App.css'
 import { useState } from 'react'
 import Header from "@/components/document/Header/Header"
-import ViewToggleButton from '../components/document/Header/ViewToggleButton';
+import ViewToggleButton from '@/components/document/Header/ViewToggleButton';
 import DocumentSVG from "@/assets/document.svg"
 import TableSVG from "@/assets/table.svg"
 import CardSVG from "@/assets/pie_chart.svg"
-import DocumentView from '../components/document/DocumentView/DocumentView';
-import CardView from '../components/document/CardView/CardView';
-import TableView from '../components/document/TableView/TableView';
-import docText from "@/assets/example_document"
+import DocumentView from '@/components/document/DocumentView/DocumentView';
+import CardView from '@/components/document/CardView/CardView';
+import TableView from '@/components/document/TableView/TableView';
+import docApi from "@/util/document_apis";
+import { useParams } from 'react-router-dom';
+import { DOC_ID_PARAM } from '@/util/constants';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
+  // const [documentView, setDocumentView] = useState("document")
 
   const DocumentIcon = <img src={DocumentSVG} className="h-6" />
   const TableIcon = <img src={TableSVG} className="h-6" />
   const CardIcon = <img src={CardSVG} className="h-6" />
 
+  const docId = useParams()[DOC_ID_PARAM];
+
+  const fullDocument = docApi.getDocById(docId)
+
   const ViewComponent = () => {
     if (documentView == "document") {
-      return <DocumentView text={docText} />
+      return <DocumentView document={fullDocument} />
     } else if (documentView == "card") {
-      return <CardView text={docText} />
+      return <CardView document={fullDocument} />
     } else {
-      return <TableView text={docText} />
+      return <TableView document={fullDocument} />
     }
   }
 

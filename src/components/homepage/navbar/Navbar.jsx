@@ -1,7 +1,7 @@
 import UserProfile from "@/components/document/Header/UserProfile";
 import NavbarSection from "@/components/homepage/navbar/NavbarSection";
 
-function Navbar() {
+const Navbar = () => {
   const sections = {
     // TODO: When you implement the actions for clicking the subsections, change this structure
     'My Documents': ['To Redact', 'In Progress'],
@@ -9,9 +9,9 @@ function Navbar() {
   }
 
   return (
-    <div className='fixed w-[350px] h-screen bg-violet-950 text-white'>
-      <div className='grid grid-cols-1 divide-y divide-gray-400 m-[30px]'>
-        <div className='h-[80px] text-2xl font-bold'>
+    <div className='fixed w-80 h-screen bg-violet-950 text-white'>
+      <div className='grid grid-cols-1 divide-y divide-gray-400 m-8'>
+        <div className='h-20 text-2xl font-bold'>
           [redacted]
         </div>
         {Object.entries(sections).map(([key, value]) => {

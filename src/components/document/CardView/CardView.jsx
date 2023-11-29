@@ -7,12 +7,12 @@ import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
 
 // this is a stub, replace it with an API call or something later
-const splitText = (text) => {
-    return text.body.split('\n\n')
+const splitText = (document) => {
+    return document.body.children
 }
 
-const CardView = ({ text }) => {
-    const paragraphs = splitText(text)
+const CardView = ({ document }) => {
+    const paragraphs = splitText(document)
     const [cards, setCards] = useState(paragraphs.map(par => { return { text: par, completed: false } }))
     const [selectedIdx, setSelectedIdx] = useState(0)
 
@@ -24,40 +24,28 @@ const CardView = ({ text }) => {
         return (selectedIdx + 1) % cards.length
     }
 
+    const CompletionButton = ({ completed }) => {
+        return <button
+            className={`bg-success ${completed ? "opacity-75" : ""} flex space-x-2 text-white items-center border-warning hover:border-white`}
+            onClick={(e) => {
+                cards[selectedIdx].completed = !completed
+                setCards([...cards])
+                e.currentTarget.blur()
+                if (!completed) setSelectedIdx(getNextIncomplete())
+            }}
+        >
+            <img src={completed ? CloseIcon : CheckIcon} className="h-8" />
+            <div>{completed ? "Re-mark for Review" : "Mark as Completed"}</div>
+        </button>
+    }
+
     return <div className="h-full w-full">
         <div className="w-80 float-left">
             <CardSelector cards={cards} selectedIdx={selectedIdx} setSelectedIdx={setSelectedIdx} />
         </div>
         <div className="bg-gray-100 h-full ml-80 px-8 flex flex-col justify-items-stretch">
             <div className="flex justify-end p-4 mb-8">
-                {cards[selectedIdx].completed ?
-                    <button
-                        className="bg-success opacity-75 flex space-x-2 text-white items-center border-warning hover:border-white"
-                        onClick={(e) => {
-                            cards[selectedIdx].completed = false
-                            setCards(cards)
-                            e.currentTarget.blur()
-                            // TODO: fix this, make it stay on the same card but refresh the display state of this button??
-                            setSelectedIdx(getNextIncomplete())
-                        }}
-                    >
-                        <img src={CloseIcon} />
-                        <div>Re-mark for review</div>
-                    </button>
-                    :
-                    <button
-                        className="bg-success flex space-x-2 text-white items-center border-success hover:border-white"
-                        onClick={(e) => {
-                            cards[selectedIdx].completed = true
-                            setCards(cards)
-                            e.currentTarget.blur()
-                            setSelectedIdx(getNextIncomplete())
-                        }}
-                    >
-                        <img src={CheckIcon} />
-                        <div>Mark as Reviewed</div>
-                    </button>
-                }
+                <CompletionButton completed={cards[selectedIdx].completed} />
             </div>
             <div className="p-6 flex space-x-2 items-center ">
                 <button

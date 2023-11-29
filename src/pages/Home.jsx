@@ -1,126 +1,139 @@
 import Navbar from "@/components/homepage/navbar/Navbar";
-import DocFileIcon from "@/assets/home_doc_file_icon.svg";
 import DocSortingIcon from "@/assets/home_doc_sorting_icon.svg";
-import { Link } from "react-router-dom";
+import DocApi from "@/util/document_apis";
+import GridSelector from "@/components/homepage/doc_selectors/GridSelector"
 
-// import DocSortingExpandIcon from "@/assets/home_doc_sorting_expand_icon.svg";
-// import Typography from '@mui/material/Typography';
-// import Popover from '@mui/material/Popover';
-// import { useState } from "react";
+import DocSortingExpandedIcon from "@/assets/home_doc_sorting_expand_icon.svg";
+import DocSortingExpandIcon from "@/assets/expand_right.svg"
+import Popover from '@mui/material/Popover';
+import { useReducer, useState } from "react";
+import Clickable from "@/components/common/Clickable";
+
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ListIcon from "@/assets/list.svg"
+import GridIcon from "@/assets/grid.svg"
+import ListSelector from "@/components/homepage/doc_selectors/ListSelector";
+
+const SORTING_OPTIONS = {
+  name: "name",
+  date: "dateLastModified",
+  file: "file_type"
+}
+
+const HOMEPAGE_DOC_LAYOUTS = {
+  list: "list",
+  grid: "grid"
+}
 
 
-// const SortingDropDownMenu = (props) => {
-//   return <div className={'flex flex-col bg-red-100 w-[100px] border-solid rounded ' + props.className}>
-//     <div>1</div>
-//     <div>2</div>
-//     <div>3</div>
-//   </div>
-// }
+const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedSortKey, setselectedSortKey] = useState(SORTING_OPTIONS.name)
 
-// const DocumentsSelectionTopBar = () => {
-//   const [anchorEl, setAnchorEl] = useState(null);
+  const SortingDropDownMenu = ({ selectedSortKey, setselectedSortKey }) => {
+    const sortDisplay = [
+      { name: "Name", key: SORTING_OPTIONS.name },
+      { name: "Date Uploaded", key: SORTING_OPTIONS.date },
+      { name: "File Type", key: SORTING_OPTIONS.file }
+    ]
+    return <div className={'flex flex-col border-solid rounded items-start p-2 divide-y divide-black'}>
+      {sortDisplay.map(so => {
+        return <Clickable
+          key={so.key}
+          className={`text-left w-full p-0.5 px-2 ${selectedSortKey === so.key ? "bg-background-primary" : "bg-white"}`}
+          onClick={() => {
+            resort(so.key)
+            setselectedSortKey(so.key)
+          }}>
+          {so.name}
+        </Clickable>
+      })}
+    </div>
+  }
 
-//   const handlePopoverOpen = (event) => {
-//     setAnchorEl(event.currentTarget);
-//   };
+  const handlePopoverOpen = (e) => {
+    setAnchorEl(e.currentTarget);
+  };
 
-//   const handlePopoverClose = () => {
-//     setAnchorEl(null);
-//   };
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
 
-//   const open = Boolean(anchorEl);
-
-//   return <div className='pt-5'>
-//     <div className='text-xl font-bold'>
-//       <div className="flex flex-row"> 
-//         <div>Documents</div>
-//         <img src={DocSortingIcon} className="ml-5"/>
-//         <Typography
-//           aria-owns={open ? 'mouse-over-popover' : undefined}
-//           aria-haspopup="true"
-//           onMouseEnter={handlePopoverOpen}
-//           // onMouseLeave={handlePopoverClose}
-//         >
-//           <img src={DocSortingExpandIcon}/>
-//         </Typography>
-//       </div>
-//       <Popover
-//         id="mouse-over-popover"
-//         sx={{
-//           pointerEvents: 'none',
-//         }}
-//         open={open}
-//         anchorEl={anchorEl}
-//         anchorOrigin={{
-//           vertical: 'bottom',
-//           horizontal: 'left',
-//         }}
-//         transformOrigin={{
-//           vertical: 'top',
-//           horizontal: 'left',
-//         }}
-//         onClose={handlePopoverClose}
-//         onMouseLeave={handlePopoverClose}
-//         disableRestoreFocus
-//       >
-//         <SortingDropDownMenu/>
-//       </Popover>
-//     </div>
-//   </div>
-// }
-
-const DocumentsSelectionTopBar = () => {
+  const open = Boolean(anchorEl)
+  const id = open ? 'sorting-select-popover' : undefined;
 
   return <div className='pt-5'>
     <div className='text-xl font-bold'>
-      <div className="flex flex-row"> 
-        <div>Documents</div>
-        <img src={DocSortingIcon} className="ml-5"/>
+      <div className="flex flex-row">
+        <div className="text-3xl">Documents</div>
+        <Clickable className="flex flex-row bg-white items-center" onClick={handlePopoverOpen}>
+          <img src={DocSortingIcon} className="ml-5" />
+          <img src={open ? DocSortingExpandedIcon : DocSortingExpandIcon} className="stroke-black" />
+        </Clickable>
+        <div className="flex flex-row-reverse w-full my-2">
+          <ToggleButtonGroup
+            size="small"
+            value={docLayout}
+            exclusive
+            onChange={(e, layout) => {
+              if (layout != null) {
+                setDocLayout(layout)
+              }
+            }}
+            aria-label="doc-layout"
+          >
+            <ToggleButton value={HOMEPAGE_DOC_LAYOUTS.grid}>
+              <img src={GridIcon} />
+            </ToggleButton>
+            <ToggleButton value={HOMEPAGE_DOC_LAYOUTS.list}>
+              <img src={ListIcon} />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </div>
       </div>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        onClose={handlePopoverClose}
+      >
+        <SortingDropDownMenu setselectedSortKey={setselectedSortKey} selectedSortKey={selectedSortKey} />
+      </Popover>
     </div>
   </div>
 }
 
-const DocumentFileText = ({doc}) => {
-  return <div className="flex flex-col h-14">
-    <div className="flex-1 text-gray-600">
-      Doc Title {doc}
-    </div>
-    <div className="w-full text-right text-gray-400 text-xs">
-      Date
-    </div>
-  </div>
-}
+const Home = () => {
+  const docInfosRaw = DocApi.getAllDocsMetadata()
 
-const DocumentFile = ({doc}) => {
-  return <Link to="/document">
-    <div className="w-[200px] h-[200px] bg-gray-100 rounded-xl">
-      <div className="flex flex-col p-2 divide-y divide-black">
-        <img src={DocFileIcon} className="flex-1 w-[140px] m-auto"/>
-        <DocumentFileText doc={doc}/>
-      </div>
-    </div>
-  </Link>
-}
+  // state management for customizing sort key
+  const sorter = (currentDocInfos, newSortKey) => {
+    const res = [...currentDocInfos].sort((d1, d2) => {
+      const f1 = d1[newSortKey]
+      const f2 = d2[newSortKey]
 
-const DocumentSelector = ({docs}) => {
-  const docFiles = docs.map(doc => { return <DocumentFile key={doc} doc={doc}/>})
-  
-  return <div className="flex flex-row flex-wrap p-2 mt-2 pt-5 gap-10">
-    {docFiles}
-  </div>
-}
+      if (f1 < f2) return -1;
+      if (f1 > f2) return 1;
+      return 0;
+    })
+    return res
+  }
+  const [docInfos, resort] = useReducer(sorter, docInfosRaw)
 
-function Home() {
+  // state management for which layout to display
+  const [docLayout, setDocLayout] = useState(HOMEPAGE_DOC_LAYOUTS.grid)
 
   return (
     <div className='flex flex-row'>
-      <div className='w-[350px]'>
-        <Navbar/>
-      </div>
-      <div className='flex-1 p-8 divide-y divide-black'>
-        <DocumentsSelectionTopBar/>
-        <DocumentSelector docs={Array(8).fill(1)}/>
+      <Navbar />
+      <div className='ml-80 flex-1 p-8 divide-y divide-black w-full'>
+        <DocumentsSelectionTopBar resort={resort} docLayout={docLayout} setDocLayout={setDocLayout} />
+        {docLayout == HOMEPAGE_DOC_LAYOUTS.grid ? <GridSelector docInfos={docInfos} /> : <ListSelector docInfos={docInfos} />}
       </div>
     </div>
   );
