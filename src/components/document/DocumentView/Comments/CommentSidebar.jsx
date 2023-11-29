@@ -7,41 +7,40 @@ import { commentThreadIDsState, commentThreadsState} from "../../../../utils/Com
 import { useRecoilValue } from "recoil";
 
 import { Card, CardHeader, Avatar, IconButton} from '@mui/material';
-import { makeStyles } from '@mui/styles';
+// import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345
-    }
-});
+// const useStyles = makeStyles({
+//     root: {
+//       maxWidth: 345
+//     }
+// });
 
-export default function CommentsSidebar(params) {
-  const allCommentThreadIDs = useRecoilValue(commentThreadIDsState);
+// export default function CommentsSidebar(params) {
+//   const allCommentThreadIDs = useRecoilValue(commentThreadIDsState);
 
-  const classes = useStyles();
+//   const classes = useStyles();
 
-  return (
-    Array.from(allCommentThreadIDs).map((id) =>
-        <Card className={classes.root}>
-        <CardHeader
-            avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-                :)
-            </Avatar>
-            }
-            action={
-            <IconButton aria-label="settings">
-                Resolve
-            </IconButton>
-            }
-            title="Soliyana"
-            subheader={ <CommentThread key={id} id={id} />}
-        />
-        </Card>
-    )
-  );
-
-}
+//   return (
+//     Array.from(allCommentThreadIDs).map((id) =>
+//         <Card className={classes.root}>
+//         <CardHeader
+//             avatar={
+//             <Avatar aria-label="recipe" className={classes.avatar}>
+//                 :)
+//             </Avatar>
+//             }
+//             action={
+//             <IconButton aria-label="settings">
+//                 Resolve
+//             </IconButton>
+//             }
+//             title="Soliyana"
+//             subheader={ <CommentThread key={id} id={id} />}
+//         />
+//         </Card>
+//     )
+//   );
+// }
 
 //TODO: need to refactor this to use material UI
 
