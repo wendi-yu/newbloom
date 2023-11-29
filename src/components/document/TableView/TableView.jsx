@@ -7,8 +7,8 @@ import { useState } from "react";
 
 const RedactionFilterDropdownMenu = () => {
     //TODO: Some sort of dropdown
-    return <div className="w-full text-end font-bold">
-        Accepted Suggestions 
+    return <div className="w-full text-end font-bold p-2">
+        Accepted Suggestions
     </div>
 }
 
@@ -62,29 +62,42 @@ const TableEntry = (sentence) => {
             {partsOfSentence}
         </div>
     }
-    
+
     const SentenceVisibilityScale = (props) => {
         return <Slider {...props} onChange={setSentenceLength} value={sentenceLength} className="w-20 m-2 justify-center items-center flex"/>
     }
-    
+
+    const Result = {
+        InReview: "InReview",
+        Approved: "Approved",
+        Rejected: "Rejected",
+    }
+
+    const [redactionResult, setRedactionResult] = useState(Result.InReview)
+
     const TableActionButtons = () => {
         return <div className="flex flex-row p-1">
-            <img src={CheckIcon}/>
-            <img src={CloseIcon}/>
+            <img
+                className={redactionResult==Result.Approved ? "opacity-30" : "opacity-100"}
+                src={CheckIcon}
+                onClick={() => {setRedactionResult(redactionResult===Result.Approved ? Result.InReview : Result.Approved)}}/>
+            <img
+                className={redactionResult==Result.Rejected ? "opacity-30" : "opacity-100"}
+                src={CloseIcon}
+                onClick={() => {setRedactionResult(redactionResult===Result.Rejected ? Result.InReview : Result.Rejected)}}/>
             <img src={CommentIcon}/>
             <img src={NavigateToIcon}/>
         </div>
     }
 
-    
-    return <div className="border border-solid border-slate-100 flex flex-row p-2">
+    return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult==Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
         <SentenceWithRedaction className="m-2"/>
         <SentenceVisibilityScale min={min} max={max}/>
         <TableActionButtons/>
     </div>
 }
 
-const TableView = ({ document }) => { 
+const TableView = ({ document }) => {
     const sentences = splitText(document)
     const tableEntries = sentences.map((sentence) => {
         return <div key={sentence}>
@@ -97,7 +110,7 @@ const TableView = ({ document }) => {
         <div className="flex flex-col">
             {tableEntries}
         </div>
-    </div> 
+    </div>
 };
 
 export default TableView;
