@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor } from 'slate'
+import { Editor, Node } from 'slate'
 
 // Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
 // Reference links here: 
@@ -21,6 +21,16 @@ export function getCommentThreadsOnTextNode(textnode) {
             .map(getCommentThreadIDFromMark)
     );
 }
+
+export function getAllChildCommentThreads(element) {
+    const threadIds = {}
+    for (const t of Node.texts(element)) {
+        // a ratchet set, since the actual one doesn't work very well
+        getCommentThreadsOnTextNode(t[0]).forEach(newId => threadIds[newId] = true)
+    }
+    return threadIds
+}
+
 
 export function getCommentThreadIDFromMark(mark) {
     if (!isCommentThreadIDMark(mark)) {
