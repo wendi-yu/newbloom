@@ -1,5 +1,5 @@
 import TextEditor from '@/components/TextEditor.jsx';
-import docText from "@/assets/example_document";
+import docText from "@/assets/example_document.jsx";
 import { useState } from 'react';
 
 import { RecoilRoot } from "recoil";

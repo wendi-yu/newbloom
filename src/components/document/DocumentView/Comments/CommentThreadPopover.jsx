@@ -26,6 +26,11 @@ export default function CommentThreadPopover({ editorOffsets, selection, threadI
       onClickOutside={onClickOutside}
     >
       {`Comment Thread Popover for threadID:${threadID}`}
+      <div className={"comment-list"}>
+        {threadData.comments.map((comment, index) => (
+          <CommentRow key={`comment_${index}`} comment={comment} />
+        ))}
+      </div>
     </NodePopover>
   );
 }

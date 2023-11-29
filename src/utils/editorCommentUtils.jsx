@@ -1,3 +1,6 @@
+import { Editor, Range, Text } from "slate";
+import { v4 as uuidv4 } from "uuid";
+
 const COMMENT_THREAD_PREFIX = "commentThread_";
 
 export function getMarkForCommentThreadID(threadID) {
@@ -36,4 +39,38 @@ export function insertCommentThread(editor, addCommentThreadToState) {
   addCommentThreadToState(threadID, newCommentThread);
   Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
   return threadID;
+}
+
+export async function initializeStateWithAllCommentThreads(
+  editor,
+  addCommentThread
+) {
+  const textNodesWithComments = Editor.nodes(editor, {
+    at: [],
+    mode: "lowest",
+    match: (n) => Text.isText(n) && getCommentThreadsOnTextNode(n).size > 0,
+  });
+
+  const commentThreads = new Set();
+
+  let textNodeEntry = textNodesWithComments.next().value;
+  while (textNodeEntry != null) {
+    [...getCommentThreadsOnTextNode(textNodeEntry[0])].forEach((threadID) => {
+      commentThreads.add(threadID);
+    });
+    textNodeEntry = textNodesWithComments.next().value;
+  }
+
+  Array.from(commentThreads).forEach((id) =>
+    addCommentThread(id, {
+      comments: [
+        {
+          author: "Jane Doe",
+          text: "Comment Thread Loaded from Server",
+          creationTime: new Date(),
+        },
+      ],
+      status: "open",
+    })
+  );
 }
