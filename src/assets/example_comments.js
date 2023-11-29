@@ -22,17 +22,17 @@ export const comments = [
     },
     {
         id: uuid(),
-        body: "Comment 2.",
+        body: "Is this identifiable? Let me know what you think.",
         date: randomDate(new Date(2012, 0, 1), new Date()),
         userId: 0,
         replies: [
             {
-                body: "Comment 2a.",
+                body: "I don't think it is, it would be a large stretch to get to a personal identity from just this information. Especially since it lacks context.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 1
             },
             {
-                body: "Comment 2b",
+                body: "Good call, ok sounds good.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 0
             }
@@ -40,17 +40,17 @@ export const comments = [
     },
     {
         id: uuid(),
-        body: "Comment 3.",
+        body: "I think we should redact this, otherwise they might be able to link people from the name.",
         date: randomDate(new Date(2012, 0, 1), new Date()),
         userId: 0,
         replies: [
             {
-                body: "Comment 3a.",
+                body: "Yes I agree, go for it.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 1
             },
             {
-                body: "Comment 3b",
+                body: "Sg!",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 0
             }
@@ -58,17 +58,17 @@ export const comments = [
     },
     {
         id: uuid(),
-        body: "Comment 4.",
+        body: "What counts as identifying in this case?",
         date: randomDate(new Date(2012, 0, 1), new Date()),
         userId: 0,
         replies: [
             {
-                body: "Comment 4a.",
+                body: "We should avoid this.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 1
             },
             {
-                body: "Comment 4b",
+                body: "I think you're right.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 0
             }
@@ -76,17 +76,17 @@ export const comments = [
     },
     {
         id: uuid(),
-        body: "Comment 5.",
+        body: "I'm going to send this out for more review, I think it would benefit from a second opinion.",
         date: randomDate(new Date(2012, 0, 1), new Date()),
         userId: 0,
         replies: [
             {
-                body: "Comment 5a.",
+                body: "Ok yes sounds good, who will you ask?",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 1
             },
             {
-                body: "Comment 5b",
+                body: "Not sure, maybe Mary. Will let you know.",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 0
             }
@@ -94,17 +94,17 @@ export const comments = [
     },
     {
         id: uuid(),
-        body: "Comment 6.",
+        body: "This might be identifying in conjunction with the redaction above.",
         date: randomDate(new Date(2012, 0, 1), new Date()),
         userId: 0,
         replies: [
             {
-                body: "Comment 6a.",
+                body: "Which one?",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 1
             },
             {
-                body: "Comment 6b",
+                body: "Where they talk about the patent?",
                 date: randomDate(new Date(2012, 0, 1), new Date()),
                 userId: 0
             }
