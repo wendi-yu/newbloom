@@ -1,4 +1,3 @@
-import { DefaultElement } from "slate-react";
 import StyledText from "../components/document/DocumentView/StyledText";
 
 export default function useEditorConfig(editor) {
@@ -22,32 +21,6 @@ const KeyBindings = {
     }
   },
 };
-
-// function renderLeaf({ attributes, children, leaf }) {
-//     let el = <>{children}</>;
-
-//     if (leaf.current) {
-//     }
-    
-//     if (leaf.suggested) {
-//     }
-
-//     if (leaf.redacted) {
-//     }
-
-//     if (leaf.rejected) {
-//     }
-
-//     if (leaf.underline) {
-//     el = <u>{el}</u>;
-//     }
-
-//     if (leaf.bold) {
-//         el = <strong>{el}</strong>;
-//     }
-
-//     return <span {...attributes}>{el}</span>;
-// }
 
 function renderLeaf(props) {
   return <StyledText {...props} />;

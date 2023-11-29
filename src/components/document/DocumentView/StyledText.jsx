@@ -3,45 +3,43 @@ import CommentedText from "./CommentedText";
 
 export default function StyledText({ attributes, children, leaf }) {
 
-    if (leaf.current) {
-      e1=<div className="bg-curr-redaction">{e1}</div>
-    }
-    
-    if (leaf.suggested) {
-      e1=<div className="bg-suggested-redaction">{e1}</div>
-    }
+  //TO DO: trim space off of highlight
 
-    if (leaf.accepted) {
-      e1=<div className="bg-accepted-redaction">{e1}</div>
-    }
-
-    if (leaf.rejected) {
-      e1=<div className="bg-rejected-redaction">{e1}</div>
-    }
-
-    if (leaf.underline) {
-    el = <u>{el}</u>;
-    }
-
-    if (leaf.bold) {
-        el = <strong>{el}</strong>;
-    }
-  
-    const commentThreads = getCommentThreadsOnTextNode(leaf);
-  
-    if (commentThreads.size > 0) {
-      return (
-        <CommentedText
-          {...attributes}
-          commentThreads={commentThreads}
-          textnode={leaf}
-        >
-          {children}
-        </CommentedText>
-      );
-    }
-  
-    return <span {...attributes}>{children}</span>;
+  if (leaf.current) {
+    children=<span className="bg-curr-redaction">{children}</span>
   }
+  
+  if (leaf.suggested) {
+    children=<span className="bg-suggested-redaction">{children}</span>
+  }
+
+  if (leaf.accepted) {
+    children=<span className="bg-accepted-redaction">{children}</span>
+  }
+
+  if (leaf.rejected) {
+    children=<u>{children}</u>
+  }
+
+  if (leaf.bold) {
+    children = <strong>{children}</strong>;
+  }
+
+  const commentThreads = getCommentThreadsOnTextNode(leaf);
+
+  if (commentThreads.size > 0) {
+    return (
+      <CommentedText
+        {...attributes}
+        commentThreads={commentThreads}
+        textnode={leaf}
+      >
+        {children}
+      </CommentedText>
+    );
+  }
+  
+  return <span {...attributes}>{children}</span>;
+}
 
   

@@ -20,7 +20,6 @@ export default {
         'rejected-redaction':"",
         'accepted-redaction':"rgba(0, 0, 0, 0.22)",
         'curr-redaction':"rgba(92,0,184,0.4)"
-
       }
     },
   },

@@ -3,22 +3,24 @@ import { v4 as uuid } from "uuid";
 
 const overlappingCommentThreadID = uuid();
 
+// THERE ARE 4 types of redactions: suggested, rejected, accepted, current 
+// To specify, just do rejected:true or etc
+
 const ExampleDocument = [
   {
     type: "paragraph",
     children: [
       {
-        text: "Text 1",
-        [getMarkForCommentThreadID(uuid())]: true,
+        text: "Text 1 ",
+        suggested:true,
       },
       {
-        text: "Text 2",
+        text: "Text 2 ",
         [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
       },
       {
-        text: "Text 3",
-        [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
-        [getMarkForCommentThreadID(uuid())]: true,
+        text: "Text 3 ",
+        accepted:true
       },
       {
         text: "Text 4",
@@ -35,9 +37,14 @@ const ExampleDocument = [
     type: "paragraph",
     children: [
       {
+        text:
+          "Cras",
+        current:true
+      },
+      {
         [getMarkForCommentThreadID(uuid())]: true,
         text:
-          "Cras maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
+          "maximus auctor congue. Sed ultrices elit quis tortor ornare, non gravida turpis feugiat. Morbi facilisis sodales sem quis feugiat. Vestibulum non urna lobortis, semper metus in, condimentum ex. Quisque est justo, egestas sit amet sem ac, auctor ultricies lacus. Pellentesque lorem justo, rhoncus ut magna sit amet, rhoncus posuere libero.",
       },
       {
         text:
