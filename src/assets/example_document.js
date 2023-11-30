@@ -11,6 +11,7 @@ const ExampleDocument = {
                 {
                     text: "Seedlings Life Science Ventures, LLC [Seedlings]",
                     [getMarkForCommentThreadID(comments[1].id)]: true,
+                    suggested: true,
                 },
                 {
                     text: " is in the business of early-stage health-care related research and product development. It alleges that Pfizer Canada ULC [Pfizer]",
@@ -20,6 +21,7 @@ const ExampleDocument = {
                     text: ", a major pharmaceutical company, infringes its patent by selling in Canada an auto-injector commonly known as the EpiPen. While, at first sight, the EpiPen and Seedlings’s invention do",
                     [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
                     [getMarkForCommentThreadID(comments[2].id)]: true,
+                    accepted: true,
                 },
                 {
                     text: "Text 4",
@@ -42,6 +44,7 @@ const ExampleDocument = {
                     [getMarkForCommentThreadID(comments[4].id)]: true,
                     text:
                         "I agree with Pfizer that the claims asserted by Seedlings",
+                    current: true,
                 },
                 {
                     text:
