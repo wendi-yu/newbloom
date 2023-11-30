@@ -66,7 +66,7 @@ const TableEntry = (sentence) => {
         partsOfSentence.push(postRedactedSection)
         if (wordEndIndex < words.length) partsOfSentence.push(ellipsis)
 
-        return <div className={`m-2 flex-1 justify-center items-center flex text-center ${redactionResult===Result.InReview ? "opacity-100" : "opacity-30"}`}>
+        return <div className={`m-2 flex-1 justify-center items-center flex text-center ${redactionResult === Result.InReview ? "opacity-100" : "opacity-30"}`}>
             {partsOfSentence}
         </div>
     }
@@ -82,7 +82,7 @@ const TableEntry = (sentence) => {
                 src={CheckIcon}
                 onClick={() => { setRedactionResult(redactionResult === Result.Approved ? Result.InReview : Result.Approved) }} />
             <img
-                className={redactionResult == Result.Rejected ? "opacity-30" : "opacity-100"}
+                className={redactionResult === Result.Rejected ? "opacity-30" : "opacity-100"}
                 src={CloseIcon}
                 onClick={() => { setRedactionResult(redactionResult === Result.Rejected ? Result.InReview : Result.Rejected) }} />
             <img src={CommentIcon} />
@@ -90,7 +90,7 @@ const TableEntry = (sentence) => {
         </div>
     }
 
-    return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult == Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
+    return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult === Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
         <SentenceWithRedaction className="m-2" />
         <SentenceVisibilityScale min={min} max={max} />
         <TableActionButtons />
