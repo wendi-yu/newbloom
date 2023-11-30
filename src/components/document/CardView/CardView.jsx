@@ -11,7 +11,7 @@ import { CommentSection } from "./CommentSection";
 
 // this is a stub, replace it with an API call or something later
 const splitText = (document) => {
-    return document.documentBody.children
+    return document.documentBody
 }
 
 const CardView = ({ document }) => {

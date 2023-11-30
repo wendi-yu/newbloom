@@ -4,7 +4,7 @@ import CommentIcon from "@/assets/comment_fill.svg";
 import NavigateToIcon from "@/assets/navigate_to_icon.svg";
 import { Slider } from 'antd';
 import { useState } from "react";
-import { toText } from "../../../util/slateUtil";
+import { toText } from "@/util/slateUtil";
 
 const RedactionFilterDropdownMenu = () => {
     //TODO: Some sort of dropdown
@@ -14,7 +14,7 @@ const RedactionFilterDropdownMenu = () => {
 }
 
 const splitText = (document) => {
-    return document.documentBody.children.map((paragraph) => {
+    return document.documentBody.map((paragraph) => {
         return paragraph.children
     }).flat(1)
 }
