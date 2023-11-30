@@ -13,7 +13,13 @@ export default {
         'emphasis-secondary': '#B1EDE8',
         'background-primary': '#E5DDF2',
         'success': '#43AA8B',
-        'danger': "#E83151"
+        'danger': "#E83151",
+        'document-background': "#F5F5F5",
+        'highlight': "#FFEC40",
+        'suggested-redaction':"rgba(92, 0, 184, 0.22)",
+        'rejected-redaction':"",
+        'accepted-redaction':"rgba(0, 0, 0, 0.22)",
+        'curr-redaction':"rgba(92,0,184,0.4)"
       }
     },
   },

@@ -35,7 +35,7 @@ function Document() {
   }
 
   return (
-    <div className='document h-full'>
+    <div className='flex flex-col document h-full'>
       <Header documentName="Test Doc Title" />
       <div className="sticky flex space-x-1.5 text-sm pl-2.5 pb-2.5">
         <ViewToggleButton
@@ -69,8 +69,8 @@ function Document() {
           Card View
         </ViewToggleButton>
       </div>
-      <div className='bg-gray-200 h-10'></div>
-      <ViewComponent />
+      
+      <ViewComponent className={"flex flex-grow"}/>
     </div>
   );
 }
