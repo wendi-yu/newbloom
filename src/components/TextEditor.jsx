@@ -4,7 +4,7 @@ import useEditorConfig from "@/hooks/useEditorConfig";
 import { createEditor } from "slate";
 import { useMemo, useEffect } from "react";
 
-import { initializeStateWithAllCommentThreads } from "@/utils/editorCommentUtils";
+import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommenttoState";
 
 export default function TextEditor({ document = [], onChange }) {
