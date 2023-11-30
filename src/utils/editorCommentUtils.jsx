@@ -1,4 +1,4 @@
-import { Editor, Range, Text } from "slate";
+import { Editor, Text } from "slate";
 import { v4 as uuidv4 } from "uuid";
 
 const COMMENT_THREAD_PREFIX = "commentThread_";
@@ -29,12 +29,12 @@ function isCommentThreadIDMark(mayBeCommentThread) {
 export function insertCommentThread(editor, addCommentThreadToState) {
   const threadID = uuidv4();
   const newCommentThread = {
-      // comments as added would be appended to the thread here.
-      comments: [],
-      creationTime: new Date(),
-      // Newly created comment threads are OPEN. We deal with statuses
-      // later in the article.
-      status: "open",
+    // comments as added would be appended to the thread here.
+    comments: [],
+    creationTime: new Date(),
+    // Newly created comment threads are OPEN. We deal with statuses
+    // later in the article.
+    status: "open",
   };
   addCommentThreadToState(threadID, newCommentThread);
   Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);

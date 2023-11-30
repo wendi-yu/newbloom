@@ -1,17 +1,15 @@
 import TextEditor from '@/components/TextEditor.jsx';
-import docText from "@/assets/example_document.jsx";
+import docText from "@/assets/example_document";
 import { useState } from 'react';
 
 import { RecoilRoot } from "recoil";
 
 const DocumentView = () => {
-    const [document, updateDocument] = useState(docText);
+    const [document, updateDocument] = useState(docText.children);
 
     return (
         <RecoilRoot>
-            <div>
-                <TextEditor document={document} onChange={updateDocument} />
-            </div>
+            <TextEditor document={document} onChange={updateDocument} />
         </RecoilRoot>
     );
 }
