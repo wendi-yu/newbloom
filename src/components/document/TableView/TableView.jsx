@@ -4,6 +4,7 @@ import CommentIcon from "@/assets/comment_fill.svg";
 import NavigateToIcon from "@/assets/navigate_to_icon.svg";
 import { Slider } from 'antd';
 import { useState } from "react";
+import { toText } from "../../../util/slateUtil";
 
 const RedactionFilterDropdownMenu = () => {
     //TODO: Some sort of dropdown
@@ -13,7 +14,7 @@ const RedactionFilterDropdownMenu = () => {
 }
 
 const splitText = (document) => {
-    return document.body.children.map((paragraph) => {
+    return document.documentBody.children.map((paragraph) => {
         return paragraph.children
     }).flat(1)
 }
@@ -21,7 +22,7 @@ const splitText = (document) => {
 const parseSentence = (sentence) => {
     const text = sentence.sentence.text
     // Temporarily insert " REDACTED " into the sentence
-    return text.slice(0, text.length/2) + " REDACTED " + text.slice(text.length/2)
+    return text.slice(0, text.length / 2) + " REDACTED " + text.slice(text.length / 2)
 }
 
 const getWordsFromSentence = (sentence) => {
@@ -51,10 +52,10 @@ const TableEntry = (sentence) => {
     const SentenceWithRedaction = () => {
         //Separate sentence into preRedactedSection, redactedWord, and postRedactedSection
         const ellipsis = '...'
-        const wordStartIndex = redactedWordIndex-sentenceLength
-        const wordEndIndex = redactedWordIndex+sentenceLength
+        const wordStartIndex = redactedWordIndex - sentenceLength
+        const wordEndIndex = redactedWordIndex + sentenceLength
 
-        const preRedactedSection = words.slice(Math.max(wordStartIndex,0), redactedWordIndex).join(' ')
+        const preRedactedSection = words.slice(Math.max(wordStartIndex, 0), redactedWordIndex).join(' ')
         const redactedWord = ' ' + words[redactedWordIndex] + ' '
         const postRedactedSection = words.slice(redactedWordIndex + 1, wordEndIndex + 1).join(' ')
 
@@ -71,41 +72,41 @@ const TableEntry = (sentence) => {
     }
 
     const SentenceVisibilityScale = (props) => {
-        return <Slider {...props} onChange={setSentenceLength} value={sentenceLength} className="w-20 m-2 justify-center items-center flex"/>
+        return <Slider {...props} onChange={setSentenceLength} value={sentenceLength} className="w-20 m-2 justify-center items-center flex" />
     }
 
     const TableActionButtons = () => {
         return <div className="flex flex-row p-1">
             <img
-                className={redactionResult==Result.Approved ? "opacity-30" : "opacity-100"}
+                className={redactionResult == Result.Approved ? "opacity-30" : "opacity-100"}
                 src={CheckIcon}
-                onClick={() => {setRedactionResult(redactionResult===Result.Approved ? Result.InReview : Result.Approved)}}/>
+                onClick={() => { setRedactionResult(redactionResult === Result.Approved ? Result.InReview : Result.Approved) }} />
             <img
-                className={redactionResult==Result.Rejected ? "opacity-30" : "opacity-100"}
+                className={redactionResult == Result.Rejected ? "opacity-30" : "opacity-100"}
                 src={CloseIcon}
-                onClick={() => {setRedactionResult(redactionResult===Result.Rejected ? Result.InReview : Result.Rejected)}}/>
-            <img src={CommentIcon}/>
-            <img src={NavigateToIcon}/>
+                onClick={() => { setRedactionResult(redactionResult === Result.Rejected ? Result.InReview : Result.Rejected) }} />
+            <img src={CommentIcon} />
+            <img src={NavigateToIcon} />
         </div>
     }
 
-    return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult==Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
-        <SentenceWithRedaction className="m-2"/>
-        <SentenceVisibilityScale min={min} max={max}/>
-        <TableActionButtons/>
+    return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult == Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
+        <SentenceWithRedaction className="m-2" />
+        <SentenceVisibilityScale min={min} max={max} />
+        <TableActionButtons />
     </div>
 }
 
 const TableView = ({ document }) => {
     const sentences = splitText(document)
     const tableEntries = sentences.map((sentence) => {
-        return <div key={sentence}>
-            <TableEntry sentence={sentence}/>
+        return <div key={toText(sentence)}>
+            <TableEntry sentence={sentence} />
         </div>
     })
 
     return <div className="p-7">
-        <RedactionFilterDropdownMenu/>
+        <RedactionFilterDropdownMenu />
         <div className="flex flex-col">
             {tableEntries}
         </div>
