@@ -57,3 +57,37 @@ export function insertCommentThread(editor, addCommentThreadToState) {
     Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
     return threadID;
 }
+
+export async function initializeStateWithAllCommentThreads(
+    editor,
+    addCommentThread
+) {
+    const textNodesWithComments = Editor.nodes(editor, {
+        at: [],
+        mode: "lowest",
+        match: (n) => Text.isText(n) && getCommentThreadsOnTextNode(n).size > 0,
+    });
+
+    const commentThreads = new Set();
+
+    let textNodeEntry = textNodesWithComments.next().value;
+    while (textNodeEntry != null) {
+        [...getCommentThreadsOnTextNode(textNodeEntry[0])].forEach((threadID) => {
+            commentThreads.add(threadID);
+        });
+        textNodeEntry = textNodesWithComments.next().value;
+    }
+
+    Array.from(commentThreads).forEach((id) =>
+        addCommentThread(id, {
+            comments: [
+                {
+                    author: "Jane Doe",
+                    text: "Comment Thread Loaded from Server",
+                    creationTime: new Date(),
+                },
+            ],
+            status: "open",
+        })
+    );
+}
