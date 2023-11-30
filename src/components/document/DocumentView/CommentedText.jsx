@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 export default function CommentedText(props) {
-  const { commentThreads, ...otherProps } = props;
+  const { commentThreads, ...otherProps } = props; // eslint-disable-line no-unused-vars
 
   const commentStyle = {
     backgroundColor: '#feeab5',

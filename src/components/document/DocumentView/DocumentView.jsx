@@ -1,7 +1,17 @@
-import RedactionPopover from "../Redaction/RedactionPopover";
+import TextEditor from '@/components/TextEditor.jsx';
+import docText from "@/assets/example_document";
+import { useState } from 'react';
 
-const DocumentView = () => { 
-    return <div><RedactionPopover /></div> 
+import { RecoilRoot } from "recoil";
+
+const Document = () => {
+    const [document, updateDocument] = useState(docText.children);
+
+    return (
+        <RecoilRoot>
+            <TextEditor document={document} onChange={updateDocument} />
+        </RecoilRoot>
+    );
 }
 
-export default DocumentView;
+export default Document

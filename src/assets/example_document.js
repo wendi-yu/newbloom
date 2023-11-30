@@ -20,6 +20,7 @@ const ExampleDocument = {
                     text: ", a major pharmaceutical company, infringes its patent by selling in Canada an auto-injector commonly known as the EpiPen. While, at first sight, the EpiPen and Seedlings’s invention do",
                     [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
                     [getMarkForCommentThreadID(comments[2].id)]: true,
+                    accepted: true,
                 },
                 {
                     text: "Text 4",
@@ -39,9 +40,18 @@ const ExampleDocument = {
             type: "paragraph",
             children: [
                 {
+                    text:
+                        "I agree with ",
+                },
+                {
+                    text:
+                        "Pfizer ",
+                    current: true,
+                },
+                {
                     [getMarkForCommentThreadID(comments[4].id)]: true,
                     text:
-                        "I agree with Pfizer that the claims asserted by Seedlings",
+                        " that the claims asserted by Seedlings",
                 },
                 {
                     text:
@@ -55,12 +65,36 @@ const ExampleDocument = {
                 {
                     [getMarkForCommentThreadID(comments[5].id)]: true,
                     text:
-                        "Rather, Seedlings’s auto-injector and the EpiPen are different inventions. The creative use of language in Seedlings’s patent cannot obscure this reality.",
+                        "Rather, Seedlings’s auto-injector and the EpiPen are different inventions. The creative use of language in Seedlings’s patent cannot obscure this reality. ",
                 },
                 {
                     text:
-                        " and the EpiPen are different inventions. The creative use of language in Seedlings’s patent cannot obscure this reality. Part I of this judgment describes the auto-injectors involved in this case. In Part II, I identify the skilled person to whom the patent is directed and I give my interpretation of certain terms of the patent, the meaning of which is in dispute. Part III is devoted to the analysis of Pfizer’s challenge to the validity of the patent’s relevant claims. I address the issues of anticipation, obviousness, utility, overbreadth and insufficiency. Even though I conclude that the relevant claims are invalid, I assess, in Part IV, whether the current version of the EpiPen infringes Seedlings’s patent. While I conclude that it does not, I also give my opinion, in Part V, as to the compensation that Pfizer would have owed to Seedlings if it had infringed valid claims.",
+                        "EpiPen ",
+                        suggested:true
                 },
+                {
+                    text:
+                        "are different inventions. The creative use of language in ",
+                },
+                {
+                    text:
+                        "Seedlings’s",
+                        suggested: true
+                },
+                {
+                    text:
+                        " patent cannot obscure this reality. Part I of this judgment describes the auto-injectors involved in this case. In Part II, I identify the skilled person to whom the patent is directed and I give my interpretation of certain terms of the patent, the meaning of which is in dispute. Part III is devoted to the analysis of Pfizer’s challenge to the validity of the patent’s relevant claims. I address the issues of anticipation, obviousness, utility, overbreadth and insufficiency. Even though I conclude that the relevant claims are invalid, I assess, in Part IV, whether the current version of the EpiPen infringes Seedlings’s patent. While I conclude that it does not, I also give my opinion, in Part V, as to the compensation that Pfizer would have owed to Seedlings if it had infringed valid claims. Part I of this ",
+                },
+                {
+                    text:
+                        "judgment",
+                        suggested: true
+                },
+                {
+                    text:
+                        " describes the auto-injectors involved in this case. In Part II, I identify the skilled person to whom the patent is directed and I give my interpretation of certain terms of the patent, the meaning of which is in dispute. Part III is devoted to the analysis of Pfizer’s challenge to the validity of the patent’s relevant claims. I address the issues of anticipation, obviousness, utility, overbreadth and insufficiency. Even though I conclude that the relevant claims are invalid, I assess, in Part IV, whether the current version of the EpiPen infringes Seedlings’s patent. While I conclude that it does not, I also give my opinion, in Part V, as to the compensation that Pfizer would have owed to Seedlings if it had infringed valid claims.",
+                },
+
             ],
         },
     ]

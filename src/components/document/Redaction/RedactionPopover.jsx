@@ -1,11 +1,10 @@
 import {useState, React} from "react";
-import { Button, Popover, ConfigProvider } from "antd";
+import { Popover, ConfigProvider } from "antd";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
-import { lineHeight } from "@mui/system";
 
-export default function RedactionPopover() {
+export default function RedactionPopover({text}) {
 
     const [open, setOpen] = useState(false);
 
@@ -26,7 +25,6 @@ export default function RedactionPopover() {
     };
 
     return (
-        <div style={{ marginTop: 100, marginLeft: 100 }}>
         <ConfigProvider
             theme={{
                 token: {
@@ -45,10 +43,9 @@ export default function RedactionPopover() {
                     arrow={false}
                     style={{padding:0, paddingSM:0}}
                 >
-                    <Button type="primary">Click me</Button>
+                    {text}
                 </Popover>
             </ConfigProvider>
-        </div>
     );
 
 }

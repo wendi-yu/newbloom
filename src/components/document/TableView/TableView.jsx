@@ -41,6 +41,13 @@ const TableEntry = (sentence) => {
     const min = 0
     const [sentenceLength, setSentenceLength] = useState(0)
 
+    const Result = {
+        InReview: "InReview",
+        Approved: "Approved",
+        Rejected: "Rejected",
+    }
+    const [redactionResult, setRedactionResult] = useState(Result.InReview)
+
     const SentenceWithRedaction = () => {
         //Separate sentence into preRedactedSection, redactedWord, and postRedactedSection
         const ellipsis = '...'
@@ -58,7 +65,7 @@ const TableEntry = (sentence) => {
         partsOfSentence.push(postRedactedSection)
         if (wordEndIndex < words.length) partsOfSentence.push(ellipsis)
 
-        return <div className="m-2 flex-1 justify-center items-center flex text-center">
+        return <div className={`m-2 flex-1 justify-center items-center flex text-center ${redactionResult===Result.InReview ? "opacity-100" : "opacity-30"}`}>
             {partsOfSentence}
         </div>
     }
@@ -66,14 +73,6 @@ const TableEntry = (sentence) => {
     const SentenceVisibilityScale = (props) => {
         return <Slider {...props} onChange={setSentenceLength} value={sentenceLength} className="w-20 m-2 justify-center items-center flex"/>
     }
-
-    const Result = {
-        InReview: "InReview",
-        Approved: "Approved",
-        Rejected: "Rejected",
-    }
-
-    const [redactionResult, setRedactionResult] = useState(Result.InReview)
 
     const TableActionButtons = () => {
         return <div className="flex flex-row p-1">
