@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { RecoilRoot } from "recoil";
 
 const DocumentView = () => {
-    const [document, updateDocument] = useState(docText.children);
+    const [document, updateDocument] = useState(docText);
 
     return (
         <RecoilRoot>
