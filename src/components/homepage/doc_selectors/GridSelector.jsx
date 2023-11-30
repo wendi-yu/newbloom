@@ -21,7 +21,7 @@ const DocumentFile = ({ docInfo }) => {
 }
 
 const DocumentSelector = ({ docInfos }) => {
-    return <div className="flex flex-row flex-wrap p-2 mt-2 pt-5 gap-10">
+    return <div className="flex flex-row flex-wrap p-2 pt-5 gap-10">
         {docInfos.map((docInfo) =>
             <DocumentFile key={docInfo.id} docInfo={docInfo} />
         )}
