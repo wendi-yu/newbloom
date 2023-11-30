@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import { RecoilRoot } from "recoil";
 
-const Document = () => {
-    const [document, updateDocument] = useState(docText.children);
+const DocumentView = () => {
+    const [document, updateDocument] = useState(docText);
 
     return (
         <RecoilRoot>
