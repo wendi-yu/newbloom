@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Node } from 'slate'
+import { Editor, Node, Text } from 'slate'
 
 // Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
 // Reference links here: 

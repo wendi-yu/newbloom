@@ -5,12 +5,11 @@ import GridSelector from "@/components/homepage/doc_selectors/GridSelector"
 
 import DocSortingExpandedIcon from "@/assets/home_doc_sorting_expand_icon.svg";
 import DocSortingExpandIcon from "@/assets/expand_right.svg"
-import Popover from '@mui/material/Popover';
+import { Popover } from 'antd';
 import { useReducer, useState } from "react";
 import Clickable from "@/components/common/Clickable";
 
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { Radio } from "antd";
 import ListIcon from "@/assets/list.svg"
 import GridIcon from "@/assets/grid.svg"
 import ListSelector from "@/components/homepage/doc_selectors/ListSelector";
@@ -28,7 +27,6 @@ const HOMEPAGE_DOC_LAYOUTS = {
 
 
 const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [selectedSortKey, setselectedSortKey] = useState(SORTING_OPTIONS.name)
 
   const SortingDropDownMenu = ({ selectedSortKey, setselectedSortKey }) => {
@@ -37,7 +35,7 @@ const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
       { name: "Date Uploaded", key: SORTING_OPTIONS.date },
       { name: "File Type", key: SORTING_OPTIONS.file }
     ]
-    return <div className={'flex flex-col border-solid rounded items-start p-2 divide-y divide-black'}>
+    return <div className={'flex flex-col items-start p-2 divide-y divide-black m-[-12px]'}>
       {sortDisplay.map(so => {
         return <Clickable
           key={so.key}
@@ -52,58 +50,47 @@ const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
     </div>
   }
 
-  const handlePopoverOpen = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
+  const [open, setOpen] = useState(false)
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl)
-  const id = open ? 'sorting-select-popover' : undefined;
-
-  return <div className='pt-5'>
+  return <div className='p-5'>
     <div className='text-xl font-bold'>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <div className="text-3xl">Documents</div>
-        <Clickable className="flex flex-row bg-white items-center" onClick={handlePopoverOpen}>
-          <img src={DocSortingIcon} className="ml-5" />
-          <img src={open ? DocSortingExpandedIcon : DocSortingExpandIcon} className="stroke-black" />
-        </Clickable>
+        <Popover
+          className="flex flex-row bg-white items-center justify-between"
+          content={<SortingDropDownMenu setselectedSortKey={setselectedSortKey} selectedSortKey={selectedSortKey} />}
+          trigger="click"
+          placement="bottomRight"
+          onOpenChange={() => { setOpen(!open) }}
+        >
+          <div>
+            <img src={DocSortingIcon} className="ml-5 w-8" />
+            <img src={open ? DocSortingExpandedIcon : DocSortingExpandIcon} className="stroke-black w-8" />
+          </div>
+        </Popover>
         <div className="flex flex-row-reverse w-full my-2">
-          <ToggleButtonGroup
-            size="small"
+          <Radio.Group
+            optionType="button"
+            size="large"
             value={docLayout}
-            exclusive
-            onChange={(e, layout) => {
-              if (layout != null) {
-                setDocLayout(layout)
-              }
+            options={
+              [
+                {
+                  label: <img src={GridIcon} className="m-2" />,
+                  value: HOMEPAGE_DOC_LAYOUTS.grid
+                },
+                {
+                  label: <img src={ListIcon} className="m-2" />,
+                  value: HOMEPAGE_DOC_LAYOUTS.list
+                }
+              ]
+            }
+            onChange={({ target: { value } }) => {
+              setDocLayout(value);
             }}
-            aria-label="doc-layout"
-          >
-            <ToggleButton value={HOMEPAGE_DOC_LAYOUTS.grid}>
-              <img src={GridIcon} />
-            </ToggleButton>
-            <ToggleButton value={HOMEPAGE_DOC_LAYOUTS.list}>
-              <img src={ListIcon} />
-            </ToggleButton>
-          </ToggleButtonGroup>
+          />
         </div>
       </div>
-      <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        onClose={handlePopoverClose}
-      >
-        <SortingDropDownMenu setselectedSortKey={setselectedSortKey} selectedSortKey={selectedSortKey} />
-      </Popover>
     </div>
   </div>
 }

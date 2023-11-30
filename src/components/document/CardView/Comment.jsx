@@ -15,7 +15,7 @@ export const Comment = ({ comment, isReply }) => {
             <div className="w-full h-px bg-slate-400 mb-2" />
             {(!!comment.replies && !!comment.replies.length) &&
                 comment.replies.map(reply => {
-                    return <Comment key={reply} comment={reply} isReply />
+                    return <Comment key={reply.body} comment={reply} isReply />
                 })
             }
         </div>
