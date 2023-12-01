@@ -11,10 +11,10 @@ import TableView from '@/components/document/TableView/TableView';
 import docApi from "@/util/document_apis";
 import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
+import { RecoilRoot } from 'recoil';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
-  // const [documentView, setDocumentView] = useState("document")
 
   const DocumentIcon = <img src={DocumentSVG} className="h-6" />
   const TableIcon = <img src={TableSVG} className="h-6" />
@@ -69,8 +69,9 @@ function Document() {
           Card View
         </ViewToggleButton>
       </div>
-      
-      <ViewComponent className={"flex flex-grow"}/>
+      <RecoilRoot>
+        <ViewComponent className={"flex flex-grow"} />
+      </RecoilRoot>
     </div>
   );
 }
