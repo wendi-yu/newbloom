@@ -53,7 +53,7 @@ const CardView = ({ document }) => {
             <CardSelector cards={cards} selectedIdx={selectedIdx} setSelectedIdx={setSelectedIdx} />
         </div>
         <div className="bg-gray-100 h-full ml-80 px-8 flex flex-col justify-items-stretch">
-            <div className="flex justify-end p-4 mb-8">
+            <div className="flex justify-end p-4">
                 <CompletionButton completed={cards[selectedIdx].completed} />
             </div>
             <div className="p-6 flex space-x-2 items-center ">
