@@ -43,7 +43,7 @@ const ExampleDocument = [
                 [getMarkForCommentThreadID(comments[4].id)]: true,
                 text:
                     "I agree with Pfizer that the claims asserted by Seedlings",
-                current: true,
+                suggested: true,
             },
             {
                 text:

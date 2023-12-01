@@ -1,17 +1,31 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import CommentedText from "./CommentedText";
 import RedactionPopover from "../Redaction/RedactionPopover";
+import {useState, useEffect, React} from "react";
 
 export default function StyledText({ attributes, children, leaf }) {
 
   //TO DO: trim space off of highlight
+  const [redactionStatus, setRedactionStatus] = useState('');
 
-  if (leaf.current) {
-    children = <RedactionPopover leaf={leaf} text={<span className="bg-curr-redaction">{children}</span>} />
-  }
+  useEffect(() => {
+    if (leaf.suggested) {
+      setRedactionStatus('bg-curr-redaction');
+    }
+  }, [leaf.suggested]);
 
   if (leaf.suggested) {
-    children = <RedactionPopover leaf={leaf} text={<span className="bg-suggested-redaction">{children}</span>} />
+    children = (
+      <RedactionPopover
+        text={<span className={redactionStatus}>{children}</span>}
+        onAccept={() => {
+          setRedactionStatus('bg-accepted-redaction');
+        }}
+        onReject={() => {
+          setRedactionStatus('bg-rejected-redaction underline');
+        }}
+      />  
+    );
   }
 
   if (leaf.accepted) {

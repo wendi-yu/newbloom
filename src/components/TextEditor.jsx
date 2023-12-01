@@ -2,13 +2,16 @@ import { Editable, Slate, withReact } from "slate-react";
 import useEditorConfig from "@/hooks/useEditorConfig";
 
 import { createEditor } from "slate";
-import { useMemo, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommenttoState";
 
 export default function TextEditor({ document = [], onChange }) {
-  const editor = useMemo(() => withReact(createEditor()), []);
+  // workaround to make the editor behave properly with vite hot reloading
+  const editorRef = useRef()
+  if (!editorRef.current) editorRef.current = withReact(createEditor())
+  const editor = editorRef.current
 
   const { renderElement, renderLeaf } = useEditorConfig(editor);
 
@@ -21,18 +24,13 @@ export default function TextEditor({ document = [], onChange }) {
   //TODO: styling
   return (
     <div className={"flex flex-col"}>
-      <Slate editor={editor} initialValue={document} onChange={onChange}>
-        <div className="h-8 bg-gray-300" />
-        <div className="flex flex-row">
-          <div className={"bg-document-background flex justify-center h-full"}>
-            <div className={"bg-white w-1/2 bg-grey h-1/3"}>
-              <div className={""}>
-                <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col" />
-              </div>
-            </div>
-          </div>
+      <div className="bg-document-background flex flex-row justify-center">
+        <div className={"bg-white mx-40 my-20 p-16 max-w-4xl min-h-screen"}>
+          <Slate editor={editor} initialValue={document} onChange={onChange} placeholder="FUCK">
+            <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col" />
+          </Slate>
         </div>
-      </Slate>
+      </div>
     </div>
   );
 }

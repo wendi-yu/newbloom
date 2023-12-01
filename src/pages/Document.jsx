@@ -11,10 +11,10 @@ import TableView from '@/components/document/TableView/TableView';
 import docApi from "@/util/document_apis";
 import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
+import { RecoilRoot } from 'recoil';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
-  // const [documentView, setDocumentView] = useState("document")
 
   const DocumentIcon = <img src={DocumentSVG} className="h-6" />
   const TableIcon = <img src={TableSVG} className="h-6" />
@@ -26,7 +26,7 @@ function Document() {
 
   const ViewComponent = () => {
     if (documentView == "document") {
-      return <DocumentView document={fullDocument} />
+      return <DocumentView document={fullDocument} className="overflow-x-hidden overflow-y-auto"/>
     } else if (documentView == "card") {
       return <CardView document={fullDocument} />
     } else {
@@ -37,7 +37,7 @@ function Document() {
   return (
     <div className='flex flex-col document h-full'>
       <Header documentName="Test Doc Title" />
-      <div className="sticky flex space-x-1.5 text-sm pl-2.5 pb-2.5">
+      <div className="sticky flex space-x-1.5 text-sm pl-2.5 pb-2.5 ">
         <ViewToggleButton
           leadingIcon={DocumentIcon}
           selected={documentView == "document"}
@@ -69,8 +69,9 @@ function Document() {
           Card View
         </ViewToggleButton>
       </div>
-      
-      <ViewComponent className={"flex flex-grow"}/>
+      <RecoilRoot>
+        <ViewComponent className={"flex flex-grow"} />
+      </RecoilRoot>
     </div>
   );
 }

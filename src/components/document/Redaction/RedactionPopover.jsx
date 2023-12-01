@@ -3,32 +3,29 @@ import { Popover, ConfigProvider } from "antd";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
-import { localeData } from "moment/moment";
 
-export default function RedactionPopover({leaf, text}) {
+export default function RedactionPopover({text, onAccept, onReject}) {
 
     const [open, setOpen] = useState(false);
 
     const hide = () => {
         setOpen(false);
     };
-
-    const accept = () => {
-        leaf.current=false;
-        leaf.accepted=true;
+    
+    function accept() {
+        onAccept();
         setOpen(false);
     };
 
     const reject = () => {
-        leaf.current=false;
-        leaf.rejected=true;
+        onReject();
         setOpen(false);
     }
 
     const content = (
         <div className="flex flex-row">
-            <img src={CheckIcon} onClick={hide} className="object-contain h-5 w-5"/>
-            <img src={CloseIcon} onClick={hide}  className="object-contain h-5 w-5"/>
+            <img src={CheckIcon} onClick={accept} className="object-contain h-5 w-5"/>
+            <img src={CloseIcon} onClick={reject}  className="object-contain h-5 w-5"/>
             <img src={CommentIcon} onClick={hide}  className="object-contain h-5 w-5"/>
         </div>
     );
