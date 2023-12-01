@@ -18,7 +18,7 @@ const CardView = ({ document }) => {
     const paragraphs = splitText(document)
     const [cards, setCards] = useState(paragraphs.map(par => (
         {
-            body: par,
+            body: par.children,
             completed: false,
             comments: Object.keys(getAllChildCommentThreads(par)).map(id => getCommentById(id))
         }
@@ -67,7 +67,11 @@ const CardView = ({ document }) => {
                 >
                     <img src={PreviousIcon} />
                 </button>
-                <Card card={cards[selectedIdx]} idx={selectedIdx} total={cards.length} />
+                <Card card={cards[selectedIdx]} idx={selectedIdx} total={cards.length} setCardBody={(body) => {
+                    const newCards = [...cards]
+                    newCards[selectedIdx].body = body
+                    setCards(newCards)
+                }} />
                 <button
                     className="p-2 w-1/8 bg-white"
                     onClick={(e) => {
