@@ -26,7 +26,7 @@ function Document() {
 
   const ViewComponent = () => {
     if (documentView == "document") {
-      return <DocumentView document={fullDocument} className="overflow-x-hidden overflow-y-auto"/>
+      return <DocumentView document={fullDocument}/>
     } else if (documentView == "card") {
       return <CardView document={fullDocument} />
     } else {
@@ -35,7 +35,7 @@ function Document() {
   }
 
   return (
-    <div className='flex flex-col document h-full'>
+    <div className='flex flex-col document h-full overflow-x-hidden'>
       <Header documentName="Test Doc Title" />
       <div className="sticky flex space-x-1.5 text-sm pl-2.5 pb-2.5 ">
         <ViewToggleButton

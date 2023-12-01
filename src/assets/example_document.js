@@ -10,30 +10,48 @@ const ExampleDocument = [
             {
                 text: "Seedlings Life Science Ventures, LLC [Seedlings]",
                 [getMarkForCommentThreadID(comments[1].id)]: true,
-                suggested: true,
             },
             {
-                text: " is in the business of early-stage health-care related research and product development. It alleges that Pfizer Canada ULC [Pfizer]",
+                text: " is in the business of early-stage health-care related research and product development.  Pfizer Canada ULC [Pfizer]",
                 [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
             },
             {
                 text: ", a major pharmaceutical company, infringes its patent by selling in Canada an auto-injector commonly known as the EpiPen. While, at first sight, the EpiPen and Seedlings’s invention do",
                 [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
                 [getMarkForCommentThreadID(comments[2].id)]: true,
-                accepted: true,
             },
             {
                 text: "Text 4",
                 [getMarkForCommentThreadID(comments[3].id)]: true,
             }, {
-                text: " not look alike, Seedlings argues that the EpiPen infringes certain claims of its patent and seeks compensation and an accounting of profits.",
+                text: " not look alike, Seedlings argues that the EpiPen infringes certain claims of its patent and seeks compensation and an accounting of profits. ",
                 [getMarkForCommentThreadID(comments[3].id)]: true,
             },
             {
                 text:
-                    " Pfizer denies that the EpiPen infringes upon Seedlings’s patent. Moreover, by way of counterclaim, it seeks a declaration that the claims of Seedlings’s patent asserted in this action are invalid.",
+                    "Pfizer",
+                    suggested:true
             },
-            { text: " Pfizer argues that those claims are overly broad, obvious and anticipated by prior art.  It also argues that Seedlings has never demonstrated the utility of its invention." },
+            {
+                text:
+                    " denies that the ",
+            },
+            {
+                text:
+                    "EpiPen",
+                    suggested:true
+            },
+            {
+                text:
+                    " infringes upon Seedlings’s patent. Moreover, by way of counterclaim, it seeks a declaration that the claims of Seedlings’s patent asserted in this action are invalid. ",
+            },
+            { 
+                text: "Pfizer",
+                suggested:true
+            },
+            { 
+                text: " argues that those claims are overly broad, obvious and anticipated by prior art.  It also argues that Seedlings has never demonstrated the utility of its invention." 
+            },
         ],
     },
     {
@@ -42,8 +60,18 @@ const ExampleDocument = [
             {
                 [getMarkForCommentThreadID(comments[4].id)]: true,
                 text:
-                    "I agree with Pfizer that the claims asserted by Seedlings",
-                suggested: true,
+                    "I agree with ",
+            },
+            {
+                [getMarkForCommentThreadID(comments[4].id)]: true,
+                text:
+                    "Pfizer",
+                suggested:true
+            },
+            {
+                [getMarkForCommentThreadID(comments[4].id)]: true,
+                text:
+                    " that the claims asserted by Seedlings",
             },
             {
                 text:
