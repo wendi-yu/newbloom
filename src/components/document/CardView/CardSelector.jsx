@@ -1,7 +1,6 @@
 import { toText } from "@/util/slateUtil"
 
 const CardSelector = ({ cards, selectedIdx, setSelectedIdx }) => {
-
     return <div className="bg-white h-full w-full p-4 overflow-y-scroll">
         {cards.map((card, idx) => {
             const bgColor = idx == selectedIdx ? "bg-background-primary" : "bg-white"

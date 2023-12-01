@@ -1,4 +1,4 @@
-import StyledText from "../components/document/DocumentView/StyledText";
+import StyledText from "@/components/document/DocumentView/StyledText";
 
 export default function useEditorConfig() {
   return { renderElement, renderLeaf };
