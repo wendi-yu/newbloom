@@ -1,9 +1,13 @@
 # newbloom
 SE2024 Capstone Project
 
-## Developer Setup
+This repository is a monorepo for the fullstack project. The frontend and backend are each contained in their separate respective folders. Some shared configurations remain in the parent folder, mostly for linting. 
 
-These are the instructions to get the repository up and running locally.
+**Note**: Run `npm ci` in the parent repo before proceeding to the frontend or backend setup instructions, as some shared dependencies are specified in the parent folder.
+
+## Developer Setup - Frontend
+
+These are the instructions to get the frontend repository up and running locally. Before running all of these, you'll want to run `cd frontend` to move into the frontend repo.
 
 ### Install Required Prerequisites
 
@@ -23,8 +27,10 @@ npm install
 
 ## App Dev Guidelines
 
-### Running the app locally
+### Running the frontend locally
+
 ```zsh
+cd frontend
 npm run dev
 ```
 
