@@ -1,0 +1,22 @@
+{
+  "name": "newbloom-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Newbloom backend",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "test",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "imports": {
+    "#routes/*": "./src/routes/*",
+    "#controllers/*": "./src/controllers/*",
+    "#middleware/*": "./src/middleware/*",
+    "#models/*": "./src/models/*",
+    "#configs/*": "./src/configs/*",
+    "#services/*": "./src/services/*"
+  },
+  "license": "MIT"
+}
