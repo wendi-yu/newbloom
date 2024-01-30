@@ -11,12 +11,12 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "imports": {
-    "#routes/*": "./src/routes/*",
-    "#controllers/*": "./src/controllers/*",
-    "#middleware/*": "./src/middleware/*",
-    "#models/*": "./src/models/*",
-    "#configs/*": "./src/configs/*",
-    "#services/*": "./src/services/*"
+    "#routes/*": "./src/routes/*.js",
+    "#controllers/*": "./src/controllers/*.js",
+    "#middleware/*": "./src/middleware/*.js",
+    "#models/*": "./src/models/*.js",
+    "#configs/*": "./src/configs/*.js",
+    "#services/*": "./src/services/*.js"
   },
   "license": "MIT"
 }
