@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Checkout frontend
+      run: cd frontend
     - name: Install modules
       run: npm ci
     - name: Run ESLint
       run: npm run lint
+    - name: Restore folder
+      run: cd ..
