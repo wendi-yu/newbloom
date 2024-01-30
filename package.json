@@ -6,6 +6,9 @@
     "scripts": {
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
     },
+    "dependencies": {
+        "@babel/eslint-parser": "^7.22.15"
+    },
     "devDependencies": {
         "@babel/preset-react": "^7.23.3",
         "eslint": "^8.45.0",
