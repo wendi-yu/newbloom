@@ -5,7 +5,7 @@ This repository is a monorepo for the fullstack project. The frontend and backen
 
 **Note**: Run `npm ci` in the parent repo before proceeding to the frontend or backend setup instructions, as some shared dependencies are specified in the parent folder.
 
-## Developer Setup - Frontend
+## Developer Setup
 
 These are the instructions to get the frontend repository up and running locally. Before running all of these, you'll want to run `cd frontend` to move into the frontend repo.
 
@@ -21,8 +21,10 @@ nvm install 20.9.0
 ```
 
 #### Insall Node modules
+Run this command in the root folder, and in both the `backend` and `frontend` folders.
+
 ```zsh
-npm install
+npm ci
 ```
 
 ## App Dev Guidelines
@@ -34,6 +36,13 @@ cd frontend
 npm run dev
 ```
 
+### Running the backend locally
+
+```zsh
+cd backend
+npm run dev
+```
+
 ### Branch naming
 We're using Linear for project management, so adding the ticket number in the branch name will automatically link your PR to the linear ticket. Naming format should be
 ```
@@ -42,6 +51,6 @@ We're using Linear for project management, so adding the ticket number in the br
 For example, `NEW-17/add-navbar`
 
 ### Linting
-Run `npm run lint` to lint. Lint before you push!
+Run `npm run lint` to lint. This can be done from anywhere. Lint before you push!
 
 
