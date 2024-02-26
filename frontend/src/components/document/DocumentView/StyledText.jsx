@@ -36,6 +36,18 @@ export default function StyledText({ attributes, children, leaf }) {
     setIsPopoverVisible(!isPopoverVisible);
   };
 
+  if (isPopoverVisible) {
+    children = (
+      <RedactionPopover
+        text={<span>{children}</span>}
+        onAccept={() => {
+        }}
+        onReject={() => {
+        }}
+      />  
+    );
+  }
+
   if (redactions.size > 0) {
     return (
       <RedactedText
@@ -43,9 +55,6 @@ export default function StyledText({ attributes, children, leaf }) {
       redactions={redactions}
       textNode={leaf}
       >
-        {isPopoverVisible && (
-          <RedactionPopover />
-        )}
         {children}
       </RedactedText>
     );
