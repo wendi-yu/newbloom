@@ -7,6 +7,53 @@ import {useState, useEffect, React} from "react";
 
 export default function StyledText({ attributes, children, leaf }) {
 
+  const commentThreads = getCommentThreadsOnTextNode(leaf);
+
+  function onRejectRedaction () {
+
+  }
+
+  function onAcceptRedaction () {
+    
+  }
+
+  if (commentThreads.size > 0) {
+    return (
+      <CommentedText
+        {...attributes}
+        commentThreads={commentThreads}
+        textnode={leaf}
+      >
+        {children}
+      </CommentedText>
+    );
+  }
+
+  const redactions = getRedactionsOnTextNode(leaf);
+  const [isPopoverVisible, setIsPopoverVisible] = useState(true);
+
+  const handleRedactionClick = () => {
+    setIsPopoverVisible(!isPopoverVisible);
+  };
+
+  if (redactions.size > 0) {
+    return (
+      <RedactedText
+      {...attributes}
+      redactions={redactions}
+      textNode={leaf}
+      >
+        {isPopoverVisible && (
+          <RedactionPopover />
+        )}
+        {children}
+      </RedactedText>
+    );
+  }
+
+  return <span {...attributes}>{children}</span>;
+}
+
   // const [redactionStatus, setRedactionStatus] = useState('');
 
   // useEffect(() => {
@@ -40,35 +87,3 @@ export default function StyledText({ attributes, children, leaf }) {
   // if (leaf.accepted) {
   //   children = <span className="bg-accepted-redaction">{children}</span>
   // }
-
-  const commentThreads = getCommentThreadsOnTextNode(leaf);
-
-  if (commentThreads.size > 0) {
-    return (
-      <CommentedText
-        {...attributes}
-        commentThreads={commentThreads}
-        textnode={leaf}
-      >
-        {children}
-      </CommentedText>
-    );
-  }
-
-  const redactions = getRedactionsOnTextNode(leaf);
-
-  if (redactions.size > 0) {
-    return (
-      <RedactedText
-      {...attributes}
-      redactions={redactions}
-      textNode={leaf}
-      >
-        {children}
-      </RedactedText>
-    );
-  }
-
-  return <span {...attributes}>{children}</span>;
-}
-
