@@ -1,21 +1,25 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode } from "@/util/editorRedactionUtils";
 import CommentedText from "./CommentedText";
-import RedactedText from "../Redactions/SuggestedRedaction";
+import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
-import {useState, useEffect, React} from "react";
+//import { removeRedaction } from "../../../util/editorRedactionUtils";
+import {accepted, rejected} from "@/assets/redacted_lists";
+
 
 export default function StyledText({ attributes, children, leaf }) {
 
-  const commentThreads = getCommentThreadsOnTextNode(leaf);
-
+  //store and send to ML model
   function onRejectRedaction () {
-
+    rejected.push(leaf)
   }
 
+  //store and send to ML model
   function onAcceptRedaction () {
-    
+    accepted.push(leaf)
   }
+
+  const commentThreads = getCommentThreadsOnTextNode(leaf);
 
   if (commentThreads.size > 0) {
     return (
@@ -30,23 +34,17 @@ export default function StyledText({ attributes, children, leaf }) {
   }
 
   const redactions = getRedactionsOnTextNode(leaf);
-  const [isPopoverVisible, setIsPopoverVisible] = useState(true);
+  const isPopoverVisible=true
+  // const [isPopoverVisible, setIsPopoverVisible] = useState(true);
 
-  const handleRedactionClick = () => {
-    setIsPopoverVisible(!isPopoverVisible);
-  };
-
-  if (isPopoverVisible) {
-    children = (
-      <RedactionPopover
-        text={<span>{children}</span>}
-        onAccept={() => {
-        }}
-        onReject={() => {
-        }}
-      />  
-    );
-  }
+  children = (
+    <RedactionPopover
+      text={<span>{children}</span>}
+      onAccept={onAcceptRedaction}
+      onReject={onRejectRedaction}
+      ifOpen={isPopoverVisible}
+    />  
+  );
 
   if (redactions.size > 0) {
     return (

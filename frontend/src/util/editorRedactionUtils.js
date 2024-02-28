@@ -1,4 +1,6 @@
 const REDACTION_PREFIX = "redaction_";
+import { v4 as uuid } from "uuid";
+import { Editor } from 'slate'
 
 export function getRedactionsOnTextNode(textNode) {
   return new Set(
@@ -24,7 +26,7 @@ export function getMarkForRedactionID(threadID) {
 }
 
 export function insertRedaction(editor, addRedactionToState) {
-  const threadID = uuidv4();
+  const threadID = uuid();
   const newRedaction = {
       redactions: [],
       creationTime: new Date(),
@@ -33,4 +35,9 @@ export function insertRedaction(editor, addRedactionToState) {
   addRedactionToState(threadID, newRedaction);
   Editor.addMark(editor, getMarkForRedactionID(threadID), true);
   return threadID;
+}
+
+export function removeRedaction(editor, removeRedactionFromState, redactionID) {
+  Editor.removeMark(editor, getMarkForRedactionID(redactionID));
+  removeRedactionFromState(redactionID);
 }

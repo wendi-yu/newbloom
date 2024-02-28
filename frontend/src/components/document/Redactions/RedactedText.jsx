@@ -1,13 +1,7 @@
 import classNames from "classnames";
-import React, { useState } from 'react';
 
-export default function SuggestedRedaction(props) {
+export default function RedactedText(props) {
   const { redactedThreads, ...otherProps } = props; // eslint-disable-line no-unused-vars
-
-
-  const redactionsStyle = {
-    backgroundColor: 'bg-curr-redaction',
-  };
 
   return (
     <span

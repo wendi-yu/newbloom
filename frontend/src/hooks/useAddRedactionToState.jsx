@@ -1,7 +1,7 @@
 import {
     redactionIDsState,
     redactionsState,
-  } from "../utils/CommentState";
+  } from "@/util/RedactionState";
   
   import { useRecoilCallback } from "recoil";
   
@@ -15,3 +15,13 @@ import {
       []
     );
   }
+
+//   export default function useRemoveRedactionFromState() {
+//     return useRecoilCallback(
+//       ({ set }) => (id) => {
+//         set(redactionIDsState, (ids) => new Set([...Array.from(ids).filter(item => item !== id)]));
+//         set(redactionsState(id), undefined);
+//       },
+//       []
+//     );
+//   }

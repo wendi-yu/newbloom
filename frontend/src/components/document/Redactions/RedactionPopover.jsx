@@ -1,4 +1,4 @@
-import {useState, React} from "react";
+import {useState} from "react";
 import { Popover, ConfigProvider } from "antd";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
@@ -15,12 +15,12 @@ export default function RedactionPopover({text, onAccept, onReject}) {
     function accept() {
         onAccept();
         setOpen(false);
-    };
+    }
 
     const reject = () => {
         onReject();
         setOpen(false);
-    }
+    };
 
     const content = (
         <div className="flex flex-row">
