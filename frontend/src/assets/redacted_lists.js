@@ -1,3 +1,3 @@
 export let added = [];
-export let redacted = [];
+export let rejected = [];
 export let accepted = [];

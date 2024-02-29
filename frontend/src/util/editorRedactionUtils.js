@@ -1,6 +1,7 @@
-const REDACTION_PREFIX = "redaction_";
 import { v4 as uuid } from "uuid";
-import { Editor } from 'slate'
+import { Editor } from 'slate';
+
+const REDACTION_PREFIX = "redaction_";
 
 export function getRedactionsOnTextNode(textNode) {
   return new Set(
@@ -8,6 +9,19 @@ export function getRedactionsOnTextNode(textNode) {
       .filter(isRedactionIDMark)
       .map(getRedactionIDFromMark)
   );
+}
+
+export function getMarkFromLeaf(leaf) {
+  const key = Object.keys(leaf)
+  return key[1];
+}
+
+export function replaceRedactionWithX(leaf) {
+  const key = Object.keys(leaf)
+  const temp = leaf[key[0]]
+
+  leaf[key[0]]='X'.repeat(temp.length)
+  
 }
 
 export function getRedactionIDFromMark(mark) {
