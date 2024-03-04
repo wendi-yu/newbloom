@@ -4,11 +4,14 @@ import PrintSVG from "@/assets/print_fill.svg"
 import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
+<<<<<<< HEAD
 
 import {useSlate} from "slate-react"
 import {useSetRecoilState, useRecoilState } from "recoil"
 import {useCallback} from "react"
 
+=======
+>>>>>>> main
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
 import {print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
@@ -21,6 +24,7 @@ import { activeRedactionIDAtom} from "../../../util/RedactionState"
 import { insertRedaction } from "../../../util/editorRedactionUtils"
 
 export default function Toolbar() {
+<<<<<<< HEAD
 
     const editor = useSlate();
 
@@ -41,6 +45,8 @@ export default function Toolbar() {
     const [redactionData, setRedactionData] = useRecoilState(
         RedactionState(threadID)
     );
+=======
+>>>>>>> main
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">

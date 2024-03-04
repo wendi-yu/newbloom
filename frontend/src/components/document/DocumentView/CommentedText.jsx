@@ -23,7 +23,6 @@ export default function CommentedText(props) {
 
   return (
     <span
-      {...otherProps}
       className={classNames({
         comment: true,
         "is-active": commentThreads.has(activeCommentThreadID),
