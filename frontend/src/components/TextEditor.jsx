@@ -9,20 +9,18 @@ import Toolbar from "@/components/common/Toolbar/Toolbar"
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
-export let editor;
-
 export default function TextEditor({ document = [], onChange }) {
   // workaround to make the editor behave properly with vite hot reloading
   const editorRef = useRef()
   if (!editorRef.current) editorRef.current = withReact(createEditor())
-  editor = editorRef.current
+  const editor = editorRef.current
 
   const { renderElement, renderLeaf } = useEditorConfig(editor);
   const addCommentThread = useAddCommentThreadToState();
 
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
-  }, [addCommentThread]);
+  }, [editor, addCommentThread]);
 
   //TODO: styling
   return (
