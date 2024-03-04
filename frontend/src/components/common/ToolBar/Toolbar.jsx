@@ -6,28 +6,37 @@ import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
 
 import {useSlate} from "slate-react"
+import {useSetRecoilState } from "recoil";
+import {useCallback} from "react"
 
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
-import {redact, print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
+import {print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
+
 import { insertCommentThread } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { useSetRecoilState } from "recoil";
 import { activeCommentThreadIDAtom } from "@/util/CommentState"
-
-import {useCallback} from "react"
+import useAddRedactionToState from "../../../hooks/useAddRedactionToState"
+import { activeRedactionIDAtom } from "../../../util/RedactionState"
+import { insertRedaction } from "../../../util/editorRedactionUtils"
 
 export default function Toolbar() {
 
     const editor = useSlate();
+
     const addComment = useAddCommentThreadToState();
-
     const setActiveCommentThreadID = useSetRecoilState(activeCommentThreadIDAtom);
-
     const comment = useCallback(() => {
         const newCommentThreadID = insertCommentThread(editor, addComment);
         setActiveCommentThreadID(newCommentThreadID);
       }, [editor, addComment, setActiveCommentThreadID]);
+
+    const addRedaction = useAddRedactionToState();
+    const setActiveRedactionID = useSetRecoilState(activeRedactionIDAtom);
+    const redact = useCallback(() => {
+        const newRedactionID = insertRedaction(editor, addRedaction);
+        setActiveRedactionID(newRedactionID);
+    }, [editor, addRedaction, setActiveRedactionID]);
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">
