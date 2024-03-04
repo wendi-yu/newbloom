@@ -1,28 +1,18 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
-import CommentedText from "./CommentedText";
+import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
+import CommentedText from "@/components/document/Document/CommentedText";
+import RedactedText from "@/components/document/Redactions/RedactedText";
+import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 
-export default function StyledText({ attributes, children, leaf }) {
+//for table view, pass in false for  isPopoverDisabled to disable popovers
+export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
-  //TO DO: trim space off of highlight
+  const mark = getMarkFromLeaf(leaf)
 
-  if (leaf.current) {
-    children = <span className="bg-curr-redaction">{children}</span>
+  function onRejectRedaction () {
   }
 
-  if (leaf.suggested) {
-    children = <span className="bg-suggested-redaction">{children}</span>
-  }
-
-  if (leaf.accepted) {
-    children = <span className="bg-accepted-redaction">{children}</span>
-  }
-
-  if (leaf.rejected) {
-    children = <u>{children}</u>
-  }
-
-  if (leaf.bold) {
-    children = <strong>{children}</strong>;
+  function onAcceptRedaction () {
   }
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
@@ -39,6 +29,29 @@ export default function StyledText({ attributes, children, leaf }) {
     );
   }
 
+  const redactions = getRedactionsOnTextNode(leaf);
+
+  if (redactions.size > 0 && leaf[mark]) {
+    children = (
+      <RedactionPopover
+        text={<span>{children}</span>}
+        onAccept={onAcceptRedaction}
+        onReject={onRejectRedaction}
+        ifOpen={isPopoverDisabled}
+        leaf={leaf}
+      />  
+    );
+
+    return (
+      <RedactedText
+      {...attributes}
+      redactions={redactions}
+      textnode={leaf}
+      >
+        {children}
+      </RedactedText>
+    );
+  }
+
   return <span {...attributes}>{children}</span>;
 }
-

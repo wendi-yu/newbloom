@@ -1,7 +1,8 @@
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
+import { getMarkForRedactionID } from "@/util/editorRedactionUtils";
 import { comments } from "./example_comments";
 
-const overlappingCommentThreadID = comments[0].id;
+import { v4 as uuid } from "uuid";
 
 const ExampleDocument = [
     {
@@ -9,23 +10,17 @@ const ExampleDocument = [
         children: [
             {
                 text: "Seedlings Life Science Ventures, LLC [Seedlings]",
-                [getMarkForCommentThreadID(comments[1].id)]: true,
-                suggested: true,
+                [getMarkForRedactionID(uuid())]: true,
+                
             },
             {
                 text: " is in the business of early-stage health-care related research and product development. It alleges that Pfizer Canada ULC [Pfizer]",
-                [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
+                [getMarkForCommentThreadID(comments[1].id)]: true,
             },
             {
                 text: ", a major pharmaceutical company, infringes its patent by selling in Canada an auto-injector commonly known as the EpiPen. While, at first sight, the EpiPen and Seedlings’s invention do",
-                [getMarkForCommentThreadID(overlappingCommentThreadID)]: true,
-                [getMarkForCommentThreadID(comments[2].id)]: true,
-                accepted: true,
             },
             {
-                text: "Text 4",
-                [getMarkForCommentThreadID(comments[3].id)]: true,
-            }, {
                 text: " not look alike, Seedlings argues that the EpiPen infringes certain claims of its patent and seeks compensation and an accounting of profits.",
                 [getMarkForCommentThreadID(comments[3].id)]: true,
             },
@@ -40,11 +35,10 @@ const ExampleDocument = [
         type: "paragraph",
         children: [
             {
-                [getMarkForCommentThreadID(comments[4].id)]: true,
                 text:
                     "I agree with Pfizer that the claims asserted by Seedlings",
-                current: true,
-            },
+                    [getMarkForRedactionID(uuid())]: true,
+                },
             {
                 text:
                     " are invalid, because they are all overly broad, some of them are anticipated and one of them is obvious. Moreover, had those claims been valid, I would have found that they are not infringed by the EpiPen. In so finding, I am not denying the creative value of Seedlings’s work. Indeed, I am invalidating only a subset of the claims of Seedlings’s patent. Contrary to Seedlings’s assertion, however, this is not a case of two inventors making the same invention independently, with Seedlings being the first in time to file its patent application.",
@@ -55,7 +49,6 @@ const ExampleDocument = [
         type: "paragraph",
         children: [
             {
-                [getMarkForCommentThreadID(comments[5].id)]: true,
                 text:
                     "Rather, Seedlings’s auto-injector and the EpiPen are different inventions. The creative use of language in Seedlings’s patent cannot obscure this reality.",
             },

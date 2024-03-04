@@ -1,7 +1,10 @@
 import classNames from "classnames";
 
 export default function CommentedText(props) {
-  const { commentThreads, ...otherProps } = props; // eslint-disable-line no-unused-vars
+
+  //dummy function for onclick
+  const onClick = () => {
+  };
 
   const commentStyle = {
     backgroundColor: '#feeab5',
@@ -9,13 +12,14 @@ export default function CommentedText(props) {
 
   return (
     <span
-      {...otherProps}
       className={classNames({
         comment: true,
       })}
       style={commentStyle}
+      onClick={onClick}
     >
       {props.children}
     </span>
   );
 }
+

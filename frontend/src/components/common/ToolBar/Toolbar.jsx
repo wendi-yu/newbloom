@@ -4,13 +4,12 @@ import PrintSVG from "@/assets/print_fill.svg"
 import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
-
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
 import {comment, redact, print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
 
 export default function Toolbar() {
-  
+    
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">
             <div className="flex flex-row space-x-1">
@@ -30,7 +29,8 @@ export default function Toolbar() {
                 /> 
                 <ToolbarIcon 
                     icon={<img src={CommentSVG} />}
-                    onClick={comment}
+                    
+                    onMouseDown={comment}
                 />
                 <ToolbarIcon 
                     icon={<img src={RedactSVG} />}
