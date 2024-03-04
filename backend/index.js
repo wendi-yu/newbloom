@@ -6,6 +6,9 @@ import { isAuthorized } from '#middleware/auth';
 // Create an instance of the express application
 const app = express();
 
+// parse request bodies as JSON
+app.use(express.json());
+
 // These routes won't be checked for auth
 app.use('/', loginRouter);
 // Attach auth guard - all attached routes after this will require auth

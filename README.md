@@ -20,11 +20,27 @@ Use nvm to install Node version 20.9.0:
 nvm install 20.9.0
 ```
 
-#### Insall Node modules
+#### git-lfs
+Our ML model files are quite large (>400MB), so we store them with [git-lfs](https://git-lfs.com/). Download (for Mac), and run all of these _after_ cloning the repo.
+```
+brew install git-lfs
+git lfs install
+git lfs fetch
+git lfs checkout
+```
+
+#### Install Node modules
 Run this command in the root folder, and in both the `backend` and `frontend` folders.
 
 ```zsh
 npm ci
+```
+
+#### Install Python modules too
+You can set up a venv if you'd like. Run this in the root folder.
+
+```zsh
+pip3 install -r requirements.txt
 ```
 
 ## App Dev Guidelines
