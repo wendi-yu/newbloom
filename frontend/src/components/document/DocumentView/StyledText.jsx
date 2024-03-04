@@ -1,27 +1,18 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
-import { getRedactionsOnTextNode, getMarkFromLeaf, replaceRedactionWithX } from "@/util/editorRedactionUtils";
-import CommentedText from "./CommentedText";
-import RedactedText from "../Redactions/RedactedText";
-import RedactionPopover from "../Redactions/RedactionPopover";
-import { accepted, rejected } from "@/assets/redacted_lists";
+import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
+import CommentedText from "@/components/document/Document/CommentedText";
+import RedactedText from "@/components/document/Redactions/RedactedText";
+import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 
 //for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
   const mark = getMarkFromLeaf(leaf)
 
-  function removeMark () {  
-  }
-  //store and send to ML model
   function onRejectRedaction () {
-    removeMark()
-    rejected.push(leaf)
   }
 
-  //store and send to ML model
   function onAcceptRedaction () {
-    replaceRedactionWithX(leaf)
-    accepted.push(leaf)
   }
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);

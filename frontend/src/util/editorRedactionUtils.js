@@ -38,20 +38,3 @@ function isRedactionIDMark(mayBeRedaction) {
 export function getMarkForRedactionID(threadID) {
   return `${REDACTION_PREFIX}${threadID}`;
 }
-
-export function insertRedaction(editor, addRedactionToState) {
-  const threadID = uuid();
-  const newRedaction = {
-      redactions: [],
-      creationTime: new Date(),
-      status: "open",
-  };
-  addRedactionToState(threadID, newRedaction);
-  Editor.addMark(editor, getMarkForRedactionID(threadID), true);
-  return threadID;
-}
-
-export function removeRedaction(editor, removeRedactionFromState, redactionID) {
-  Editor.removeMark(editor, getMarkForRedactionID(redactionID));
-  removeRedactionFromState(redactionID);
-}
