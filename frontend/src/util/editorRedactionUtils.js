@@ -1,6 +1,3 @@
-import { v4 as uuid } from "uuid";
-import { Editor } from 'slate';
-
 const REDACTION_PREFIX = "redaction_";
 
 export function getRedactionsOnTextNode(textNode) {
