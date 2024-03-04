@@ -1,8 +1,8 @@
 import classNames from "classnames";
 
 export default function CommentedText(props) {
-  const { commentThreads, textnode, ...otherProps } = props;
 
+  //dummy function for onclick
   const onClick = () => {
   };
 
@@ -12,7 +12,6 @@ export default function CommentedText(props) {
 
   return (
     <span
-      {...otherProps}
       className={classNames({
         comment: true,
       })}
