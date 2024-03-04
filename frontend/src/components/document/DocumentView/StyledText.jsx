@@ -5,20 +5,12 @@ import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
 import { accepted, rejected } from "@/assets/redacted_lists";
 
-import { useSlate } from "slate-react"
-
 //for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
   const mark = getMarkFromLeaf(leaf)
-  const editor = useSlate();
 
-  //this stuff is wrong
   function removeMark () {  
-    
-    leaf[mark] = false
-    editor.removeMark(mark)
-    console.log(leaf)
   }
   //store and send to ML model
   function onRejectRedaction () {
