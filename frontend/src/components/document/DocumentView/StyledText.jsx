@@ -3,7 +3,6 @@ import { getRedactionsOnTextNode, getMarkFromLeaf, replaceRedactionWithX } from 
 import CommentedText from "./CommentedText";
 import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
-import { editor } from "../../TextEditor";
 //import { removeRedaction } from "../../../util/editorRedactionUtils";
 import {accepted, rejected} from "@/assets/redacted_lists";
 
