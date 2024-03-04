@@ -5,12 +5,30 @@ import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
 
+import {useSlate} from "slate-react"
+
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
-import {comment, redact, print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
+import {redact, print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
+import { insertCommentThread } from "@/util/EditorCommentUtils"
+import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+import { useSetRecoilState } from "recoil";
+import { activeCommentThreadIDAtom } from "@/util/CommentState"
+
+import {useCallback} from "react"
 
 export default function Toolbar() {
-  
+
+    const editor = useSlate();
+    const addComment = useAddCommentThreadToState();
+
+    const setActiveCommentThreadID = useSetRecoilState(activeCommentThreadIDAtom);
+
+    const comment = useCallback(() => {
+        const newCommentThreadID = insertCommentThread(editor, addComment);
+        setActiveCommentThreadID(newCommentThreadID);
+      }, [editor, addComment, setActiveCommentThreadID]);
+    
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">
             <div className="flex flex-row space-x-1">
@@ -30,7 +48,8 @@ export default function Toolbar() {
                 /> 
                 <ToolbarIcon 
                     icon={<img src={CommentSVG} />}
-                    onClick={comment}
+                    
+                    onMouseDown={comment}
                 />
                 <ToolbarIcon 
                     icon={<img src={RedactSVG} />}

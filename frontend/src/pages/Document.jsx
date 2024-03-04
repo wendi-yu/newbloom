@@ -9,7 +9,6 @@ import DocumentView from '@/components/document/DocumentView/DocumentView';
 import CardView from '@/components/document/CardView/CardView';
 import TableView from '@/components/document/TableView/TableView';
 import docApi from "@/util/document_apis";
-import Toolbar from "@/components/common/Toolbar/Toolbar"
 import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
 import { RecoilRoot } from 'recoil';
@@ -71,7 +70,6 @@ function Document() {
             Card View
           </ViewToggleButton>
         </div>
-        <Toolbar/>
       </div>
       <RecoilRoot>
         <ViewComponent className={"flex flex-grow"} />

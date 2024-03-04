@@ -3,7 +3,7 @@ import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils"
 import { Transforms, createEditor } from "slate";
 import { useEffect, useRef } from "react";
 import useEditorConfig from "@/hooks/useEditorConfig";
-import useAddCommentThreadToState from "@/hooks/useAddCommenttoState";
+import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
 const Card = ({ card, setCardBody, idx, total }) => {
     const editorRef = useRef()
