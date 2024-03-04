@@ -1,7 +1,7 @@
 import {
     redactionIDsState,
     redactionsState,
-  } from "@/util/RedactionState";
+  } from "@/util/CommentRedactionState";
   
   import { useRecoilCallback } from "recoil";
   

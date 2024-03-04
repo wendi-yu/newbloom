@@ -1,18 +1,18 @@
 import classNames from "classnames";
 
-import { activeCommentThreadIDAtom } from "@/util/CommentState";
+import { activeThreadIDAtom } from "@/util/CommentRedactionState";
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { useRecoilState } from "recoil";
 
 export default function CommentedText(props) {
   const { commentThreads, textnode, ...otherProps } = props;
 
-  const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
-    activeCommentThreadIDAtom
+  const [activeThreadID, setActiveThreadID] = useRecoilState(
+    activeThreadIDAtom
   );
 
   const onClick = () => {
-    setActiveCommentThreadID(
+    setActiveThreadID(
       getCommentThreadsOnTextNode(textnode)
     );
   };
@@ -25,7 +25,7 @@ export default function CommentedText(props) {
     <span
       className={classNames({
         comment: true,
-        "is-active": commentThreads.has(activeCommentThreadID),
+        "is-active": commentThreads.has(activeThreadID),
       })}
       style={commentStyle}
       onClick={onClick}

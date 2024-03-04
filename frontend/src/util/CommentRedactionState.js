@@ -10,7 +10,17 @@ export const commentThreadIDsState = atom({
   default: new Set([]),
 });
 
-export const activeCommentThreadIDAtom = atom({
-  key: "activeCommentThreadID",
+export const activeThreadIDAtom = atom({
+  key: "activeThreadID",
   default: null,
+});
+
+export const redactionsState = atomFamily({
+  key: "redactions",
+  default: [],
+});
+
+export const redactionIDsState = atom({
+  key: "redactionIDs",
+  default: new Set([]),
 });

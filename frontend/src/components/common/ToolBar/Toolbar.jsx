@@ -4,49 +4,48 @@ import PrintSVG from "@/assets/print_fill.svg"
 import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
-<<<<<<< HEAD
 
 import {useSlate} from "slate-react"
 import {useSetRecoilState, useRecoilState } from "recoil"
 import {useCallback} from "react"
 
-=======
->>>>>>> main
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
 import {print, markAsDone, undo, redo} from "@/util/toolbar_functions.js"
 
 import { insertCommentThread } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { activeCommentThreadIDAtom } from "@/util/CommentState"
-import useAddRedactionToState from "../../../hooks/useAddRedactionToState"
-import { activeRedactionIDAtom} from "../../../util/RedactionState"
-import { insertRedaction } from "../../../util/editorRedactionUtils"
+import { activeThreadIDAtom } from "@/util/CommentRedactionState"
+import useAddRedactionToState from "@/hooks/useAddRedactionToState"
+import { insertRedaction } from "@/util/editorRedactionUtils"
 
 export default function Toolbar() {
-<<<<<<< HEAD
-
     const editor = useSlate();
+    const setActiveThreadID = useSetRecoilState(activeThreadIDAtom);
 
     const addComment = useAddCommentThreadToState();
-    const setActiveCommentThreadID = useSetRecoilState(activeCommentThreadIDAtom);
+    
     const comment = useCallback(() => {
         const newCommentThreadID = insertCommentThread(editor, addComment);
-        setActiveCommentThreadID(newCommentThreadID);
-      }, [editor, addComment, setActiveCommentThreadID]);
+        setActiveThreadID(newCommentThreadID);
+      }, [editor, addComment, setActiveThreadID]);
 
     const addRedaction = useAddRedactionToState();
-    const setActiveRedactionID = useSetRecoilState(activeRedactionIDAtom);
+
     const redact = useCallback(() => {
         const newRedactionID = insertRedaction(editor, addRedaction);
-        setActiveRedactionID(newRedactionID);
-    }, [editor, addRedaction, setActiveRedactionID]);
+        setActiveThreadID(newRedactionID);
 
-    const [redactionData, setRedactionData] = useRecoilState(
-        RedactionState(threadID)
-    );
-=======
->>>>>>> main
+        const [redactionData, setRedactionData] = useRecoilState(
+            redactionsState(newRedactionID)
+        );
+
+
+    }, [editor, addRedaction, setActiveThreadID]);
+
+
+
+
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">

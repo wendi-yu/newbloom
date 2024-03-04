@@ -15,7 +15,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   //this stuff is wrong
   function removeMark () {  
-    
     leaf[mark] = false
     editor.removeMark(mark)
     console.log(leaf)
