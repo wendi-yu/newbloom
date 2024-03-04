@@ -3,10 +3,9 @@ import { getRedactionsOnTextNode, getMarkFromLeaf, replaceRedactionWithX } from 
 import CommentedText from "./CommentedText";
 import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
-import { removeRedaction } from "../../../util/editorRedactionUtils";
-import {accepted, rejected} from "@/assets/redacted_lists";
+import { accepted, rejected } from "@/assets/redacted_lists";
 
-import {useSlate} from "slate-react"
+import { useSlate } from "slate-react"
 
 //for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
@@ -14,6 +13,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const mark = getMarkFromLeaf(leaf)
   const editor = useSlate();
 
+  //this stuff is wrong
   function removeMark () {  
     
     leaf[mark] = false
@@ -29,8 +29,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   //store and send to ML model
   function onAcceptRedaction () {
     replaceRedactionWithX(leaf)
-    console.log(leaf)
-    removeMark()
     accepted.push(leaf)
   }
 
@@ -57,6 +55,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
         onAccept={onAcceptRedaction}
         onReject={onRejectRedaction}
         ifOpen={isPopoverDisabled}
+        leaf={leaf}
       />  
     );
 

@@ -5,7 +5,7 @@ import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { useRecoilState } from "recoil";
 
 export default function CommentedText(props) {
-  const { commentThreads, textnode, ...otherProps } = props; // eslint-disable-line no-unused-vars
+  const { commentThreads, textnode, ...otherProps } = props;
 
   const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
     activeCommentThreadIDAtom

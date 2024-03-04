@@ -1,8 +1,8 @@
-import {useState} from "react";
-import { Popover, ConfigProvider } from "antd";
-import CheckIcon from "@/assets/check_fill.svg";
-import CloseIcon from "@/assets/close_fill.svg";
-import CommentIcon from "@/assets/comment_fill.svg";
+import {useState} from "react"
+import { Popover, ConfigProvider } from "antd"
+import CheckIcon from "@/assets/check_fill.svg"
+import CloseIcon from "@/assets/close_fill.svg"
+import CommentIcon from "@/assets/comment_fill.svg"
 
 export default function RedactionPopover({text, onAccept, onReject}) {
 

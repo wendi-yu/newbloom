@@ -6,7 +6,7 @@ import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
 
 import {useSlate} from "slate-react"
-import {useSetRecoilState } from "recoil";
+import {useSetRecoilState} from "recoil"
 import {useCallback} from "react"
 
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
@@ -17,7 +17,7 @@ import { insertCommentThread } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { activeCommentThreadIDAtom } from "@/util/CommentState"
 import useAddRedactionToState from "../../../hooks/useAddRedactionToState"
-import { activeRedactionIDAtom } from "../../../util/RedactionState"
+import { activeRedactionIDAtom} from "../../../util/RedactionState"
 import { insertRedaction } from "../../../util/editorRedactionUtils"
 
 export default function Toolbar() {
@@ -37,6 +37,10 @@ export default function Toolbar() {
         const newRedactionID = insertRedaction(editor, addRedaction);
         setActiveRedactionID(newRedactionID);
     }, [editor, addRedaction, setActiveRedactionID]);
+
+    // const [redactionData, setRedactionData] = useRecoilState(
+    //     RedactionState(threadID)
+    // );
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">

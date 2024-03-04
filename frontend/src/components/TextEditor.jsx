@@ -22,7 +22,7 @@ export default function TextEditor({ document = [], onChange }) {
 
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
-  }, [editor, addCommentThread]);
+  }, [addCommentThread]);
 
   //TODO: styling
   return (
