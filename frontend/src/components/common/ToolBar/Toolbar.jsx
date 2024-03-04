@@ -6,7 +6,7 @@ import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
 
 import {useSlate} from "slate-react"
-import {useSetRecoilState} from "recoil"
+import {useSetRecoilState, useRecoilState } from "recoil"
 import {useCallback} from "react"
 
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
@@ -38,9 +38,9 @@ export default function Toolbar() {
         setActiveRedactionID(newRedactionID);
     }, [editor, addRedaction, setActiveRedactionID]);
 
-    // const [redactionData, setRedactionData] = useRecoilState(
-    //     RedactionState(threadID)
-    // );
+    const [redactionData, setRedactionData] = useRecoilState(
+        RedactionState(threadID)
+    );
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">
