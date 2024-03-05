@@ -4,6 +4,7 @@ import CommentedText from "./CommentedText";
 import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
 import { accepted, rejected } from "@/assets/redacted_lists";
+import useEditorConfig from "@/hooks/useEditorConfig";
 
 import { useSlate } from "slate-react"
 
@@ -13,22 +14,34 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const mark = getMarkFromLeaf(leaf)
   const editor = useSlate();
 
+  const { renderLeaf } = useEditorConfig(editor);
+
+  let ifBgColor = true
+  let redactionColor = "bg-suggested-redaction"
+
   //this stuff is wrong
   function removeMark () {  
     leaf[mark] = false
     editor.removeMark(mark)
-    console.log(leaf)
   }
   //store and send to ML model
   function onRejectRedaction () {
     removeMark()
     rejected.push(leaf)
+    leaf.underline=true;
+    ifBgColor=false;
   }
 
   //store and send to ML model
   function onAcceptRedaction () {
-    replaceRedactionWithX(leaf)
+    redactionColor="bg-accepted-redaction"
+    console.log(leaf)
+    renderLeaf()
     accepted.push(leaf)
+  }
+
+  if (leaf.underline) {
+    return <u>{children}</u>
   }
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
@@ -63,6 +76,8 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       {...attributes}
       redactions={redactions}
       textnode={leaf}
+      bgColor={redactionColor}
+      ifBgColor={ifBgColor}
       >
         {children}
       </RedactedText>
