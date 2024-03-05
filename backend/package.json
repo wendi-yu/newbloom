@@ -18,5 +18,9 @@
     "#configs/*": "./src/configs/*.js",
     "#services/*": "./src/services/*.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express-async-handler": "^1.2.0"
+  }
 }
