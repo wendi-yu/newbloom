@@ -5,6 +5,7 @@ import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
 import { accepted, rejected } from "@/assets/redacted_lists";
 import useEditorConfig from "@/hooks/useEditorConfig";
+import { removeRedaction } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
 
@@ -21,15 +22,13 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   //this stuff is wrong
   function removeMark () {  
-    leaf[mark] = false
-    editor.removeMark(mark)
+    removeRedaction(editor, mark)
   }
   //store and send to ML model
   function onRejectRedaction () {
     removeMark()
     rejected.push(leaf)
     leaf.underline=true;
-    ifBgColor=false;
   }
 
   //store and send to ML model

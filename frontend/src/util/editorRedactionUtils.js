@@ -51,7 +51,8 @@ export function insertRedaction(editor, addRedactionToState) {
   return threadID;
 }
 
-export function removeRedaction(editor, removeRedactionFromState, redactionID) {
-  Editor.removeMark(editor, getMarkForRedactionID(redactionID));
-  removeRedactionFromState(redactionID);
+export function removeRedaction(editor, mark) {
+  console.log(mark)
+  Editor.removeMark(editor, mark);
+  removeRedactionFromState(mark);
 }

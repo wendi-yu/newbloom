@@ -43,9 +43,6 @@ export default function Toolbar() {
 
     }, [editor, addRedaction, setActiveThreadID]);
 
-
-
-
     
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">
