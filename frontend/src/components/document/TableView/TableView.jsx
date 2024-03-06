@@ -1,10 +1,10 @@
+import { getRedactionsOnTextNode } from "@/util/editorRedactionUtils";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
 import NavigateToIcon from "@/assets/navigate_to_icon.svg";
 import { Slider } from 'antd';
 import { useState } from "react";
-import { toText } from "@/util/slateUtil";
 
 const RedactionFilterDropdownMenu = () => {
     //TODO: Some sort of dropdown
@@ -13,33 +13,12 @@ const RedactionFilterDropdownMenu = () => {
     </div>
 }
 
-const splitText = (document) => {
-    return document.documentBody.map((paragraph) => {
-        return paragraph.children
-    }).flat(1)
-}
-
-const parseSentence = (sentence) => {
-    const text = sentence.sentence.text
-    // Temporarily insert " REDACTED " into the sentence
-    return text.slice(0, text.length / 2) + " REDACTED " + text.slice(text.length / 2)
-}
-
-const getWordsFromSentence = (sentence) => {
-    return sentence.split(' ')
-}
-
-const getRedactedWordIndex = (words) => {
-    return words.indexOf("REDACTED")
-}
-
-const TableEntry = (sentence) => {
-    const parsedSentence = parseSentence(sentence)
-    const words = getWordsFromSentence(parsedSentence)
-    const redactedWordIndex = getRedactedWordIndex(words)
-
-    const max = Math.max(words.length - redactedWordIndex - 1, redactedWordIndex)
-    const min = 0
+const TableEntry = (paragraph_index) => {
+    paragraph_index = paragraph_index.paragraph_index[0] // Cuz weird formatting
+    var words = paragraph_index.paragraph
+    var redacted_index = paragraph_index.index
+    var redacted_start_index = redacted_index.start_index
+    var redacted_end_index = redacted_index.end_index
     const [sentenceLength, setSentenceLength] = useState(0)
 
     const Result = {
@@ -52,12 +31,12 @@ const TableEntry = (sentence) => {
     const SentenceWithRedaction = () => {
         //Separate sentence into preRedactedSection, redactedWord, and postRedactedSection
         const ellipsis = '...'
-        const wordStartIndex = redactedWordIndex - sentenceLength
-        const wordEndIndex = redactedWordIndex + sentenceLength
+        const wordStartIndex = redacted_start_index - sentenceLength
+        const wordEndIndex = redacted_end_index + sentenceLength
 
-        const preRedactedSection = words.slice(Math.max(wordStartIndex, 0), redactedWordIndex).join(' ')
-        const redactedWord = ' ' + words[redactedWordIndex] + ' '
-        const postRedactedSection = words.slice(redactedWordIndex + 1, wordEndIndex + 1).join(' ')
+        const preRedactedSection = words.slice(Math.max(wordStartIndex, 0), redacted_start_index).join(' ')
+        const redactedWord = ' [' + words.slice(redacted_start_index, redacted_end_index).join(' ') + '] '
+        const postRedactedSection = words.slice(redacted_end_index + 1, wordEndIndex + 1).join(' ')
 
         const partsOfSentence = []
         if (wordStartIndex > 0) partsOfSentence.push(ellipsis)
@@ -92,17 +71,46 @@ const TableEntry = (sentence) => {
 
     return <div className={`border border-solid border-slate-100 flex flex-row p-2 ${redactionResult === Result.InReview ? 'opacity-100' : 'opacity-70'}`}>
         <SentenceWithRedaction className="m-2" />
-        <SentenceVisibilityScale min={min} max={max} />
+        <SentenceVisibilityScale min={0} max={words.length} />
         <TableActionButtons />
     </div>
 }
 
 const TableView = ({ document }) => {
-    const sentences = splitText(document)
-    const tableEntries = sentences.map((sentence) => {
-        return <div key={toText(sentence)}>
-            <TableEntry sentence={sentence} />
-        </div>
+    /*We're going to map each redaction to a tuple (paragraph, indexes)
+    paragraph: A string of the paragraph
+    indexes: (start_index, end_index) of redaction
+    */
+    const paragraph_index_list = document.documentBody.map((paragraph) => {
+        const paragraph_words = paragraph.children.map((child) => child.text).flat(1).join("").split(" ")
+        var curr_word_index = 0
+        const paragraph_index = []
+        paragraph.children.forEach((child) => {
+            if (getRedactionsOnTextNode(child).size > 0) {
+                const index = {
+                    start_index: curr_word_index,
+                    end_index: curr_word_index + child.text.split(" ").length,
+                }
+                paragraph_index.push({
+                    paragraph: paragraph_words,
+                    index: index,
+                })
+            }
+            curr_word_index += child.text.split(" ").length
+        })
+
+        return paragraph_index
+    })
+
+    const tableEntries = []
+    paragraph_index_list.forEach((paragraph_index, i) => {
+        if (paragraph_index.length > 0) {
+            tableEntries.push(
+                <div key={i}>
+                <TableEntry paragraph_index={paragraph_index} />
+            </div>
+            ) 
+        }
     })
 
     return <div className="p-7">
