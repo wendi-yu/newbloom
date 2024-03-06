@@ -1,5 +1,5 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
-import { getRedactionsOnTextNode, getMarkFromLeaf, replaceRedactionWithX } from "@/util/editorRedactionUtils";
+import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import CommentedText from "./CommentedText";
 import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
