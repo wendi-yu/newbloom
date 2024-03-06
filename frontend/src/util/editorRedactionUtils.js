@@ -54,5 +54,5 @@ export function insertRedaction(editor, addRedactionToState) {
 export function removeRedaction(editor, mark) {
   console.log(mark)
   Editor.removeMark(editor, mark);
-  removeRedactionFromState(mark);
+  // removeRedactionFromState(mark);
 }

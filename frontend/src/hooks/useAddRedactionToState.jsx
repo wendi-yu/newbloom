@@ -16,14 +16,14 @@ import {
     );
   }
 
-  export default function useRemoveRedactionFromState(mark) {
-    return useRecoilCallback(
-      ({ set }) => (id) => {
-        set(redactionIDsState, (ids) => new Set([...ids].filter(item => item !== id)));
-        id && set(redactionsState(id), undefined);
-      },
-      []
+  // export default function useRemoveRedactionFromState(mark) {
+  //   return useRecoilCallback(
+  //     ({ set }) => (id) => {
+  //       set(redactionIDsState, (ids) => new Set([...ids].filter(item => item !== id)));
+  //       id && set(redactionsState(id), undefined);
+  //     },
+  //     []
       
-    );
-  }
+  //   );
+  // }
   

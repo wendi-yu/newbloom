@@ -13,6 +13,7 @@ import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
 import { RecoilRoot } from 'recoil';
 import Toolbar from "@/components/common/Toolbar/Toolbar"
+import { DebugObserver } from '@/components/common/DebugObserver';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -73,6 +74,7 @@ function Document() {
         </div>
       </div>
       <RecoilRoot>
+        <DebugObserver />
         <ViewComponent className={"flex flex-grow"} />
       </RecoilRoot>
     </div>
