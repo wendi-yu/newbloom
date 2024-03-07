@@ -1,5 +1,5 @@
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
-import { getMarkForRedactionID } from "@/util/editorRedactionUtils";
+import { getMarkForRedactionID, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
 import { comments } from "./example_comments";
 
 import { v4 as uuid } from "uuid";
@@ -10,8 +10,8 @@ const ExampleDocument = [
         children: [
             {
                 text: "Seedlings Life Science Ventures, LLC [Seedlings]",
-                [getMarkForRedactionID(uuid())]: true,
-                
+                [getMarkForRedactionID(uuid(), SUGGESTION_PREFIX)]: true,
+
             },
             {
                 text: " is in the business of early-stage health-care related research and product development. It alleges that Pfizer Canada ULC [Pfizer]",
@@ -37,8 +37,8 @@ const ExampleDocument = [
             {
                 text:
                     "I agree with Pfizer that the claims asserted by Seedlings",
-                    [getMarkForRedactionID(uuid())]: true,
-                },
+                [getMarkForRedactionID(uuid(), SUGGESTION_PREFIX)]: true,
+            },
             {
                 text:
                     " are invalid, because they are all overly broad, some of them are anticipated and one of them is obvious. Moreover, had those claims been valid, I would have found that they are not infringed by the EpiPen. In so finding, I am not denying the creative value of Seedlings’s work. Indeed, I am invalidating only a subset of the claims of Seedlings’s patent. Contrary to Seedlings’s assertion, however, this is not a case of two inventors making the same invention independently, with Seedlings being the first in time to file its patent application.",

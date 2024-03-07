@@ -5,11 +5,11 @@ import RedactedText from "../Redactions/RedactedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
 import { accepted, rejected } from "@/assets/redacted_lists";
 import useEditorConfig from "@/hooks/useEditorConfig";
-import { removeRedaction } from "@/util/editorRedactionUtils";
+import { removeRedaction, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
 
-//for table view, pass in false for  isPopoverDisabled to disable popovers
+// for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
   const mark = getMarkFromLeaf(leaf)
@@ -20,20 +20,22 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   let ifBgColor = true
   let redactionColor = "bg-suggested-redaction"
 
-  //this stuff is wrong
-  function removeMark () {  
+  // this stuff is wrong
+  function removeMark() {
     removeRedaction(editor, mark)
   }
-  //store and send to ML model
-  function onRejectRedaction () {
+  // store and send to ML model
+  function onRejectRedaction() {
+    console.log("redaction rejected")
+    console.log(leaf)
     removeMark()
     rejected.push(leaf)
-    leaf.underline=true;
+    leaf.underline = true;
   }
 
-  //store and send to ML model
-  function onAcceptRedaction () {
-    redactionColor="bg-accepted-redaction"
+  // store and send to ML model
+  function onAcceptRedaction() {
+    redactionColor = "bg-accepted-redaction"
     console.log(leaf)
     renderLeaf()
     accepted.push(leaf)
@@ -57,7 +59,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     );
   }
 
-  const redactions = getRedactionsOnTextNode(leaf);
+  const redactions = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX);
 
   if (redactions.size > 0 && leaf[mark]) {
     children = (
@@ -67,16 +69,16 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
         onReject={onRejectRedaction}
         ifOpen={isPopoverDisabled}
         leaf={leaf}
-      />  
+      />
     );
 
     return (
       <RedactedText
-      {...attributes}
-      redactions={redactions}
-      textnode={leaf}
-      bgColor={redactionColor}
-      ifBgColor={ifBgColor}
+        {...attributes}
+        redactions={redactions}
+        textnode={leaf}
+        bgColor={redactionColor}
+        ifBgColor={ifBgColor}
       >
         {children}
       </RedactedText>
