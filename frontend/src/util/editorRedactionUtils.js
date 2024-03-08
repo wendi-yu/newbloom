@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms, Range } from 'slate';
+import { Editor, Transforms } from 'slate';
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -42,22 +42,15 @@ export function getMarkForRedactionID(threadID, target) {
   return `${target}${threadID}`;
 }
 
-export function insertRedaction(editor, addRedactionToState, target) {
+export function insertRedaction(editor, target) {
   const threadID = uuid();
-  const newRedaction = {
-    redactions: [],
-    creationTime: new Date(),
-    status: "open",
-  };
-  addRedactionToState(threadID, newRedaction);
   Editor.addMark(editor, getMarkForRedactionID(threadID, target), true);
   return threadID;
 }
 
-function selectAllText(editor) {
-  // Get the start and end points of the editor
-  const [start, end] = Editor.edges(editor, [0]);
 
+function setSelectionToCurrNodeEdges(editor) {
+  const [start, end] = Editor.edges(editor, editor.selection.anchor.path)
   // Create a new range that spans the entire editor
   const range = { anchor: start, focus: end };
 
@@ -65,13 +58,17 @@ function selectAllText(editor) {
   Transforms.select(editor, range);
 }
 
-export function removeRedaction(editor, mark) {
+
+export function changeRedaction(editor, mark, target) {
   // removeMark only removes all instances of the mark within the current selection, so select everything then remove
 
   // store the old selection to restore it afterwards
   const temp = editor.selection
-  selectAllText(editor);
+
+
+  setSelectionToCurrNodeEdges(editor)
   Editor.removeMark(editor, mark);
+  insertRedaction(editor, target)
 
   // restore old selection
   editor.selection = temp

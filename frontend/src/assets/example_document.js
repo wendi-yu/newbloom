@@ -1,8 +1,9 @@
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
-import { getMarkForRedactionID, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
+import { getMarkForRedactionID, SUGGESTION_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 import { comments } from "./example_comments";
 
 import { v4 as uuid } from "uuid";
+import { ACCEPTED_PREFIX } from "../util/editorRedactionUtils";
 
 const ExampleDocument = [
     {
@@ -10,12 +11,12 @@ const ExampleDocument = [
         children: [
             {
                 text: "Seedlings Life Science Ventures, LLC [Seedlings]",
-                [getMarkForRedactionID(uuid(), SUGGESTION_PREFIX)]: true,
+                [getMarkForRedactionID(uuid(), REJECTED_PREFIX)]: true,
 
             },
             {
                 text: " is in the business of early-stage health-care related research and product development. It alleges that Pfizer Canada ULC [Pfizer]",
-                [getMarkForCommentThreadID(comments[1].id)]: true,
+                [getMarkForRedactionID(uuid(), ACCEPTED_PREFIX)]: true,
             },
             {
                 text: ", a major pharmaceutical company, infringes its patent by selling in Canada an auto-injector commonly known as the EpiPen. While, at first sight, the EpiPen and Seedlings’s invention do",

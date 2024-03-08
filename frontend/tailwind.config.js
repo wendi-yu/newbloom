@@ -16,10 +16,11 @@ export default {
         'danger': "#E83151",
         'document-background': "#F5F5F5",
         'highlight': "#FFEC40",
-        'suggested-redaction':"rgba(92, 0, 184, 0.22)",
-        'rejected-redaction':"",
-        'accepted-redaction':"rgba(0, 0, 0, 0.22)",
-        'curr-redaction':"rgba(92,0,184,0.4)"
+        'suggested-redaction': "rgba(92, 0, 184, 0.22)",
+        'suggested-redaction-darker': "rgba(92, 0, 184, 0.3)",
+        'accepted-redaction': "rgba(0, 0, 0, 0.22)",
+        'accepted-redaction-darker': "rgba(0, 0, 0, 0.3)",
+        'curr-redaction': "rgba(92,0,184,0.4)"
       }
     },
   },

@@ -14,8 +14,7 @@ import { print, markAsDone, undo, redo } from "@/util/toolbar_functions.js"
 
 import { insertCommentThread } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { useAddRedactionToState } from "@/hooks/useAddRedactionToState"
-import { insertRedaction } from "@/util/editorRedactionUtils"
+import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
 
 export default function Toolbar() {
     const editor = useSlate();
@@ -26,11 +25,9 @@ export default function Toolbar() {
         insertCommentThread(editor, addComment);
     }, [editor, addComment]);
 
-    const addRedaction = useAddRedactionToState();
-
     const redact = useCallback(() => {
-        insertRedaction(editor, addRedaction);
-    }, [editor, addRedaction]);
+        insertRedaction(editor, ACCEPTED_PREFIX);
+    }, [editor]);
 
     return (
         <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4">

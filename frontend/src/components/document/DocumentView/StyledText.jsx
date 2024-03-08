@@ -1,49 +1,19 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import CommentedText from "./CommentedText";
-import RedactedText from "../Redactions/RedactedText";
+import SuggestedText from "../Redactions/SuggestedText";
+import RejectedText from "../Redactions/RejectedText";
 import RedactionPopover from "../Redactions/RedactionPopover";
-import { accepted, rejected } from "@/assets/redacted_lists";
-import useEditorConfig from "@/hooks/useEditorConfig";
-import { removeRedaction, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
+import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
+import AcceptedText from "../Redactions/AcceptedText";
 
 // for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
   const mark = getMarkFromLeaf(leaf)
   const editor = useSlate();
-
-  const { renderLeaf } = useEditorConfig(editor);
-
-  let ifBgColor = true
-  let redactionColor = "bg-suggested-redaction"
-
-  // this stuff is wrong
-  function removeMark() {
-    removeRedaction(editor, mark)
-  }
-  // store and send to ML model
-  function onRejectRedaction() {
-    console.log("redaction rejected")
-    console.log(leaf)
-    removeMark()
-    rejected.push(leaf)
-    leaf.underline = true;
-  }
-
-  // store and send to ML model
-  function onAcceptRedaction() {
-    redactionColor = "bg-accepted-redaction"
-    console.log(leaf)
-    renderLeaf()
-    accepted.push(leaf)
-  }
-
-  if (leaf.underline) {
-    return <u>{children}</u>
-  }
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
 
@@ -58,30 +28,43 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       </CommentedText>
     );
   }
+  const popover = (
+    <RedactionPopover
+      text={<span>{children}</span>}
+      onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
+      onReject={() => changeRedaction(editor, mark, REJECTED_PREFIX)}
+      ifOpen={isPopoverDisabled}
+      leaf={leaf}
+    />
+  )
 
-  const redactions = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX);
+  const isSuggestion = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
+  const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
+  const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
 
-  if (redactions.size > 0 && leaf[mark]) {
-    children = (
-      <RedactionPopover
-        text={<span>{children}</span>}
-        onAccept={onAcceptRedaction}
-        onReject={onRejectRedaction}
-        ifOpen={isPopoverDisabled}
-        leaf={leaf}
-      />
-    );
-
+  if (isSuggestion) {
     return (
-      <RedactedText
+      <SuggestedText
         {...attributes}
-        redactions={redactions}
-        textnode={leaf}
-        bgColor={redactionColor}
-        ifBgColor={ifBgColor}
       >
-        {children}
-      </RedactedText>
+        {popover}
+      </SuggestedText>
+    );
+  } else if (isRejected) {
+    return (
+      <RejectedText
+        {...attributes}
+      >
+        {popover}
+      </RejectedText>
+    );
+  } else if (isAccepted) {
+    return (
+      <AcceptedText
+        {...attributes}
+      >
+        {popover}
+      </AcceptedText>
     );
   }
 
