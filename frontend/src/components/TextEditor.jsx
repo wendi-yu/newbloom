@@ -4,6 +4,8 @@ import useEditorConfig from "@/hooks/useEditorConfig";
 import { createEditor } from "slate";
 import { useEffect, useRef } from "react";
 
+import Toolbar from "@/components/common/Toolbar/Toolbar"
+
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
@@ -26,6 +28,7 @@ export default function TextEditor({ document = [], onChange }) {
       <div className="bg-document-background flex flex-row justify-center">
         <div className={"bg-white mx-40 my-20 p-16 max-w-4xl min-h-screen "}>
           <Slate editor={editor} initialValue={document} onChange={onChange}>
+            <Toolbar />
             <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col focus:outline-none" />
           </Slate>
         </div>

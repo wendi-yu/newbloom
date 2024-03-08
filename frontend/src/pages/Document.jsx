@@ -12,7 +12,6 @@ import docApi from "@/util/document_apis";
 import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
 import { RecoilRoot } from 'recoil';
-import Toolbar from "@/components/common/Toolbar/Toolbar"
 import { DebugObserver } from '@/components/common/DebugObserver';
 
 function Document() {
@@ -72,7 +71,6 @@ function Document() {
             Card View
           </ViewToggleButton>
         </div>
-        <Toolbar />
       </div>
       <RecoilRoot>
         <DebugObserver />
