@@ -19,7 +19,18 @@ export default {
         'suggested-redaction':"rgba(92, 0, 184, 0.22)",
         'rejected-redaction':"",
         'accepted-redaction':"rgba(0, 0, 0, 0.22)",
-        'curr-redaction':"rgba(92,0,184,0.4)"
+        'curr-redaction':"rgba(92,0,184,0.4)",
+        'text-input':'#EFEFEF'
+      },
+      fontSize: {
+        'description':'1em',
+        'title':'1.75em',
+
+      },
+      fontWeight: {
+        'regular': 400,
+        'semibold': 500,
+        'bold': 700
       }
     },
   },
