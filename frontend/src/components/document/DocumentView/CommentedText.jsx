@@ -2,10 +2,6 @@ import classNames from "classnames";
 
 export default function CommentedText(props) {
 
-  //dummy function for onclick
-  const onClick = () => {
-  };
-
   const commentStyle = {
     backgroundColor: '#feeab5',
   };
@@ -16,7 +12,6 @@ export default function CommentedText(props) {
         comment: true,
       })}
       style={commentStyle}
-      onClick={onClick}
     >
       {props.children}
     </span>

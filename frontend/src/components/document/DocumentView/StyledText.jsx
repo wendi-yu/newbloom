@@ -1,19 +1,19 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
-import CommentedText from "@/components/document/DocumentView/CommentedText";
-import RedactedText from "@/components/document/Redactions/RedactedText";
-import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
+import CommentedText from "./CommentedText";
+import SuggestedText from "../Redactions/SuggestedText";
+import RejectedText from "../Redactions/RejectedText";
+import RedactionPopover from "../Redactions/RedactionPopover";
+import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
-//for table view, pass in false for  isPopoverDisabled to disable popovers
+import { useSlate } from "slate-react"
+import AcceptedText from "../Redactions/AcceptedText";
+
+// for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
 
   const mark = getMarkFromLeaf(leaf)
-
-  function onRejectRedaction () {
-  }
-
-  function onAcceptRedaction () {
-  }
+  const editor = useSlate();
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
 
@@ -28,28 +28,43 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       </CommentedText>
     );
   }
+  const popover = (
+    <RedactionPopover
+      text={<span>{children}</span>}
+      onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
+      onReject={() => changeRedaction(editor, mark, REJECTED_PREFIX)}
+      ifOpen={isPopoverDisabled}
+      leaf={leaf}
+    />
+  )
 
-  const redactions = getRedactionsOnTextNode(leaf);
+  const isSuggestion = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
+  const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
+  const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
 
-  if (redactions.size > 0 && leaf[mark]) {
-    children = (
-      <RedactionPopover
-        text={<span>{children}</span>}
-        onAccept={onAcceptRedaction}
-        onReject={onRejectRedaction}
-        ifOpen={isPopoverDisabled}
-        leaf={leaf}
-      />  
-    );
-
+  if (isSuggestion) {
     return (
-      <RedactedText
-      {...attributes}
-      redactions={redactions}
-      textnode={leaf}
+      <SuggestedText
+        {...attributes}
       >
-        {children}
-      </RedactedText>
+        {popover}
+      </SuggestedText>
+    );
+  } else if (isRejected) {
+    return (
+      <RejectedText
+        {...attributes}
+      >
+        {popover}
+      </RejectedText>
+    );
+  } else if (isAccepted) {
+    return (
+      <AcceptedText
+        {...attributes}
+      >
+        {popover}
+      </AcceptedText>
     );
   }
 

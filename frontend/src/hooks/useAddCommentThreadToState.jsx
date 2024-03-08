@@ -1,7 +1,7 @@
 import {
   commentThreadIDsState,
   commentThreadsState,
-} from "@/util/CommentState";
+} from "@/util/CommentRedactionState";
 
 import { useRecoilCallback } from "recoil";
 
