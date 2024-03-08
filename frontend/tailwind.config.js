@@ -21,6 +21,16 @@ export default {
         'accepted-redaction': "rgba(0, 0, 0, 0.22)",
         'accepted-redaction-darker': "rgba(0, 0, 0, 0.3)",
         'curr-redaction': "rgba(92,0,184,0.4)"
+      },
+      fontSize: {
+        'description':'1em',
+        'title':'1.75em',
+
+      },
+      fontWeight: {
+        'regular': 400,
+        'semibold': 500,
+        'bold': 700
       }
     },
   },
