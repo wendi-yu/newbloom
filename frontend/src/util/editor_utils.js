@@ -1,4 +1,4 @@
-import {Editor} from "slate"
+import {Editor, Range} from "slate"
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -30,7 +30,7 @@ export function getPreviousMark(currMark, marks) {
 export const hotkeys = (event, editor) => {
 
   let currMark = editor.selection;
-  const marks = Editor.getMarks(editor);
+  const marks = Range.getMarks(editor, currMark);
 
   if (event.key === 'z' && event.ctrlKey) {
     event.preventDefault();
