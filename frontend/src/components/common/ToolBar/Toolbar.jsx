@@ -10,7 +10,7 @@ import { useCallback } from "react"
 
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
-import { print, markAsDone, undo, redo } from "@/util/toolbar_functions.js"
+import { print, markAsDone} from "@/util/toolbar_functions.js"
 
 import { insertCommentThread } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
@@ -34,11 +34,11 @@ export default function Toolbar() {
             <div className="flex flex-row space-x-1">
                 <ToolbarIcon
                     icon={<img src={UndoSVG} />}
-                    onClick={undo}
+                    onClick={editor.undo}
                 />
                 <ToolbarIcon
                     icon={<img src={RedoSVG} />}
-                    onClick={redo}
+                    onClick={editor.redo}
                 />
             </div>
             <div className="flex flex-row space-x-1">

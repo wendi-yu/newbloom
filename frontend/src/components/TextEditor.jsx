@@ -3,6 +3,7 @@ import useEditorConfig from "@/hooks/useEditorConfig";
 
 import { createEditor } from "slate";
 import { useEffect, useRef } from "react";
+import { withHistory } from "slate-history";
 
 import Toolbar from "@/components/common/Toolbar/Toolbar"
 
@@ -12,7 +13,7 @@ import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 export default function TextEditor({ document = [], onChange }) {
   // workaround to make the editor behave properly with vite hot reloading
   const editorRef = useRef()
-  if (!editorRef.current) editorRef.current = withReact(createEditor())
+  if (!editorRef.current) editorRef.current = withReact(withHistory(createEditor()));
   const editor = editorRef.current
 
   const { renderElement, renderLeaf } = useEditorConfig(editor);
