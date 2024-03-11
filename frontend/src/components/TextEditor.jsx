@@ -30,7 +30,7 @@ export default function TextEditor({ document = [], onChange }) {
       <Slate editor={editor} initialValue={document} onChange={onChange}>
         <Toolbar />
         <div className="bg-document-background flex flex-row justify-center">
-          <div className={"bg-white mx-40 my-20 p-16 max-w-4xl min-h-screen "}>
+          <div className={"bg-white mx-40 mt-20 mb-7 p-16 max-w-4xl min-h-screen "}>
             <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col focus:outline-none" />
           </div>
         </div>
