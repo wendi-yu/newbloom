@@ -13,7 +13,6 @@ export function getRedactionsOnTextNode(textNode, target) {
   );
 }
 
-
 export function getMarkFromLeaf(leaf) {
   const key = Object.keys(leaf)
   return key[1];
