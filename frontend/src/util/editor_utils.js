@@ -65,12 +65,12 @@ export const hotkeys = (event, editor) => {
 
   const redactions = getAllRedactions(editor);
 
-  if (event.key === 'z' && event.shiftKey && event.ctrlKey) {
+  if (event.key === 'z' && event.shiftKey && (event.ctrlKey || event.metaKey)) {
     event.preventDefault();
     console.log("redo")
     editor.redo();
 
-  } else if (event.key === 'z' && event.ctrlKey) {
+  } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
     event.preventDefault();
     console.log("undo")
     editor.undo();
