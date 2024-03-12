@@ -1,4 +1,4 @@
-import {Editor, Path } from "slate"
+import {Editor, Path, Transforms } from "slate"
 import { changeRedaction, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import { ReactEditor } from "slate-react";
 
@@ -52,14 +52,12 @@ export function getPreviousRedaction(editor, redactions) {
   return prev;
 }
 
-//TODO: implement
 export function selectNode(editor, redaction) {
 
-  const node = Editor.node(editor, redaction.path);
+  const domNode = ReactEditor.toDOMNode(editor, redaction.node);
 
-  //const domNode = findDOMNode(editor, node); // eslint-disable-line react/no-find-dom-node
-  const domNode = ReactEditor.toDOMNode(editor, node);
-  domNode.focus();
+  ReactEditor.focus(editor);
+  domNode.click();
 
 }
 
