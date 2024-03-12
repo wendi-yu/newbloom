@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms } from 'slate';
+import { Editor, Transforms, Node } from 'slate';
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -73,22 +73,38 @@ export function changeRedaction(editor, mark, target) {
   editor.selection = temp
 }
 
-export function getCurrMark(editor) {
+export function getCurrRedaction(editor, redactions) {
+
+  const selectedNode = editor.selection && Editor.node(editor, editor.selection.focus)
 
   //if the user is selecting a redaction, this is the current redaction
-  if (Editor.selection) {
-    console.log(editor.selection);
-    return currMark = Editor.selection;
+  if (isRedaction(selectedNode[0])) {
+    return selectedNode[0];
   }
 
   //otherwise select the first redaction mark
-  marks = getAllMarks(editor);
-  return marks[0];
+  return redactions[0];
 }
 
-//TODO: implement
-export function getAllMarks(editor) {
-  const marks = [];
-  
-  return marks;
+export function isRedaction(leaf) {
+  const isSuggested = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
+  const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
+  const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
+
+  return isSuggested || isRejected || isAccepted;
+}
+
+export function getAllRedactions(editor) {
+
+  let redactions=[];
+
+  for (const children of editor.children) {
+    for (const child of children.children) {
+      if (isRedaction(child)) {
+        redactions.push(child);
+      }
+    }
+  }
+
+  return redactions;
 }

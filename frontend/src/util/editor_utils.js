@@ -1,5 +1,5 @@
-import {Editor, Range} from "slate"
-import { getCurrMark, getAllMarks } from "@/util/editorRedactionUtils";
+import {Editor } from "slate"
+import { getCurrRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -17,22 +17,43 @@ export function getFirstTextNodeAtSelection(editor, selection) {
     return textNodeEntry != null ? textNodeEntry[0] : null;
 }
 
-export function getNextMark(editor, marks) {
-  let currMark = getCurrMark(editor);
+export function getNextRedaction(editor, redactions) {
+  const curr = getCurrRedaction(editor, redactions);
+  const index = redactions.indexOf(curr);
 
+  let next;
+  if (index==redactions.length - 1) {
+    next = redactions[0];
+  } else {
+    next = redactions [index + 1]
+  }
 
-
+  return next;
 }
 
-export function getPreviousMark(editor, marks) {
-  let currMark = getCurrMark(editor);
-  
+export function getPreviousRedaction(editor, redactions) {
+  const curr = getCurrRedaction(editor, redactions);
+  const index = redactions.indexOf(curr);
 
+  let prev;
+  if (index == 0) {
+    prev = redactions[redactions.length - 1];
+  } else {
+    prev = redactions [index - 1]
+  }
+
+  return prev;
+}
+
+//TODO: implement
+export function selectNode(editor, node) {
+  console.log(node);
+  
 }
 
 export const hotkeys = (event, editor) => {
 
-  const marks = getAllMarks(editor);
+  const redactions = getAllRedactions(editor);
 
   if (event.key === 'z' && event.ctrlKey) {
     event.preventDefault();
@@ -44,10 +65,10 @@ export const hotkeys = (event, editor) => {
     editor.redo();
   } else if (event.key === 'Tab' && event.shiftKey) {
     event.preventDefault();
-    Editor.selection = getPreviousMark(editor, marks);
+    selectNode(editor, getPreviousRedaction(editor, redactions));
   } else if (event.key === 'Tab') {
     event.preventDefault();
-    Editor.selection = getNextMark(editor, marks);
+    selectNode(editor, getNextRedaction(editor, redactions));
   } 
   else {
     event.preventDefault();
