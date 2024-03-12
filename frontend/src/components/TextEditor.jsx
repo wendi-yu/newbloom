@@ -31,7 +31,12 @@ export default function TextEditor({ document = [], onChange }) {
         <Toolbar />
         <div className="bg-document-background flex flex-row justify-center">
           <div className={"bg-white mx-40 mt-20 mb-7 p-16 max-w-4xl min-h-screen "}>
-            <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col focus:outline-none" />
+            <Editable
+              renderElement={renderElement}
+              onKeyDown={(event)=>hotkeys(event, editor)}
+              renderLeaf={renderLeaf}
+              className="flex flex-col focus:outline-none"
+            />
           </div>
         </div>
       </Slate>

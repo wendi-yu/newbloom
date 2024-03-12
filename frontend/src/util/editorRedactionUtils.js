@@ -72,3 +72,23 @@ export function changeRedaction(editor, mark, target) {
   // restore old selection
   editor.selection = temp
 }
+
+export function getCurrMark(editor) {
+
+  //if the user is selecting a redaction, this is the current redaction
+  if (Editor.selection) {
+    console.log(editor.selection);
+    return currMark = Editor.selection;
+  }
+
+  //otherwise select the first redaction mark
+  marks = getAllMarks(editor);
+  return marks[0];
+}
+
+//TODO: implement
+export function getAllMarks(editor) {
+  const marks = [];
+  
+  return marks;
+}
