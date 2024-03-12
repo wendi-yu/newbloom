@@ -1,6 +1,6 @@
-import {Editor, Transforms, Path } from "slate"
+import {Editor, Path } from "slate"
 import { getCurrRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
-import { ReactEditor } from "slate-react";
+import { findDOMNode } from 'slate-react'
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -53,12 +53,13 @@ export function getPreviousRedaction(editor, redactions) {
 }
 
 //TODO: implement
-export function selectNode(editor, node) {
-  
-  console.log(node)
-  const range = Editor.range(editor, node.path);
-  Transforms.setSelection(editor, range);
-  
+export function selectNode(editor, redaction) {
+
+  const node = Editor.node(editor, redaction.path);
+
+  const domNode = findDOMNode(editor, node);
+  domNode.focus();
+
 }
 
 export const hotkeys = (event, editor) => {
