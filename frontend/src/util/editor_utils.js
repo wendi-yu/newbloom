@@ -1,6 +1,6 @@
 import {Editor, Path } from "slate"
 import { getCurrRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
-import { findDOMNode } from 'slate-react'
+import { ReactEditor } from "slate-react";
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -57,7 +57,8 @@ export function selectNode(editor, redaction) {
 
   const node = Editor.node(editor, redaction.path);
 
-  const domNode = findDOMNode(editor, node);
+  //const domNode = findDOMNode(editor, node); // eslint-disable-line react/no-find-dom-node
+  const domNode = ReactEditor.toDOMNode(editor, node);
   domNode.focus();
 
 }
@@ -66,14 +67,14 @@ export const hotkeys = (event, editor) => {
 
   const redactions = getAllRedactions(editor);
 
-  if (event.key === 'z' && event.ctrlKey) {
-    event.preventDefault();
-    console.log("undo")
-    editor.undo();
-  } else if (event.key === 'z' && event.shiftKey && event.ctrlKey) {
+  if (event.key === 'z' && event.shiftKey && event.ctrlKey) {
     event.preventDefault();
     console.log("redo")
     editor.redo();
+  } else if (event.key === 'z' && event.ctrlKey) {
+    event.preventDefault();
+    console.log("undo")
+    editor.undo();
   } else if (event.key === 'Tab' && event.shiftKey) {
     event.preventDefault();
     selectNode(editor, getPreviousRedaction(editor, redactions));

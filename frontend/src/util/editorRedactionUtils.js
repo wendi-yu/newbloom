@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms, Node, select } from 'slate';
+import { Editor, Transforms } from 'slate';
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
