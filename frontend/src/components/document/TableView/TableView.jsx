@@ -1,4 +1,4 @@
-import { getRedactionsOnTextNode } from "@/util/editorRedactionUtils";
+import { getRedactionsOnTextNode, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
@@ -86,7 +86,7 @@ const TableView = ({ document }) => {
         var curr_word_index = 0
         const paragraph_index = []
         paragraph.children.forEach((child) => {
-            if (getRedactionsOnTextNode(child).size > 0) {
+            if (getRedactionsOnTextNode(child, SUGGESTION_PREFIX).size > 0) {
                 const index = {
                     start_index: curr_word_index,
                     end_index: curr_word_index + child.text.split(" ").length,
