@@ -1,5 +1,6 @@
-import {Editor } from "slate"
+import {Editor, Transforms, Path } from "slate"
 import { getCurrRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
+import { ReactEditor } from "slate-react";
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -19,7 +20,10 @@ export function getFirstTextNodeAtSelection(editor, selection) {
 
 export function getNextRedaction(editor, redactions) {
   const curr = getCurrRedaction(editor, redactions);
-  const index = redactions.indexOf(curr);
+  
+  const index =  redactions.findIndex(redaction =>
+    Path.equals(redaction.path, curr.path)
+  );
 
   let next;
   if (index==redactions.length - 1) {
@@ -33,7 +37,10 @@ export function getNextRedaction(editor, redactions) {
 
 export function getPreviousRedaction(editor, redactions) {
   const curr = getCurrRedaction(editor, redactions);
-  const index = redactions.indexOf(curr);
+  
+  const index =  redactions.findIndex(redaction =>
+    Path.equals(redaction.path, curr.path)
+  );
 
   let prev;
   if (index == 0) {
@@ -47,7 +54,10 @@ export function getPreviousRedaction(editor, redactions) {
 
 //TODO: implement
 export function selectNode(editor, node) {
-  console.log(node);
+  
+  console.log(node)
+  const range = Editor.range(editor, node.path);
+  Transforms.setSelection(editor, range);
   
 }
 

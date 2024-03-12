@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms, Node } from 'slate';
+import { Editor, Transforms, Node, select } from 'slate';
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -79,7 +79,7 @@ export function getCurrRedaction(editor, redactions) {
 
   //if the user is selecting a redaction, this is the current redaction
   if (isRedaction(selectedNode[0])) {
-    return selectedNode[0];
+    return {node: selectedNode[0], path: selectedNode[1]};
   }
 
   //otherwise select the first redaction mark
@@ -96,15 +96,16 @@ export function isRedaction(leaf) {
 
 export function getAllRedactions(editor) {
 
-  let redactions=[];
+  let redactions = [];
 
-  for (const children of editor.children) {
-    for (const child of children.children) {
+  editor.children.forEach((children, index) => {
+    children.children.forEach((child, childIndex) => {
       if (isRedaction(child)) {
-        redactions.push(child);
+        const path = [index, childIndex];
+        redactions.push({ node: child, path });
       }
-    }
-  }
+    });
+  });
 
   return redactions;
 }
