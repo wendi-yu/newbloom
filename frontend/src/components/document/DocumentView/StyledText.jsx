@@ -1,9 +1,9 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
-import CommentedText from "./CommentedText";
-import SuggestedText from "../Redactions/SuggestedText";
-import RejectedText from "../Redactions/RejectedText";
-import RedactionPopover from "../Redactions/RedactionPopover";
+import CommentedText from "@/components/document/DocumentView/CommentedText";
+import SuggestedText from "@/components/document/Redactions/SuggestedText";
+import RejectedText from "@/components/document/Redactions/RejectedText";
+import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"

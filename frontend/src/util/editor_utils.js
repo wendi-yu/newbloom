@@ -1,5 +1,5 @@
 import {Editor, Path } from "slate"
-import { getCurrRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
+import { changeRedaction, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import { ReactEditor } from "slate-react";
 
 export function getFirstTextNodeAtSelection(editor, selection) {
@@ -71,17 +71,31 @@ export const hotkeys = (event, editor) => {
     event.preventDefault();
     console.log("redo")
     editor.redo();
+
   } else if (event.key === 'z' && event.ctrlKey) {
     event.preventDefault();
     console.log("undo")
     editor.undo();
+
   } else if (event.key === 'Tab' && event.shiftKey) {
     event.preventDefault();
     selectNode(editor, getPreviousRedaction(editor, redactions));
+
   } else if (event.key === 'Tab') {
     event.preventDefault();
     selectNode(editor, getNextRedaction(editor, redactions));
-  } 
+
+  } else if (event.key=='a') {
+    event.preventDefault();
+    const mark = getCurrRedaction(editor, redactions)
+    changeRedaction(editor, getMarkFromLeaf(mark.node), ACCEPTED_PREFIX)
+
+  } else if (event.key=='r') {
+    event.preventDefault();
+    const mark = getCurrRedaction(editor, redactions)
+    changeRedaction(editor, getMarkFromLeaf(mark.node), REJECTED_PREFIX)
+  }
+
   else {
     event.preventDefault();
   }
