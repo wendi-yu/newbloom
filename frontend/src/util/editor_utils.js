@@ -52,12 +52,18 @@ export function getPreviousRedaction(editor, redactions) {
   return prev;
 }
 
+
 export function selectNode(editor, redaction) {
 
   const domNode = ReactEditor.toDOMNode(editor, redaction.node);
+  console.log(domNode)
 
   ReactEditor.focus(editor);
-  domNode.click();
+  domNode.focus();
+  console.log("click 1")
+  domNode.dispatchEvent(new MouseEvent('click'));
+  
+  console.log("click 2")
 
 }
 
