@@ -55,15 +55,37 @@ export function getPreviousRedaction(editor, redactions) {
 
 export function selectNode(editor, redaction) {
 
-  const domNode = ReactEditor.toDOMNode(editor, redaction.node);
-  console.log(domNode)
+  //const span= document.querySelector(domNode)
 
-  ReactEditor.focus(editor);
-  domNode.focus();
-  console.log("click 1")
-  domNode.dispatchEvent(new MouseEvent('click'));
+  // const domNode = ReactEditor.toDOMNode(editor, redaction.node);
+  // console.log(domNode);
+
+  // // ReactEditor.focus(editor);
+  // // domNode.focus();
+  // domNode.dispatchEvent(new MouseEvent('click'));
+
+  // const point = Editor.point(editor, redaction.path, 0);
+  // const domPoint = ReactEditor.toDOMPoint(editor, point);
+  // //console.log(domPoint)
+
+
+  // node.dispatchEvent(new MouseEvent('click'));
+
+  // selection.removeAllRanges();
+
+  // this removes both elements all together
+  // const anchorElement = document.createElement('a');
+  // anchorElement.appendChild(domNode);
+  // anchorElement.dispatchEvent(new MouseEvent('click'));
   
-  console.log("click 2")
+  // const range = Editor.range(editor, redaction.path);
+  // const domRange = ReactEditor.toDOMRange(editor, range);
+  // console.log(domRange)
+
+  //this selects the node but doesn't click it
+  const range = Editor.range(editor, redaction.path);
+  Transforms.setSelection(editor, range);
+
 
 }
 
