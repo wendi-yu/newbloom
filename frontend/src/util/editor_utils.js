@@ -1,6 +1,5 @@
 import {Editor, Path, Transforms } from "slate"
 import { changeRedaction, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, getMarkFromLeaf } from "@/util/editorRedactionUtils";
-import { ReactEditor } from "slate-react";
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
