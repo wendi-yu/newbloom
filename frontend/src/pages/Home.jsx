@@ -13,6 +13,7 @@ import { Radio } from "antd";
 import ListIcon from "@/assets/list.svg"
 import GridIcon from "@/assets/grid.svg"
 import ListSelector from "@/components/homepage/doc_selectors/ListSelector";
+import UploadButton from "@/components/homepage/UploadButton";
 
 const SORTING_OPTIONS = {
   name: "name",
@@ -122,6 +123,7 @@ const Home = () => {
         <DocumentsSelectionTopBar resort={resort} docLayout={docLayout} setDocLayout={setDocLayout} />
         {docLayout == HOMEPAGE_DOC_LAYOUTS.grid ? <GridSelector docInfos={docInfos} /> : <ListSelector docInfos={docInfos} />}
       </div>
+      <UploadButton className='fixed bottom-10 right-10' />
     </div>
   );
 }
