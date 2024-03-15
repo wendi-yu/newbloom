@@ -30,14 +30,7 @@ export function getNextRedaction(editor, redactions) {
     Path.equals(redaction.path, curr.path)
   );
 
-  let next;
-  if (index==redactions.length - 1) {
-    next = redactions[0];
-  } else {
-    next = redactions [index + 1]
-  }
-
-  return next;
+  return redactions[(index + 1) % redactions.length];
 }
 
 export function getPreviousRedaction(editor, redactions) {
@@ -47,44 +40,10 @@ export function getPreviousRedaction(editor, redactions) {
     Path.equals(redaction.path, curr.path)
   );
 
-  let prev;
-  if (index == 0) {
-    prev = redactions[redactions.length - 1];
-  } else {
-    prev = redactions [index - 1]
-  }
-
-  return prev;
+  return redactions[(index - 1) % redactions.length];
 }
 
 export function selectNode(editor, redaction) {
-
-  //const span= document.querySelector(domNode)
-
-  // const domNode = ReactEditor.toDOMNode(editor, redaction.node);
-  // console.log(domNode);
-
-  // // ReactEditor.focus(editor);
-  // // domNode.focus();
-  // domNode.dispatchEvent(new MouseEvent('click'));
-
-  // const point = Editor.point(editor, redaction.path, 0);
-  // const domPoint = ReactEditor.toDOMPoint(editor, point);
-  // //console.log(domPoint)
-
-
-  // node.dispatchEvent(new MouseEvent('click'));
-
-  // selection.removeAllRanges();
-
-  // this removes both elements all together
-  // const anchorElement = document.createElement('a');
-  // anchorElement.appendChild(domNode);
-  // anchorElement.dispatchEvent(new MouseEvent('click'));
-  
-  // const range = Editor.range(editor, redaction.path);
-  // const domRange = ReactEditor.toDOMRange(editor, range);
-  // console.log(domRange)
 
   //this selects the node but doesn't click it
   const range = Editor.range(editor, redaction.path);
