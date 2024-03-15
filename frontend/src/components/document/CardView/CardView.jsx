@@ -8,6 +8,13 @@ import PreviousIcon from "@/assets/previous.svg";
 import { getAllChildCommentThreads } from "@/util/editorCommentUtils";
 import { getCommentById } from "@/util/comment_apis";
 import { CommentSection } from "./CommentSection";
+import Toolbar from "@/components/common/Toolbar/Toolbar"
+
+import { Slate, withReact } from "slate-react";
+import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
+import { createEditor } from "slate";
+import { useEffect, useRef } from "react";
+import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
 // this is a stub, replace it with an API call or something later
 const splitText = (document) => {
@@ -48,7 +55,27 @@ const CardView = ({ document }) => {
         </button>
     }
 
+    const editorRef = useRef()
+    if (!editorRef.current) editorRef.current = withReact(createEditor())
+    const editor = editorRef.current
+
+    const addCommentThread = useAddCommentThreadToState();
+
+    useEffect(() => {
+        initializeStateWithAllCommentThreads(editor, addCommentThread);
+    }, [editor, addCommentThread]);
+
+    function setCardBody(body) {
+        const newCards = [...cards]
+        newCards[selectedIdx].body = body
+        setCards(newCards)
+    }
+
     return <div className="h-full w-full">
+        <Slate editor={editor} initialValue={[{ children: cards[selectedIdx].body }]} onChange={(v) => {
+                setCardBody(v[0].children)
+            }} >
+        <Toolbar />
         <div className="w-80 float-left">
             <CardSelector cards={cards} selectedIdx={selectedIdx} setSelectedIdx={setSelectedIdx} />
         </div>
@@ -67,11 +94,7 @@ const CardView = ({ document }) => {
                 >
                     <img src={PreviousIcon} />
                 </button>
-                <Card card={cards[selectedIdx]} idx={selectedIdx} total={cards.length} setCardBody={(body) => {
-                    const newCards = [...cards]
-                    newCards[selectedIdx].body = body
-                    setCards(newCards)
-                }} />
+                <Card card={cards[selectedIdx]} idx={selectedIdx} total={cards.length} />
                 <button
                     className="p-2 w-1/8 bg-white"
                     onClick={(e) => {
@@ -84,6 +107,7 @@ const CardView = ({ document }) => {
             </div>
             <CommentSection comments={cards[selectedIdx].comments} />
         </div>
+        </Slate>
     </div>
 }
 
