@@ -17,6 +17,12 @@ export function getFirstTextNodeAtSelection(editor, selection) {
     return textNodeEntry != null ? textNodeEntry[0] : null;
 }
 
+export function getCurrentPoint(editor) {
+  const selectedPoint = editor.selection && Editor.point(editor, editor.selection.focus)
+  
+  return selectedPoint;
+}
+
 export function getNextRedaction(editor, redactions) {
   const curr = getCurrRedaction(editor, redactions);
   
@@ -88,29 +94,49 @@ export function selectNode(editor, redaction) {
 
 }
 
+const extendSelectionByWord = (editor, direction) => {
+  
+  if (direction=="right") {
+    Transforms.move(editor, {
+      unit: 'word',
+      edge: 'focus'
+    })  
+  } else {
+    Transforms.move(editor, {
+      unit: 'word',
+      reverse: true,
+      edge: 'focus'
+    })
+  }
+
+};
+
 export const hotkeys = (event, editor) => {
 
   const redactions = getAllRedactions(editor);
 
+  // Handle undo/redo
   if (event.key === 'z' && event.shiftKey && (event.ctrlKey || event.metaKey)) {
     event.preventDefault();
-    console.log("redo")
     editor.redo();
 
   } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
     event.preventDefault();
-    console.log("undo")
     editor.undo();
-
-  } else if (event.key === 'Tab' && event.shiftKey) {
+  }
+  
+  // handle loop through redactions
+  else if (event.key === 'Tab') {
     event.preventDefault();
-    selectNode(editor, getPreviousRedaction(editor, redactions));
+    if (event.shiftKey) {
+      selectNode(editor, getPreviousRedaction(editor, redactions));
+    } else {
+      selectNode(editor, getNextRedaction(editor, redactions));
+    }
+  }
 
-  } else if (event.key === 'Tab') {
-    event.preventDefault();
-    selectNode(editor, getNextRedaction(editor, redactions));
-
-  } else if (event.key=='a') {
+  // handle redaction popover
+  else if (event.key=='a') {
     event.preventDefault();
     const mark = getCurrRedaction(editor, redactions)
     changeRedaction(editor, getMarkFromLeaf(mark.node), ACCEPTED_PREFIX)
@@ -120,8 +146,15 @@ export const hotkeys = (event, editor) => {
     const mark = getCurrRedaction(editor, redactions)
     changeRedaction(editor, getMarkFromLeaf(mark.node), REJECTED_PREFIX)
   }
+  
+  // handle highlight with arrow keys
+  else if (event.shiftKey && (event.ctrlKey || event.metaKey) && (event.key === 'O' || event.key === 'I')) {
+    
+    event.preventDefault();
+    const direction = event.key === 'O' ? 'right' : 'left';
+    extendSelectionByWord(editor, direction);
 
-  else {
+  } else {
     event.preventDefault();
   }
 };
