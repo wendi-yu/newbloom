@@ -1,23 +1,12 @@
-import { Editable, Slate, withReact } from "slate-react";
-import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
-import { Transforms, createEditor } from "slate";
-import { useEffect, useRef } from "react";
+import { Editable, useSlate } from "slate-react";
+import { Transforms } from "slate";
+import { useEffect } from "react";
 import useEditorConfig from "@/hooks/useEditorConfig";
-import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
-const Card = ({ card, setCardBody, idx, total }) => {
-    const editorRef = useRef()
-    if (!editorRef.current) editorRef.current = withReact(createEditor())
-    const editor = editorRef.current
+const Card = ({ card, idx, total }) => {
 
+    const editor = useSlate();
     const { renderElement, renderLeaf } = useEditorConfig(editor);
-
-    const addCommentThread = useAddCommentThreadToState();
-
-    useEffect(() => {
-        initializeStateWithAllCommentThreads(editor, addCommentThread);
-    }, [editor, addCommentThread]);
-
 
     // TODO: pull card.body.children into a state, update it in this function
     // we'll need to use a reducer to avoid infinite state change updating
@@ -34,11 +23,7 @@ const Card = ({ card, setCardBody, idx, total }) => {
         <div className="bg-primary-light h-2 rounded" style={{ width: width + "%" }} />
         <div className="mt-1 mx-2 text-primary-light">{idx + 1} / {total}</div>
         <div className="p-8">
-            <Slate editor={editor} initialValue={[{ children: card.body }]} onChange={(v) => {
-                setCardBody(v[0].children)
-            }} >
-                <Editable renderElement={renderElement} renderLeaf={renderLeaf} />
-            </Slate>
+            <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col focus:outline-none"/>
         </div>
     </div >
 }
