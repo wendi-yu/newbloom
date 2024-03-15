@@ -1,23 +1,6 @@
 import {Editor, Path, Transforms, Element } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
 
-export function getAllMarks(editor) {
-  const marks = new Set();
-
-  const iterate = (node) => {
-    if (Element.isElement(node)) {
-      node.children.forEach((child) => iterate(child));
-    } else {
-      node.marks.forEach(mark => marks.add(mark));
-    }
-  };
-
-  const { children } = editor;
-  children.forEach((node) => iterate(node));
-
-  return Array.from(marks);
-}
-
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
   
