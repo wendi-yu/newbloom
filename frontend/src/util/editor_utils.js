@@ -1,5 +1,22 @@
-import {Editor, Path, Transforms } from "slate"
-import { changeRedaction, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, getMarkFromLeaf } from "@/util/editorRedactionUtils";
+import {Editor, Path, Transforms, Element } from "slate"
+import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
+
+export function getAllMarks(editor) {
+  const marks = new Set();
+
+  const iterate = (node) => {
+    if (Element.isElement(node)) {
+      node.children.forEach((child) => iterate(child));
+    } else {
+      node.marks.forEach(mark => marks.add(mark));
+    }
+  };
+
+  const { children } = editor;
+  children.forEach((node) => iterate(node));
+
+  return Array.from(marks);
+}
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -57,7 +74,6 @@ export function getPreviousRedaction(editor, redactions) {
   return prev;
 }
 
-
 export function selectNode(editor, redaction) {
 
   //const span= document.querySelector(domNode)
@@ -91,6 +107,27 @@ export function selectNode(editor, redaction) {
   const range = Editor.range(editor, redaction.path);
   Transforms.setSelection(editor, range);
 
+}
+
+function handleChangeRedaction (editor, prefix) {
+
+  const curr = editor.selection && Editor.node(editor, editor.selection.focus)
+  const mark = Object.keys(curr[0])[1]
+
+  if (mark && isRedactionFromMark(mark)) {
+    const temp = editor.selection
+    setSelectionToCurrNodeEdges(editor)
+    Editor.removeMark(editor, mark);
+    if (prefix=='accepted') {
+      insertRedaction(editor, ACCEPTED_PREFIX)
+      
+    } else {
+      insertRedaction(editor, REJECTED_PREFIX)
+    }
+
+    editor.selection = temp
+
+  }
 
 }
 
@@ -114,20 +151,18 @@ const extendSelectionByWord = (editor, direction) => {
 export const hotkeys = (event, editor) => {
 
   const redactions = getAllRedactions(editor);
+  event.preventDefault();
 
   // Handle undo/redo
   if (event.key === 'z' && event.shiftKey && (event.ctrlKey || event.metaKey)) {
-    event.preventDefault();
     editor.redo();
 
   } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
-    event.preventDefault();
     editor.undo();
   }
   
   // handle loop through redactions
   else if (event.key === 'Tab') {
-    event.preventDefault();
     if (event.shiftKey) {
       selectNode(editor, getPreviousRedaction(editor, redactions));
     } else {
@@ -137,24 +172,22 @@ export const hotkeys = (event, editor) => {
 
   // handle redaction popover
   else if (event.key=='a') {
-    event.preventDefault();
-    const mark = getCurrRedaction(editor, redactions)
-    changeRedaction(editor, getMarkFromLeaf(mark.node), ACCEPTED_PREFIX)
+    handleChangeRedaction(editor, redactions, 'accepted');
 
-  } else if (event.key=='r') {
-    event.preventDefault();
-    const mark = getCurrRedaction(editor, redactions)
-    changeRedaction(editor, getMarkFromLeaf(mark.node), REJECTED_PREFIX)
+  } else if (event.key=='s') {
+    handleChangeRedaction(editor, redactions, 'rejected');
+  }
+
+  // handle add redaction
+  else if (event.key=='w') {
+    insertRedaction(editor, SUGGESTION_PREFIX)
   }
   
   // handle highlight with arrow keys
   else if (event.shiftKey && (event.ctrlKey || event.metaKey) && (event.key === 'O' || event.key === 'I')) {
     
-    event.preventDefault();
     const direction = event.key === 'O' ? 'right' : 'left';
     extendSelectionByWord(editor, direction);
 
-  } else {
-    event.preventDefault();
-  }
+  } 
 };
