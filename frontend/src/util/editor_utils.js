@@ -1,4 +1,4 @@
-import {Editor, Path, Transforms, Element, Range } from "slate"
+import {Editor, Path, Transforms, Element } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
 
 export function getAllMarks(editor) {
