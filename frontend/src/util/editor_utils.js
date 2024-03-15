@@ -110,7 +110,7 @@ export function selectNode(editor, redaction) {
 }
 
 function handleChangeRedaction (editor, prefix) {
-
+  
   const curr = editor.selection && Editor.node(editor, editor.selection.focus)
   const mark = Object.keys(curr[0])[1]
 
@@ -172,10 +172,10 @@ export const hotkeys = (event, editor) => {
 
   // handle redaction popover
   else if (event.key=='a') {
-    handleChangeRedaction(editor, redactions, 'accepted');
+    handleChangeRedaction(editor, 'accepted');
 
   } else if (event.key=='s') {
-    handleChangeRedaction(editor, redactions, 'rejected');
+    handleChangeRedaction(editor, 'rejected');
   }
 
   // handle add redaction
