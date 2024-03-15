@@ -1,4 +1,4 @@
-import {Editor, Path, Transforms, Element } from "slate"
+import {Editor, Path, Transforms, Element, Range } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
 
 export function getAllMarks(editor) {
@@ -150,6 +150,11 @@ const extendSelectionByWord = (editor, direction) => {
 
 export const hotkeys = (event, editor) => {
 
+  // handle left and right arrows (keep default behavior)
+  if (event.key=='ArrowRight' || event.key=='ArrowLeft') {
+    return;
+  }
+
   const redactions = getAllRedactions(editor);
   event.preventDefault();
 
@@ -190,4 +195,5 @@ export const hotkeys = (event, editor) => {
     extendSelectionByWord(editor, direction);
 
   } 
+
 };
