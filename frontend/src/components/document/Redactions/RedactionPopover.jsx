@@ -51,7 +51,7 @@ export default function RedactionPopover({text, onAccept, onReject}) {
                     onOpenChange={handleOpenChange}
                     placement="topRight"
                     arrow={false}
-                    style={{padding:0, paddingSM:0}}
+                    style={{padding:0, paddingSM:0, zIndex: 9999}}
                 >
                     {text}
                 </Popover>

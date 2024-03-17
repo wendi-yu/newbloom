@@ -13,6 +13,15 @@ export function getRedactionsOnTextNode(textNode, target) {
   );
 }
 
+export function isRedactionFromMark (mark) {
+  if (!mark) {
+    return false
+  }
+  if (mark.startsWith(ACCEPTED_PREFIX) || mark.startsWith(REJECTED_PREFIX) || mark.startsWith(SUGGESTION_PREFIX)) {
+    return true
+  }
+  return false
+}
 
 export function getMarkFromLeaf(leaf) {
   const key = Object.keys(leaf)
@@ -34,7 +43,7 @@ export function getRedactionIDFromMark(mark, target) {
   return mark.replace(target, "");
 }
 
-function isRedactionIDMark(mayBeRedaction, target) {
+export function isRedactionIDMark(mayBeRedaction, target) {
   return mayBeRedaction.indexOf(target) === 0;
 }
 
@@ -49,7 +58,7 @@ export function insertRedaction(editor, target) {
 }
 
 
-function setSelectionToCurrNodeEdges(editor) {
+export function setSelectionToCurrNodeEdges(editor) {
   const [start, end] = Editor.edges(editor, editor.selection.anchor.path)
   // Create a new range that spans the entire editor
   const range = { anchor: start, focus: end };
@@ -58,13 +67,11 @@ function setSelectionToCurrNodeEdges(editor) {
   Transforms.select(editor, range);
 }
 
-
 export function changeRedaction(editor, mark, target) {
   // removeMark only removes all instances of the mark within the current selection, so select everything then remove
 
   // store the old selection to restore it afterwards
   const temp = editor.selection
-
 
   setSelectionToCurrNodeEdges(editor)
   Editor.removeMark(editor, mark);
@@ -72,4 +79,41 @@ export function changeRedaction(editor, mark, target) {
 
   // restore old selection
   editor.selection = temp
+}
+
+export function getCurrRedaction(editor, redactions) {
+
+  const selectedNode = editor.selection && Editor.node(editor, editor.selection.focus)
+
+  //if the user is selecting a redaction, this is the current redaction
+  if (isRedaction(selectedNode[0])) {
+    return {node: selectedNode[0], path: selectedNode[1]};
+  }
+
+  //otherwise select the first redaction mark
+  return redactions[0];
+}
+
+export function isRedaction(leaf) {
+  const isSuggested = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
+  const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
+  const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
+
+  return isSuggested || isRejected || isAccepted;
+}
+
+export function getAllRedactions(editor) {
+
+  let redactions = [];
+
+  editor.children.forEach((children, index) => {
+    children.children.forEach((child, childIndex) => {
+      if (isRedaction(child)) {
+        const path = [index, childIndex];
+        redactions.push({ node: child, path });
+      }
+    });
+  });
+
+  return redactions;
 }
