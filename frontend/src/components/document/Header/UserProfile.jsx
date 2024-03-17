@@ -15,7 +15,7 @@ const UserProfile = () => {
         setOpen(newOpen);
     };
     
-    return <div className="flex items-center space-x-2.5">
+    return <div className="flex items-center">
         <ConfigProvider
             theme={{
                 token: {
@@ -25,19 +25,21 @@ const UserProfile = () => {
                 },
             }}
             >
-                <Popover
-                    content={content}
-                    trigger="click"
-                    open={open}
-                    onOpenChange={handleOpenChange}
-                    placement="topRight"
-                    arrow={false}
-                    style={{padding:0, paddingSM:0}}
-                >
+            <Popover
+                content={content}
+                trigger="click"
+                open={open}
+                onOpenChange={handleOpenChange}
+                placement="topRight"
+                arrow={false}
+                style={{padding:0, paddingSM:0}}
+            >
+                <div className="flex flex-row items-center justify-center space-x-2.5">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10" />
-                </Popover>
-            </ConfigProvider>
-        <h4>Soliyana</h4>
+                    <h4 className="font-semibold text-dark-grey">Soliyana</h4>
+                </div>
+            </Popover>
+        </ConfigProvider>
     </div>
 }
 
