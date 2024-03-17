@@ -1,19 +1,33 @@
 import AddIcon from "@/assets/add_round.svg";
 import { useRef } from "react";
-import DocApi from "@/util/document_apis";
+import DocApi from "@/util/api/document_apis";
+import { addLocalDocument } from "@/util/localDocStore";
+import { toSlateFormat } from "@/util/slateUtil";
 
 const UploadButton = (props) => {
   const fileInput = useRef([]);
 
-  const processFile = (e) => {
+  const handleWithFile = async (event, f) => {
+    // get text
+    const text = event.target.result;
+
+    // get redaction suggestions from text
+    const redaction_suggestions = await DocApi.postDoc(text);
+    console.log(redaction_suggestions);
+
+    // store file in local store
+    const state = toSlateFormat(text, redaction_suggestions.redactions);
+    addLocalDocument(f.name, text, state);
+  };
+
+  const processFiles = (e) => {
     const files = Array.from(e.target.files);
+    console.log("uploading");
 
     files.forEach((file) => {
       const reader = new FileReader();
-      reader.onload = function (event) {
-        // The file's text will be printed here
-        const text = event.target.result;
-        DocApi.postDoc(text);
+      reader.onload = async (e) => {
+        handleWithFile(e, file);
       };
 
       reader.readAsText(file);
@@ -25,7 +39,7 @@ const UploadButton = (props) => {
       <input
         type="file"
         ref={fileInput}
-        onChange={processFile}
+        onChange={processFiles}
         multiple
         accept=".txt,.docx,.doc"
         className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer text-[0]"
