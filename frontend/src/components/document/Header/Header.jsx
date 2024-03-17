@@ -13,8 +13,8 @@ export default function Header({ documentName }) {
     }
 
     return <div className="flex h-24 sticky items-center justify-between p-7">
-        <div className="flex space-x-4 items-center" onClick={handleLogoClick}>
-            <img src={LogoIcon} alt="NewBloom Logo" className="h-10"/>
+        <div className="flex space-x-4 items-center">
+            <img src={LogoIcon} alt="NewBloom Logo" className="h-10" onClick={handleLogoClick}/>
             <h2>{documentName}</h2>
         </div>
         <div className="flex space-x-7 items-center">
