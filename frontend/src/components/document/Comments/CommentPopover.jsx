@@ -10,7 +10,7 @@ import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
 function CommentPopover ({text, leaf}) {
 
-    console.log(leaf)
+    // console.log(leaf)
 
     const [comment, setComment] = useState('');
 

@@ -139,7 +139,6 @@ export const hotkeys = (event, editor) => {
   
   // handle highlight with arrow keys
   else if (event.shiftKey && (event.ctrlKey || event.metaKey) && (event.key === 'O' || event.key === 'I')) {
-    
     const direction = event.key === 'O' ? 'right' : 'left';
     extendSelectionByWord(editor, direction);
 

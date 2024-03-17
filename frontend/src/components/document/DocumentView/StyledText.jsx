@@ -18,12 +18,12 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
 
-  const popoverComment = (
-    <CommentPopover
-      text={<span>{children}</span>}
-      leaf={leaf}
-    />
-  )
+  // const popoverComment = (
+  //   <CommentPopover
+  //     text={<span>{children}</span>}
+  //     leaf={leaf}
+  //   />
+  // )
 
   if (commentThreads.size > 0) {
     return (
@@ -32,7 +32,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
         commentThreads={commentThreads}
         textnode={leaf}
       >
-        {popoverComment}
+        {children}
       </CommentedText>
     );
   }

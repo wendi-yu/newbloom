@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
 
 import Toolbar from "@/components/common/Toolbar/Toolbar"
+import CommentSideBar from '@/components/document/Comments/CommentSideBar';
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import { hotkeys } from "@/util/editor_utils";
@@ -38,7 +39,9 @@ export default function TextEditor({ document = [], onChange }) {
               className="flex flex-col focus:outline-none"
             />
           </div>
+          <CommentSideBar />
         </div>
+        
       </Slate>
     </div>
   );

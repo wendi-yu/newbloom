@@ -50,11 +50,12 @@ export function insertCommentThread(editor, addCommentThreadToState) {
         creationTime: new Date(),
         // Newly created comment threads are OPEN. We deal with statuses
         // later in the article.
+        author: "Soliyana",
         status: "open",
     };
     addCommentThreadToState(threadID, newCommentThread);
     Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
-    console.log("INSERT COMMENT")
+    
     return threadID;
 }
 

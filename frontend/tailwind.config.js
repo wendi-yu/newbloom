@@ -28,6 +28,7 @@ export default {
 
       },
       fontWeight: {
+        'light':300,
         'regular': 400,
         'semibold': 500,
         'bold': 700

@@ -40,7 +40,7 @@ export default function RedactionPopover({text, onAccept, onReject}) {
                 token: {
                     padding: 0,
                     paddingSM: 0,
-                    boxShadowSecondary: ""
+                    boxShadowSecondary: "0 5px 10px 0 rgba(0, 0, 0, 0.05)"
                 },
             }}
             >

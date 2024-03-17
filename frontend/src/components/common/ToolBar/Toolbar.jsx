@@ -11,19 +11,15 @@ import { useCallback } from "react"
 import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
 import { print, markAsDone} from "@/util/toolbar_functions.js"
-
-// import { insertCommentThread } from "@/util/EditorCommentUtils"
-// import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
 
 export default function Toolbar() {
     const editor = useSlate();
 
-    // const addComment = useAddCommentThreadToState();
-
-    // const comment = useCallback(() => {
-    //     insertCommentThread(editor, addComment);
-    // }, [editor, addComment]);
+    const comment = () => {
+        //TODO: Popup comment popover
+        console.log("comment")
+    };
 
     const redact = useCallback(() => {
         insertRedaction(editor, ACCEPTED_PREFIX);
@@ -48,7 +44,8 @@ export default function Toolbar() {
                 />
                 <ToolbarIcon
                     icon={<img src={CommentSVG} />}
-                    // onClick={comment}
+
+                    onMouseDown={comment}
                 />
                 <ToolbarIcon
                     icon={<img src={RedactSVG} />}
