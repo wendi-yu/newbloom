@@ -3,9 +3,16 @@ import CustomizeSVG from "@/assets/customize_bindings.svg"
 import SettingsSVG from "@/assets/settings.svg"
 
 import UserMenuItem from "@/components/common/UserMenu/UserMenuItem"
+import { useNavigate } from 'react-router-dom';
 
+//add width prop
+function UserMenu () {
 
-function UserMenu (width) {
+    const navigate = useNavigate();
+
+    const signout = () => {
+        navigate('/login')
+    }
 
     return (
         <div className="flex flex-col">
@@ -20,6 +27,7 @@ function UserMenu (width) {
             <UserMenuItem
                 icon={<img src={SignoutSVG}/>}
                 text="Sign Out"
+                onClick={signout}
             />
         </div>
     );
