@@ -36,7 +36,7 @@ const UserProfile = () => {
             >
                 <div className="flex flex-row items-center justify-center space-x-2.5">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10" />
-                    <h4 className="font-semibold text-dark-grey">Soliyana</h4>
+                    <h4 className="font-semibold text-B1B1B1">Soliyana</h4>
                 </div>
             </Popover>
         </ConfigProvider>
