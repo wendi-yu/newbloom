@@ -4,13 +4,39 @@ import EmailSVG from "@/assets/email.svg"
 import LockSVG from "@/assets/lock.svg"
 import LoginButton from "@/components/login/LoginButton"
 import PasswordInput from "@/components/login/PasswordInput"
+import { validateLogin } from "@/util/login_utils"
 
 import {Flex} from "antd";
+
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react"; 
 
 function Login() {
 
     const EmailIcon = <img src={EmailSVG} className="h-5" />
     const LockIcon = <img src={LockSVG} className="h-5" />
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        console.log("doop")
+
+        console.log(email)
+        
+        const err = validateLogin(email, password)
+        err === null ? navigate('/home') : console.log(err);
+    }
 
     return (
         <div className="h-screen bg-document-background flex items-center justify-center">
@@ -28,12 +54,16 @@ function Login() {
                         <TextInput 
                             icon={EmailIcon}
                             text="Email"
+                            value={email}
+                            handleValueChange = {handleEmailChange}
                         />
                         <PasswordInput 
                             icon={LockIcon}
                             text="Password"
+                            value={password}
+                            handleValueChange = {handlePasswordChange}
                         />
-                        <LoginButton text="login"/>
+                        <LoginButton text="login" onSubmit={handleSubmit}/>
                     </Flex>
                     <p className="text-description font-semibold" >don&apos;t have an account? <a href="/register">register</a></p>
                 </div>
@@ -41,6 +71,6 @@ function Login() {
             
         </div> 
     );
-  }
   
+    }
   export default Login;

@@ -1,7 +1,7 @@
 import {Button} from "antd";
 import { Link } from 'react-router-dom';
 
-export default function LoginButton ({text}) {
+export default function LoginButton ({text, onSubmit}) {
 
     const buttonStyle = {
         backgroundColor: "#5C00B8",
@@ -12,11 +12,9 @@ export default function LoginButton ({text}) {
     };
 
     return (
-        <Link to="/">
-            <Button style={buttonStyle} className="mb-10 mt-5">
-                {text}
-            </Button>
-        </Link>
+        <Button style={buttonStyle} className="mb-10 mt-5" onClick={onSubmit}>
+            {text}
+        </Button>
     );
 
 

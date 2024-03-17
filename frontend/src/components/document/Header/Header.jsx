@@ -1,6 +1,6 @@
 import LogoIcon from "@/assets/logo.svg";
-import ShareIcon from "@/assets/share.svg";
-import CommentIcon from "@/assets/comment.svg";
+// import ShareIcon from "@/assets/share.svg";
+// import CommentIcon from "@/assets/comment.svg";
 import UserProfile from "@/components/document/Header/UserProfile";
 
 export default function Header({ documentName }) {
@@ -10,8 +10,8 @@ export default function Header({ documentName }) {
             <h2>{documentName}</h2>
         </div>
         <div className="flex space-x-7 items-center">
-            <img src={ShareIcon} alt="Share Icon" className="h-9"/>
-            <img src={CommentIcon} alt="Comment Icon" className="h-9"/>
+            {/* <img src={ShareIcon} alt="Share Icon" className="h-9"/>
+            <img src={CommentIcon} alt="Comment Icon" className="h-9"/> */}
             <UserProfile />
         </div>
     </div>

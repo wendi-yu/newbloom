@@ -5,14 +5,46 @@ import LockSVG from "@/assets/lock.svg"
 import UserSVG from "@/assets/user.svg"
 import LoginButton from "@/components/login/LoginButton"
 import PasswordInput from "@/components/login/PasswordInput"
+import { validateRegister } from "@/util/login_utils"
 
 import {Flex} from "antd";
+
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react"; 
 
 function Register() {
 
     const EmailIcon = <img src={EmailSVG} className="h-5" />
     const LockIcon = <img src={LockSVG} className="h-5" />
     const UserIcon = <img src={UserSVG} className="h-5" />
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+
+    const handleFirstNameChange = (event) => {
+        setFirstName(event.target.value);
+    };
+
+    const handleLastNameChange = (event) => {
+        setLastName(event.target.value);
+    };
+
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        const err = validateRegister(firstName, lastName, email, password)
+        err === null ? navigate('/home') : console.log(err);
+    }
 
     return (
         <div className="h-screen bg-document-background flex items-center justify-center">
@@ -30,20 +62,28 @@ function Register() {
                         <TextInput 
                             icon={UserIcon}
                             text="First Name"
+                            value={firstName}
+                            handleValueChange = {handleFirstNameChange}
                         />
                         <TextInput 
                             icon={UserIcon}
                             text="Last Name"
+                            value={lastName}
+                            handleValueChange = {handleLastNameChange}
                         />
                         <TextInput 
                             icon={EmailIcon}
                             text="Email"
+                            value={email}
+                            handleValueChange = {handleEmailChange}
                         />
                         <PasswordInput 
                             icon={LockIcon}
                             text="Password"
+                            value={password}
+                            handleValueChange = {handlePasswordChange}
                         />
-                        <LoginButton text="register"/>
+                        <LoginButton text="register" onSubmit={handleSubmit}/>
                     </Flex>
                     <p className="text-description font-semibold" >already have an account? <a href="/login">sign in</a></p>
                 </div>
