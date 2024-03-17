@@ -21,6 +21,7 @@ const UploadButton = (props) => {
 
   const processFiles = (e) => {
     const files = Array.from(e.target.files);
+    console.log("uploading");
 
     files.forEach((file) => {
       const reader = new FileReader();
