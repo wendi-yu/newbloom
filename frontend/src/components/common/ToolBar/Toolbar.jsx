@@ -12,18 +12,18 @@ import ToolbarIcon from "@/components/common/Toolbar/ToolbarIcon"
 
 import { print, markAsDone} from "@/util/toolbar_functions.js"
 
-import { insertCommentThread } from "@/util/EditorCommentUtils"
-import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+// import { insertCommentThread } from "@/util/EditorCommentUtils"
+// import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
 
 export default function Toolbar() {
     const editor = useSlate();
 
-    const addComment = useAddCommentThreadToState();
+    // const addComment = useAddCommentThreadToState();
 
-    const comment = useCallback(() => {
-        insertCommentThread(editor, addComment);
-    }, [editor, addComment]);
+    // const comment = useCallback(() => {
+    //     insertCommentThread(editor, addComment);
+    // }, [editor, addComment]);
 
     const redact = useCallback(() => {
         insertRedaction(editor, ACCEPTED_PREFIX);
@@ -48,8 +48,7 @@ export default function Toolbar() {
                 />
                 <ToolbarIcon
                     icon={<img src={CommentSVG} />}
-
-                    onMouseDown={comment}
+                    // onClick={comment}
                 />
                 <ToolbarIcon
                     icon={<img src={RedactSVG} />}

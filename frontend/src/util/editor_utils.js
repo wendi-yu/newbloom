@@ -1,6 +1,7 @@
 import {Editor, Path, Transforms } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
 
+
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
   
@@ -123,11 +124,17 @@ export const hotkeys = (event, editor) => {
 
   } else if (event.key=='s') {
     handleChangeRedaction(editor, 'rejected');
+  
   }
 
   // handle add redaction
   else if (event.key=='w') {
     insertRedaction(editor, SUGGESTION_PREFIX)
+
+  // handle add comment
+  } else if (event.key=='d') {
+    // const addComment = useAddCommentThreadToState()
+    // insertCommentThread(editor, addComment)
   }
   
   // handle highlight with arrow keys

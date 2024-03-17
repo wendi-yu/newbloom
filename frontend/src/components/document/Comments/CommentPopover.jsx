@@ -10,6 +10,8 @@ import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
 function CommentPopover ({text, leaf}) {
 
+    console.log(leaf)
+
     const [comment, setComment] = useState('');
 
     const [open, setOpen] = useState(false);
@@ -28,6 +30,7 @@ function CommentPopover ({text, leaf}) {
         if (comment.length>0) {
             insertComment();
             setOpen(false);
+            setComment('');
         }
     }
 

@@ -54,6 +54,7 @@ export function insertCommentThread(editor, addCommentThreadToState) {
     };
     addCommentThreadToState(threadID, newCommentThread);
     Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
+    console.log("INSERT COMMENT")
     return threadID;
 }
 
