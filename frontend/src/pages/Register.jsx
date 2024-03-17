@@ -6,6 +6,7 @@ import UserSVG from "@/assets/user.svg"
 import LoginButton from "@/components/login/LoginButton"
 import PasswordInput from "@/components/login/PasswordInput"
 import { validateRegister } from "@/util/login_utils"
+import LogoIcon from "@/assets/new_logo.svg";
 
 import {Flex} from "antd";
 
@@ -54,7 +55,7 @@ function Register() {
                 </div>
                 <div className="h-full w-3/5 bg-white rounded-tr-lg rounded-br-lg flex flex-col items-center justify-center">
                     <div className="pb-10 flex flex-col items-center justify-center">
-                        <p className="text-title font-bold text-emphasis-primary" >[X]</p>
+                        <img src={LogoIcon} alt="[X]" className="h-8 mb-3"/>
                         <p className="text-title font-bold">Welcome!</p>
                         <p className="text-description font-semibold">sign up and start redacting :)</p>
                     </div>
