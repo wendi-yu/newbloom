@@ -12,7 +12,7 @@ import docApi from "@/util/document_apis";
 import { useParams } from 'react-router-dom';
 import { DOC_ID_PARAM } from '@/util/constants';
 import { RecoilRoot } from 'recoil';
-import { DebugObserver } from '@/components/common/DebugObserver';
+// import { DebugObserver } from '@/components/common/DebugObserver';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document")
@@ -36,7 +36,7 @@ function Document() {
   }
 
   return (
-    <div className='flex flex-col document h-full overflow-hidden'>
+    <div className='flex flex-col document h-full overflow-x-hidden'>
       <Header documentName="Test Doc Title" />
       <div className="flex flex-col sticky">
         <div className="flex space-x-1.5 text-sm pl-2.5 pb-2.5">
@@ -73,7 +73,7 @@ function Document() {
         </div>
       </div>
       <RecoilRoot>
-        <DebugObserver />
+        {/* <DebugObserver /> */}
         <ViewComponent className={"flex flex-grow"} />
       </RecoilRoot>
     </div>
