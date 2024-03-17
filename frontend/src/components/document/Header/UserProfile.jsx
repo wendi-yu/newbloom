@@ -10,7 +10,7 @@ const UserProfile = () => {
     const [open, setOpen] = useState(false);
 
     const content = ( <UserMenu /> );
-    
+
     const handleOpenChange = (newOpen) => {
         setOpen(newOpen);
     };
@@ -20,8 +20,7 @@ const UserProfile = () => {
             theme={{
                 token: {
                     padding: 0,
-                    paddingSM: 0,
-                    boxShadowSecondary: ""
+                    paddingSM: 0
                 },
             }}
             >
@@ -30,9 +29,10 @@ const UserProfile = () => {
                 trigger="click"
                 open={open}
                 onOpenChange={handleOpenChange}
-                placement="topRight"
+                placement="bottomRight"
                 arrow={false}
                 style={{padding:0, paddingSM:0}}
+                colorText="#B1B1B1"
             >
                 <div className="flex flex-row items-center justify-center space-x-2.5">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10" />

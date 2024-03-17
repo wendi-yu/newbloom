@@ -15,7 +15,7 @@ function UserMenu () {
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
             <UserMenuItem
                 icon={<img src={SettingsSVG}/>}
                 text="Settings"
