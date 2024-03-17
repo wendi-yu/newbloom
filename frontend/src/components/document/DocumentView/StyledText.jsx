@@ -1,13 +1,14 @@
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
-import CommentedText from "@/components/document/DocumentView/CommentedText";
+import CommentedText from "@/components/document/Comments/CommentedText";
 import SuggestedText from "@/components/document/Redactions/SuggestedText";
 import RejectedText from "@/components/document/Redactions/RejectedText";
 import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
-import AcceptedText from "../Redactions/AcceptedText";
+import AcceptedText from "@/components/document/Redactions/AcceptedText";
+import CommentPopover from "@/components/document/Comments/CommentPopover";
 
 // for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
@@ -17,6 +18,13 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
 
+  const popoverComment = (
+    <CommentPopover
+      text={<span>{children}</span>}
+      leaf={leaf}
+    />
+  )
+
   if (commentThreads.size > 0) {
     return (
       <CommentedText
@@ -24,10 +32,11 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
         commentThreads={commentThreads}
         textnode={leaf}
       >
-        {children}
+        {popoverComment}
       </CommentedText>
     );
   }
+
   const popover = (
     <RedactionPopover
       text={<span>{children}</span>}

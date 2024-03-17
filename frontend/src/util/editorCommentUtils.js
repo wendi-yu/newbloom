@@ -31,7 +31,6 @@ export function getAllChildCommentThreads(element) {
     return threadIds
 }
 
-
 export function getCommentThreadIDFromMark(mark) {
     if (!isCommentThreadIDMark(mark)) {
         throw new Error("Expected mark to be of a comment thread");
