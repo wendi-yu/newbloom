@@ -3,44 +3,24 @@ import CustomizeSVG from "@/assets/customize_bindings.svg"
 import SettingsSVG from "@/assets/settings.svg"
 
 import UserMenuItem from "@/components/common/UserMenu/UserMenuItem"
-import { Popover, ConfigProvider } from "antd"
 
-function UserMenu () {
+
+function UserMenu (width) {
 
     return (
-        <div>
-            <ConfigProvider
-            theme={{
-                token: {
-                    padding: 0,
-                    paddingSM: 0,
-                    boxShadowSecondary: ""
-                },
-            }}
-            >
-                <Popover
-                    content={content}
-                    trigger="click"
-                    open={open}
-                    onOpenChange={handleOpenChange}
-                    placement="topRight"
-                    arrow={false}
-                    style={{padding:0, paddingSM:0}}
-                >
-                    <UserMenuItem
-                        icon={<img src={SettingsSVG}/>}
-                        text="Settings"
-                    />
-                    <UserMenuItem
-                        icon={<img src={CustomizeSVG}/>}
-                        text="Customize Bindings"
-                    />
-                    <UserMenuItem
-                        icon={<img src={SignoutSVG}/>}
-                        text="Sign Out"
-                    />
-                </Popover>
-            </ConfigProvider>
+        <div className="flex flex-col">
+            <UserMenuItem
+                icon={<img src={SettingsSVG}/>}
+                text="Settings"
+            />
+            <UserMenuItem
+                icon={<img src={CustomizeSVG}/>}
+                text="Customize Bindings"
+            />
+            <UserMenuItem
+                icon={<img src={SignoutSVG}/>}
+                text="Sign Out"
+            />
         </div>
     );
 

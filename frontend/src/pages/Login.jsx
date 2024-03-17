@@ -19,6 +19,8 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    let err;
+
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     };
@@ -30,11 +32,7 @@ function Login() {
     const navigate = useNavigate();
 
     const handleSubmit = () => {
-        console.log("doop")
-
-        console.log(email)
-        
-        const err = validateLogin(email, password)
+        err = validateLogin(email, password)
         err === null ? navigate('/home') : console.log(err);
     }
 
@@ -65,6 +63,7 @@ function Login() {
                         />
                         <LoginButton text="login" onSubmit={handleSubmit}/>
                     </Flex>
+                    {err && <p style={{ color: 'red' }}>{err}</p>}
                     <p className="text-description font-semibold" >don&apos;t have an account? <a href="/register">register</a></p>
                 </div>
             </div>
