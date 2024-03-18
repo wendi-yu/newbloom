@@ -2,16 +2,9 @@ import CommentSVG from "@/assets/comment_fill_gray.svg"
 import RedactSVG from "@/assets/edit_fill.svg"
 import PrintSVG from "@/assets/print_fill.svg"
 import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
-import PurpleCommentSVG from "@/assets/comment_fill_purple.svg";
-import PurpleRedactSVG from "@/assets/edit_fill_purple.svg";
-import PurplePrintSVG from "@/assets/print_fill_purple.svg";
-import PurpleMarkAsDoneSVG from "@/assets/book_check_fill_purple.svg";
 
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
-import PurpleUndoSVG from "@/assets/redo_purple.svg";
-import PurpleRedoSVG from "@/assets/undo_purple.svg";
-
 import PurpleUndoSVG from "@/assets/redo_purple.svg";
 import PurpleRedoSVG from "@/assets/undo_purple.svg";
 
