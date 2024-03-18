@@ -77,7 +77,7 @@ const CardView = ({ document }) => {
   }
 
   return (
-    <div className="h-full w-full">
+    <div className="h-4/5 w-full">
       <Slate
         editor={editor}
         initialValue={[{ children: cards[selectedIdx].body }]}
@@ -86,7 +86,7 @@ const CardView = ({ document }) => {
         }}
       >
         <Toolbar />
-        <div className="w-80 float-left">
+        <div className="w-80 float-left h-full pb-8">
           <CardSelector
             cards={cards}
             selectedIdx={selectedIdx}
@@ -97,7 +97,7 @@ const CardView = ({ document }) => {
           <div className="flex justify-end p-4">
             <CompletionButton completed={cards[selectedIdx].completed} />
           </div>
-          <div className="p-6 flex space-x-2 items-center ">
+          <div className="p-6 flex space-x-2 items-center h-1/2">
             <button
               className="p-2 w-1/8 bg-white"
               onClick={(e) => {

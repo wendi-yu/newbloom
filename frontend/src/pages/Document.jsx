@@ -25,7 +25,6 @@ function Document() {
 
   const fullDocument = docApi.getDocById(docId);
   console.log(fullDocument);
-  console.log(docApi.getAllDocsMetadata());
 
   const ViewComponent = () => {
     if (documentView == "document") {
