@@ -12,7 +12,7 @@ export default function Header({ documentName }) {
   };
 
   return (
-    <div className="flex h-24 sticky items-center justify-between p-7">
+    <div className="flex h-24 sticky items-center justify-between p-5">
       <div className="flex space-x-4 items-center">
         <img
           src={LogoIcon}
