@@ -42,6 +42,23 @@ function isCommentThreadIDMark(mayBeCommentThread) {
     return mayBeCommentThread.indexOf(COMMENT_THREAD_PREFIX) === 0;
 }
 
+export function insertMaybeComment (editor, selectedText, setMaybeComment) {
+    setMaybeComment(selectedText);
+    Editor.addMark(editor, 'isMaybeComment', true);
+}
+
+export function ifMaybeCommentOnTextNode(textnode) {
+    const keys = Object.keys(textnode)
+    if (keys.length >1 && keys[1]==='isMaybeComment') {
+        return true;
+    }
+    return false;
+}
+
+export function deleteMaybeComment(editor) {
+    Editor.removeMark(editor, 'isMaybeComment');
+}
+
 export function insertCommentThread(editor, addCommentThreadToState) {
     const threadID = uuid();
     const newCommentThread = {

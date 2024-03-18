@@ -26,7 +26,7 @@ function SidebarComment ({id}) {
     }
 
     return (
-        <div className="flex flex-col justify-left p-1 bg-white p-5 rounded-2xl min-w-64 focus:shadow-md">
+        <div className="flex flex-col justify-left p-1 bg-white p-5 rounded-2xl min-w-64 focus:shadow-md my-5">
             <div className="flex flex-row justify-between">
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>

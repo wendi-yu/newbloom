@@ -14,18 +14,24 @@ import PurpleRedoSVG from "@/assets/undo_purple.svg";
 
 import { useSlate } from "slate-react"
 import { useCallback } from "react"
+import { useSetRecoilState } from "recoil";
 
 import HoverableIcon from "@/components/common/HoverableIcon"
-
 import { print, markAsDone} from "@/util/toolbar_functions.js"
+import { getTextFromSelection } from "@/util/editor_utils"
+import { insertMaybeComment } from "@/util/editorCommentUtils";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
+import { maybeCommentAtom } from "@/util/CommentRedactionState";
+import { select } from "slate";
 
 export default function Toolbar() {
     const editor = useSlate();
 
+    const setMaybeComment= useSetRecoilState(maybeCommentAtom)
+
     const comment = () => {
-        //TODO: Popup comment popover
-        console.log(editor.selection)
+        const selectedText = getTextFromSelection(editor);
+        insertMaybeComment(editor, selectedText, setMaybeComment)
     };
 
     const redact = useCallback(() => {

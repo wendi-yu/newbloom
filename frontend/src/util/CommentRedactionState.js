@@ -19,3 +19,8 @@ export const redactionIDsState = atom({
   key: "redactionIDs",
   default: new Set([]),
 });
+
+export const maybeCommentAtom = atom({
+  key: "maybeComment",
+  default: null,
+});

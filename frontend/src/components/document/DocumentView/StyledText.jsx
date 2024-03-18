@@ -1,4 +1,4 @@
-import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
+import { getCommentThreadsOnTextNode, ifMaybeCommentOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import CommentedText from "@/components/document/Comments/CommentedText";
 import SuggestedText from "@/components/document/Redactions/SuggestedText";
@@ -7,6 +7,7 @@ import RedactionPopover from "@/components/document/Redactions/RedactionPopover"
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
+
 import AcceptedText from "@/components/document/Redactions/AcceptedText";
 import CommentPopover from "@/components/document/Comments/CommentPopover";
 
@@ -17,13 +18,22 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const editor = useSlate();
 
   const commentThreads = getCommentThreadsOnTextNode(leaf);
+  const maybeComment= ifMaybeCommentOnTextNode(leaf);
 
-  const popoverComment = (
-    <CommentPopover
-      text={<span>{children}</span>}
-      leaf={leaf}
-    />
-  )
+  if (maybeComment) {
+    return (
+      <CommentedText
+        {...attributes}
+        commentThreads={commentThreads}
+        textnode={leaf}
+      >
+        <CommentPopover
+          text={<span>{children}</span>}
+          ifOpen={true}
+        />
+      </CommentedText>
+    );
+  }
 
   if (commentThreads.size > 0) {
     return (

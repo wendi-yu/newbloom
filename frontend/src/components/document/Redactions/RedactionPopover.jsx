@@ -7,10 +7,6 @@ import CloseIcon from "@/assets/close_fill.svg"
 export default function RedactionPopover({text, onAccept, onReject}) {
 
     const [open, setOpen] = useState(false);
-
-    // const hide = () => {
-    //     setOpen(false);
-    // };
     
     function accept() {
         onAccept();
@@ -26,7 +22,6 @@ export default function RedactionPopover({text, onAccept, onReject}) {
         <div className="flex flex-row">
             <img src={CheckIcon} onClick={accept} className="object-contain h-5 w-5"/>
             <img src={CloseIcon} onClick={reject}  className="object-contain h-5 w-5"/>
-            {/* <img src={CommentIcon} onClick={hide}  className="object-contain h-5 w-5"/> */}
         </div>
     );
 

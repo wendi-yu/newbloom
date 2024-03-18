@@ -5,18 +5,19 @@ import { useSlate } from "slate-react"
 import  {useState, useCallback } from "react"
 import { Popover } from "antd"
 
-import { insertCommentThread } from "@/util/EditorCommentUtils"
+import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
-function CommentPopover ({text, leaf}) {
-
-    // console.log(leaf)
+function CommentPopover ({text}) {
 
     const [comment, setComment] = useState('');
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const handleOpenChange = (newOpen) => {
         setOpen(newOpen);
+        if (!newOpen) {
+            deleteMaybeComment(editor);
+        }
     };
 
     const editor = useSlate();
@@ -24,6 +25,7 @@ function CommentPopover ({text, leaf}) {
 
     const insertComment = useCallback(() => {
         insertCommentThread(editor, addComment);
+        deleteMaybeComment(editor);
     }, [editor, addComment]);
 
     const submitComment = () => {
