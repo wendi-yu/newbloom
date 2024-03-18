@@ -13,6 +13,7 @@ import Toolbar from "@/components/common/Toolbar/Toolbar";
 import { Slate, withReact } from "slate-react";
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import { createEditor } from "slate";
+import { withHistory } from "slate-history";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
 // this is a stub, replace it with an API call or something later
@@ -61,7 +62,8 @@ const CardView = ({ document }) => {
   };
 
   const editorRef = useRef();
-  if (!editorRef.current) editorRef.current = withReact(createEditor());
+  if (!editorRef.current)
+    editorRef.current = withReact(withHistory(createEditor()));
   const editor = editorRef.current;
 
   const addCommentThread = useAddCommentThreadToState();
