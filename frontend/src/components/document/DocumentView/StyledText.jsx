@@ -77,5 +77,5 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     );
   }
 
-  return <span {...attributes}>{popoverComment}</span>;
+  return <span {...attributes}>{children}</span>;
 }
