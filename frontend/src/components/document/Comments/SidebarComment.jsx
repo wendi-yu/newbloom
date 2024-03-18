@@ -1,5 +1,9 @@
 import MenuSVG from "@/assets/meatballs_menu.svg"
 import ResolveSVG from "@/assets/resolve_comment.svg"
+import PurpleMenuSVG from "@/assets/meatballs_menu_purple.svg"
+import PurpleResolveSVG from "@/assets/resolve_comment_purple.svg"
+import HoverableIcon from "@/components/common/HoverableIcon"
+
 import ProfileIcon from "@/assets/pfp.svg"
 
 import {commentThreadsState} from "@/util/CommentRedactionState";
@@ -31,8 +35,18 @@ function SidebarComment ({id}) {
                     </div>
                 </div>
                 <div className="flex flex-row space-x-1">
-                    <img src={ResolveSVG} alt="Resolve" className="h-5" onClick={handleResolveComment}/>
-                    <img src={MenuSVG} alt="Menu" className="h-5" onClick={handleClickMenu}/>
+                    <HoverableIcon 
+                        SVG={ResolveSVG}
+                        SVGonHover={PurpleResolveSVG}
+                        onClick={handleResolveComment}
+                        height={5}
+                    />
+                    <HoverableIcon 
+                        SVG={MenuSVG}
+                        SVGonHover={PurpleMenuSVG}
+                        onClick={handleClickMenu}
+                        height={5}
+                    />
                 </div>
             </div>
             {firstComment.text}
