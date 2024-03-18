@@ -12,16 +12,15 @@ const UploadButton = (props) => {
     const text = event.target.result;
 
     // get redaction suggestions from text
-    const redaction_suggestions = await DocApi.postDoc(text);
+    const res = await DocApi.postDoc(text);
 
     // store file in local store
-    const state = toSlateFormat(text, redaction_suggestions.redactions);
-    addLocalDocument(f.name, text, state);
+    const state = toSlateFormat(text, res.redactions);
+    addLocalDocument(f.name, res.id, state);
   };
 
   const processFiles = (e) => {
     const files = Array.from(e.target.files);
-    console.log("uploading");
 
     files.forEach((file) => {
       const reader = new FileReader();
