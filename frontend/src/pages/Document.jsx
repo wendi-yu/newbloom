@@ -8,7 +8,7 @@ import CardSVG from "@/assets/pie_chart.svg";
 import DocumentView from "@/components/document/DocumentView/DocumentView";
 import CardView from "@/components/document/CardView/CardView";
 import TableView from "@/components/document/TableView/TableView";
-import docApi from "@/util/document_apis";
+import docApi from "@/util/api/document_apis";
 import { useParams } from "react-router-dom";
 import { DOC_ID_PARAM } from "@/util/constants";
 import { RecoilRoot } from "recoil";

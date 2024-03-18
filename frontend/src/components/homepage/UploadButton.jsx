@@ -13,7 +13,6 @@ const UploadButton = (props) => {
 
     // get redaction suggestions from text
     const redaction_suggestions = await DocApi.postDoc(text);
-    console.log(redaction_suggestions);
 
     // store file in local store
     const state = toSlateFormat(text, redaction_suggestions.redactions);
