@@ -19,7 +19,7 @@ function CommentSideBar () {
             {Array.from(allCommentThreadIDs).map((id) => (
             <Row key={id}>
                 <Col>
-                    <SidebarComment id={id}/>
+                    <SidebarComment id={id} comment={comment}/>
                 </Col>
             </Row>
             ))}

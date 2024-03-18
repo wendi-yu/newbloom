@@ -31,8 +31,9 @@ function SidebarComment ({id}) {
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
                     <div className="flex flex-col">
-                        {/* <p className="font-semibold">{firstComment.author}</p>
-                        <p className="font-light">{format(firstComment.creationTime, "MMM dd h:mmaa")}</p> */}
+                        <p className="font-semibold">Soliyana</p>
+                        <p className="font-light">Apr 17 5:02pm</p>
+                        {/* <p className="font-light">{format(creationTime, "MMM dd h:mmaa")}</p> */}
                     </div>
                 </div>
                 <div className="flex flex-row space-x-1">
@@ -50,7 +51,7 @@ function SidebarComment ({id}) {
                     />
                 </div>
             </div>
-            {/* {firstComment.text} */}
+            Should I redact this?
         </div>
     );
 
