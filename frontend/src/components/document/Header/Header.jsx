@@ -1,4 +1,4 @@
-import LogoIcon from "@/assets/logo.svg";
+import LogoIcon from "@/assets/new_logo.svg";
 // import ShareIcon from "@/assets/share.svg";
 // import CommentIcon from "@/assets/comment.svg";
 import UserProfile from "@/components/document/Header/UserProfile";
