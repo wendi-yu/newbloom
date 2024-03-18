@@ -155,8 +155,8 @@ const Home = () => {
     return currentDocInfos;
   };
   const [docState, updateDisplay] = useReducer(updater, {
-    key: "name",
-    docs: sorter(docInfosRaw, "name"),
+    key: SORTING_OPTIONS.name,
+    docs: sorter(docInfosRaw, SORTING_OPTIONS.name),
   });
 
   // state management for which layout to display
