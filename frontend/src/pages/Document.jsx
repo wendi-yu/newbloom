@@ -24,7 +24,6 @@ function Document() {
   const docId = useParams()[DOC_ID_PARAM];
 
   const fullDocument = docApi.getDocById(docId);
-  console.log(fullDocument);
 
   const ViewComponent = () => {
     if (documentView == "document") {
