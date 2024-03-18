@@ -24,6 +24,8 @@ function Document() {
   const docId = useParams()[DOC_ID_PARAM];
 
   const fullDocument = docApi.getDocById(docId);
+  console.log(fullDocument);
+  console.log(docApi.getAllDocsMetadata());
 
   const ViewComponent = () => {
     if (documentView == "document") {
@@ -37,7 +39,7 @@ function Document() {
 
   return (
     <div className="flex flex-col document h-full overflow-x-hidden">
-      <Header documentName="Test Doc Title" />
+      <Header documentName={fullDocument.name} />
       <div className="flex flex-col sticky">
         <div className="flex space-x-1.5 text-sm pl-2.5 pb-2.5">
           <ViewToggleButton

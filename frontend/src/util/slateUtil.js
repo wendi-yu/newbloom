@@ -44,16 +44,17 @@ export const toSlateFormat = (text, redactions) => {
   let currentParagraph = 0;
   redactionsOrdered.forEach((redaction) => {
     // update paragraph counter
-    if (redaction.start > paragraphSplits[currentParagraph]) {
+    while (redaction.start > paragraphSplits[currentParagraph]) {
       currentParagraph++;
     }
 
     // for normalizing the redaction list character index
-    const idxOfLastSplit =
+    const locationOfLastSplit =
       currentParagraph == 0 ? 0 : paragraphSplits[currentParagraph - 1];
+
     paragraphsWithRedactions[currentParagraph].redactions.push({
-      start: redaction.start - idxOfLastSplit,
-      end: redaction.end - idxOfLastSplit,
+      start: redaction.start - locationOfLastSplit,
+      end: redaction.end - locationOfLastSplit,
     });
   });
 
