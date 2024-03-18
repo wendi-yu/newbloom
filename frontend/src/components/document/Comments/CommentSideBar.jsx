@@ -6,6 +6,7 @@ import { Row, Col } from 'antd';
 function CommentSideBar () {
 
     const allCommentThreadIDs = useRecoilValue(commentThreadIDsState);
+    console.log(allCommentThreadIDs)
 
     const comment = {
         author: 'John Doe',

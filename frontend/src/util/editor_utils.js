@@ -1,7 +1,6 @@
 import {Editor, Path, Transforms } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
 
-
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
   

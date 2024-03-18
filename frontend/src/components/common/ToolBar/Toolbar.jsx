@@ -25,7 +25,7 @@ export default function Toolbar() {
 
     const comment = () => {
         //TODO: Popup comment popover
-        console.log("comment")
+        console.log(editor.selection)
     };
 
     const redact = useCallback(() => {

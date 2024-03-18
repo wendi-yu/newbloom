@@ -83,8 +83,8 @@ export async function initializeStateWithAllCommentThreads(
         addCommentThread(id, {
             comments: [
                 {
-                    author: "Jane Doe",
-                    text: "Comment Thread Loaded from Server",
+                    author: "Soliyana",
+                    text: "Should I redact this?",
                     creationTime: new Date(),
                 },
             ],

@@ -13,8 +13,9 @@ import { format } from "date-fns";
 
 function SidebarComment ({id}) {
 
-    const { comments } = useRecoilValue(commentThreadsState(id));
-    const [firstComment, ...otherComments] = comments;
+    // const { comments } = useRecoilValue(commentThreadsState(id));
+    // console.log(comments)
+    // const [firstComment, ...otherComments] = comments;
 
     const handleResolveComment = () => {
         console.log("resolve")
@@ -30,8 +31,8 @@ function SidebarComment ({id}) {
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
                     <div className="flex flex-col">
-                        <p className="font-semibold">{firstComment.author}</p>
-                        <p className="font-light">{format(firstComment.creationTime, "MMM dd h:mmaa")}</p>
+                        {/* <p className="font-semibold">{firstComment.author}</p>
+                        <p className="font-light">{format(firstComment.creationTime, "MMM dd h:mmaa")}</p> */}
                     </div>
                 </div>
                 <div className="flex flex-row space-x-1">
@@ -49,7 +50,7 @@ function SidebarComment ({id}) {
                     />
                 </div>
             </div>
-            {firstComment.text}
+            {/* {firstComment.text} */}
         </div>
     );
 
