@@ -1,6 +1,6 @@
 import AllDocs from "@/util/test_documents";
 import axios from "axios";
-import { API_DOMAIN } from "./constants";
+import { API_DOMAIN } from "../constants";
 
 /*
     Gets all information on all docs
@@ -39,12 +39,15 @@ const postDoc = async (docText) => {
     },
   };
 
+  let data;
   try {
     const resp = await axios.post(url, { text: docText }, config);
-    console.log(resp.data);
+    data = resp.data;
   } catch (error) {
     console.log("Error uploading files: ", error);
   }
+
+  return data;
 };
 
 export default {
