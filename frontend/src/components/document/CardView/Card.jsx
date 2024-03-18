@@ -3,6 +3,8 @@ import { Transforms } from "slate";
 import { useEffect } from "react";
 import useEditorConfig from "@/hooks/useEditorConfig";
 
+import { hotkeys } from "@/util/editor_utils";
+
 const Card = ({ card, idx, total }) => {
 
     const editor = useSlate();
@@ -23,7 +25,12 @@ const Card = ({ card, idx, total }) => {
         <div className="bg-primary-light h-2 rounded" style={{ width: width + "%" }} />
         <div className="mt-1 mx-2 text-primary-light">{idx + 1} / {total}</div>
         <div className="p-8">
-            <Editable renderElement={renderElement} renderLeaf={renderLeaf} className="flex flex-col focus:outline-none"/>
+            <Editable
+                renderElement={renderElement}
+                renderLeaf={renderLeaf}
+                className="flex flex-col focus:outline-none"
+                onKeyDown={(event)=>hotkeys(event, editor)}
+            />
         </div>
     </div >
 }

@@ -26,7 +26,6 @@ const HOMEPAGE_DOC_LAYOUTS = {
   grid: "grid"
 }
 
-
 const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
   const [selectedSortKey, setselectedSortKey] = useState(SORTING_OPTIONS.name)
 

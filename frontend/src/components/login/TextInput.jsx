@@ -1,6 +1,6 @@
 import {Input} from "antd"
 
-export default function TextInput ({text, icon }) {
+export default function TextInput ({text, icon, value, handleValueChange }) {
     
     const inputStyle = {
         backgroundColor: "#EFEFEF",
@@ -9,7 +9,7 @@ export default function TextInput ({text, icon }) {
 
     return (
         <div >
-            <Input placeholder={text} prefix={icon} variant="filled" style={inputStyle}/>
+            <Input placeholder={text} prefix={icon} variant="filled" style={inputStyle} value={value} onChange={handleValueChange}/>
         </div>
     );
     

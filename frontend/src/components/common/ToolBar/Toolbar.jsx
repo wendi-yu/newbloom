@@ -12,17 +12,24 @@ import RedoSVG from "@/assets/redo.svg"
 import PurpleUndoSVG from "@/assets/redo_purple.svg";
 import PurpleRedoSVG from "@/assets/undo_purple.svg";
 
+import PurpleUndoSVG from "@/assets/redo_purple.svg";
+import PurpleRedoSVG from "@/assets/undo_purple.svg";
+
+import PurpleCommentSVG from "@/assets/comment_fill_purple.svg";
+import PurpleRedactSVG from "@/assets/edit_fill_purple.svg";
+import PurplePrintSVG from "@/assets/print_fill_purple.svg";
+import PurpleMarkAsDoneSVG from "@/assets/book_check_fill_purple.svg";
+
 import { useSlate } from "slate-react"
 import { useCallback } from "react"
-import { useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil"
 
 import HoverableIcon from "@/components/common/HoverableIcon"
 import { print, markAsDone} from "@/util/toolbar_functions.js"
 import { getTextFromSelection } from "@/util/editor_utils"
-import { insertMaybeComment } from "@/util/editorCommentUtils";
+import { insertMaybeComment } from "@/util/editorCommentUtils"
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
-import { maybeCommentAtom } from "@/util/CommentRedactionState";
-import { select } from "slate";
+import { maybeCommentAtom } from "@/util/CommentRedactionState"
 
 export default function Toolbar() {
     const editor = useSlate();
@@ -39,7 +46,7 @@ export default function Toolbar() {
     }, [editor]);
 
     return (
-        <div className="flex flex-row items-center bg-gray-200 h-10 w-full space-x-6 pl-4">
+        <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4 items-center">
             <div className="flex flex-row space-x-1">
                 <HoverableIcon
                     SVG={UndoSVG}
