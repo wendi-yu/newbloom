@@ -1,11 +1,45 @@
 import ProfileIcon from "@/assets/pfp.svg"
+import UserMenu from "@/components/common/UserMenu/UserMenu"
+import { Popover, ConfigProvider } from "antd"
+import { useState } from "react"
 
+// This is a fill in component.
+// TODO: fill out this functionality (with contexts, whatever) once we have login/authentication
 const UserProfile = () => {
-    // This is a fill in component.
-    // TODO: fill out this functionality (with contexts, whatever) once we have login/authentication
-    return <div className="flex items-center space-x-2.5">
-        <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
-        <h4>Soliyana</h4>
+
+    const [open, setOpen] = useState(false);
+
+    const content = ( <UserMenu /> );
+
+    const handleOpenChange = (newOpen) => {
+        setOpen(newOpen);
+    };
+    
+    return <div className="flex items-center">
+        <ConfigProvider
+            theme={{
+                token: {
+                    padding: 0,
+                    paddingSM: 0
+                },
+            }}
+            >
+            <Popover
+                content={content}
+                trigger="click"
+                open={open}
+                onOpenChange={handleOpenChange}
+                placement="bottomRight"
+                arrow={false}
+                style={{padding:0, paddingSM:0}}
+                colorText="#B1B1B1"
+            >
+                <div className="flex flex-row items-center justify-center space-x-2.5">
+                    <img src={ProfileIcon} alt="Profile Pic" className="h-10" />
+                    <h4 className="font-semibold text-B1B1B1">Soliyana</h4>
+                </div>
+            </Popover>
+        </ConfigProvider>
     </div>
 }
 

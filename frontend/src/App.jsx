@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 import Home from '@/pages/Home';
 import Document from '@/pages/Document';
 import Login from '@/pages/Login';
@@ -11,7 +12,8 @@ function App() {
     <div className="h-full w-full">
       <Router>
         <Routes>
-          <Route path='/' exact element={<Home />} />
+          <Route path='/' exact element={<Navigate to="/login" />} />
+          <Route path='/home' exact element={<Home />} />
           <Route path='/login' exact element={<Login/>}/>
           <Route path='/register' exact element={<Register/>}/>
           <Route path={`/document/:${DOC_ID_PARAM}`} element={<Document />} />
