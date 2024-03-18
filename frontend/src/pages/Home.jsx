@@ -26,7 +26,11 @@ const HOMEPAGE_DOC_LAYOUTS = {
   grid: "grid",
 };
 
-const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
+const DocumentsSelectionTopBar = ({
+  updateDisplay,
+  docLayout,
+  setDocLayout,
+}) => {
   const [selectedSortKey, setselectedSortKey] = useState(SORTING_OPTIONS.name);
 
   const SortingDropDownMenu = ({ selectedSortKey, setselectedSortKey }) => {
@@ -51,7 +55,7 @@ const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
                   : "bg-white"
               }`}
               onClick={() => {
-                resort(so.key);
+                updateDisplay({ newSortKey: so.key });
                 setselectedSortKey(so.key);
               }}
             >
@@ -121,19 +125,39 @@ const DocumentsSelectionTopBar = ({ resort, docLayout, setDocLayout }) => {
 const Home = () => {
   const docInfosRaw = DocApi.getAllDocsMetadata();
 
-  // state management for customizing sort key
-  const sorter = (currentDocInfos, newSortKey) => {
-    const res = [...currentDocInfos].sort((d1, d2) => {
-      const f1 = d1[newSortKey];
-      const f2 = d2[newSortKey];
+  const sorter = (docs, key) => {
+    return [...docs].sort((d1, d2) => {
+      const f1 = d1[key];
+      const f2 = d2[key];
 
       if (f1 < f2) return -1;
       if (f1 > f2) return 1;
       return 0;
     });
-    return res;
   };
-  const [docInfos, resort] = useReducer(sorter, docInfosRaw);
+
+  // state management for customizing sort key
+  const updater = (currentDocInfos, action) => {
+    if (action.docChange) {
+      return {
+        ...currentDocInfos,
+        docs: sorter(DocApi.getAllDocsMetadata(), currentDocInfos.key),
+      };
+    }
+    if (action.newSortKey) {
+      const sortedDocs = sorter([...currentDocInfos.docs], action.newSortKey);
+      return {
+        ...currentDocInfos,
+        key: action.newSortKey,
+        docs: sortedDocs,
+      };
+    }
+    return currentDocInfos;
+  };
+  const [docState, updateDisplay] = useReducer(updater, {
+    key: "name",
+    docs: sorter(docInfosRaw, "name"),
+  });
 
   // state management for which layout to display
   const [docLayout, setDocLayout] = useState(HOMEPAGE_DOC_LAYOUTS.grid);
@@ -143,17 +167,22 @@ const Home = () => {
       <Navbar />
       <div className="ml-80 flex-1 p-8 divide-y divide-black w-full">
         <DocumentsSelectionTopBar
-          resort={resort}
+          updateDisplay={updateDisplay}
           docLayout={docLayout}
           setDocLayout={setDocLayout}
         />
         {docLayout == HOMEPAGE_DOC_LAYOUTS.grid ? (
-          <GridSelector docInfos={docInfos} />
+          <GridSelector docInfos={docState.docs} />
         ) : (
-          <ListSelector docInfos={docInfos} />
+          <ListSelector docInfos={docState.docs} />
         )}
       </div>
-      <UploadButton className="fixed bottom-10 right-10" />
+      <UploadButton
+        className="fixed bottom-10 right-10"
+        onLocalDocUpdate={() => {
+          updateDisplay({ docChange: true });
+        }}
+      />
     </div>
   );
 };
