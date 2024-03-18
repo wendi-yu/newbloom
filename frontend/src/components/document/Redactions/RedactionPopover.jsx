@@ -2,16 +2,11 @@ import {useState} from "react"
 import { Popover, ConfigProvider } from "antd"
 import CheckIcon from "@/assets/check_fill.svg"
 import CloseIcon from "@/assets/close_fill.svg"
-import CommentIcon from "@/assets/comment_fill.svg"
 
 export default function RedactionPopover({text, onAccept, onReject}) {
 
     const [open, setOpen] = useState(false);
 
-    const hide = () => {
-        setOpen(false);
-    };
-    
     function accept() {
         onAccept();
         setOpen(false);
@@ -26,7 +21,6 @@ export default function RedactionPopover({text, onAccept, onReject}) {
         <div className="flex flex-row">
             <img src={CheckIcon} onClick={accept} className="object-contain h-5 w-5"/>
             <img src={CloseIcon} onClick={reject}  className="object-contain h-5 w-5"/>
-            <img src={CommentIcon} onClick={hide}  className="object-contain h-5 w-5"/>
         </div>
     );
 
@@ -40,7 +34,7 @@ export default function RedactionPopover({text, onAccept, onReject}) {
                 token: {
                     padding: 0,
                     paddingSM: 0,
-                    boxShadowSecondary: ""
+                    boxShadowSecondary: "0 5px 10px 0 rgba(0, 0, 0, 0.05)"
                 },
             }}
             >
