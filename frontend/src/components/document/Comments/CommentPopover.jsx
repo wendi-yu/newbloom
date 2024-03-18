@@ -2,6 +2,7 @@ import ProfileIcon from "@/assets/pfp.svg"
 import CommentInput from "@/components/document/Comments/CommentInput";
 
 import { useSlate } from "slate-react"
+import { Transforms } from "slate"
 import  {useState, useCallback } from "react"
 import { Popover } from "antd"
 
@@ -17,6 +18,7 @@ function CommentPopover ({text}) {
         setOpen(newOpen);
         if (!newOpen) {
             deleteMaybeComment(editor);
+            Transforms.deselect(editor);
         }
     };
 

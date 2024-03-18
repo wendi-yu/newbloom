@@ -136,8 +136,7 @@ export const hotkeys = (event, editor) => {
 
   // handle add comment
   } else if (event.key=='d') {
-    // const addComment = useAddCommentThreadToState()
-    // insertCommentThread(editor, addComment)
+    // can't call hook here so maybe press toolbar button?
   }
   
   // handle highlight with arrow keys

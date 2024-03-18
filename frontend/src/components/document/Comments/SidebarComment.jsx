@@ -6,10 +6,10 @@ import HoverableIcon from "@/components/common/HoverableIcon"
 
 import ProfileIcon from "@/assets/pfp.svg"
 
-import {commentThreadsState} from "@/util/CommentRedactionState";
-import { useRecoilValue } from "recoil";
+// import {commentThreadsState} from "@/util/CommentRedactionState";
+// import { useRecoilValue } from "recoil";
 
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 function SidebarComment ({id}) {
 
@@ -19,6 +19,7 @@ function SidebarComment ({id}) {
 
     const handleResolveComment = () => {
         console.log("resolve")
+        console.log(id)
     }
 
     const handleClickMenu = () => {

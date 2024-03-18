@@ -1,5 +1,5 @@
 import SidebarComment from "@/components/document/Comments/SidebarComment";
-import {commentThreadIDsState, commentThreadsState} from "@/util/CommentRedactionState";
+import {commentThreadIDsState} from "@/util/CommentRedactionState";
 import { useRecoilValue } from "recoil";
 import { Row, Col } from 'antd';
 
