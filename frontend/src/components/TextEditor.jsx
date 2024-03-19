@@ -7,8 +7,6 @@ import { withHistory } from "slate-history";
 
 import Toolbar from "@/components/common/Toolbar/Toolbar"
 
-import CommentSideBar from '@/components/document/Comments/CommentSideBar';
-
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import { hotkeys } from "@/util/editor_utils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
@@ -40,7 +38,6 @@ export default function TextEditor({ document = [], onChange, selection}) {
               className="flex flex-col p-16 focus:outline-none h-full overflow-y-scroll"
             />
           </div>
-          <CommentSideBar />
         </div>
         
       </Slate>

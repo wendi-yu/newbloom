@@ -33,7 +33,7 @@ function CommentPopover ({text}) {
         insertCommentThread(editor, addComment);
         deleteMaybeComment(editor);
         setMaybeComment(null);
-    }, [editor, addComment]);
+    }, [editor, addComment, setMaybeComment]);
 
     const submitComment = () => {
         if (comment.length>0) {
