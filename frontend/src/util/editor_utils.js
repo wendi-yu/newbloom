@@ -1,5 +1,6 @@
 import {Editor, Path, Transforms } from "slate"
 import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
+import isHotkey from 'is-hotkey';
 
 export function getFirstTextNodeAtSelection(editor, selection) {
     const selectionForNode = selection ?? editor.selection;
@@ -51,7 +52,7 @@ export function selectNode(editor, redaction) {
 
 }
 
-function handleChangeRedaction (editor, prefix) {
+export function handleChangeRedaction (editor, prefix) {
   
   const curr = editor.selection && Editor.node(editor, editor.selection.focus)
   const mark = Object.keys(curr[0])[1]
@@ -73,7 +74,7 @@ function handleChangeRedaction (editor, prefix) {
 
 }
 
-const extendSelectionByWord = (editor, direction) => {
+export const extendSelectionByWord = (editor, direction) => {
   
   if (direction=="right") {
     Transforms.move(editor, {
@@ -90,52 +91,50 @@ const extendSelectionByWord = (editor, direction) => {
 
 };
 
-export const hotkeys = (event, editor) => {
+export const KeyBindings = {
+  onKeyDown: (editor, event) => {
 
-  // handle left and right arrows (keep default behavior)
-  if (event.key=='ArrowRight' || event.key=='ArrowLeft') {
-    return;
-  }
-
-  const redactions = getAllRedactions(editor);
-  event.preventDefault();
-
-  // Handle undo/redo
-  if (event.key === 'z' && event.shiftKey && (event.ctrlKey || event.metaKey)) {
-    editor.redo();
-
-  } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
-    editor.undo();
-  }
-  
-  // handle loop through redactions
-  else if (event.key === 'Tab') {
-    if (event.shiftKey) {
-      selectNode(editor, getPreviousRedaction(editor, redactions));
-    } else {
-      selectNode(editor, getNextRedaction(editor, redactions));
+    // default behavior for arrow left and right
+    if (isHotkey("ArrowLeft", event) || isHotkey("ArrowRight", event)) {
+      return;
     }
-  }
 
-  // handle redaction popover
-  else if (event.key=='a') {
-    handleChangeRedaction(editor, 'accepted');
+    //mask all other keys from working
+    event.preventDefault();
 
-  } else if (event.key=='s') {
-    handleChangeRedaction(editor, 'rejected');
-  }
+    //handle undo/redo
+    if (isHotkey("mod+z", event)) {
+      event.shiftKey ? editor.redo() : editor.undo();
+    } 
 
-  // handle add redaction
-  else if (event.key=='w') {
-    insertRedaction(editor, SUGGESTION_PREFIX)
-  }
-  
-  // handle highlight with arrow keys
-  else if (event.shiftKey && (event.ctrlKey || event.metaKey) && (event.key === 'O' || event.key === 'I')) {
-    
-    const direction = event.key === 'O' ? 'right' : 'left';
-    extendSelectionByWord(editor, direction);
+    //handle loop through redactions
+    else if (isHotkey("Tab", event)) {
+      const redactions = getAllRedactions(editor);
+      if (event.shiftKey) {
+        selectNode(editor, getPreviousRedaction(editor, redactions));
+      } else {
+        selectNode(editor, getNextRedaction(editor, redactions));
+      }
+    }
 
-  } 
+    // handle redaction popover
+    else if (isHotkey("a", event)) {
+      handleChangeRedaction(editor, 'accepted');
+    }
 
+    else if (isHotkey("s", event)) {
+      handleChangeRedaction(editor, 'rejected');
+    }
+
+    // handle add redaction
+    else if (isHotkey("w", event)) {
+      insertRedaction(editor, SUGGESTION_PREFIX)
+    }
+
+    //handle highlight w arrow keys
+    else if (event.shiftKey && isHotkey("mod+O") || isHotkey("mod+I")) {
+      const direction = event.key === 'O' ? 'right' : 'left';
+      extendSelectionByWord(editor, direction);
+    }
+  },
 };
