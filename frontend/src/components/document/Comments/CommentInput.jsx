@@ -10,6 +10,12 @@ function CommentInput ({value, handleValueChange, submitComment}) {
         paddingLeft: 5
     }
 
+    const handleEnterKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            submitComment();
+        }
+    };
+
     return (
         <div>
             <Input 
@@ -19,6 +25,7 @@ function CommentInput ({value, handleValueChange, submitComment}) {
                 className="focus:outline-none"
                 style = {inputStyle}
                 onChange={handleValueChange}
+                onKeyDown={handleEnterKeyPress}
             />
 
         </div>

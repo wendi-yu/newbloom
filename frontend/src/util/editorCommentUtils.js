@@ -55,8 +55,9 @@ export function ifMaybeCommentOnTextNode(textnode) {
     return false;
 }
 
-export function deleteMaybeComment(editor) {
+export function deleteMaybeComment(editor, setMaybeComment) {
     Editor.removeMark(editor, 'isMaybeComment');
+    setMaybeComment(null);
 }
 
 export function insertCommentThread(editor, addCommentThreadToState) {

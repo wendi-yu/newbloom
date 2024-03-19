@@ -136,9 +136,12 @@ export const KeyBindings = {
     }
 
     //handle highlight w arrow keys
-    else if (event.shiftKey && isHotkey("mod+O") || isHotkey("mod+I")) {
-      const direction = event.key === 'O' ? 'right' : 'left';
-      extendSelectionByWord(editor, direction);
+    else if (event.shiftKey && (event.ctrlKey || event.metaKey)) {
+      if (event.key=='O'||event.key=='I') {
+        const direction = event.key === 'O' ? 'right' : 'left';
+        extendSelectionByWord(editor, direction);
+      }
     }
+
   },
 };

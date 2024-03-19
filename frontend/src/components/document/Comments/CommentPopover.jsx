@@ -17,34 +17,48 @@ function CommentPopover ({text}) {
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
 
     const [open, setOpen] = useState(true);
-    const handleOpenChange = (newOpen) => {
-        setOpen(newOpen);
-        if (!newOpen) {
-            deleteMaybeComment(editor);
-            Transforms.deselect(editor);
-            setMaybeComment(null);
-        }
-    };
-
     const editor = useSlate();
     const addComment = useAddCommentThreadToState();
 
+    const deleteComment = useCallback(() => {
+        setComment('');
+        deleteMaybeComment(editor, setMaybeComment);
+    }, [editor, setMaybeComment]);
+    
+    const handleOpenChange = (newOpen) => {
+        setOpen(newOpen);
+        if (!newOpen) {
+            deleteComment();
+            Transforms.deselect(editor);
+        }
+    };
+
     const insertComment = useCallback(() => {
         insertCommentThread(editor, addComment);
-        deleteMaybeComment(editor);
-        setMaybeComment(null);
-    }, [editor, addComment, setMaybeComment]);
+        deleteComment();
+    }, [editor, addComment, deleteComment]);
 
     const submitComment = () => {
         if (comment.length>0) {
             insertComment();
             setOpen(false);
-            setComment('');
+        }
+    }
+
+    const handleEscapePress = (event) => {
+        if (event.key === 'Escape') {
+            deleteComment();
+            Transforms.deselect(editor);
+            setOpen(false);
         }
     }
 
     const content = (
-        <div className="flex flex-col justify-left p-1">
+        <div
+            className="flex flex-col justify-left p-1"
+            onKeyDown={handleEscapePress}
+            tabIndex={0}
+        >
             <div className="flex flex-row items-center space-x-2 mb-3">
                 <img src={ProfileIcon} alt="Profile Pic" className="h-7"/>
                 <p className="font-semibold">Soliyana</p>
