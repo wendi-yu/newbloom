@@ -17,6 +17,7 @@
     "date-fns": "^2.30.0",
     "deep-equal": "^2.2.3",
     "esbuild": "^0.19.8",
+    "is-hotkey": "^0.2.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
