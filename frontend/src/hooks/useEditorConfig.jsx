@@ -1,9 +1,12 @@
 import StyledText from "@/components/document/DocumentView/StyledText";
-import areEqual from "deep-equal";
-import { useState, useCallback } from "react";
+import { useCallback} from "react";
+import { KeyBindings } from "@/util/editor_utils";
 
-export default function useEditorConfig() {
-  return { renderElement, renderLeaf };
+export default function useEditorConfig(editor) {
+  const onKeyDown = useCallback(
+    (event) => KeyBindings.onKeyDown(editor, event), [editor]
+  );
+  return { renderElement, renderLeaf, onKeyDown };
 }
 
 function renderElement(props) {
