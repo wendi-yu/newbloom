@@ -5,12 +5,7 @@ import CheckIcon from "@/assets/check_ring.svg";
 import CloseIcon from "@/assets/close_ring.svg";
 import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
-import {
-  getAllChildCommentThreads,
-  initializeStateWithAllCommentThreads,
-} from "@/util/editorCommentUtils";
-import { getCommentById } from "@/util/api/comment_apis";
-import { CommentSection } from "./CommentSection";
+import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import Toolbar from "@/components/common/ToolBar/Toolbar";
 
 import { Slate, withReact } from "slate-react";
@@ -29,9 +24,9 @@ const CardView = ({ document }) => {
     paragraphs.map((par) => ({
       body: par.children,
       completed: false,
-      comments: Object.keys(getAllChildCommentThreads(par)).map((id) =>
-        getCommentById(id)
-      ),
+      // comments: Object.keys(getAllChildCommentThreads(par)).map((id) =>
+      //   getCommentById(id)
+      // ),
     }))
   );
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -80,14 +75,35 @@ const CardView = ({ document }) => {
     setCards(newCards);
   }
 
+  const onChange = (value) => {
+    setCardBody(value[0].children);
+    const isAstChange = editor.operations.some(
+      (op) => "set_selection" !== op.type
+    );
+    if (isAstChange) {
+      // Save the value to Local Storage.
+      const updatedContent = cards.map((card) => {
+        const children = card.body.map((node) => {
+          const { text, ...marks } = node;
+          return { text, ...marks };
+        });
+        return {
+          type: "paragraph",
+          children,
+        };
+      });
+
+      const content = JSON.stringify(updatedContent);
+      localStorage.setItem("content", content);
+    }
+  };
+
   return (
     <div className="h-4/5 w-full">
       <Slate
         editor={editor}
         initialValue={[{ children: cards[selectedIdx].body }]}
-        onChange={(v) => {
-          setCardBody(v[0].children);
-        }}
+        onChange={onChange}
       >
         <Toolbar />
         <div className="w-80 float-left h-full pb-8">
@@ -127,7 +143,7 @@ const CardView = ({ document }) => {
               <img src={NextIcon} />
             </button>
           </div>
-          <CommentSection comments={cards[selectedIdx].comments} />
+          {/* <CommentSection comments={cards[selectedIdx].comments} /> */}
         </div>
       </Slate>
     </div>

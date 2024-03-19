@@ -1,5 +1,5 @@
 import "@/App.css";
-import { useState } from "react";
+import { useState} from "react";
 import Header from "@/components/document/Header/Header";
 import ViewToggleButton from "@/components/document/Header/ViewToggleButton";
 import DocumentSVG from "@/assets/document.svg";
@@ -36,7 +36,7 @@ function Document() {
   };
 
   return (
-    <div className="flex flex-col document h-full overflow-x-hidden">
+    <div className="flex flex-col document h-full overflow-hidden">
       <Header documentName={fullDocument.name} />
       <div className="flex flex-col sticky">
         <div className="flex space-x-1.5 text-sm pl-2.5 pb-2.5">
