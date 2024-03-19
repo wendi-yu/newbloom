@@ -15,7 +15,7 @@ function renderLeaf(props) {
 }
 
 //notify of selection change and store it in the Editor component’s state
-export default function useSelection(editor) {
+export function useSelection(editor) {
   const [selection, setSelection] = useState(editor.selection);
   const setSelectionOptimized = useCallback(
     (newSelection) => {
