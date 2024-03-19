@@ -51,7 +51,6 @@ function CommentPopover ({text}) {
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
-            console.log("hi")
             deleteComment();
             Transforms.deselect(editor);
             setOpen(false);
