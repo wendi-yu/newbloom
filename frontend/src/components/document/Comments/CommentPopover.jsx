@@ -41,17 +41,13 @@ function CommentPopover ({text}) {
         }
     };
 
-    const insertComment = useCallback(() => {
-        insertCommentThread(editor, addComment);
-        deleteComment();
-    }, [editor, addComment, deleteComment]);
-
-    const submitComment = () => {
-        if (comment.length>0) {
-            insertComment();
-            setOpen(false);
+    const submitComment = useCallback(() => {
+        if (comment.length > 0) {
+          insertCommentThread(editor, addComment);
+          deleteComment();
+          setOpen(false);
         }
-    }
+    }, [comment, editor, addComment, deleteComment, setOpen]);
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
