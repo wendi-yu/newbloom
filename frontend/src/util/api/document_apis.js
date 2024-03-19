@@ -17,7 +17,7 @@ const getAllDocs = () => {
 */
 const getAllDocsMetadata = () => {
   return getAllDocs().map((doc) => {
-    var docMetadata = doc;
+    var docMetadata = { ...doc };
     delete docMetadata["documentBody"];
     return docMetadata;
   });

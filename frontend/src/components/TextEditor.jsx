@@ -26,18 +26,16 @@ export default function TextEditor({ document = [], onChange }) {
   }, [editor, addCommentThread]);
 
   return (
-    <div className={"flex flex-col"}>
+    <div className="flex flex-col h-full">
       <Slate editor={editor} initialValue={document} onChange={onChange}>
         <Toolbar />
         <div className="bg-document-background flex flex-row justify-center">
-          <div
-            className={"bg-white mx-40 mt-20 mb-7 p-16 max-w-4xl min-h-screen "}
-          >
+          <div className="bg-white mx-40 mt-20 mb-7  max-w-4xl min-h-screen">
             <Editable
               renderElement={renderElement}
               onKeyDown={(event) => hotkeys(event, editor)}
               renderLeaf={renderLeaf}
-              className="flex flex-col focus:outline-none"
+              className="flex flex-col p-16 focus:outline-none h-full overflow-y-scroll"
             />
           </div>
         </div>
