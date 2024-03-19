@@ -51,7 +51,7 @@ const ListSelector = ({ docInfos }) => {
     key: di.id,
     id: di.id,
     name: di.name,
-    owner: users.find((u) => u.id === di.id).name,
+    owner: users.find((u) => u.id === di.owner).name,
     dateLastModified: Moment(di.dateLastModified).format("MMM D, YYYY"),
   }));
   const navigateToDoc = (record) => {

@@ -1,21 +1,24 @@
-import AllDocs from "@/util/test_documents";
+import FakeDocs from "@/util/test_documents";
 import axios from "axios";
 import { API_DOMAIN } from "../constants";
+import { getLocalDocuments } from "../localDocStore";
 
 /*
     Gets all information on all docs
 */
 const getAllDocs = () => {
-  return AllDocs;
+  const localDocs = getLocalDocuments();
+  const res = [...localDocs, ...FakeDocs];
+  return res;
 };
 
 /*
     Gets ids, name, and dateLastModified (and other metadata) info about all docs
 */
 const getAllDocsMetadata = () => {
-  return AllDocs.map((doc) => {
-    var docMetadata = doc;
-    delete docMetadata["body"];
+  return getAllDocs().map((doc) => {
+    var docMetadata = { ...doc };
+    delete docMetadata["documentBody"];
     return docMetadata;
   });
   //Note: When backend is setup, this should only call the api and return doc metadata
@@ -25,7 +28,7 @@ const getAllDocsMetadata = () => {
     Get full document given its id
 */
 const getDocById = (id) => {
-  return AllDocs.find((e) => {
+  return getAllDocs().find((e) => {
     return e.id == id;
   });
 };

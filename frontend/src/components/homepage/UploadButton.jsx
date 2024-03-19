@@ -1,11 +1,13 @@
 import AddIcon from "@/assets/add_round.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import DocApi from "@/util/api/document_apis";
 import { addLocalDocument } from "@/util/localDocStore";
 import { toSlateFormat } from "@/util/slateUtil";
+import { Grid } from "react-loader-spinner";
 
 const UploadButton = (props) => {
   const fileInput = useRef([]);
+  const [loading, setLoading] = useState(0);
 
   const handleWithFile = async (event, f) => {
     // get text
@@ -17,15 +19,18 @@ const UploadButton = (props) => {
     // store file in local store
     const state = toSlateFormat(text, res.redactions);
     addLocalDocument(f.name, res.id, state);
+    props.onLocalDocUpdate();
   };
 
   const processFiles = (e) => {
     const files = Array.from(e.target.files);
+    setLoading(files.length);
 
     files.forEach((file) => {
       const reader = new FileReader();
-      reader.onload = async (e) => {
-        handleWithFile(e, file);
+      reader.onloadend = async (e) => {
+        await handleWithFile(e, file);
+        setLoading(Math.max(loading - 1, 0));
       };
 
       reader.readAsText(file);
@@ -45,7 +50,13 @@ const UploadButton = (props) => {
       <button
         className={`bg-primary-light flex space-x-2 text-white items-center border-warning hover:border-white`}
       >
-        <img src={AddIcon} className="h-8" />
+        {loading > 0 ? (
+          <div className="p-2 ">
+            <Grid height="16" width="16" color="white" />
+          </div>
+        ) : (
+          <img src={AddIcon} className="h-8" />
+        )}
         <div className="pr-2">Upload</div>
       </button>
     </div>

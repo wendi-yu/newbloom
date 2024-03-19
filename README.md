@@ -37,7 +37,7 @@ npm ci
 ```
 
 #### Install Python modules too
-You can set up a venv if you'd like. Run this in the root folder.
+You can set up a venv if you'd like. Run this in the backend folder.
 
 ```zsh
 pip3 install -r requirements.txt
