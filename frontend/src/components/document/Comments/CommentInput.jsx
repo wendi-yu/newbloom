@@ -1,7 +1,7 @@
 import ArrowSVG from "@/assets/arrow_top.svg"
 import { Input } from "antd"
 
-function CommentInput ({value, handleValueChange, submitComment}) {
+function CommentInput ({value, handleValueChange, submitComment, inputRef}) {
 
     const ArrowIcon = <div onClick={submitComment}><img src={ArrowSVG} className="h-5" alt="NewBloom Logo"/></div>
    
@@ -26,6 +26,7 @@ function CommentInput ({value, handleValueChange, submitComment}) {
                 style = {inputStyle}
                 onChange={handleValueChange}
                 onKeyDown={handleEnterKeyPress}
+                ref={inputRef}
             />
 
         </div>

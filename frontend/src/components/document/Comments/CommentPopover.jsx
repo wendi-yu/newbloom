@@ -3,7 +3,7 @@ import CommentInput from "@/components/document/Comments/CommentInput";
 
 import { useSlate } from "slate-react"
 import { Transforms } from "slate"
-import  {useState, useCallback } from "react"
+import  {useState, useCallback, useRef, useEffect } from "react"
 import { Popover } from "antd"
 
 import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
@@ -12,6 +12,14 @@ import { maybeCommentAtom } from "@/util/CommentRedactionState"
 import { useSetRecoilState } from "recoil";
 
 function CommentPopover ({text}) {
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, []);
 
     const [comment, setComment] = useState('');
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
@@ -47,6 +55,7 @@ function CommentPopover ({text}) {
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
+            console.log("hi")
             deleteComment();
             Transforms.deselect(editor);
             setOpen(false);
@@ -68,6 +77,7 @@ function CommentPopover ({text}) {
                 value={comment}
                 handleValueChange = {(e)=>setComment(e.target.value)}
                 submitComment = {submitComment}
+                inputRef={inputRef}
             />
         </div>
     );
