@@ -8,10 +8,13 @@ import { Popover } from "antd"
 
 import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+import { maybeCommentAtom } from "@/util/CommentRedactionState"
+import { useSetRecoilState } from "recoil";
 
 function CommentPopover ({text}) {
 
     const [comment, setComment] = useState('');
+    const setMaybeComment= useSetRecoilState(maybeCommentAtom)
 
     const [open, setOpen] = useState(true);
     const handleOpenChange = (newOpen) => {
@@ -19,6 +22,7 @@ function CommentPopover ({text}) {
         if (!newOpen) {
             deleteMaybeComment(editor);
             Transforms.deselect(editor);
+            setMaybeComment(null);
         }
     };
 
@@ -28,6 +32,7 @@ function CommentPopover ({text}) {
     const insertComment = useCallback(() => {
         insertCommentThread(editor, addComment);
         deleteMaybeComment(editor);
+        setMaybeComment(null);
     }, [editor, addComment]);
 
     const submitComment = () => {
