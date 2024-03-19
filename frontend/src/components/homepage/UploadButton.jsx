@@ -17,6 +17,7 @@ const UploadButton = (props) => {
     // store file in local store
     const state = toSlateFormat(text, res.redactions);
     addLocalDocument(f.name, res.id, state);
+    props.onLocalDocUpdate();
   };
 
   const processFiles = (e) => {
