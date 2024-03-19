@@ -87,7 +87,7 @@ const CardView = ({ document }) => {
           setCardBody(v[0].children);
         }}
       >
-        <Toolbar />
+        <Toolbar selection={selection} />
         <div className="w-80 float-left h-full pb-8">
           <CardSelector
             cards={cards}

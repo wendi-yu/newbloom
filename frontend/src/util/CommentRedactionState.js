@@ -10,6 +10,12 @@ export const commentThreadIDsState = atom({
   default: new Set([]),
 });
 
+//stores the comment that is currently being selected
+export const activeCommentThreadIDAtom = atom({
+  key: "activeCommentThreadID",
+  default: null,
+});
+
 export const redactionsState = atomFamily({
   key: "redactions",
   default: [],
@@ -20,6 +26,7 @@ export const redactionIDsState = atom({
   default: new Set([]),
 });
 
+// maybe comment is the comment that may be commented before the comment gets inserted
 export const maybeCommentAtom = atom({
   key: "maybeComment",
   default: null,

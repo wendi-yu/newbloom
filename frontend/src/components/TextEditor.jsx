@@ -6,13 +6,14 @@ import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
 
 import Toolbar from "@/components/common/Toolbar/Toolbar"
+
 import CommentSideBar from '@/components/document/Comments/CommentSideBar';
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import { hotkeys } from "@/util/editor_utils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
-export default function TextEditor({ document = [], onChange }) {
+export default function TextEditor({ document = [], onChange, selection}) {
   // workaround to make the editor behave properly with vite hot reloading
   const editorRef = useRef();
   if (!editorRef.current)
@@ -29,7 +30,7 @@ export default function TextEditor({ document = [], onChange }) {
   return (
     <div className="flex flex-col h-full">
       <Slate editor={editor} initialValue={document} onChange={onChange}>
-        <Toolbar />
+        <Toolbar selection={selection} />
         <div className="bg-document-background flex flex-row justify-center">
           <div className="bg-white mx-40 mt-20 mb-7  max-w-4xl min-h-screen">
             <Editable

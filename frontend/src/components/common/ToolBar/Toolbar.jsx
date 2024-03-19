@@ -24,7 +24,7 @@ import { insertMaybeComment } from "@/util/editorCommentUtils"
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
 import { maybeCommentAtom } from "@/util/CommentRedactionState"
 
-export default function Toolbar() {
+export default function Toolbar({selection}) {
     const editor = useSlate();
 
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
