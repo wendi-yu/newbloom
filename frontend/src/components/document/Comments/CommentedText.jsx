@@ -3,7 +3,7 @@ import classNames from "classnames";
 export default function CommentedText(props) {
 
   const commentStyle = {
-    backgroundColor: '#feeab5',
+    backgroundColor: 'rgba(255, 236, 64, 0.4)',
   };
 
   return (

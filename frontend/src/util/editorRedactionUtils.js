@@ -52,6 +52,7 @@ export function getMarkForRedactionID(threadID, target) {
 }
 
 export function insertRedaction(editor, target) {
+  //check if editor already has a redaction
   const threadID = uuid();
   Editor.addMark(editor, getMarkForRedactionID(threadID, target), true);
   return threadID;

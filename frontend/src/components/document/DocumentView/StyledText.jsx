@@ -1,15 +1,15 @@
 import { getCommentThreadsOnTextNode, ifMaybeCommentOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
-import CommentedText from "@/components/document/Comments/CommentedText";
-import SuggestedText from "@/components/document/Redactions/SuggestedText";
-import RejectedText from "@/components/document/Redactions/RejectedText";
-import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
 
-import AcceptedText from "@/components/document/Redactions/AcceptedText";
+import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import CommentPopover from "@/components/document/Comments/CommentPopover";
+import HighlightedText from "@/components/document/Redactions/HighlightedText";
+import AcceptedText from "@/components/document/Redactions/AcceptedText"
+import RejectedText from "@/components/document/Redactions/RejectedText"
+import CommentedText from "@/components/document/Comments/CommentedText"
 
 // for table view, pass in false for  isPopoverDisabled to disable popovers
 export default function StyledText({ attributes, children, leaf, isPopoverDisabled }) {
@@ -17,75 +17,75 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const mark = getMarkFromLeaf(leaf)
   const editor = useSlate();
 
+  //check what marks are on the textnode
   const commentThreads = getCommentThreadsOnTextNode(leaf);
+  
   const maybeComment= ifMaybeCommentOnTextNode(leaf);
-
-  if (maybeComment) {
-    return (
-      <CommentedText
-        {...attributes}
-        commentThreads={commentThreads}
-        textnode={leaf}
-      >
-        <CommentPopover
-          text={<span>{children}</span>}
-          ifOpen={true}
-        />
-      </CommentedText>
-    );
-  }
-
-  if (commentThreads.size > 0) {
-    return (
-      <CommentedText
-        {...attributes}
-        commentThreads={commentThreads}
-        textnode={leaf}
-      >
-        {children}
-      </CommentedText>
-    );
-  }
-
-  const popover = (
-    <RedactionPopover
-      text={<span>{children}</span>}
-      onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
-      onReject={() => changeRedaction(editor, mark, REJECTED_PREFIX)}
-      ifOpen={isPopoverDisabled}
-      leaf={leaf}
-    />
-  )
-
   const isSuggestion = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
   const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
   const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
+  const ifComment = commentThreads.size > 0;
+
+  const redactionPopover = (
+    <RedactionPopover
+      onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
+      onReject={() => changeRedaction(editor, mark, REJECTED_PREFIX)}
+      ifOpen={true}
+      leaf={leaf}
+      text={<span>{children}</span>}
+     />
+  )
+
+  //only modify content if it has a popover
+  let content = <span>{children}</span>
+  if (maybeComment && redactionPopover) {
+    content = <CommentPopover ifOpen={true} text={redactionPopover} />
+  } else if (maybeComment) {
+    content = <CommentPopover ifOpen={true} text={<span>{children}</span>} />
+  } else if (redactionPopover) {
+    content=redactionPopover
+  }
 
   if (isSuggestion) {
+    const color = (maybeComment || ifComment) ? "suggestion-and-comment" : "suggested-redaction";
     return (
-      <SuggestedText
-        {...attributes}
-      >
-        {popover}
-      </SuggestedText>
+      <HighlightedText color={color} {...attributes}>
+        {content}
+      </HighlightedText>
     );
+    
   } else if (isRejected) {
+    const color = (maybeComment || ifComment) ? "comment" : "transparent";
+    console.log(color)
     return (
       <RejectedText
         {...attributes}
+        color={color}
       >
-        {popover}
+        {content}
       </RejectedText>
     );
+
   } else if (isAccepted) {
+    const color = (maybeComment || ifComment) ? "comment" : "transparent";
     return (
-      <AcceptedText
+      <AcceptedText 
         {...attributes}
+        color={color}
       >
-        {popover}
+        {content}
       </AcceptedText>
     );
-  }
+  } else if (maybeComment || ifComment) {
+    return (
+      <CommentedText 
+        {...attributes}
+      >
+        {content}
+      </CommentedText>
+    )
+
+  } 
 
   return <span {...attributes}>{children}</span>;
 }

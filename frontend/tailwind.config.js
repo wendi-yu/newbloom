@@ -22,7 +22,10 @@ export default {
         'accepted-redaction': "rgba(0, 0, 0, 0.22)",
         'accepted-redaction-darker': "rgba(0, 0, 0, 0.3)",
         'curr-redaction': "rgba(92,0,184,0.4)",
-        'dark-grey': '#494949'
+        'dark-grey': '#494949',
+        'comment': 'rgba(255, 236, 64, 0.4)',
+        'suggestion-and-comment': '#DAB7B5',
+        'transparent': 'rgba(255, 255, 255, 0.5)'
       },
       fontSize: {
         'description':'1em',
