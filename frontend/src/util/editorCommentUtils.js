@@ -7,6 +7,7 @@ import { Editor, Node, Text } from 'slate'
 // Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
 
 const COMMENT_THREAD_PREFIX = "commentThread_";
+const MAYBE_COMMENT = "isMaybeComment";
 
 // In this context, a mark is similar to a "bold" or "italic" tag that marks
 // a node as having the comment thread corresponding to threadID
@@ -31,7 +32,6 @@ export function getAllChildCommentThreads(element) {
     return threadIds
 }
 
-
 export function getCommentThreadIDFromMark(mark) {
     if (!isCommentThreadIDMark(mark)) {
         throw new Error("Expected mark to be of a comment thread");
@@ -43,6 +43,26 @@ function isCommentThreadIDMark(mayBeCommentThread) {
     return mayBeCommentThread.indexOf(COMMENT_THREAD_PREFIX) === 0;
 }
 
+export function insertMaybeComment (editor, selectedText, setMaybeComment) {
+    setMaybeComment(selectedText);
+    Editor.addMark(editor, MAYBE_COMMENT, true);
+}
+
+export function ifMaybeCommentOnTextNode(textnode) {
+    const keys = Object.keys(textnode)
+    if (keys.length >1 && keys[1]===MAYBE_COMMENT) {
+        return true;
+    }
+    return false;
+}
+
+//selection must be on mark to delete maybe comment
+//will hopefully change this in next pr (active comments)
+export function deleteMaybeComment(editor, setMaybeComment) {
+    Editor.removeMark(editor, MAYBE_COMMENT);
+    setMaybeComment(null);
+}
+
 export function insertCommentThread(editor, addCommentThreadToState) {
     const threadID = uuid();
     const newCommentThread = {
@@ -51,10 +71,12 @@ export function insertCommentThread(editor, addCommentThreadToState) {
         creationTime: new Date(),
         // Newly created comment threads are OPEN. We deal with statuses
         // later in the article.
+        author: "Soliyana",
         status: "open",
     };
     addCommentThreadToState(threadID, newCommentThread);
     Editor.addMark(editor, getMarkForCommentThreadID(threadID), true);
+    
     return threadID;
 }
 
@@ -82,8 +104,8 @@ export async function initializeStateWithAllCommentThreads(
         addCommentThread(id, {
             comments: [
                 {
-                    author: "Jane Doe",
-                    text: "Comment Thread Loaded from Server",
+                    author: "Soliyana",
+                    text: "Should I redact this?",
                     creationTime: new Date(),
                 },
             ],

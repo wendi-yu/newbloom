@@ -47,7 +47,7 @@ const CardView = ({ document}) => {
       <button
         className={`bg-success ${
           completed ? "opacity-75" : ""
-        } flex space-x-2 text-white items-center border-warning hover:border-white`}
+        } flex space-x-2 text-white items-center border-warning hover:border-white focus:outline-none`}
         onClick={(e) => {
           cards[selectedIdx].completed = !completed;
           setCards([...cards]);

@@ -5,7 +5,6 @@ import MarkAsDoneSVG from "@/assets/book_check_fill.svg"
 
 import UndoSVG from "@/assets/undo.svg"
 import RedoSVG from "@/assets/redo.svg"
-
 import PurpleUndoSVG from "@/assets/redo_purple.svg";
 import PurpleRedoSVG from "@/assets/undo_purple.svg";
 
@@ -16,23 +15,24 @@ import PurpleMarkAsDoneSVG from "@/assets/book_check_fill_purple.svg";
 
 import { useSlate } from "slate-react"
 import { useCallback } from "react"
+import { useSetRecoilState } from "recoil"
 
 import HoverableIcon from "@/components/common/HoverableIcon"
-
 import { print, markAsDone} from "@/util/toolbar_functions.js"
-
-import { insertCommentThread } from "@/util/EditorCommentUtils"
-import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+import { getTextFromSelection } from "@/util/editor_utils"
+import { insertMaybeComment } from "@/util/editorCommentUtils"
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils"
+import { maybeCommentAtom } from "@/util/CommentRedactionState"
 
 export default function Toolbar() {
     const editor = useSlate();
 
-    const addComment = useAddCommentThreadToState();
+    const setMaybeComment= useSetRecoilState(maybeCommentAtom)
 
-    const comment = useCallback(() => {
-        insertCommentThread(editor, addComment);
-    }, [editor, addComment]);
+    const comment = () => {
+        const selectedText = getTextFromSelection(editor);
+        insertMaybeComment(editor, selectedText, setMaybeComment)
+    };
 
     const redact = useCallback(() => {
         insertRedaction(editor, ACCEPTED_PREFIX);
@@ -55,7 +55,7 @@ export default function Toolbar() {
                 />
             </div>
             <div className="flex flex-row space-x-1">
-            <HoverableIcon
+                <HoverableIcon
                     SVG={PrintSVG}
                     SVGonHover={PurplePrintSVG}
                     onClick={print}

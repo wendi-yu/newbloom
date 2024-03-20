@@ -4,11 +4,13 @@ import useEditorConfig from "@/hooks/useEditorConfig";
 import { createEditor } from "slate";
 import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
+import { useSetRecoilState } from "recoil";
 
 import Toolbar from "@/components/common/Toolbar/Toolbar";
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+import { maybeCommentAtom } from "@/util/CommentRedactionState"
 
 export default function TextEditor({ document = [], onChange}) {
   // workaround to make the editor behave properly with vite hot reloading
@@ -17,9 +19,10 @@ export default function TextEditor({ document = [], onChange}) {
     editorRef.current = withReact(withHistory(createEditor()));
   const editor = editorRef.current;
 
-  const { renderElement, renderLeaf, onKeyDown } = useEditorConfig(editor);
   const addCommentThread = useAddCommentThreadToState();
-
+  const setMaybeComment = useSetRecoilState(maybeCommentAtom);
+  const { renderElement, renderLeaf, onKeyDown } = useEditorConfig(editor, setMaybeComment);
+ 
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
@@ -38,6 +41,7 @@ export default function TextEditor({ document = [], onChange}) {
             />
           </div>
         </div>
+        
       </Slate>
     </div>
   );

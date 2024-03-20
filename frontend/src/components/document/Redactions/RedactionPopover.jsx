@@ -6,7 +6,7 @@ import CloseIcon from "@/assets/close_fill.svg"
 export default function RedactionPopover({text, onAccept, onReject}) {
 
     const [open, setOpen] = useState(false);
-
+    
     function accept() {
         onAccept();
         setOpen(false);
