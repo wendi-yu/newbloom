@@ -5,13 +5,15 @@ import CheckIcon from "@/assets/check_ring.svg";
 import CloseIcon from "@/assets/close_ring.svg";
 import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
-import { getAllChildCommentThreads } from "@/util/editorCommentUtils";
+import {
+  getAllChildCommentThreads,
+  initializeStateWithAllCommentThreads,
+} from "@/util/editorCommentUtils";
 import { getCommentById } from "@/util/api/comment_apis";
 import { CommentSection } from "./CommentSection";
-import Toolbar from "@/components/common/Toolbar/Toolbar";
+import Toolbar from "@/components/common/ToolBar/Toolbar";
 
 import { Slate, withReact } from "slate-react";
-import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import { createEditor } from "slate";
 import { withHistory } from "slate-history";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
@@ -21,7 +23,7 @@ const splitText = (document) => {
   return document.documentBody;
 };
 
-const CardView = ({ document}) => {
+const CardView = ({ document }) => {
   const paragraphs = splitText(document);
   const [cards, setCards] = useState(
     paragraphs.map((par) => ({
@@ -87,7 +89,7 @@ const CardView = ({ document}) => {
           setCardBody(v[0].children);
         }}
       >
-        <Toolbar/>
+        <Toolbar />
         <div className="w-80 float-left h-full pb-8">
           <CardSelector
             cards={cards}
