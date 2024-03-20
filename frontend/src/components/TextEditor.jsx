@@ -6,13 +6,13 @@ import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
 import { useSetRecoilState } from "recoil";
 
-import Toolbar from "@/components/common/Toolbar/Toolbar"
+import Toolbar from "@/components/common/ToolBar/Toolbar";
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { maybeCommentAtom } from "@/util/CommentRedactionState"
+import { maybeCommentAtom } from "@/util/CommentRedactionState";
 
-export default function TextEditor({ document = [], onChange}) {
+export default function TextEditor({ document = [], onChange }) {
   // workaround to make the editor behave properly with vite hot reloading
   const editorRef = useRef();
   if (!editorRef.current)
@@ -21,8 +21,11 @@ export default function TextEditor({ document = [], onChange}) {
 
   const addCommentThread = useAddCommentThreadToState();
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
-  const { renderElement, renderLeaf, onKeyDown } = useEditorConfig(editor, setMaybeComment);
- 
+  const { renderElement, renderLeaf, onKeyDown } = useEditorConfig(
+    editor,
+    setMaybeComment
+  );
+
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
@@ -30,7 +33,7 @@ export default function TextEditor({ document = [], onChange}) {
   return (
     <div className="flex flex-col h-full">
       <Slate editor={editor} initialValue={document} onChange={onChange}>
-        <Toolbar/>
+        <Toolbar />
         <div className="bg-document-background flex flex-row justify-center">
           <div className="bg-white mx-40 mt-20 mb-7  max-w-4xl min-h-screen">
             <Editable
@@ -41,7 +44,6 @@ export default function TextEditor({ document = [], onChange}) {
             />
           </div>
         </div>
-        
       </Slate>
     </div>
   );
