@@ -13,6 +13,7 @@
   "imports": {
     "#routes/*": "./src/routes/*.js",
     "#controllers/*": "./src/controllers/*.js",
+    "#database/*": "./src/database/*.js",
     "#middleware/*": "./src/middleware/*.js",
     "#models/*": "./src/models/*.js",
     "#configs/*": "./src/configs/*.js",
@@ -22,6 +23,8 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
-    "express-async-handler": "^1.2.0"
+    "dotenv": "^16.4.5",
+    "express-async-handler": "^1.2.0",
+    "pg": "^8.11.3"
   }
 }
