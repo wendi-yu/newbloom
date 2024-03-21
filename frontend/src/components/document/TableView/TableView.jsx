@@ -1,4 +1,4 @@
-import { getRedactionsOnTextNode, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
+import { isRedaction } from "@/util/editorRedactionUtils";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
@@ -35,7 +35,7 @@ const TableEntry = (paragraph_index) => {
         const wordEndIndex = redacted_end_index + sentenceLength
 
         const preRedactedSection = words.slice(Math.max(wordStartIndex, 0), redacted_start_index).join(' ')
-        const redactedWord = ' [' + words.slice(redacted_start_index, redacted_end_index).join(' ') + '] '
+        const redactedWord = ' <' + words.slice(redacted_start_index, redacted_end_index).join(' ') + '> '
         const postRedactedSection = words.slice(redacted_end_index + 1, wordEndIndex + 1).join(' ')
 
         const partsOfSentence = []
@@ -86,7 +86,7 @@ const TableView = ({ document }) => {
         var curr_word_index = 0
         const paragraph_index = []
         paragraph.children.forEach((child) => {
-            if (getRedactionsOnTextNode(child, SUGGESTION_PREFIX).size > 0) {
+            if (isRedaction(child)) {
                 const index = {
                     start_index: curr_word_index,
                     end_index: curr_word_index + child.text.split(" ").length,
