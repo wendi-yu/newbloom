@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms } from 'slate';
+import { Editor, Transforms } from "slate";
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -8,32 +8,35 @@ export const ACCEPTED_PREFIX = "accepted_";
 export function getRedactionsOnTextNode(textNode, target) {
   return new Set(
     Object.keys(textNode)
-      .filter(node => isRedactionIDMark(node, target))
-      .map(mark => getRedactionIDFromMark(mark, target))
+      .filter((node) => isRedactionIDMark(node, target))
+      .map((mark) => getRedactionIDFromMark(mark, target))
   );
 }
 
-export function isRedactionFromMark (mark) {
+export function isRedactionFromMark(mark) {
   if (!mark) {
-    return false
+    return false;
   }
-  if (mark.startsWith(ACCEPTED_PREFIX) || mark.startsWith(REJECTED_PREFIX) || mark.startsWith(SUGGESTION_PREFIX)) {
-    return true
+  if (
+    mark.startsWith(ACCEPTED_PREFIX) ||
+    mark.startsWith(REJECTED_PREFIX) ||
+    mark.startsWith(SUGGESTION_PREFIX)
+  ) {
+    return true;
   }
-  return false
+  return false;
 }
 
 export function getMarkFromLeaf(leaf) {
-  const key = Object.keys(leaf)
+  const key = Object.keys(leaf);
   return key[1];
 }
 
 export function replaceRedactionWithX(leaf) {
-  const key = Object.keys(leaf)
-  const temp = leaf[key[0]]
+  const key = Object.keys(leaf);
+  const temp = leaf[key[0]];
 
-  leaf[key[0]] = 'X'.repeat(temp.length)
-
+  leaf[key[0]] = "X".repeat(temp.length);
 }
 
 export function getRedactionIDFromMark(mark, target) {
@@ -57,9 +60,8 @@ export function insertRedaction(editor, target) {
   return threadID;
 }
 
-
 export function setSelectionToCurrNodeEdges(editor) {
-  const [start, end] = Editor.edges(editor, editor.selection.anchor.path)
+  const [start, end] = Editor.edges(editor, editor.selection.anchor.path);
   // Create a new range that spans the entire editor
   const range = { anchor: start, focus: end };
 
@@ -71,23 +73,33 @@ export function changeRedaction(editor, mark, target) {
   // removeMark only removes all instances of the mark within the current selection, so select everything then remove
 
   // store the old selection to restore it afterwards
-  const temp = editor.selection
+  const temp = editor.selection;
 
-  setSelectionToCurrNodeEdges(editor)
+  setSelectionToCurrNodeEdges(editor);
   Editor.removeMark(editor, mark);
-  insertRedaction(editor, target)
+  insertRedaction(editor, target);
 
   // restore old selection
-  editor.selection = temp
+  editor.selection = temp;
+}
+
+export function removeRedaction(editor, mark) {
+  const temp = editor.selection;
+
+  setSelectionToCurrNodeEdges(editor);
+  Editor.removeMark(editor, mark);
+
+  // restore old selection
+  editor.selection = temp;
 }
 
 export function getCurrRedaction(editor, redactions) {
-
-  const selectedNode = editor.selection && Editor.node(editor, editor.selection.focus)
+  const selectedNode =
+    editor.selection && Editor.node(editor, editor.selection.focus);
 
   //if the user is selecting a redaction, this is the current redaction
   if (isRedaction(selectedNode[0])) {
-    return {node: selectedNode[0], path: selectedNode[1]};
+    return { node: selectedNode[0], path: selectedNode[1] };
   }
 
   //otherwise select the first redaction mark
@@ -103,7 +115,6 @@ export function isRedaction(leaf) {
 }
 
 export function getAllRedactions(editor) {
-
   let redactions = [];
 
   editor.children.forEach((children, index) => {
