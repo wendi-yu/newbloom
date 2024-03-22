@@ -1,4 +1,4 @@
-import { getRedactionsOnTextNode, SUGGESTION_PREFIX } from "@/util/editorRedactionUtils";
+import { isRedaction } from "@/util/editorRedactionUtils";
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
 import CommentIcon from "@/assets/comment_fill.svg";
@@ -13,11 +13,12 @@ const RedactionFilterDropdownMenu = () => {
     </div>
 }
 
-const TableEntry = (paragraph_index) => {
-    paragraph_index = paragraph_index.paragraph_index[0] // Cuz weird formatting
+const TableEntry = (redaction) => {
+    var paragraph_index = redaction.redaction
+    console.log(paragraph_index)
     var words = paragraph_index.paragraph
     var redacted_index = paragraph_index.index
-    var redacted_start_index = redacted_index.start_index
+    var redacted_start_index = redacted_index.start_index 
     var redacted_end_index = redacted_index.end_index
     const [sentenceLength, setSentenceLength] = useState(0)
 
@@ -35,7 +36,7 @@ const TableEntry = (paragraph_index) => {
         const wordEndIndex = redacted_end_index + sentenceLength
 
         const preRedactedSection = words.slice(Math.max(wordStartIndex, 0), redacted_start_index).join(' ')
-        const redactedWord = ' [' + words.slice(redacted_start_index, redacted_end_index).join(' ') + '] '
+        const redactedWord = ' <' + words.slice(redacted_start_index, redacted_end_index).join(' ') + '> '
         const postRedactedSection = words.slice(redacted_end_index + 1, wordEndIndex + 1).join(' ')
 
         const partsOfSentence = []
@@ -86,7 +87,7 @@ const TableView = ({ document }) => {
         var curr_word_index = 0
         const paragraph_index = []
         paragraph.children.forEach((child) => {
-            if (getRedactionsOnTextNode(child, SUGGESTION_PREFIX).size > 0) {
+            if (isRedaction(child)) {
                 const index = {
                     start_index: curr_word_index,
                     end_index: curr_word_index + child.text.split(" ").length,
@@ -96,7 +97,7 @@ const TableView = ({ document }) => {
                     index: index,
                 })
             }
-            curr_word_index += child.text.split(" ").length
+            curr_word_index += child.text.split(" ").length-1
         })
 
         return paragraph_index
@@ -104,13 +105,13 @@ const TableView = ({ document }) => {
 
     const tableEntries = []
     paragraph_index_list.forEach((paragraph_index, i) => {
-        if (paragraph_index.length > 0) {
+        paragraph_index.forEach((redaction, j) => {
             tableEntries.push(
-                <div key={i}>
-                <TableEntry paragraph_index={paragraph_index} />
+                <div key={100 * i + j}>
+                <TableEntry redaction={redaction} />
             </div>
             ) 
-        }
+        })
     })
 
     return <div className="p-7">
