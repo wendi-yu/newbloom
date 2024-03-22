@@ -13,11 +13,12 @@ const RedactionFilterDropdownMenu = () => {
     </div>
 }
 
-const TableEntry = (paragraph_index) => {
-    paragraph_index = paragraph_index.paragraph_index[0] // Cuz weird formatting
+const TableEntry = (redaction) => {
+    var paragraph_index = redaction.redaction
+    console.log(paragraph_index)
     var words = paragraph_index.paragraph
     var redacted_index = paragraph_index.index
-    var redacted_start_index = redacted_index.start_index
+    var redacted_start_index = redacted_index.start_index 
     var redacted_end_index = redacted_index.end_index
     const [sentenceLength, setSentenceLength] = useState(0)
 
@@ -96,7 +97,7 @@ const TableView = ({ document }) => {
                     index: index,
                 })
             }
-            curr_word_index += child.text.split(" ").length
+            curr_word_index += child.text.split(" ").length-1
         })
 
         return paragraph_index
@@ -104,13 +105,13 @@ const TableView = ({ document }) => {
 
     const tableEntries = []
     paragraph_index_list.forEach((paragraph_index, i) => {
-        if (paragraph_index.length > 0) {
+        paragraph_index.forEach((redaction, j) => {
             tableEntries.push(
-                <div key={i}>
-                <TableEntry paragraph_index={paragraph_index} />
+                <div key={100 * i + j}>
+                <TableEntry redaction={redaction} />
             </div>
             ) 
-        }
+        })
     })
 
     return <div className="p-7">
