@@ -32,7 +32,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     <RedactionPopover
       onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
       onReject={() => changeRedaction(editor, mark, REJECTED_PREFIX)}
-      ifOpen={true}
+      ifOpen={isPopoverDisabled}
       leaf={leaf}
       text={<span>{children}</span>}
      />
