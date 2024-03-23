@@ -5,10 +5,10 @@ export default function AcceptedText(props) {
 
     return (
         <span
-            {...props}
+            {...rest}
             className={`bg-${color} hover:bg-${color}-darker text-accepted-redaction hover:text-accepted-redaction-darker`}
         >
-            {props.children}
+            {children}
         </span>
     );
 }

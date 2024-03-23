@@ -24,6 +24,7 @@ export default {
         'curr-redaction': "rgba(92,0,184,0.4)",
         'dark-grey': '#494949',
         'comment': 'rgba(255, 236, 64, 0.4)',
+        'comment-darker': 'rgba(245, 195, 15, 0.4)',
         'suggestion-and-comment': '#DAB7B5',
         'suggestion-and-comment-darker': '#DAB7B5',
         'transparent': 'rgba(255, 255, 255, 0.5)'

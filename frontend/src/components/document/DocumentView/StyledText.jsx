@@ -50,7 +50,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   if (isSuggestion) {
     const color = (maybeComment || ifComment) ? 'suggestion-and-comment' : 'suggested-redaction';
-    if (maybeComment || ifComment ) console.log(color)
     return (
       <HighlightedText color={color} {...attributes}>
         {content}
@@ -59,7 +58,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     
   } else if (isRejected) {
     const color = (maybeComment || ifComment) ? "comment" : "transparent";
-    // console.log(color)
     return (
       <RejectedText
         {...attributes}
@@ -71,7 +69,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   } else if (isAccepted) {
     const color = (maybeComment || ifComment) ? "comment" : "transparent";
-    // console.log(color)
     return (
       <AcceptedText 
         {...attributes}

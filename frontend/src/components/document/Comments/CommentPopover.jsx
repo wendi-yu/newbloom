@@ -26,7 +26,6 @@ function CommentPopover ({text}) {
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
 
     const [open, setOpen] = useState(true);
-    console.log(open)
     const editor = useSlate();
     const addComment = useAddCommentThreadToState();
 

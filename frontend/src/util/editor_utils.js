@@ -4,6 +4,7 @@ import {
   getAllRedactions,
   ACCEPTED_PREFIX,
   REJECTED_PREFIX,
+  SUGGESTION_PREFIX,
   insertRedaction,
   changeRedaction,
   isRedaction,
