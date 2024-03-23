@@ -10,6 +10,7 @@ import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUti
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom } from "@/util/CommentRedactionState"
 import { useSetRecoilState } from "recoil";
+import { getUserById, getCurrentUser } from "@/util/api/user_apis"
 
 function CommentPopover ({text}) {
 
@@ -25,6 +26,7 @@ function CommentPopover ({text}) {
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
 
     const [open, setOpen] = useState(true);
+    console.log(open)
     const editor = useSlate();
     const addComment = useAddCommentThreadToState();
 
@@ -44,10 +46,9 @@ function CommentPopover ({text}) {
     const submitComment = useCallback(() => {
         if (comment.length > 0) {
           insertCommentThread(editor, addComment);
-          deleteComment();
           setOpen(false);
         }
-    }, [comment, editor, addComment, deleteComment, setOpen]);
+    }, [comment, editor, addComment, setOpen]);
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
@@ -57,6 +58,8 @@ function CommentPopover ({text}) {
         }
     }
 
+    const user = getUserById(getCurrentUser());
+
     const content = (
         <div
             className="flex flex-col justify-left p-1"
@@ -65,7 +68,7 @@ function CommentPopover ({text}) {
         >
             <div className="flex flex-row items-center space-x-2 mb-3">
                 <img src={ProfileIcon} alt="Profile Pic" className="h-7"/>
-                <p className="font-semibold">Soliyana</p>
+                <p className="font-semibold">{user.name}</p>
             </div>
 
             <CommentInput

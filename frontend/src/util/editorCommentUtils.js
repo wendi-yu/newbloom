@@ -7,6 +7,7 @@ import { Editor, Node, Text } from 'slate'
 // Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
 
 const COMMENT_THREAD_PREFIX = "commentThread_";
+const MAYBE_COMMENT = "isMaybeComment";
 
 // In this context, a mark is similar to a "bold" or "italic" tag that marks
 // a node as having the comment thread corresponding to threadID
@@ -44,21 +45,24 @@ function isCommentThreadIDMark(mayBeCommentThread) {
 
 export function insertMaybeComment (editor, selectedText, setMaybeComment) {
     setMaybeComment(selectedText);
-    Editor.addMark(editor, 'isMaybeComment', true);
+    Editor.addMark(editor, MAYBE_COMMENT, true);
 }
 
 export function ifMaybeCommentOnTextNode(textnode) {
     const keys = Object.keys(textnode)
-    if (keys.length >1 && keys[1]==='isMaybeComment') {
-        return true;
+
+    if(keys.some(key => key === MAYBE_COMMENT)) {
+        return true
     }
+    
     return false;
 }
 
+//selection must be on mark to delete maybe comment
+//will hopefully change this in next pr (active comments)
 export function deleteMaybeComment(editor, setMaybeComment) {
-    Editor.removeMark(editor, 'isMaybeComment');
+    Editor.removeMark(editor, MAYBE_COMMENT);
     setMaybeComment(null);
-    console.log("remove")
 }
 
 export function insertCommentThread(editor, addCommentThreadToState) {

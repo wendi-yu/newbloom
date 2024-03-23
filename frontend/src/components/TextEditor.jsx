@@ -27,11 +27,6 @@ export default function TextEditor({ document = [], onChange}) {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
 
-  // const debug = () => {
-  //   onChange();
-  //   console.log(editor.children);
-  // }
-
   return (
     <div className="flex flex-col h-full">
       <Slate editor={editor} initialValue={document} onChange={onChange}>

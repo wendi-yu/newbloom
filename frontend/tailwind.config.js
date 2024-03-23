@@ -25,6 +25,7 @@ export default {
         'dark-grey': '#494949',
         'comment': 'rgba(255, 236, 64, 0.4)',
         'suggestion-and-comment': '#DAB7B5',
+        'suggestion-and-comment-darker': '#DAB7B5',
         'transparent': 'rgba(255, 255, 255, 0.5)'
       },
       fontSize: {

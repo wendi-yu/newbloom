@@ -41,18 +41,16 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   //only modify content if it has a popover
   let content = <span>{children}</span>
   if (maybeComment && isRedaction) {
-    console.log("Rendering CommentPopover with redactionPopover");
     content = <CommentPopover ifOpen={true} text={redactionPopover} />
   } else if (maybeComment) {
-    console.log("Rendering CommentPopover");
     content = <CommentPopover ifOpen={true} text={<span>{children}</span>} />
   } else if (isRedaction) {
-    console.log("Rendering redactionPopover");
     content=redactionPopover
   }
 
   if (isSuggestion) {
-    const color = (maybeComment || ifComment) ? "suggestion-and-comment" : "suggested-redaction";
+    const color = (maybeComment || ifComment) ? 'suggestion-and-comment' : 'suggested-redaction';
+    if (maybeComment || ifComment ) console.log(color)
     return (
       <HighlightedText color={color} {...attributes}>
         {content}
@@ -61,7 +59,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     
   } else if (isRejected) {
     const color = (maybeComment || ifComment) ? "comment" : "transparent";
-    console.log(color)
+    // console.log(color)
     return (
       <RejectedText
         {...attributes}
@@ -73,6 +71,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   } else if (isAccepted) {
     const color = (maybeComment || ifComment) ? "comment" : "transparent";
+    // console.log(color)
     return (
       <AcceptedText 
         {...attributes}

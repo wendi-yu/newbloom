@@ -73,7 +73,7 @@ function Document() {
         </div>
       </div>
       <RecoilRoot>
-        {/* <DebugObserver /> */}
+        <DebugObserver />
         <ViewComponent className={"flex flex-grow"} />
       </RecoilRoot>
     </div>

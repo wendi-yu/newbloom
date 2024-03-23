@@ -4,7 +4,7 @@ export default function HighlightedText(props) {
 
   return (
     <span
-      {...props}
+      {...rest}
       className={`bg-${color} hover:bg-${color}-darker`}
     >
       {children}
