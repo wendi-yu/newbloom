@@ -26,6 +26,8 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
   const ifComment = commentThreads.size > 0;
 
+  const isRedaction = isSuggestion || isAccepted || isRejected
+
   const redactionPopover = (
     <RedactionPopover
       onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
@@ -38,11 +40,14 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   //only modify content if it has a popover
   let content = <span>{children}</span>
-  if (maybeComment && redactionPopover) {
+  if (maybeComment && isRedaction) {
+    console.log("Rendering CommentPopover with redactionPopover");
     content = <CommentPopover ifOpen={true} text={redactionPopover} />
   } else if (maybeComment) {
+    console.log("Rendering CommentPopover");
     content = <CommentPopover ifOpen={true} text={<span>{children}</span>} />
-  } else if (redactionPopover) {
+  } else if (isRedaction) {
+    console.log("Rendering redactionPopover");
     content=redactionPopover
   }
 
