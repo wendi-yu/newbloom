@@ -45,7 +45,7 @@ function CommentPopover ({text}) {
 
     const submitComment = useCallback(() => {
         if (comment.length > 0) {
-          insertCommentThread(editor, addComment);
+          const newCommentThreadID = insertCommentThread(editor, addComment);
           setActiveCommentThreadID(newCommentThreadID);
           setOpen(false);
         }

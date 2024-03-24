@@ -23,6 +23,12 @@ export function getCommentThreadsOnTextNode(textnode) {
     );
 }
 
+export function ifCommentThreadsEqual(node1, node2) {
+    // there's a better way to check for equality but we're doing this for now :o
+    if (node1.size !== node2.size) return false;
+    return node1.text == node2.text ? true : false;
+}
+
 export function getAllChildCommentThreads(element) {
     const threadIds = {}
     for (const t of Node.texts(element)) {
