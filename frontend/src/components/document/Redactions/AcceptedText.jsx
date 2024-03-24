@@ -2,7 +2,6 @@
 export default function AcceptedText(props) {
 
     const { color, children, ...rest } = props;
-
     return (
         <span
             {...rest}

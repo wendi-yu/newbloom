@@ -1,6 +1,5 @@
 const RejectedText = props => {
     const { color, children, ...rest } = props;
-    
     return (
         <span
             {...rest}

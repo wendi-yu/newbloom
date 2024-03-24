@@ -3,6 +3,7 @@ import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedaction
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
 
 import { useSlate } from "slate-react"
+import { useState, useEffect } from "react";
 
 import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import CommentPopover from "@/components/document/Comments/CommentPopover";
@@ -16,6 +17,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
 
   const mark = getMarkFromLeaf(leaf)
   const editor = useSlate();
+  const [color, setColor] = useState('transparent'); 
 
   //check what marks are on the textnode
   const commentThreads = getCommentThreadsOnTextNode(leaf);
@@ -27,6 +29,18 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const ifComment = commentThreads.size > 0;
 
   const isRedaction = isSuggestion || isAccepted || isRejected
+
+  useEffect(() => {
+    let newColor = 'transparent';
+    if (isSuggestion) {
+      newColor = (maybeComment || ifComment) ? 'suggestion-and-comment' : 'suggested-redaction';
+    } else if (isRejected) {
+      newColor = (maybeComment || ifComment) ? 'comment' : 'transparent';
+    } else if (isAccepted) {
+      newColor = (maybeComment || ifComment) ? 'comment' : 'transparent';
+    }
+    setColor(newColor); 
+  }, [maybeComment, ifComment, isSuggestion, isRejected, isAccepted]);
 
   const redactionPopover = (
     <RedactionPopover
@@ -49,15 +63,16 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   }
 
   if (isSuggestion) {
-    const color = (maybeComment || ifComment) ? 'suggestion-and-comment' : 'suggested-redaction';
     return (
-      <HighlightedText color={color} {...attributes}>
+      <HighlightedText
+        color={color}
+        {...attributes}
+      >
         {content}
       </HighlightedText>
     );
     
   } else if (isRejected) {
-    const color = (maybeComment || ifComment) ? "comment" : "transparent";
     return (
       <RejectedText
         {...attributes}
@@ -68,11 +83,11 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     );
 
   } else if (isAccepted) {
-    const color = (maybeComment || ifComment) ? "comment" : "transparent";
     return (
       <AcceptedText 
         {...attributes}
         color={color}
+        yeet={maybeComment || ifComment}
       >
         {content}
       </AcceptedText>
