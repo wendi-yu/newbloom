@@ -87,7 +87,6 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       <AcceptedText 
         {...attributes}
         color={color}
-        yeet={maybeComment || ifComment}
       >
         {content}
       </AcceptedText>
@@ -96,6 +95,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     return (
       <CommentedText 
         {...attributes}
+        leaf = {leaf}
       >
         {content}
       </CommentedText>

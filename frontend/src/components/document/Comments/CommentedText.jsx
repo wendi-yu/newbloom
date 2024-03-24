@@ -1,19 +1,27 @@
-import classNames from "classnames";
+import { activeCommentThreadIDAtom } from "@/util/CommentRedactionState";
+import { useRecoilState } from "recoil";
 
 export default function CommentedText(props) {
 
-  const commentStyle = {
-    backgroundColor: 'rgba(255, 236, 64, 0.4)',
+  const { leaf, children, ...otherProps } = props;
+
+  const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
+    activeCommentThreadIDAtom
+  );
+
+  const onClick = () => {
+    setActiveCommentThreadID(leaf);
   };
+
+  const isActive = leaf === activeCommentThreadID;
 
   return (
     <span
-      className={classNames({
-        comment: true,
-      })}
-      style={commentStyle}
+      {...otherProps}
+      className={`${ isActive ? 'bg-comment' : 'bg-comment-darker'}`}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </span>
   );
 }

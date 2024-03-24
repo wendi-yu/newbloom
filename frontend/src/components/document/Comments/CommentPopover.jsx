@@ -8,7 +8,7 @@ import { Popover } from "antd"
 
 import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { maybeCommentAtom } from "@/util/CommentRedactionState"
+import { maybeCommentAtom, activeCommentThreadIDAtom } from "@/util/CommentRedactionState"
 import { useSetRecoilState } from "recoil";
 import { getUserById, getCurrentUser } from "@/util/api/user_apis"
 
@@ -24,6 +24,7 @@ function CommentPopover ({text}) {
 
     const [comment, setComment] = useState('');
     const setMaybeComment= useSetRecoilState(maybeCommentAtom)
+    const setActiveCommentThreadID = useSetRecoilState(activeCommentThreadIDAtom);
 
     const [open, setOpen] = useState(true);
     const editor = useSlate();
@@ -45,9 +46,10 @@ function CommentPopover ({text}) {
     const submitComment = useCallback(() => {
         if (comment.length > 0) {
           insertCommentThread(editor, addComment);
+          setActiveCommentThreadID(newCommentThreadID);
           setOpen(false);
         }
-    }, [comment, editor, addComment, setOpen]);
+    }, [comment, editor, addComment, setOpen, setActiveCommentThreadID]);
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
