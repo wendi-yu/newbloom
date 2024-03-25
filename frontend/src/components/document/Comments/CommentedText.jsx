@@ -8,15 +8,14 @@ import { useEffect } from "react";
 export default function CommentedText(props) {
 
   const editor = useSlate();
-
   const { leaf, children, ...otherProps } = props;
+
+  //check if the editor selection is in the comment
+  const ifSelectionInLeaf = ifSelectionInTextNode(editor, leaf)
 
   const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
     activeCommentThreadIDAtom
   );
-
-  //check if the editor selection is in the comment
-  const ifSelectionInLeaf = ifSelectionInTextNode(editor, leaf)
 
   useEffect(() => {
     if (ifSelectionInLeaf) {

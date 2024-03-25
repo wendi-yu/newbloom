@@ -19,13 +19,8 @@ export function getTextFromSelection(editor) {
 }
 
 export function ifSelectionInTextNode (editor, leaf) {
-
   const selection = editor.selection;
-
-  if (!selection) {
-    return false;
-  }
-
+  if (!selection) return false;
   const node = getFirstTextNodeAtSelection(editor, selection)
   return ifCommentThreadsEqual(node, leaf) ? true : false
 }
