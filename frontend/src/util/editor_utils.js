@@ -1,36 +1,57 @@
-import {Editor, Path, Transforms } from "slate"
-import { setSelectionToCurrNodeEdges, getCurrRedaction, getAllRedactions, ACCEPTED_PREFIX, REJECTED_PREFIX, SUGGESTION_PREFIX, insertRedaction, isRedactionFromMark} from "@/util/editorRedactionUtils";
+import { Editor, Path, Transforms } from "slate";
+import { ifCommentThreadsEqual } from "@/util/editorCommentUtils";
+import {
+  getCurrRedaction,
+  getAllRedactions,
+  ACCEPTED_PREFIX,
+  REJECTED_PREFIX,
+  SUGGESTION_PREFIX,
+  insertRedaction,
+  changeRedaction,
+  isRedaction,
+  removeRedaction,
+  getRedactionsOnTextNode
+} from "@/util/editorRedactionUtils";
+import isHotkey from "is-hotkey";
+
+export function ifSelectionInTextNode (editor, leaf) {
+  const selection = editor.selection;
+  if (!selection) return false;
+  const node = getFirstTextNodeAtSelection(editor, selection)
+  return ifCommentThreadsEqual(node, leaf) ? true : false
+}
 
 export function getTextFromSelection(editor) {
   return Editor.string(editor, editor.selection)
 }
 
 export function getFirstTextNodeAtSelection(editor, selection) {
-    const selectionForNode = selection ?? editor.selection;
-  
-    if (selectionForNode == null) {
-      return null;
-    }
-  
-    const textNodeEntry = Editor.nodes(editor, {
-      at: selectionForNode,
-      mode: "lowest",
-      match: Text.isText,
-    }).next().value;
-  
-    return textNodeEntry != null ? textNodeEntry[0] : null;
+  const selectionForNode = selection ?? editor.selection;
+
+  if (selectionForNode == null) {
+    return null;
+  }
+
+  const textNodeEntry = Editor.nodes(editor, {
+    at: selectionForNode,
+    mode: "lowest",
+    match: Text.isText,
+  }).next().value;
+
+  return textNodeEntry != null ? textNodeEntry[0] : null;
 }
 
 export function getCurrentPoint(editor) {
-  const selectedPoint = editor.selection && Editor.point(editor, editor.selection.focus)
-  
+  const selectedPoint =
+    editor.selection && Editor.point(editor, editor.selection.focus);
+
   return selectedPoint;
 }
 
 export function getNextRedaction(editor, redactions) {
   const curr = getCurrRedaction(editor, redactions);
-  
-  const index =  redactions.findIndex(redaction =>
+
+  const index = redactions.findIndex((redaction) =>
     Path.equals(redaction.path, curr.path)
   );
 
@@ -39,8 +60,8 @@ export function getNextRedaction(editor, redactions) {
 
 export function getPreviousRedaction(editor, redactions) {
   const curr = getCurrRedaction(editor, redactions);
-  
-  const index =  redactions.findIndex(redaction =>
+
+  const index = redactions.findIndex((redaction) =>
     Path.equals(redaction.path, curr.path)
   );
 
@@ -48,102 +69,92 @@ export function getPreviousRedaction(editor, redactions) {
 }
 
 export function selectNode(editor, redaction) {
-
   //this selects the node but doesn't click it
   const range = Editor.range(editor, redaction.path);
   Transforms.setSelection(editor, range);
-
 }
 
-function handleChangeRedaction (editor, prefix) {
-  
-  const curr = editor.selection && Editor.node(editor, editor.selection.focus)
-  const mark = Object.keys(curr[0])[1]
+export function handleChangeRedaction(editor, prefix) {
+  const curr = editor.selection && Editor.node(editor, editor.selection.focus);
+  const mark = Object.keys(curr[0])[1];
 
-  if (mark && isRedactionFromMark(mark)) {
-    const temp = editor.selection
-    setSelectionToCurrNodeEdges(editor)
-    Editor.removeMark(editor, mark);
-    if (prefix=='accepted') {
-      insertRedaction(editor, ACCEPTED_PREFIX)
-      
-    } else {
-      insertRedaction(editor, REJECTED_PREFIX)
-    }
-
-    editor.selection = temp
-
-  }
-
-}
-
-const extendSelectionByWord = (editor, direction) => {
-  
-  if (direction=="right") {
-    Transforms.move(editor, {
-      unit: 'word',
-      edge: 'focus'
-    })  
-  } else {
-    Transforms.move(editor, {
-      unit: 'word',
-      reverse: true,
-      edge: 'focus'
-    })
-  }
-
-};
-
-export const hotkeys = (event, editor) => {
-
-  // handle left and right arrows (keep default behavior)
-  if (event.key=='ArrowRight' || event.key=='ArrowLeft') {
+  if (prefix == "DELETE") {
+    console.log(mark);
+    removeRedaction(editor, mark);
     return;
   }
 
-  const redactions = getAllRedactions(editor);
-  event.preventDefault();
-
-  // Handle undo/redo
-  if (event.key === 'z' && event.shiftKey && (event.ctrlKey || event.metaKey)) {
-    editor.redo();
-
-  } else if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
-    editor.undo();
+  if (mark) {
+    changeRedaction(editor, mark, prefix);
   }
-  
-  // handle loop through redactions
-  else if (event.key === 'Tab') {
-    if (event.shiftKey) {
-      selectNode(editor, getPreviousRedaction(editor, redactions));
-    } else {
-      selectNode(editor, getNextRedaction(editor, redactions));
+}
+
+export const extendSelectionByWord = (editor, direction) => {
+  if (direction == "right") {
+    Transforms.move(editor, {
+      unit: "word",
+      edge: "focus",
+    });
+  } else {
+    Transforms.move(editor, {
+      unit: "word",
+      reverse: true,
+      edge: "focus",
+    });
+  }
+};
+
+export const KeyBindings = {
+  onKeyDown: (editor, event) => {
+    // default behavior for arrow left and right
+    if (isHotkey("ArrowLeft", event) || isHotkey("ArrowRight", event)) {
+      return;
     }
-  }
 
-  // handle redaction popover
-  else if (event.key=='a') {
-    handleChangeRedaction(editor, 'accepted');
+    const currNode = getFirstTextNodeAtSelection(editor);
 
-  } else if (event.key=='s') {
-    handleChangeRedaction(editor, 'rejected');
-  
-  }
+    //mask all other keys from working
+    event.preventDefault();
 
-  // handle add redaction
-  else if (event.key=='w') {
-    insertRedaction(editor, SUGGESTION_PREFIX)
+    //handle undo/redo
+    if (isHotkey("mod+z", event)) {
+      event.shiftKey ? editor.redo() : editor.undo();
+    }
 
-  // handle add comment
-  } else if (event.key=='d') {
-    // can't call hook here so maybe press toolbar button?
-  }
-  
-  // handle highlight with arrow keys
-  else if (event.shiftKey && (event.ctrlKey || event.metaKey) && (event.key === 'O' || event.key === 'I')) {
-    const direction = event.key === 'O' ? 'right' : 'left';
-    extendSelectionByWord(editor, direction);
+    //handle loop through redactions
+    else if (isHotkey("Tab", event)) {
+      const redactions = getAllRedactions(editor);
+      if (event.shiftKey) {
+        selectNode(editor, getPreviousRedaction(editor, redactions));
+      } else {
+        selectNode(editor, getNextRedaction(editor, redactions));
+      }
+    }
 
-  } 
+    // handle redaction popover
+    else if (isHotkey("a", event)) {
+      //only insert if no redaction or rejected redaction
+      if (getRedactionsOnTextNode(currNode, ACCEPTED_PREFIX) || getRedactionsOnTextNode(currNode, SUGGESTION_PREFIX)) {
+        handleChangeRedaction(editor, ACCEPTED_PREFIX);
+      }
+      insertRedaction(editor, ACCEPTED_PREFIX);
 
+    } else if (isHotkey("s", event)) {
+      handleChangeRedaction(editor, REJECTED_PREFIX);
+    }
+
+    // delete redaction mark
+    else if (isHotkey("e", event) && isRedaction(currNode)) {
+      handleChangeRedaction(editor, "DELETE");
+    }
+
+    //handle highlight w arrow keys
+    else if (event.shiftKey && (event.ctrlKey || event.metaKey)) {
+      if (event.key == "O" || event.key == "I") {
+        const direction = event.key === "O" ? "right" : "left";
+        extendSelectionByWord(editor, direction);
+      }
+    }
+
+  },
 };

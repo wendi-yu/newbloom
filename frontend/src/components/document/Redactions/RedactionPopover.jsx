@@ -3,7 +3,7 @@ import { Popover, ConfigProvider } from "antd"
 import CheckIcon from "@/assets/check_fill.svg"
 import CloseIcon from "@/assets/close_fill.svg"
 
-export default function RedactionPopover({text, onAccept, onReject}) {
+export default function RedactionPopover({onAccept, onReject, text}) {
 
     const [open, setOpen] = useState(false);
     

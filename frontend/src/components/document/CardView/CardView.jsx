@@ -21,7 +21,7 @@ const splitText = (document) => {
   return document.documentBody;
 };
 
-const CardView = ({ document }) => {
+const CardView = ({ document}) => {
   const paragraphs = splitText(document);
   const [cards, setCards] = useState(
     paragraphs.map((par) => ({
@@ -87,7 +87,7 @@ const CardView = ({ document }) => {
           setCardBody(v[0].children);
         }}
       >
-        <Toolbar selection={selection} />
+        <Toolbar/>
         <div className="w-80 float-left h-full pb-8">
           <CardSelector
             cards={cards}

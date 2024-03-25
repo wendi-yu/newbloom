@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Node, Text } from 'slate'
+import { Editor, Node, Text } from 'slate';
+import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 
 // Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
 // Reference links here: 
@@ -7,6 +8,7 @@ import { Editor, Node, Text } from 'slate'
 // Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
 
 const COMMENT_THREAD_PREFIX = "commentThread_";
+const MAYBE_COMMENT = "isMaybeComment";
 
 // In this context, a mark is similar to a "bold" or "italic" tag that marks
 // a node as having the comment thread corresponding to threadID
@@ -20,6 +22,13 @@ export function getCommentThreadsOnTextNode(textnode) {
             .filter(isCommentThreadIDMark)
             .map(getCommentThreadIDFromMark)
     );
+}
+
+export function ifCommentThreadsEqual(node1, node2) {
+    // TODO: find a better way to check for equality
+    if (!node1 || !node2) return false;
+    if (node1.size !== node2.size) return false;
+    return node1.text == node2.text ? true : false;
 }
 
 export function getAllChildCommentThreads(element) {
@@ -44,31 +53,36 @@ function isCommentThreadIDMark(mayBeCommentThread) {
 
 export function insertMaybeComment (editor, selectedText, setMaybeComment) {
     setMaybeComment(selectedText);
-    Editor.addMark(editor, 'isMaybeComment', true);
+    Editor.addMark(editor, MAYBE_COMMENT, true);
 }
 
 export function ifMaybeCommentOnTextNode(textnode) {
     const keys = Object.keys(textnode)
-    if (keys.length >1 && keys[1]==='isMaybeComment') {
-        return true;
+
+    if(keys.some(key => key === MAYBE_COMMENT)) {
+        return true
     }
+    
     return false;
 }
 
-export function deleteMaybeComment(editor) {
-    Editor.removeMark(editor, 'isMaybeComment');
-    console.log("remove")
+//selection must be on mark to delete maybe comment
+//will hopefully change this in next pr (active comments)
+export function deleteMaybeComment(editor, setMaybeComment) {
+    Editor.removeMark(editor, MAYBE_COMMENT);
+    setMaybeComment(null);
 }
 
 export function insertCommentThread(editor, addCommentThreadToState) {
     const threadID = uuid();
+    const user = getUserById(getCurrentUser());
     const newCommentThread = {
         // comments as added would be appended to the thread here.
         comments: [],
         creationTime: new Date(),
         // Newly created comment threads are OPEN. We deal with statuses
         // later in the article.
-        author: "Soliyana",
+        author: user.name,
         status: "open",
     };
     addCommentThreadToState(threadID, newCommentThread);
@@ -81,6 +95,7 @@ export async function initializeStateWithAllCommentThreads(
     editor,
     addCommentThread
 ) {
+
     const textNodesWithComments = Editor.nodes(editor, {
         at: [],
         mode: "lowest",
