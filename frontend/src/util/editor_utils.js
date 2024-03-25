@@ -1,4 +1,5 @@
 import { Editor, Path, Transforms } from "slate";
+import { ifCommentThreadsEqual } from "@/util/editorCommentUtils";
 import {
   getCurrRedaction,
   getAllRedactions,
@@ -15,6 +16,13 @@ import isHotkey from "is-hotkey";
 
 export function getTextFromSelection(editor) {
   return Editor.string(editor, editor.selection);
+}
+
+export function ifSelectionInTextNode (editor, leaf) {
+  const selection = editor.selection;
+  if (!selection) return false;
+  const node = getFirstTextNodeAtSelection(editor, selection)
+  return ifCommentThreadsEqual(node, leaf) ? true : false
 }
 
 export function getFirstTextNodeAtSelection(editor, selection) {

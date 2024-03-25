@@ -89,6 +89,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     return (
       <CommentedText 
         {...attributes}
+        leaf = {leaf}
       >
         {content}
       </CommentedText>
