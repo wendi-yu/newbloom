@@ -26,21 +26,21 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const isSuggestion = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
   const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
   const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
-  const ifComment = commentThreads.size > 0;
+  const isComment = commentThreads.size > 0;
 
   const isRedaction = isSuggestion || isAccepted || isRejected
+  const isCommentLike = maybeComment || isComment
 
   useEffect(() => {
     let newColor = 'transparent';
+    // renders normal redaction styling if there isn't a comment
     if (isSuggestion) {
-      newColor = (maybeComment || ifComment) ? 'suggestion-and-comment' : 'suggested-redaction';
-    } else if (isRejected) {
-      newColor = (maybeComment || ifComment) ? 'comment' : 'transparent';
-    } else if (isAccepted) {
-      newColor = (maybeComment || ifComment) ? 'comment' : 'transparent';
+      newColor = isCommentLike ? 'suggestion-and-comment' : 'suggested-redaction';
+    } else if (isRejected || isAccepted) {
+      newColor = isCommentLike ? 'comment' : 'transparent';
     }
     setColor(newColor); 
-  }, [maybeComment, ifComment, isSuggestion, isRejected, isAccepted]);
+  }, [maybeComment, isComment, isSuggestion, isRejected, isAccepted]);
 
   const redactionPopover = (
     <RedactionPopover
@@ -87,12 +87,11 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       <AcceptedText 
         {...attributes}
         color={color}
-        yeet={maybeComment || ifComment}
       >
         {content}
       </AcceptedText>
     );
-  } else if (maybeComment || ifComment) {
+  } else if (isCommentLike) {
     return (
       <CommentedText 
         {...attributes}
