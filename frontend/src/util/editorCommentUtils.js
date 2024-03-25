@@ -50,9 +50,11 @@ export function insertMaybeComment (editor, selectedText, setMaybeComment) {
 
 export function ifMaybeCommentOnTextNode(textnode) {
     const keys = Object.keys(textnode)
-    if (keys.length >1 && keys[1]===MAYBE_COMMENT) {
-        return true;
+
+    if(keys.some(key => key === MAYBE_COMMENT)) {
+        return true
     }
+    
     return false;
 }
 

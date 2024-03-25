@@ -15,7 +15,6 @@ const RedactionFilterDropdownMenu = () => {
 
 const TableEntry = (redaction) => {
     var paragraph_index = redaction.redaction
-    console.log(paragraph_index)
     var words = paragraph_index.paragraph
     var redacted_index = paragraph_index.index
     var redacted_start_index = redacted_index.start_index 

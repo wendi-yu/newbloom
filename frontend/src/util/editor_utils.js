@@ -6,13 +6,12 @@ import {
   REJECTED_PREFIX,
   SUGGESTION_PREFIX,
   insertRedaction,
-} from "@/util/editorRedactionUtils";
-import isHotkey from "is-hotkey";
-import {
   changeRedaction,
   isRedaction,
   removeRedaction,
-} from "./editorRedactionUtils";
+  getRedactionsOnTextNode
+} from "@/util/editorRedactionUtils";
+import isHotkey from "is-hotkey";
 
 export function getTextFromSelection(editor) {
   return Editor.string(editor, editor.selection);
@@ -126,18 +125,14 @@ export const KeyBindings = {
 
     // handle redaction popover
     else if (isHotkey("a", event)) {
-      if (!isRedaction(currNode)) {
-        insertRedaction(editor, ACCEPTED_PREFIX);
+      //only insert if no redaction or rejected redaction
+      if (getRedactionsOnTextNode(currNode, ACCEPTED_PREFIX) || getRedactionsOnTextNode(currNode, SUGGESTION_PREFIX)) {
+        handleChangeRedaction(editor, ACCEPTED_PREFIX);
       }
-      handleChangeRedaction(editor, ACCEPTED_PREFIX);
+      insertRedaction(editor, ACCEPTED_PREFIX);
+
     } else if (isHotkey("s", event)) {
       handleChangeRedaction(editor, REJECTED_PREFIX);
-    }
-
-    // handle add redaction
-    else if (isHotkey("w", event)) {
-      insertRedaction(editor, SUGGESTION_PREFIX);
-      handleChangeRedaction(editor, ACCEPTED_PREFIX);
     }
 
     // delete redaction mark
@@ -152,5 +147,6 @@ export const KeyBindings = {
         extendSelectionByWord(editor, direction);
       }
     }
+
   },
 };
