@@ -40,7 +40,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       newColor = isCommentLike ? 'comment' : 'transparent';
     }
     setColor(newColor); 
-  }, [maybeComment, isComment, isSuggestion, isRejected, isAccepted]);
+  }, [isCommentLike, isSuggestion, isRejected, isAccepted]);
 
   const redactionPopover = (
     <RedactionPopover
