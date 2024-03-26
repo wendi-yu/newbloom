@@ -1,9 +1,12 @@
 import { getCommentThreadsOnTextNode, ifMaybeCommentOnTextNode } from "@/util/editorCommentUtils";
 import { getRedactionsOnTextNode, getMarkFromLeaf } from "@/util/editorRedactionUtils";
 import { changeRedaction, SUGGESTION_PREFIX, ACCEPTED_PREFIX, REJECTED_PREFIX } from "@/util/editorRedactionUtils";
+import { ifSelectionInTextNode } from "@/util/editor_utils";
+import { activeCommentThreadIDAtom } from "@/util/CommentRedactionState";
 
 import { useSlate } from "slate-react"
 import { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
 
 import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
 import CommentPopover from "@/components/document/Comments/CommentPopover";
@@ -31,16 +34,34 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
   const isRedaction = isSuggestion || isAccepted || isRejected
   const isCommentLike = maybeComment || isComment
 
+  //check if the editor selection is in the comment
+  const ifSelectionInLeaf = ifSelectionInTextNode(editor, leaf) && isComment
+
+  const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
+    activeCommentThreadIDAtom
+  );
+
+  useEffect(() => {
+    if (ifSelectionInLeaf) {
+      setActiveCommentThreadID(leaf);
+    } else if (activeCommentThreadID === leaf) {
+      // if selection isn't in leaf, set active comment thread to null
+      setActiveCommentThreadID(null);
+    }
+  }, [ifSelectionInLeaf, leaf, activeCommentThreadID]);
+
+  const isActive = leaf === activeCommentThreadID;
+
   useEffect(() => {
     let newColor = 'transparent';
     // renders normal redaction styling if there isn't a comment
     if (isSuggestion) {
-      newColor = isCommentLike ? 'suggestion-and-comment' : 'suggested-redaction';
+      newColor = isActive ? 'suggestion-and-comment-darker' : (isCommentLike ? 'suggestion-and-comment' : 'suggested-redaction');
     } else if (isRejected || isAccepted) {
-      newColor = isCommentLike ? 'comment' : 'transparent';
+        newColor = isActive ? 'comment-darker' : (isCommentLike ? 'comment' : 'transparent');
     }
     setColor(newColor); 
-  }, [isCommentLike, isSuggestion, isRejected, isAccepted]);
+  }, [activeCommentThreadID, isActive, isCommentLike, isSuggestion, isRejected, isAccepted]);
 
   const redactionPopover = (
     <RedactionPopover
@@ -90,6 +111,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       <CommentedText 
         {...attributes}
         leaf = {leaf}
+        isActive={isActive}
       >
         {content}
       </CommentedText>

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "f9facc7f-9981-44fc-87f4-5c60cfdf05e8",
+        "comment": [
+            {
+                "author": "Soliyana",
+                "text": "Should I redact this?",
+                "creationTime": "2024-03-17T17:02:00"
+            }
+        ]
+    },
+    {
+        "id": "3bfde8e5-74eb-404b-a50c-0e2555396c5e",
+        "comment": [
+            {
+                "author": "Soliyana",
+                "text": "Is this information sensitive?",
+                "creationTime": "2024-03-17T17:02:03"
+            }
+        ]
+    }
+
+]

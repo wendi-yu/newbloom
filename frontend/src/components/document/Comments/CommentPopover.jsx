@@ -3,18 +3,24 @@ import CommentInput from "@/components/document/Comments/CommentInput";
 
 import { useSlate } from "slate-react"
 import { Transforms } from "slate"
-import  {useState, useCallback, useRef, useEffect } from "react"
+import  {useState, useRef, useEffect } from "react"
 import { Popover } from "antd"
 
 import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom, activeCommentThreadIDAtom } from "@/util/CommentRedactionState"
 import { useSetRecoilState } from "recoil";
+
+import {  addCommentToDocument } from "@/util/localDocStore"
 import { getUserById, getCurrentUser } from "@/util/api/user_apis"
+import { useParams } from "react-router-dom";
+import { DOC_ID_PARAM } from "@/util/constants";
 
 function CommentPopover ({text}) {
 
     const inputRef = useRef(null);
+    const user = getUserById(getCurrentUser());
+    const docId = useParams()[DOC_ID_PARAM];
 
     useEffect(() => {
         if (inputRef.current) {
@@ -30,10 +36,12 @@ function CommentPopover ({text}) {
     const editor = useSlate();
     const addComment = useAddCommentThreadToState();
 
-    const deleteComment = useCallback(() => {
+    const userName = getUserById(getCurrentUser())
+
+    const deleteComment = () => {
         setComment('');
         deleteMaybeComment(editor, setMaybeComment);
-    }, [editor, setMaybeComment]);
+    }
     
     const handleOpenChange = (newOpen) => {
         setOpen(newOpen);
@@ -43,13 +51,21 @@ function CommentPopover ({text}) {
         }
     };
 
-    const submitComment = useCallback(() => {
+    const submitComment = () => {
         if (comment.length > 0) {
-          const newCommentThreadID = insertCommentThread(editor, addComment);
-          setActiveCommentThreadID(newCommentThreadID);
-          setOpen(false);
+            const newCommentThreadID = insertCommentThread(editor, addComment);
+            deleteMaybeComment(editor, setMaybeComment);
+            setOpen(false);
+
+            const newComment = {
+                id: newCommentThreadID, 
+                author: userName,
+                text,
+                creationTime: new Date().toISOString(),
+            };
+            addCommentToDocument(docId, newComment);
         }
-    }, [comment, editor, addComment, setOpen, setActiveCommentThreadID]);
+    }
 
     const handleEscapePress = (event) => {
         if (event.key === 'Escape') {
@@ -58,8 +74,6 @@ function CommentPopover ({text}) {
             setOpen(false);
         }
     }
-
-    const user = getUserById(getCurrentUser());
 
     const content = (
         <div

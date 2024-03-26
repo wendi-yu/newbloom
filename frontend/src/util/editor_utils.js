@@ -67,9 +67,10 @@ export function getPreviousRedaction(editor, redactions) {
   return redactions[(index - 1) % redactions.length];
 }
 
-export function selectNode(editor, redaction) {
+export function selectNode(editor, node) {
   //this selects the node but doesn't click it
-  const range = Editor.range(editor, redaction.path);
+  console.log(node)
+  const range = Editor.range(editor, node.path);
   Transforms.setSelection(editor, range);
 }
 

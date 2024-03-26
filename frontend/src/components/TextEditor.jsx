@@ -14,6 +14,9 @@ import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
 import localDocStore from "@/util/localDocStore";
 
+import { useParams } from "react-router-dom";
+import { DOC_ID_PARAM } from "@/util/constants";
+
 export default function TextEditor({
   document = { documentBody: [] },
   updateDocumentState,
@@ -31,8 +34,10 @@ export default function TextEditor({
     setMaybeComment
   );
 
+  const docId = useParams()[DOC_ID_PARAM];
+
   useEffect(() => {
-    initializeStateWithAllCommentThreads(editor, addCommentThread);
+    initializeStateWithAllCommentThreads(editor, addCommentThread, docId);
   }, [editor, addCommentThread]);
 
   const onChange = (value) => {
@@ -57,18 +62,20 @@ export default function TextEditor({
         onChange={onChange}
       >
         <Toolbar />
-        <div className="bg-document-background min-h-full flex flex-row justify-center">
-          <div className=" mx-40 max-w-4xl max-h-[900px] overflow-y-scroll">
-            <div className="mt-20 bg-white">
-              <Editable
-                renderElement={renderElement}
-                onKeyDown={onKeyDown}
-                renderLeaf={renderLeaf}
-                className="flex flex-col p-16 focus:outline-none max-h-full"
-              />
+        <div className="bg-document-background min-h-full justify-center">
+          <div className="overflow-y-scroll flex flex-row">
+            <div className="ml-72 mr-10 max-w-4xl max-h-[1200px]">
+              <div className="mt-20 bg-white">
+                <Editable
+                  renderElement={renderElement}
+                  onKeyDown={onKeyDown}
+                  renderLeaf={renderLeaf}
+                  className="flex flex-col p-16 focus:outline-none max-h-full"
+                />
+              </div>
             </div>
+            <CommentSideBar />
           </div>
-          <CommentSideBar />
         </div>
       </Slate>
     </div>
