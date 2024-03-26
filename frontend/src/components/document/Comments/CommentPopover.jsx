@@ -8,7 +8,7 @@ import { Popover } from "antd"
 
 import { insertCommentThread, deleteMaybeComment } from "@/util/EditorCommentUtils"
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { maybeCommentAtom, activeCommentThreadIDAtom } from "@/util/CommentRedactionState"
+import { maybeCommentAtom } from "@/util/CommentRedactionState"
 import { useSetRecoilState } from "recoil";
 
 import {  addCommentToDocument } from "@/util/localDocStore"
