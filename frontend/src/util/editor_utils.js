@@ -12,6 +12,7 @@ import {
   getRedactionsOnTextNode,
 } from "@/util/editorRedactionUtils";
 import isHotkey from "is-hotkey";
+import { getUserKeyBinds } from "./api/user_apis";
 
 export function getTextFromSelection(editor) {
   return Editor.string(editor, editor.selection);
@@ -125,7 +126,7 @@ export const extendSelectionByWord = (editor, direction) => {
 
 export const KeyBindings = {
   onKeyDown: (editor, event) => {
-
+    const userHotkeys = getUserKeyBinds(false);
     // default behavior for arrow left and right
     if (isHotkey("ArrowLeft", event) || isHotkey("ArrowRight", event)) {
       return;
@@ -137,12 +138,12 @@ export const KeyBindings = {
     event.preventDefault();
 
     //handle undo/redo
-    if (isHotkey("mod+z", event)) {
+    if (isHotkey("mod+" + userHotkeys.undo, event)) {
       event.shiftKey ? editor.redo() : editor.undo();
     }
 
     //handle loop through redactions
-    else if (isHotkey("Tab", event)) {
+    else if (isHotkey(userHotkeys.next, event)) {
       const redactions = getAllRedactions(editor);
       if (event.shiftKey) {
         selectNode(editor, getPreviousRedaction(editor, redactions));
@@ -152,7 +153,7 @@ export const KeyBindings = {
     }
 
     // handle redaction popover
-    else if (isHotkey("a", event)) {
+    else if (isHotkey(userHotkeys.accept, event)) {
       //only insert if no redaction or rejected redaction
       if (
         getRedactionsOnTextNode(currNode, ACCEPTED_PREFIX) ||
@@ -161,18 +162,21 @@ export const KeyBindings = {
         handleChangeRedaction(editor, ACCEPTED_PREFIX);
       }
       insertRedaction(editor, ACCEPTED_PREFIX);
-    } else if (isHotkey("s", event)) {
+    } else if (isHotkey(userHotkeys.reject, event)) {
       handleChangeRedaction(editor, REJECTED_PREFIX);
     }
 
     // delete redaction mark
-    else if (isHotkey("e", event) && isRedaction(currNode)) {
+    else if (isHotkey(userHotkeys.delete, event) && isRedaction(currNode)) {
       handleChangeRedaction(editor, "DELETE");
     }
 
     //handle highlight w arrow keys
     else if (event.shiftKey && (event.ctrlKey || event.metaKey)) {
-      if (event.key == "O" || event.key == "I") {
+      if (
+        event.key == userHotkeys.highlightRight ||
+        event.key == userHotkeys.highlightLeft
+      ) {
         const direction = event.key === "O" ? "right" : "left";
         extendSelectionByWord(editor, direction);
       }

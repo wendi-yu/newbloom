@@ -65,9 +65,7 @@ function CommentPopover({ text, leaf }) {
         text: comment,
         creationTime: new Date().toISOString(),
       };
-      
       addCommentToDocument(docId, newComment);
-
     }
   };
 
