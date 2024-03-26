@@ -14,7 +14,6 @@ import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
 import { removeSelectedMark } from "@/util/editor_utils"
 
 import { useSlate } from "slate-react";
-import { deleteCommentFromDocument } from "@/util/localDocStore"
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
 
 import { format } from "date-fns";
@@ -36,12 +35,10 @@ function SidebarComment ({id, comment, docId}) {
 
     const handleResolveComment = () => {
         removeSelectedMark(editor, getMarkForCommentThreadID(id));
-        deleteCommentFromDocument(docId, id);
     }
 
     //TODO: implement menu
     const handleClickMenu = () => {
-        //console.log("menu")
     }
 
     //TODO: for now, you can only focus on comments when you click the corresponding comments
