@@ -6,6 +6,9 @@ import PurpleMenuSVG from "@/assets/meatballs_menu_purple.svg"
 
 import ProfileIcon from "@/assets/pfp.svg"
 
+import CommentResponse from "@/components/document/Comments/CommentResponse"
+import CommentChild from "@/components/document/Comments/CommentChild"
+
 import { useRecoilValue } from "recoil";
 import { activeCommentThreadIDAtom } from "@/util/CommentRedactionState";
 import { useState, useEffect } from "react" 
@@ -20,6 +23,7 @@ import { format } from "date-fns";
 
 function SidebarComment ({id, comment}) {
 
+    const [isViewReply, setIsViewReply] = useState(true)
     const [isFocus, setIsFocus] = useState(false)
     const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
     const editor = useSlate();
@@ -30,6 +34,7 @@ function SidebarComment ({id, comment}) {
             setIsFocus(activeCommentMarkSet.has(id));
         } else {
             setIsFocus(false)
+            setIsViewReply(false)
         }
     }, [activeCommentThreadID, id]);
 
@@ -50,6 +55,10 @@ function SidebarComment ({id, comment}) {
         // }
     }
 
+    const toggleViewReply = () => {
+        setIsViewReply(!isViewReply);
+    }
+
     const menu = (
         <div className="flex flex-row space-x-1">
             <HoverableIcon 
@@ -68,18 +77,32 @@ function SidebarComment ({id, comment}) {
     )
 
     return (
-        <div onClick={handleOnClick} className={`flex flex-col justify-left p-1 bg-white p-5 rounded-2xl w-64 ${isFocus ? 'shadow-xl -ml-2.5 transform -translate-x-2.5' : ''}`}>
-            <div className="flex flex-row justify-between">
-                <div className="flex flex-row items-center space-x-2.5 mb-3">
-                    <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
-                    <div className="flex flex-col">
-                        <p className="font-semibold">{comment.author}</p>
-                        <p className="font-light">{format(new Date(), "MMM dd h:mmaa")}</p>
+        <div onClick={handleOnClick} className={`flex flex-col bg-none justify-left rounded-2xl ${isFocus ? 'shadow-xl -ml-2.5 transform -translate-x-2.5' : ''}`}>
+            <div className={`flex flex-col bg-white p-5 w-64 ${isFocus && isViewReply ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'}`}>
+                <div className="flex flex-row justify-between">
+                    <div className="flex flex-row items-center space-x-2.5 mb-3">
+                        <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
+                        <div className="flex flex-col">
+                            <p className="font-semibold">{comment.author}</p>
+                            <p className="font-light">{format(new Date(), "MMM dd h:mmaa")}</p>
+                        </div>
                     </div>
+                {isFocus && menu }
+                
                 </div>
-            {isFocus && menu }
+                {comment.text}
+                <div onClick={toggleViewReply}>
+                    <p className="text-xs mt-2 font-light text-dark-grey underline decoration-light-gray-background">
+                        {isFocus ? (isViewReply ? "Hide Reply" : "View Reply") : ''}
+                    </p>
+                </div>
             </div>
-            {comment.text}
+            {isViewReply && isFocus && 
+                <div className="flex flex-col">
+                    <CommentChild />
+                    <CommentResponse />
+                </div>
+            }
         </div>
     );
 

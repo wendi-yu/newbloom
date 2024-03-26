@@ -60,7 +60,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
     } else if (isRejected || isAccepted) {
         newColor = isActive ? 'comment-darker' : (isCommentLike ? 'comment' : 'transparent');
     }
-    setColor(newColor); 
+    setColor(newColor);
   }, [activeCommentThreadID, isActive, isCommentLike, isSuggestion, isRejected, isAccepted]);
 
   const redactionPopover = (

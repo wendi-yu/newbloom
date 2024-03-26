@@ -1,7 +1,7 @@
 import ArrowSVG from "@/assets/arrow_top.svg"
 import { Input } from "antd"
 
-function CommentInput ({value, handleValueChange, submitComment, inputRef}) {
+function CommentInput ({value, handleValueChange, submitComment, inputRef, placeholder}) {
 
     const ArrowIcon = <div onClick={submitComment}><img src={ArrowSVG} className="h-5" alt="Submit"/></div>
    
@@ -20,7 +20,7 @@ function CommentInput ({value, handleValueChange, submitComment, inputRef}) {
         <div>
             <Input 
                 suffix={ArrowIcon}
-                placeholder="Comment"
+                placeholder={placeholder}
                 value = {value}
                 className="focus:outline-none"
                 style = {inputStyle}
