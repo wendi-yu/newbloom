@@ -161,5 +161,6 @@ export const KeyBindings = {
         extendSelectionByWord(editor, direction);
       }
     }
+
   },
 };
