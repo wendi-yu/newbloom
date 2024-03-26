@@ -112,7 +112,7 @@ export default function StyledText({
   //only modify content if it has a popover
   let textContent = isRedaction ? redactionPopover : <span>{children}</span>;
   const content = maybeComment ? (
-    <CommentPopover ifOpen={true} text={textContent} leaf={leaf} />
+    <CommentPopover ifOpen={true} text={textContent} />
   ) : (
     textContent
   );

@@ -19,7 +19,7 @@ import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 import { useParams } from "react-router-dom";
 import { DOC_ID_PARAM } from "@/util/constants";
 
-function CommentPopover({ text, leaf }) {
+function CommentPopover({ text}) {
   const inputRef = useRef(null);
   const user = getUserById(getCurrentUser());
   const docId = useParams()[DOC_ID_PARAM];
