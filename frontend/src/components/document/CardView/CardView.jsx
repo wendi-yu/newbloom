@@ -107,7 +107,7 @@ const CardView = ({ document }) => {
         initialValue={[{ children: cards[selectedIdx].body }]}
         onChange={onChange}
       >
-        <Toolbar />
+        <Toolbar document={document}/>
         <div className="w-80 float-left h-full pb-8">
           <CardSelector
             cards={cards}
