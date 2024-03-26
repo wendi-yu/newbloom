@@ -9,7 +9,6 @@ import {
   insertRedaction,
   changeRedaction,
   isRedaction,
-  removeRedaction,
   getRedactionsOnTextNode
 } from "@/util/editorRedactionUtils";
 import isHotkey from "is-hotkey";
@@ -74,13 +73,33 @@ export function selectNode(editor, redaction) {
   Transforms.setSelection(editor, range);
 }
 
+export function setSelectionToCurrNodeEdges(editor) {
+  const [start, end] = Editor.edges(editor, editor.selection.anchor.path);
+  // Create a new range that spans the entire editor
+  const range = { anchor: start, focus: end };
+
+  // Update the selection to the new range
+  Transforms.select(editor, range);
+}
+
+export function removeSelectedMark(editor, mark) {
+  console.log(mark)
+  const temp = editor.selection;
+
+  setSelectionToCurrNodeEdges(editor);
+  Editor.removeMark(editor, mark);
+
+  // restore old selection
+  editor.selection = temp;
+}
+
 export function handleChangeRedaction(editor, prefix) {
   const curr = editor.selection && Editor.node(editor, editor.selection.focus);
   const mark = Object.keys(curr[0])[1];
 
   if (prefix == "DELETE") {
     console.log(mark);
-    removeRedaction(editor, mark);
+    removeSelectedMark(editor, mark);
     return;
   }
 

@@ -2,11 +2,6 @@ import { v4 as uuid } from "uuid";
 import { Editor, Node, Text } from 'slate';
 import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 
-// Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
-// Reference links here: 
-// Slate docs: https://docs.slatejs.org/concepts/01-interfaces
-// Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
-
 const COMMENT_THREAD_PREFIX = "commentThread_";
 const MAYBE_COMMENT = "isMaybeComment";
 

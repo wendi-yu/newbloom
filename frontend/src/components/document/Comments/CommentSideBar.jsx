@@ -1,7 +1,8 @@
 import SidebarComment from "@/components/document/Comments/SidebarComment";
-import {commentThreadIDsState} from "@/util/CommentRedactionState";
-import { useRecoilValue } from "recoil";
+import { commentThreadIDsState } from "@/util/CommentRedactionState";
 import { Row, Col } from 'antd';
+
+import { useRecoilValue } from "recoil";
 
 function CommentSideBar () {
 
@@ -14,7 +15,7 @@ function CommentSideBar () {
     };
 
     return (
-        <div className="flex flex-col mt-20 mb-7">
+        <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
             {Array.from(allCommentThreadIDs).map((id) => (
             <Row key={id}>
                 <Col>
@@ -22,7 +23,7 @@ function CommentSideBar () {
                 </Col>
             </Row>
             ))}
-        </div>
+         </div>
     );
 
 }
