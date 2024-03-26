@@ -18,7 +18,6 @@ function CommentSideBar () {
 
     useEffect(() => {
         const allComments = getAllCommentsFromDoc(docId)
-        console.log(allComments)
         if (document && allComments) {
             setComments(allComments);
         }
@@ -31,8 +30,7 @@ function CommentSideBar () {
                 return (
                     <Row key={id}>
                         <Col>
-                            {/* Pass only the matching comment to SidebarComment */}
-                            {matchingComment && <SidebarComment id={id} comment={matchingComment} />}
+                            {matchingComment && <SidebarComment id={id} comment={natchingCmment} />}
                         </Col>
                     </Row>
                 );

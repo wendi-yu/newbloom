@@ -22,7 +22,6 @@ export const updateDocumentBody = (docId, state) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-
   docHashes[docId].state = state;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
