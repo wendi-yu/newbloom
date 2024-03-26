@@ -40,7 +40,7 @@ export default function Toolbar() {
   }, [editor]);
 
   return (
-    <div className="flex flex-row bg-gray-200 h-10 w-full space-x-6 pl-4 items-center">
+    <div className="flex flex-row bg-gray-200 w-full space-x-6 pl-4 py-2 items-center">
       <div className="flex flex-row space-x-1">
         <HoverableIcon
           SVG={UndoSVG}

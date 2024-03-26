@@ -56,14 +56,16 @@ export default function TextEditor({
         onChange={onChange}
       >
         <Toolbar />
-        <div className="bg-document-background flex flex-row justify-center">
-          <div className="bg-white mx-40 mt-20 mb-7 max-w-4xl min-h-screen">
-            <Editable
-              renderElement={renderElement}
-              onKeyDown={onKeyDown}
-              renderLeaf={renderLeaf}
-              className="flex flex-col p-16 focus:outline-none h-full overflow-y-scroll"
-            />
+        <div className="bg-document-background min-h-full flex flex-row justify-center">
+          <div className=" mx-40 max-w-4xl max-h-[900px] overflow-y-scroll">
+            <div className="mt-20 bg-white">
+              <Editable
+                renderElement={renderElement}
+                onKeyDown={onKeyDown}
+                renderLeaf={renderLeaf}
+                className="flex flex-col p-16 focus:outline-none max-h-full"
+              />
+            </div>
           </div>
         </div>
       </Slate>
