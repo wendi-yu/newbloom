@@ -1,6 +1,6 @@
 import { getCurrentUser } from "./api/user_apis";
 
-export const addDocument = (name, id, state) => {
+const addDocument = (name, id, state) => {
   const userId = getCurrentUser();
   // todo: this only allows one path per document
 
@@ -12,7 +12,7 @@ export const addDocument = (name, id, state) => {
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
-export const updateDocumentBody = (docId, state) => {
+const updateDocumentBody = (docId, state) => {
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
@@ -28,7 +28,7 @@ export const updateDocumentBody = (docId, state) => {
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
-export const getLocalDocuments = () => {
+const getLocalDocuments = () => {
   const userId = getCurrentUser();
   const documents = JSON.parse(localStorage.getItem(userId));
 
@@ -47,8 +47,26 @@ export const getLocalDocuments = () => {
   });
 };
 
+const KEYBINDS_KEY = "keyBinds";
+
+const getUserCustomKeyBind = (userId) => {
+  const keybindsString = localStorage.getItem(KEYBINDS_KEY);
+  const keyBinds = keybindsString ? JSON.parse(keybindsString) : {};
+  return keyBinds[userId];
+};
+
+const saveUserCustomKeyBind = (userId, newKeyBinds) => {
+  const keybindsString = localStorage.getItem(KEYBINDS_KEY);
+  const keyBinds = keybindsString ? JSON.parse(keybindsString) : {};
+  keyBinds[userId] = newKeyBinds;
+
+  localStorage.setItem(KEYBINDS_KEY, JSON.stringify(keyBinds));
+};
+
 export default {
+  saveUserCustomKeyBind,
   addDocument,
   updateDocumentBody,
   getLocalDocuments,
+  getUserCustomKeyBind,
 };
