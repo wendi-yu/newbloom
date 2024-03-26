@@ -72,7 +72,7 @@ export function getPreviousRedaction(editor, redactions) {
 export function selectNode(editor, redaction) {
   //this selects the node but doesn't click it
   const range = Editor.range(editor, redaction.path);
-  Transforms.setSelection(editor, range);
+  Transforms.select(editor, range);
 }
 
 export function handleChangeRedaction(editor, prefix) {

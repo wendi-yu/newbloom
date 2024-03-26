@@ -27,6 +27,16 @@ export function isRedactionFromMark(mark) {
   return false;
 }
 
+export function getTargetFromMark(mark) {
+  let res = null;
+  [ACCEPTED_PREFIX, SUGGESTION_PREFIX, REJECTED_PREFIX].forEach((pre) => {
+    if (mark.includes(pre)) {
+      res = pre;
+    }
+  });
+  return res;
+}
+
 export function getMarkFromLeaf(leaf) {
   const key = Object.keys(leaf);
   return key[1];
