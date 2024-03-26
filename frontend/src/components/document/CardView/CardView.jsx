@@ -13,6 +13,8 @@ import { createEditor } from "slate";
 import { withHistory } from "slate-history";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 
+import localDocStore from "@/util/localDocStore";
+
 // this is a stub, replace it with an API call or something later
 const splitText = (document) => {
   return document.documentBody;
@@ -69,33 +71,33 @@ const CardView = ({ document }) => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
 
-  function setCardBody(body) {
+  function updatedCards(changedCardBody) {
     const newCards = [...cards];
-    newCards[selectedIdx].body = body;
-    setCards(newCards);
+    newCards[selectedIdx].body = changedCardBody;
+    return newCards;
   }
 
   const onChange = (value) => {
-    setCardBody(value[0].children);
-    const isAstChange = editor.operations.some(
+    const newCards = updatedCards(value[0].children);
+    setCards(newCards);
+
+    const isMeaningfulChange = editor.operations.some(
       (op) => "set_selection" !== op.type
     );
-    if (isAstChange) {
-      // Save the value to Local Storage.
-      const updatedContent = cards.map((card) => {
-        const children = card.body.map((node) => {
-          const { text, ...marks } = node;
-          return { text, ...marks };
-        });
-        return {
-          type: "paragraph",
-          children,
-        };
-      });
-
-      const content = JSON.stringify(updatedContent);
-      localStorage.setItem("content", content);
+    // ignore selections
+    if (!isMeaningfulChange) {
+      return;
     }
+
+    // reassmable whole document body from this change
+    const newWholeDocBody = newCards.map((card) => {
+      return {
+        type: "paragraph",
+        children: card.body,
+      };
+    });
+
+    localDocStore.updateDocumentBody(document.id, newWholeDocBody);
   };
 
   return (

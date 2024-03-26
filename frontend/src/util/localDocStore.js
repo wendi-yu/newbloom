@@ -1,6 +1,6 @@
 import { getCurrentUser } from "./api/user_apis";
 
-export const addLocalDocument = (name, id, state) => {
+export const addDocument = (name, id, state) => {
   const userId = getCurrentUser();
   // todo: this only allows one path per document
 
@@ -8,6 +8,22 @@ export const addLocalDocument = (name, id, state) => {
   const docHashes = docHashesString ? JSON.parse(docHashesString) : {};
   // todo: warning if we''re going to overwrite
   docHashes[id] = { name: name, state: state, dateAdded: new Date() };
+
+  localStorage.setItem(userId, JSON.stringify(docHashes));
+};
+
+export const updateDocumentBody = (docId, state) => {
+  const userId = getCurrentUser();
+
+  let docHashesString = localStorage.getItem(userId);
+  if (!docHashesString) {
+    console.error(`document ${docId} not found`);
+    return;
+  }
+
+  const docHashes = JSON.parse(docHashesString);
+
+  docHashes[docId].state = state;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -29,4 +45,10 @@ export const getLocalDocuments = () => {
       documentBody: obj.state,
     };
   });
+};
+
+export default {
+  addDocument,
+  updateDocumentBody,
+  getLocalDocuments,
 };
