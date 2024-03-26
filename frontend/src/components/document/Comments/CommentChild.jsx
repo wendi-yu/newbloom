@@ -7,7 +7,7 @@ import HoverableIcon from "@/components/common/HoverableIcon"
 import MenuSVG from "@/assets/meatballs_menu.svg"
 import PurpleMenuSVG from "@/assets/meatballs_menu_purple.svg"
 
-function CommentChild({}) {
+function CommentChild() {
 
     //TODO: resolve child comment
     const handleResolveComment = () => {

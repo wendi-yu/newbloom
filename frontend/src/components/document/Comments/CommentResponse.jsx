@@ -1,8 +1,7 @@
 import CommentInput from "@/components/document/Comments/CommentInput"
 import { useState, useRef, useEffect } from "react";
-import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 
-function CommentResponse ({}) {
+function CommentResponse () {
 
     const inputRef = useRef(null);
     const [comment, setComment] = useState("");
@@ -11,7 +10,7 @@ function CommentResponse ({}) {
         if (inputRef.current) {
             inputRef.current.focus();
         }
-    }, []);
+    });
 
     const submitCommentResponse = () => {
     };

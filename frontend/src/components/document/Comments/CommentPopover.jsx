@@ -15,13 +15,10 @@ import { maybeCommentAtom } from "@/util/CommentRedactionState";
 import { useSetRecoilState } from "recoil";
 
 import { getUserById, getCurrentUser } from "@/util/api/user_apis";
-import { useParams } from "react-router-dom";
-import { DOC_ID_PARAM } from "@/util/constants";
 
 function CommentPopover({ text }) {
   const inputRef = useRef(null);
   const user = getUserById(getCurrentUser());
-  const docId = useParams()[DOC_ID_PARAM];
 
   useEffect(() => {
     if (inputRef.current) {
@@ -35,8 +32,6 @@ function CommentPopover({ text }) {
   const [open, setOpen] = useState(true);
   const editor = useSlate();
   const addComment = useAddCommentThreadToState();
-
-  const userName = getUserById(getCurrentUser());
 
   const deleteComment = () => {
     setComment("");
@@ -53,19 +48,9 @@ function CommentPopover({ text }) {
 
   const submitComment = () => {
     if (comment.length > 0) {
-      const newCommentThreadID = insertCommentThread(editor, addComment);
+      insertCommentThread(editor, addComment);
       deleteMaybeComment(editor, setMaybeComment);
       setOpen(false);
-
-      const newComment = {
-        id: newCommentThreadID,
-        comment: [{
-          author: userName,
-          text: comment,
-          creationTime: new Date().toISOString(),
-        }]
-      };
-
     }
   };
 
