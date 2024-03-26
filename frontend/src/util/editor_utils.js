@@ -9,19 +9,20 @@ import {
   insertRedaction,
   changeRedaction,
   isRedaction,
-  getRedactionsOnTextNode
+  removeRedaction,
+  getRedactionsOnTextNode,
 } from "@/util/editorRedactionUtils";
 import isHotkey from "is-hotkey";
 
-export function ifSelectionInTextNode (editor, leaf) {
-  const selection = editor.selection;
-  if (!selection) return false;
-  const node = getFirstTextNodeAtSelection(editor, selection)
-  return ifCommentThreadsEqual(node, leaf) ? true : false
+export function getTextFromSelection(editor) {
+  return Editor.string(editor, editor.selection);
 }
 
-export function getTextFromSelection(editor) {
-  return Editor.string(editor, editor.selection)
+export function ifSelectionInTextNode(editor, leaf) {
+  const selection = editor.selection;
+  if (!selection) return false;
+  const node = getFirstTextNodeAtSelection(editor, selection);
+  return ifCommentThreadsEqual(node, leaf) ? true : false;
 }
 
 export function getFirstTextNodeAtSelection(editor, selection) {
@@ -98,7 +99,6 @@ export function handleChangeRedaction(editor, prefix) {
   const mark = Object.keys(curr[0])[1];
 
   if (prefix == "DELETE") {
-    console.log(mark);
     removeSelectedMark(editor, mark);
     return;
   }
@@ -153,11 +153,13 @@ export const KeyBindings = {
     // handle redaction popover
     else if (isHotkey("a", event)) {
       //only insert if no redaction or rejected redaction
-      if (getRedactionsOnTextNode(currNode, ACCEPTED_PREFIX) || getRedactionsOnTextNode(currNode, SUGGESTION_PREFIX)) {
+      if (
+        getRedactionsOnTextNode(currNode, ACCEPTED_PREFIX) ||
+        getRedactionsOnTextNode(currNode, SUGGESTION_PREFIX)
+      ) {
         handleChangeRedaction(editor, ACCEPTED_PREFIX);
       }
       insertRedaction(editor, ACCEPTED_PREFIX);
-
     } else if (isHotkey("s", event)) {
       handleChangeRedaction(editor, REJECTED_PREFIX);
     }
@@ -174,6 +176,5 @@ export const KeyBindings = {
         extendSelectionByWord(editor, direction);
       }
     }
-
   },
 };

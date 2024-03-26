@@ -7,18 +7,22 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prod": "vite build && serve -l $PORT -s dist"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
     "antd": "^5.15.1",
+    "autoprefixer": "^10.4.16",
     "axios": "^1.6.7",
     "date-fns": "^2.30.0",
     "deep-equal": "^2.2.3",
     "esbuild": "^0.19.8",
     "is-hotkey": "^0.2.0",
     "moment": "^2.29.4",
+    "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
@@ -28,18 +32,15 @@
     "slate-history": "^0.100.0",
     "slate-react": "^0.101.6",
     "styled-components": "^6.1.1",
+    "tailwindcss": "^3.3.5",
     "util-deprecate": "^1.0.2",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "vite": "^4.4.5"
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react-swc": "^3.3.2",
-    "autoprefixer": "^10.4.16",
-    "eslint-plugin-react": "^7.33.2",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^4.4.5"
+    "eslint-plugin-react": "^7.33.2"
   }
 }

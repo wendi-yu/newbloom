@@ -25,3 +25,6 @@ dist-ssr
 
 # Vite
 .vite/*
+
+# Environment variables
+*.env
