@@ -1,13 +1,13 @@
 import FakeDocs from "@/util/test_documents";
 import axios from "axios";
 import { API_DOMAIN } from "../constants";
-import { getLocalDocuments } from "../localDocStore";
+import localDocStore from "../localDocStore";
 
 /*
     Gets all information on all docs
 */
 const getAllDocs = () => {
-  const localDocs = getLocalDocuments();
+  const localDocs = localDocStore.getLocalDocuments();
   const res = [...localDocs, ...FakeDocs];
   return res;
 };

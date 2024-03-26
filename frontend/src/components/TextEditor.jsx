@@ -11,8 +11,12 @@ import Toolbar from "@/components/common/ToolBar/Toolbar";
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
+import localDocStore from "@/util/localDocStore";
 
-export default function TextEditor({ document = [], onChange }) {
+export default function TextEditor({
+  document = { documentBody: [] },
+  updateDocumentState,
+}) {
   // workaround to make the editor behave properly with vite hot reloading
   const editorRef = useRef();
   if (!editorRef.current)
@@ -30,12 +34,30 @@ export default function TextEditor({ document = [], onChange }) {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
 
+  const onChange = (value) => {
+    updateDocumentState({ ...document, documentBody: value });
+
+    const isMeaningfulChange = editor.operations.some(
+      (op) => "set_selection" !== op.type
+    );
+    // ignore selections
+    if (!isMeaningfulChange) {
+      return;
+    }
+
+    localDocStore.updateDocumentBody(document.id, value);
+  };
+
   return (
     <div className="flex flex-col h-full">
-      <Slate editor={editor} initialValue={document} onChange={onChange}>
+      <Slate
+        editor={editor}
+        initialValue={document.documentBody}
+        onChange={onChange}
+      >
         <Toolbar />
         <div className="bg-document-background flex flex-row justify-center">
-          <div className="bg-white mx-40 mt-20 mb-7  max-w-4xl min-h-screen">
+          <div className="bg-white mx-40 mt-20 mb-7 max-w-4xl min-h-screen">
             <Editable
               renderElement={renderElement}
               onKeyDown={onKeyDown}

@@ -1,7 +1,7 @@
 import AddIcon from "@/assets/add_round.svg";
 import { useRef, useState } from "react";
 import DocApi from "@/util/api/document_apis";
-import { addLocalDocument } from "@/util/localDocStore";
+import localDocStore from "@/util/localDocStore";
 import { toSlateFormat } from "@/util/slateUtil";
 import { Grid } from "react-loader-spinner";
 
@@ -18,7 +18,7 @@ const UploadButton = (props) => {
 
     // store file in local store
     const state = toSlateFormat(text, res.redactions);
-    addLocalDocument(f.name, res.id, state);
+    localDocStore.addDocument(f.name, res.id, state);
     props.onLocalDocUpdate();
   };
 

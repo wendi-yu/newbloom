@@ -5,18 +5,15 @@ import CheckIcon from "@/assets/check_ring.svg";
 import CloseIcon from "@/assets/close_ring.svg";
 import NextIcon from "@/assets/next.svg";
 import PreviousIcon from "@/assets/previous.svg";
-import {
-  getAllChildCommentThreads,
-  initializeStateWithAllCommentThreads,
-} from "@/util/editorCommentUtils";
-import { getCommentById } from "@/util/api/comment_apis";
-import { CommentSection } from "./CommentSection";
+import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import Toolbar from "@/components/common/ToolBar/Toolbar";
 
 import { Slate, withReact } from "slate-react";
 import { createEditor } from "slate";
 import { withHistory } from "slate-history";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
+
+import localDocStore from "@/util/localDocStore";
 
 // this is a stub, replace it with an API call or something later
 const splitText = (document) => {
@@ -29,9 +26,9 @@ const CardView = ({ document }) => {
     paragraphs.map((par) => ({
       body: par.children,
       completed: false,
-      comments: Object.keys(getAllChildCommentThreads(par)).map((id) =>
-        getCommentById(id)
-      ),
+      // comments: Object.keys(getAllChildCommentThreads(par)).map((id) =>
+      //   getCommentById(id)
+      // ),
     }))
   );
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -74,20 +71,41 @@ const CardView = ({ document }) => {
     initializeStateWithAllCommentThreads(editor, addCommentThread);
   }, [editor, addCommentThread]);
 
-  function setCardBody(body) {
+  function updatedCards(changedCardBody) {
     const newCards = [...cards];
-    newCards[selectedIdx].body = body;
-    setCards(newCards);
+    newCards[selectedIdx].body = changedCardBody;
+    return newCards;
   }
+
+  const onChange = (value) => {
+    const newCards = updatedCards(value[0].children);
+    setCards(newCards);
+
+    const isMeaningfulChange = editor.operations.some(
+      (op) => "set_selection" !== op.type
+    );
+    // ignore selections
+    if (!isMeaningfulChange) {
+      return;
+    }
+
+    // reassmable whole document body from this change
+    const newWholeDocBody = newCards.map((card) => {
+      return {
+        type: "paragraph",
+        children: card.body,
+      };
+    });
+
+    localDocStore.updateDocumentBody(document.id, newWholeDocBody);
+  };
 
   return (
     <div className="h-4/5 w-full">
       <Slate
         editor={editor}
         initialValue={[{ children: cards[selectedIdx].body }]}
-        onChange={(v) => {
-          setCardBody(v[0].children);
-        }}
+        onChange={onChange}
       >
         <Toolbar />
         <div className="w-80 float-left h-full pb-8">
@@ -127,7 +145,7 @@ const CardView = ({ document }) => {
               <img src={NextIcon} />
             </button>
           </div>
-          <CommentSection comments={cards[selectedIdx].comments} />
+          {/* <CommentSection comments={cards[selectedIdx].comments} /> */}
         </div>
       </Slate>
     </div>
