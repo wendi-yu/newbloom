@@ -1,13 +1,13 @@
-import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
-import {
-  getMarkForRedactionID,
-  SUGGESTION_PREFIX,
-  REJECTED_PREFIX,
-} from "@/util/editorRedactionUtils";
-import { comments } from "./example_comments";
+// import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
+// import {
+//   getMarkForRedactionID,
+//   SUGGESTION_PREFIX,
+//   REJECTED_PREFIX,
+// } from "@/util/editorRedactionUtils";
+// import { comments } from "./example_comments";
 
-import { v4 as uuid } from "uuid";
-import { ACCEPTED_PREFIX } from "../util/editorRedactionUtils";
+// import { v4 as uuid } from "uuid";
+// import { ACCEPTED_PREFIX } from "../util/editorRedactionUtils";
 
 import data from "@/assets/ericstate.json"
 const ExampleDocument = data;
