@@ -18,7 +18,7 @@ import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
 
 import { format } from "date-fns";
 
-function SidebarComment ({id, comment, docId}) {
+function SidebarComment ({id, comment}) {
 
     const [isFocus, setIsFocus] = useState(false)
     const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
