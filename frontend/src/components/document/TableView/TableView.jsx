@@ -6,7 +6,7 @@ import { createEditor } from "slate";
 import { changeRedaction, getAllRedactions } from "@/util/editorRedactionUtils";
 import { selectNode } from "@/util/editor_utils";
 import localDocStore from "@/util/localDocStore";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
 const RedactionFilterDropdownMenu = () => {
   //TODO: Some sort of dropdown
