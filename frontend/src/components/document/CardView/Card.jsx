@@ -10,16 +10,27 @@ const Card = ({ card, idx, total }) => {
   const editor = useSlate();
 
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
+
   const { renderElement, renderLeaf, onKeyDown } = useEditorConfig(editor, setMaybeComment);
 
   // TODO: pull card.body.children into a state, update it in this function
   // we'll need to use a reducer to avoid infinite state change updating
   useEffect(() => {
+
+    //editor selection ends up at the bottom of the slate editor for some reason
+    const selection = editor.selection;
+
     // empty the node
     editor.children.forEach(() => {
       Transforms.delete(editor, { at: [0] });
     });
     Transforms.insertNodes(editor, [{ children: card.body }]);
+
+    // restore old selection
+    if (selection !== editor.selection) {
+      Transforms.select(editor, selection);
+    }
+
   }, [card.body, editor]);
 
   const width = ((idx + 1) / total) * 100 || 5;
