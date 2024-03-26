@@ -1,6 +1,6 @@
 export default function CommentedText(props) {
 
-  const { leaf, children, isActive, ...otherProps } = props;
+  const { children, isActive, ...otherProps } = props;
 
   return (
     <span
