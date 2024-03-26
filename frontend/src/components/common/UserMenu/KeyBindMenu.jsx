@@ -62,7 +62,7 @@ export const KeyBindMenu = ({ open, setOpen }) => {
                 {val.map((v, i) => {
                   return i === val.length - 1 ? (
                     <input
-                      className={`font-mono bg-suggested-redaction-darker my-1 px-1.5 w-${
+                      className={`font-mono bg-suggested-redaction-darker my-1 px-1.5 focus:outline-none w-${
                         v.length === 1 ? "5" : "8"
                       } rounded-sm text-black text-sm`}
                       key={v}
