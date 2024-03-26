@@ -30,7 +30,7 @@ function CommentSideBar () {
                 return (
                     <Row key={id}>
                         <Col>
-                            {matchingComment && <SidebarComment id={id} comment={matchingCmment} />}
+                            {matchingComment && <SidebarComment id={id} comment={matchingComment} />}
                         </Col>
                     </Row>
                 );
