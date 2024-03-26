@@ -105,6 +105,7 @@ export const extendSelectionByWord = (editor, direction) => {
 
 export const KeyBindings = {
   onKeyDown: (editor, event) => {
+
     // default behavior for arrow left and right
     if (isHotkey("ArrowLeft", event) || isHotkey("ArrowRight", event)) {
       return;
@@ -156,5 +157,6 @@ export const KeyBindings = {
         extendSelectionByWord(editor, direction);
       }
     }
+
   },
 };
