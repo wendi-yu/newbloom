@@ -10,7 +10,7 @@ import { useRecoilValue } from "recoil";
 import { activeCommentThreadIDAtom } from "@/util/CommentRedactionState";
 import { useState, useEffect } from "react" 
 import { getCommentThreadsOnTextNode } from "@/util/editorCommentUtils";
-import { selectNode, removeSelectedMark } from "@/util/editor_utils"
+import { removeSelectedMark } from "@/util/editor_utils"
 
 import { useSlate } from "slate-react";
 
@@ -31,7 +31,7 @@ function SidebarComment ({id}) {
         } else {
             setIsFocus(false)
         }
-    }, [activeCommentThreadID]);
+    }, [activeCommentThreadID, id]);
 
     const handleResolveComment = () => {
         console.log(activeCommentThreadID)

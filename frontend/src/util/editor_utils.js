@@ -9,7 +9,6 @@ import {
   insertRedaction,
   changeRedaction,
   isRedaction,
-  removeRedaction,
   getRedactionsOnTextNode,
 } from "@/util/editorRedactionUtils";
 import isHotkey from "is-hotkey";
