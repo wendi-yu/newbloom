@@ -38,7 +38,7 @@ export default function TextEditor({
 
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread, docId);
-  }, [editor, addCommentThread]);
+  }, [editor, addCommentThread, docId]);
 
   const onChange = (value) => {
     updateDocumentState({ ...document, documentBody: value });

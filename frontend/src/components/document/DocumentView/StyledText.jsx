@@ -48,7 +48,7 @@ export default function StyledText({ attributes, children, leaf, isPopoverDisabl
       // if selection isn't in leaf, set active comment thread to null
       setActiveCommentThreadID(null);
     }
-  }, [ifSelectionInLeaf, leaf, activeCommentThreadID]);
+  }, [ifSelectionInLeaf, leaf, activeCommentThreadID, setActiveCommentThreadID]);
 
   const isActive = leaf === activeCommentThreadID;
 
