@@ -24,6 +24,10 @@ function SidebarComment({ id, comment, docId }) {
   const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
   const editor = useSlate();
 
+  //convert to comment format
+  const commentCreationTimeISO = comment[0].creationTime;
+  const commentCreationDate = new Date(commentCreationTimeISO);
+
   useEffect(() => {
     if (activeCommentThreadID) {
       const activeCommentMarkSet = getCommentThreadsOnTextNode(
@@ -83,9 +87,9 @@ function SidebarComment({ id, comment, docId }) {
           <img src={ProfileIcon} alt="Profile Pic" className="h-10" />
           <div className="flex flex-col">
             <p className="font-semibold">{comment[0].author.name}</p>
-            {/* <p className="font-light">
-              {format(comment[0].creationTime, "MMM dd hh:mmaa")}
-            </p> */}
+            <p className="font-light">
+              {format(commentCreationDate, "MMM dd hh:mmaa")}
+            </p>
           </div>
         </div>
         {isFocus && menu}
