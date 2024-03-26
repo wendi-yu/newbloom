@@ -17,7 +17,7 @@ import { useSlate } from "slate-react";
 import { deleteCommentFromDocument } from "@/util/localDocStore";
 import { getMarkForCommentThreadID } from "@/util/editorCommentUtils";
 
-import { format } from "date-fns";
+import { format, parseISO } from 'date-fns';
 
 function SidebarComment({ id, comment, docId }) {
   const [isFocus, setIsFocus] = useState(false);
@@ -25,8 +25,10 @@ function SidebarComment({ id, comment, docId }) {
   const editor = useSlate();
 
   //convert to comment format
-  const commentCreationTimeISO = comment[0].creationTime;
-  const commentCreationDate = new Date(commentCreationTimeISO);
+  const formatCreationTime = (creationTimeISO) => {
+    const date = parseISO(creationTimeISO);
+    return format(date, 'MMM dd, yyyy hh:mm aaaa');
+  };
 
   useEffect(() => {
     if (activeCommentThreadID) {
@@ -88,7 +90,7 @@ function SidebarComment({ id, comment, docId }) {
           <div className="flex flex-col">
             <p className="font-semibold">{comment[0].author.name}</p>
             <p className="font-light">
-              {format(commentCreationDate, "MMM dd hh:mmaa")}
+              {formatCreationTime(comment[0].creationTime)}
             </p>
           </div>
         </div>
