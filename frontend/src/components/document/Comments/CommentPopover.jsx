@@ -61,9 +61,11 @@ function CommentPopover({ text, leaf }) {
 
       const newComment = {
         id: newCommentThreadID,
-        author: userName,
-        text: comment,
-        creationTime: new Date().toISOString(),
+        comment: [{
+          author: userName,
+          text: comment,
+          creationTime: new Date().toISOString(),
+        }]
       };
       addCommentToDocument(docId, newComment);
     }

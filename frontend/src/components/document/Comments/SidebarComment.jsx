@@ -82,15 +82,15 @@ function SidebarComment({ id, comment, docId }) {
         <div className="flex flex-row items-center space-x-2.5 mb-3">
           <img src={ProfileIcon} alt="Profile Pic" className="h-10" />
           <div className="flex flex-col">
-            <p className="font-semibold">{comment.author.name}</p>
+            <p className="font-semibold">{comment[0].author.name}</p>
             {/* <p className="font-light">
-              {format(comment.creationTime, "MMM dd h:mmaa")}
+              {format(comment[0].creationTime, "MMM dd hh:mmaa")}
             </p> */}
           </div>
         </div>
         {isFocus && menu}
       </div>
-      {comment.text}
+      {comment[0].text}
     </div>
   );
 }

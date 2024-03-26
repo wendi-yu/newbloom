@@ -14,6 +14,7 @@ function CommentSideBar() {
 
   useEffect(() => {
     const allComments = getAllCommentsFromDoc(docId);
+    console.log(allComments)
     if (document && allComments) {
       setComments(allComments);
     }
@@ -21,11 +22,11 @@ function CommentSideBar() {
 
   return (
     <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
-      {Array.from(comments).map((id) => {
+      {Array.from(comments).map((comment) => {
         return (
-          <Row key={id}>
+          <Row key={comment.id}>
             <Col>
-                <SidebarComment id={id} comment={comment} docId={docId}/>
+                <SidebarComment id={comment.id} comment={comment.comment} docId={docId}/>
             </Col>
           </Row>
         );
