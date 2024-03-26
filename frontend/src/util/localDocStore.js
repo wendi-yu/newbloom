@@ -7,7 +7,12 @@ export const addDocument = (name, id, state) => {
   let docHashesString = localStorage.getItem(userId);
   const docHashes = docHashesString ? JSON.parse(docHashesString) : {};
   // todo: warning if we''re going to overwrite
-  docHashes[id] = { name: name, state: state, dateAdded: new Date(), comments:[] };
+  docHashes[id] = {
+    name: name,
+    state: state,
+    dateAdded: new Date(),
+    comments: [],
+  };
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -44,8 +49,8 @@ export const addCommentToDocument = (docId, newComment) => {
   }
 
   document.comments.push(newComment);
+  console.log(docHashes);
   localStorage.setItem(userId, JSON.stringify(docHashes));
-
 };
 
 export const getAllCommentsFromDoc = (docId) => {
@@ -60,12 +65,11 @@ export const getAllCommentsFromDoc = (docId) => {
   const docHashes = JSON.parse(docHashesString);
   const document = docHashes[docId];
 
-  if(!document.comments) return null;
+  if (!document.comments) return null;
   return document.comments;
-}
+};
 
 export const deleteCommentFromDocument = (docId, commentId) => {
-
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
@@ -78,7 +82,7 @@ export const deleteCommentFromDocument = (docId, commentId) => {
   const document = docHashes[docId];
 
   if (!document) {
-    return
+    return;
   }
 
   if (!document.comments) {
@@ -86,7 +90,9 @@ export const deleteCommentFromDocument = (docId, commentId) => {
     return;
   }
 
-  const updatedComments = document.comments.filter(comment => comment.id !== commentId);
+  const updatedComments = document.comments.filter(
+    (comment) => comment.id !== commentId
+  );
   document.comments = updatedComments;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
