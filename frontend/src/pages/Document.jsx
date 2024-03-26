@@ -37,8 +37,8 @@ function Document() {
 
   return (
     <div className="flex flex-col document h-full overflow-x-hidden">
-      <Header documentName={fullDocument.name} />
       <div className="flex flex-col sticky">
+        <Header documentName={fullDocument.name} />
         <div className="flex space-x-1.5 text-sm pl-2.5 pb-2.5">
           <ViewToggleButton
             leadingIcon={DocumentIcon}
