@@ -19,13 +19,13 @@ import { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
 
 import HoverableIcon from "@/components/common/HoverableIcon";
-import { print, markAsDone } from "@/util/toolbar_functions.js";
+import { exportDoc, markAsDone } from "@/util/toolbar_functions.js";
 import { getTextFromSelection } from "@/util/editor_utils";
 import { insertMaybeComment } from "@/util/editorCommentUtils";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
 
-export default function Toolbar() {
+export default function Toolbar({document}) {
   const editor = useSlate();
 
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
@@ -59,7 +59,7 @@ export default function Toolbar() {
         <HoverableIcon
           SVG={PrintSVG}
           SVGonHover={PurplePrintSVG}
-          onClick={print}
+          onClick={() => exportDoc(document)}
           height={7}
         />
         <HoverableIcon
