@@ -68,10 +68,10 @@ export function getPreviousRedaction(editor, redactions) {
   return redactions[(index - 1) % redactions.length];
 }
 
-export function selectNode(editor, redaction) {
+export function selectNode(editor, node) {
   //this selects the node but doesn't click it
-  const range = Editor.range(editor, redaction.path);
-  Transforms.select(editor, range);
+  const range = Editor.range(editor, node.path);
+  Transforms.setSelection(editor, range);
 }
 
 export function setSelectionToCurrNodeEdges(editor) {
@@ -84,7 +84,6 @@ export function setSelectionToCurrNodeEdges(editor) {
 }
 
 export function removeSelectedMark(editor, mark) {
-  console.log(mark)
   const temp = editor.selection;
 
   setSelectionToCurrNodeEdges(editor);
@@ -176,10 +175,10 @@ export const KeyBindings = {
         event.key == userHotkeys.highlightRight ||
         event.key == userHotkeys.highlightLeft
       ) {
-        const direction = event.key === "O" ? "right" : "left";
+        const direction =
+          event.key === userHotkeys.highlightRight ? "right" : "left";
         extendSelectionByWord(editor, direction);
       }
     }
-
   },
 };

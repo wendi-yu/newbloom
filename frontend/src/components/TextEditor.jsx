@@ -2,11 +2,11 @@ import { Editable, Slate, withReact } from "slate-react";
 import useEditorConfig from "@/hooks/useEditorConfig";
 
 import { createEditor } from "slate";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { withHistory } from "slate-history";
 import { useSetRecoilState } from "recoil";
 
-import Toolbar from "@/components/common/Toolbar/Toolbar";
+import Toolbar from "@/components/common/ToolBar/Toolbar";
 import CommentSideBar from '@/components/document/Comments/CommentSideBar';
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
@@ -36,6 +36,7 @@ export default function TextEditor({
 
   const docId = useParams()[DOC_ID_PARAM];
 
+  const [commentRefresh, setCommentRefresh] = useState(false);
   useEffect(() => {
     initializeStateWithAllCommentThreads(editor, addCommentThread, docId);
   }, [editor, addCommentThread, docId]);
@@ -51,6 +52,7 @@ export default function TextEditor({
       return;
     }
 
+    setCommentRefresh(!commentRefresh);
     localDocStore.updateDocumentBody(document.id, value);
   };
 
@@ -74,7 +76,7 @@ export default function TextEditor({
                 />
               </div>
             </div>
-            <CommentSideBar />
+            <CommentSideBar refresh={commentRefresh} />
           </div>
         </div>
       </Slate>
