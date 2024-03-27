@@ -7,6 +7,7 @@ import { withHistory } from "slate-history";
 import { useSetRecoilState } from "recoil";
 
 import Toolbar from "@/components/common/ToolBar/Toolbar";
+import CommentSideBar from "@/components/document/Comments/CommentSideBar";
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
@@ -40,9 +41,16 @@ export default function TextEditor({
     initializeStateWithAllCommentThreads(editor, addCommentThread, docId);
   }, [editor, addCommentThread, docId]);
 
-  const onChange = (value) => {
-    updateDocumentState({ ...document, documentBody: value });
+  const onDocChange = (newVal, externalChange = false) => {
+    updateDocumentState({ ...document, documentBody: newVal });
 
+    setCommentRefresh(!commentRefresh);
+    localDocStore.updateDocumentBody(document.id, newVal);
+
+    if (externalChange) editor.children = newVal;
+  };
+
+  const onSlateChange = (value) => {
     const isMeaningfulChange = editor.operations.some(
       (op) => "set_selection" !== op.type
     );
@@ -50,9 +58,7 @@ export default function TextEditor({
     if (!isMeaningfulChange) {
       return;
     }
-
-    setCommentRefresh(!commentRefresh);
-    localDocStore.updateDocumentBody(document.id, value);
+    onDocChange(value);
   };
 
   return (
@@ -60,18 +66,26 @@ export default function TextEditor({
       <Slate
         editor={editor}
         initialValue={document.documentBody}
-        onChange={onChange}
+        onChange={onSlateChange}
       >
-        <Toolbar document={document}/>
-        <div className="bg-document-background min-h-full flex flex-row justify-center">
-          <div className=" mx-40 max-w-4xl max-h-[900px] overflow-y-scroll">
-            <div className="mt-20 bg-white">
-              <Editable
-                renderElement={renderElement}
-                onKeyDown={onKeyDown}
-                renderLeaf={renderLeaf}
-                className="flex flex-col p-16 focus:outline-none max-h-full"
-              />
+        <Toolbar
+          document={document}
+          onRefresh={(val) => {
+            onDocChange(val, true);
+            setCommentRefresh(!commentRefresh);
+          }}
+        />
+        <div className="bg-document-background min-h-full justify-center">
+          <div className="overflow-y-scroll flex flex-row">
+            <div className="ml-72 mr-10 max-w-4xl max-h-[1200px]">
+              <div className="mt-20 bg-white">
+                <Editable
+                  renderElement={renderElement}
+                  onKeyDown={onKeyDown}
+                  renderLeaf={renderLeaf}
+                  className="flex flex-col p-16 focus:outline-none max-h-full"
+                />
+              </div>
             </div>
           </div>
         </div>

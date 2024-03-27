@@ -2,6 +2,7 @@ import CommentSVG from "@/assets/comment_fill_gray.svg";
 import RedactSVG from "@/assets/edit_fill.svg";
 import PrintSVG from "@/assets/print_fill.svg";
 import MarkAsDoneSVG from "@/assets/book_check_fill.svg";
+import RefreshSVG from "@/assets/refresh.svg";
 
 import UndoSVG from "@/assets/undo.svg";
 import RedoSVG from "@/assets/redo.svg";
@@ -13,19 +14,20 @@ import PurpleCommentSVG from "@/assets/comment_fill_purple.svg";
 import PurpleRedactSVG from "@/assets/edit_fill_purple.svg";
 import PurplePrintSVG from "@/assets/print_fill_purple.svg";
 import PurpleMarkAsDoneSVG from "@/assets/book_check_fill_purple.svg";
+import PurpleRefreshSVG from "@/assets/refresh_purple.svg";
 
 import { useSlate } from "slate-react";
 import { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
 
 import HoverableIcon from "@/components/common/HoverableIcon";
-import { exportDoc, markAsDone } from "@/util/toolbar_functions.js";
+import { exportDoc, markAsDone, refresh } from "@/util/toolbar_functions.js";
 import { getTextFromSelection } from "@/util/editor_utils";
 import { insertMaybeComment } from "@/util/editorCommentUtils";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
 
-export default function Toolbar({document}) {
+export default function Toolbar({ document, onRefresh }) {
   const editor = useSlate();
 
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
@@ -77,7 +79,13 @@ export default function Toolbar({document}) {
         <HoverableIcon
           SVG={MarkAsDoneSVG}
           SVGonHover={PurpleMarkAsDoneSVG}
-          onClick={markAsDone}
+          onClick={() => markAsDone(document)}
+          height={7}
+        />
+        <HoverableIcon
+          SVG={RefreshSVG}
+          SVGonHover={PurpleRefreshSVG}
+          onClick={() => refresh(document, onRefresh)}
           height={7}
         />
       </div>
