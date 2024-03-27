@@ -1,5 +1,11 @@
 import { getCurrentUser } from "./api/user_apis";
 
+const DOC_STATUS = {
+  New: "New",
+  InProgress: "InProgress",
+  Completed: "Completed",
+};
+
 const addDocument = (name, id, state) => {
   const userId = getCurrentUser();
   // todo: this only allows one path per document
@@ -10,6 +16,7 @@ const addDocument = (name, id, state) => {
   docHashes[id] = {
     name: name,
     state: state,
+    status: DOC_STATUS.New, 
     dateAdded: new Date(),
     comments: [],
   };
@@ -28,6 +35,7 @@ const updateDocumentBody = (docId, state) => {
 
   const docHashes = JSON.parse(docHashesString);
   docHashes[docId].state = state;
+  docHashes[docId].status = DOC_STATUS.InProgress;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -128,6 +136,7 @@ export const getLocalDocuments = () => {
       owner: userId,
       documentBody: obj.state,
       comments: obj.comments || [],
+      status: obj.status ? obj.status : DOC_STATUS.New,
     };
   });
 };
@@ -149,6 +158,7 @@ const saveUserCustomKeyBind = (userId, newKeyBinds) => {
 };
 
 export default {
+  DOC_STATUS,
   saveUserCustomKeyBind,
   addDocument,
   updateDocumentBody,
