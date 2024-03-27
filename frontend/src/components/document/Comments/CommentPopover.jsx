@@ -9,7 +9,7 @@ import { Popover } from "antd";
 import {
   insertCommentThread,
   deleteMaybeComment,
-} from "@/util/EditorCommentUtils";
+} from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
 import { useSetRecoilState } from "recoil";
@@ -19,7 +19,7 @@ import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 import { useParams } from "react-router-dom";
 import { DOC_ID_PARAM } from "@/util/constants";
 
-function CommentPopover({ text}) {
+function CommentPopover({ text }) {
   const inputRef = useRef(null);
   const user = getUserById(getCurrentUser());
   const docId = useParams()[DOC_ID_PARAM];
@@ -60,11 +60,13 @@ function CommentPopover({ text}) {
 
       const newComment = {
         id: newCommentThreadID,
-        comment: [{
-          author: userName,
-          text: comment,
-          creationTime: new Date().toISOString(),
-        }]
+        comment: [
+          {
+            author: userName,
+            text: comment,
+            creationTime: new Date().toISOString(),
+          },
+        ],
       };
       addCommentToDocument(docId, newComment);
     }

@@ -1,4 +1,3 @@
-import FakeDocs from "@/util/test_documents";
 import axios from "axios";
 import { API_DOMAIN } from "../constants";
 import localDocStore from "../localDocStore";
@@ -8,7 +7,7 @@ import localDocStore from "../localDocStore";
 */
 const getAllDocs = () => {
   const localDocs = localDocStore.getLocalDocuments();
-  const res = [...localDocs, ...FakeDocs];
+  const res = [...localDocs];
   return res;
 };
 
