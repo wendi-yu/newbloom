@@ -1,5 +1,5 @@
 import express from "express";
-import { upload_file } from "#controllers/fileController";
+import { upload_file, updateFile, getFile } from "#controllers/fileController";
 import { getUsers } from "#controllers/userController";
 const router = express.Router();
 
@@ -9,7 +9,9 @@ router.get("/", (req, res) => {
 });
 
 // redact test route
-router.post("/upload", upload_file);
+router.post("/file/upload", upload_file);
+router.post("/file/update", updateFile);
+router.get("/file/", getFile);
 
 router.get("/users", getUsers);
 

@@ -17,6 +17,7 @@ function CommentSideBar({ refresh }) {
       setComments(allComments);
     }
   }, [docId, refresh]);
+  console.log(comments);
 
   return (
     <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
