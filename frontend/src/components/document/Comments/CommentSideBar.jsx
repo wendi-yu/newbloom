@@ -7,17 +7,16 @@ import { DOC_ID_PARAM } from "@/util/constants";
 
 import { getAllCommentsFromDoc } from "@/util/localDocStore";
 
-function CommentSideBar() {
-
+function CommentSideBar({ refresh }) {
   const docId = useParams()[DOC_ID_PARAM];
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(getAllCommentsFromDoc(docId));
 
   useEffect(() => {
     const allComments = getAllCommentsFromDoc(docId);
     if (document && allComments) {
       setComments(allComments);
     }
-  }, [docId]);
+  }, [docId, refresh]);
 
   return (
     <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
@@ -25,7 +24,11 @@ function CommentSideBar() {
         return (
           <Row key={comment.id}>
             <Col>
-                <SidebarComment id={comment.id} comment={comment.comment} docId={docId}/>
+              <SidebarComment
+                id={comment.id}
+                comment={comment.comment}
+                docId={docId}
+              />
             </Col>
           </Row>
         );

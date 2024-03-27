@@ -175,10 +175,10 @@ export const KeyBindings = {
         event.key == userHotkeys.highlightRight ||
         event.key == userHotkeys.highlightLeft
       ) {
-        const direction = event.key === "O" ? "right" : "left";
+        const direction =
+          event.key === userHotkeys.highlightRight ? "right" : "left";
         extendSelectionByWord(editor, direction);
       }
     }
-
   },
 };
