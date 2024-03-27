@@ -87,6 +87,7 @@ export default function TextEditor({
                 />
               </div>
             </div>
+            <CommentSideBar refresh={commentRefresh} />
           </div>
         </div>
       </Slate>
