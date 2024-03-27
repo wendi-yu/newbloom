@@ -70,9 +70,8 @@ export function getPreviousRedaction(editor, redactions) {
 
 export function selectNode(editor, node) {
   //this selects the node but doesn't click it
-  console.log(node)
-  const range = Editor.range(editor, node.path);
-  Transforms.setSelection(editor, range);
+  const range = Editor.range(editor, redaction.path);
+  Transforms.select(editor, range);
 }
 
 export function setSelectionToCurrNodeEdges(editor) {
