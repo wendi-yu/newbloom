@@ -1,5 +1,7 @@
 import { getCurrentUser } from "./api/user_apis";
 
+const tempDocID = "d02dd6a363df05a1ded4aa8150c58d62d7baf0396bfc66a1dd38efa98cf00072"
+
 const addDocument = (name, id, state) => {
   const userId = getCurrentUser();
   // todo: this only allows one path per document
@@ -16,13 +18,14 @@ const updateDocumentBody = (docId, state) => {
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
+  
   if (!docHashesString) {
     console.error(`document ${docId} not found`);
     return;
   }
 
   const docHashes = JSON.parse(docHashesString);
-  docHashes[docId].state = state;
+  docHashes[tempDocID].state = state;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -37,7 +40,7 @@ export const addCommentToDocument = (docId, newComment) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docId];
+  const document = docHashes[tempDocID];
 
   if (!document.comments) {
     document.comments = [];
@@ -57,7 +60,7 @@ export const getAllCommentsFromDoc = (docId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docId];
+  const document = docHashes[tempDocID];
 
   if (!document.comments) return null;
   return document.comments;
@@ -73,7 +76,7 @@ export const deleteCommentFromDocument = (docId, commentId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docId];
+  const document = docHashes[tempDocID];
 
   if (!document) {
     return;
