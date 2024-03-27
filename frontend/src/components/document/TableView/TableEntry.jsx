@@ -1,6 +1,5 @@
 import CheckIcon from "@/assets/check_fill.svg";
 import CloseIcon from "@/assets/close_fill.svg";
-import CommentIcon from "@/assets/comment_fill.svg";
 import NavigateToIcon from "@/assets/navigate_to_icon.svg";
 import { Slider } from "antd";
 import { useState } from "react";
@@ -10,8 +9,15 @@ import {
   REJECTED_PREFIX,
 } from "@/util/editorRedactionUtils";
 import { getTargetFromMark } from "@/util/editorRedactionUtils";
+import AcceptedText from "@/components/document/Redactions/AcceptedText";
+import RejectedText from "@/components/document/Redactions/RejectedText";
+import HighlightedText from "@/components/document/Redactions/HighlightedText";
 
-export const TableEntry = ({ redaction, updateParentState }) => {
+export const TableEntry = ({
+  redaction,
+  updateParentState,
+  popOutToDocView,
+}) => {
   let paragraph_index = redaction;
   let words = paragraph_index.paragraph;
   let redacted_index = paragraph_index.index;
@@ -37,28 +43,32 @@ export const TableEntry = ({ redaction, updateParentState }) => {
     const preRedactedSection = words
       .slice(Math.max(wordStartIndex, 0), redacted_start_index)
       .join(" ");
-    const redactedWord =
-      " <" +
-      words.slice(redacted_start_index, redacted_end_index).join(" ") +
-      "> ";
+    const redactedWord = words
+      .slice(redacted_start_index, redacted_end_index)
+      .join(" ");
     const postRedactedSection = words
       .slice(redacted_end_index + 1, wordEndIndex + 1)
       .join(" ");
 
-    const partsOfSentence = [];
-    if (wordStartIndex > 0) partsOfSentence.push(ellipsis);
-    partsOfSentence.push(preRedactedSection);
-    partsOfSentence.push(redactedWord);
-    partsOfSentence.push(postRedactedSection);
-    if (wordEndIndex < words.length) partsOfSentence.push(ellipsis);
-
     return (
       <div
-        className={`m-2 flex-1 justify-center items-center flex text-center ${
-          redactionResult === SUGGESTION_PREFIX ? "opacity-100" : "opacity-30"
-        }`}
+        className={`m-2 flex-1 justify-center items-center flex text-center`}
       >
-        {partsOfSentence}
+        <p>
+          {wordStartIndex > 0 && ellipsis}
+          {preRedactedSection}{" "}
+          {redactionResult === SUGGESTION_PREFIX ? (
+            <HighlightedText color={"suggested-redaction"} className="contents">
+              {redactedWord}
+            </HighlightedText>
+          ) : redactionResult === ACCEPTED_PREFIX ? (
+            <AcceptedText>{redactedWord}</AcceptedText>
+          ) : (
+            <RejectedText>{redactedWord}</RejectedText>
+          )}{" "}
+          {postRedactedSection}
+          {wordEndIndex < words.length && ellipsis}
+        </p>
       </div>
     );
   };
@@ -74,7 +84,7 @@ export const TableEntry = ({ redaction, updateParentState }) => {
     );
   };
 
-  const TableActionButtons = ({ onSelect }) => {
+  const TableActionButtons = ({ onSelect, popOutToDocView }) => {
     return (
       <div className="flex flex-row p-1">
         <img
@@ -103,8 +113,12 @@ export const TableEntry = ({ redaction, updateParentState }) => {
             );
           }}
         />
-        <img src={CommentIcon} />
-        <img src={NavigateToIcon} />
+        <img
+          src={NavigateToIcon}
+          onClick={() => {
+            popOutToDocView();
+          }}
+        />
       </div>
     );
   };
@@ -117,7 +131,10 @@ export const TableEntry = ({ redaction, updateParentState }) => {
     >
       <SentenceWithRedaction className="m-2" />
       <SentenceVisibilityScale min={0} max={words.length} />
-      <TableActionButtons onSelect={updateLocalState} />
+      <TableActionButtons
+        onSelect={updateLocalState}
+        popOutToDocView={popOutToDocView}
+      />
     </div>
   );
 };

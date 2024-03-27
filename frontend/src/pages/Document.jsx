@@ -31,7 +31,14 @@ function Document() {
     } else if (documentView == "card") {
       return <CardView document={fullDocument} />;
     } else {
-      return <TableView document={fullDocument} />;
+      return (
+        <TableView
+          document={fullDocument}
+          popOutToDocView={() => {
+            setDocumentView("document");
+          }}
+        />
+      );
     }
   };
 
