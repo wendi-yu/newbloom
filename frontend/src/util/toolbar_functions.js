@@ -5,7 +5,11 @@ import {
 } from "@/util/editorRedactionUtils";
 import { slateToIndices, toSlateFormat, toText } from "./slateUtil";
 import docApi from "./api/document_apis";
-import { getAllCommentsFromDoc, setDocumentComments } from "./localDocStore";
+import {
+  getAllCommentsFromDoc,
+  markDocAsDone,
+  setDocumentComments,
+} from "./localDocStore";
 
 export const toPDF = (body) => {
   return Array.from(body.document.documentBody)
@@ -48,6 +52,8 @@ export function exportDoc(document) {
 export async function markAsDone(document) {
   const indexForm = slateToIndices(document.documentBody);
   const allComments = getAllCommentsFromDoc(document.id);
+  // mark it as done in localhost
+  markDocAsDone(document.id);
   await docApi.updateDoc(document.id, { ...indexForm, comments: allComments });
 }
 
