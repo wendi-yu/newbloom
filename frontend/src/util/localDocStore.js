@@ -7,12 +7,7 @@ const addDocument = (name, id, state) => {
   let docHashesString = localStorage.getItem(userId);
   const docHashes = docHashesString ? JSON.parse(docHashesString) : {};
   // todo: warning if we''re going to overwrite
-  docHashes[id] = {
-    name: name,
-    state: state,
-    dateAdded: new Date(),
-    comments: [],
-  };
+  docHashes[id] = { name: name, state: state, dateAdded: new Date(), comments:[] };
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };

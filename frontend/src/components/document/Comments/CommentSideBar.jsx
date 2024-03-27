@@ -9,7 +9,7 @@ import { getAllCommentsFromDoc } from "@/util/localDocStore";
 
 function CommentSideBar({ refresh }) {
   const docId = useParams()[DOC_ID_PARAM];
-  const [comments, setComments] = useState(getAllCommentsFromDoc(docId));
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const allComments = getAllCommentsFromDoc(docId);

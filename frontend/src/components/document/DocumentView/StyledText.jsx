@@ -41,8 +41,7 @@ export default function StyledText({
   const commentThreads = getCommentThreadsOnTextNode(leaf);
 
   const maybeComment = ifMaybeCommentOnTextNode(leaf);
-  const isSuggestion =
-    getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
+  const isSuggestion = getRedactionsOnTextNode(leaf, SUGGESTION_PREFIX).size > 0;
   const isRejected = getRedactionsOnTextNode(leaf, REJECTED_PREFIX).size > 0;
   const isAccepted = getRedactionsOnTextNode(leaf, ACCEPTED_PREFIX).size > 0;
   const isComment = commentThreads.size > 0;
@@ -112,7 +111,7 @@ export default function StyledText({
   //only modify content if it has a popover
   let textContent = isRedaction ? redactionPopover : <span>{children}</span>;
   const content = maybeComment ? (
-    <CommentPopover ifOpen={true} text={textContent} />
+    <CommentPopover ifOpen={true} text={textContent} leaf={leaf} />
   ) : (
     textContent
   );
