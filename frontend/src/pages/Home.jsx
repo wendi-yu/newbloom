@@ -1,6 +1,7 @@
 import Navbar from "@/components/homepage/navbar/Navbar";
 import DocSortingIcon from "@/assets/home_doc_sorting_icon.svg";
 import DocApi from "@/util/api/document_apis";
+import LocalStore from "@/util/localDocStore";
 import GridSelector from "@/components/homepage/doc_selectors/GridSelector";
 
 import DocSortingExpandedIcon from "@/assets/home_doc_sorting_expand_icon.svg";
@@ -154,17 +155,20 @@ const Home = () => {
     }
     return currentDocInfos;
   };
-  const [docState, updateDisplay] = useReducer(updater, {
+  const [status, updateDisplay] = useReducer(updater, {
     key: SORTING_OPTIONS.name,
     docs: sorter(docInfosRaw, SORTING_OPTIONS.name),
   });
 
   // state management for which layout to display
-  const [docLayout, setDocLayout] = useState(HOMEPAGE_DOC_LAYOUTS.grid);
+  const [docLayout, setDocLayout] = useState(HOMEPAGE_DOC_LAYOUTS.grid)
+  const [docSection, updateDocSection] = useState(LocalStore.DOC_STATUS.New)
+
+  let docsInSection = status.docs.filter(doc => doc.status === docSection)
 
   return (
     <div className="flex flex-row">
-      <Navbar />
+      <Navbar updateDocSection={(section) => {updateDocSection(section)}}/>
       <div className="ml-80 flex-1 p-8 divide-y divide-black w-full">
         <DocumentsSelectionTopBar
           updateDisplay={updateDisplay}
@@ -172,9 +176,9 @@ const Home = () => {
           setDocLayout={setDocLayout}
         />
         {docLayout == HOMEPAGE_DOC_LAYOUTS.grid ? (
-          <GridSelector docInfos={docState.docs} />
+          <GridSelector docInfos={docsInSection} />
         ) : (
-          <ListSelector docInfos={docState.docs} />
+          <ListSelector docInfos={docsInSection} />
         )}
       </div>
       <UploadButton
