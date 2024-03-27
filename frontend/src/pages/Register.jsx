@@ -24,6 +24,8 @@ function Register() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    const [err, setErr] = useState(null);
+
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
     };
@@ -43,8 +45,9 @@ function Register() {
     const navigate = useNavigate();
 
     const handleSubmit = () => {
-        const err = validateRegister(firstName, lastName, email, password)
-        err === null ? navigate('/home') : console.log(err);
+        const validationResult = validateRegister(email, password);
+        setErr(validationResult);
+        validationResult === null ? navigate('/home') : console.log(err);
     }
 
     return (
@@ -84,6 +87,7 @@ function Register() {
                             value={password}
                             handleValueChange = {handlePasswordChange}
                         />
+                        {err && <p className="text-red-500 text-center text-xs">{err}</p>}
                         <LoginButton text="register" onSubmit={handleSubmit}/>
                     </Flex>
                     <p className="text-description font-semibold" >already have an account? <a href="/login">sign in</a></p>
