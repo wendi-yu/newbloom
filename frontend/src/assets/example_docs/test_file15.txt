@@ -1,0 +1,117 @@
+Date: 20200109
+
+Docket: T-2128-18
+Citation: 2020 FC 24
+Ottawa, Ontario, January 9, 2020
+PRESENT:  Madam Justice McDonald
+BETWEEN:
+TEODORO LICLICAN
+Applicant
+and
+ATTORNEY GENERAL OF CANADA
+Respondent
+
+JUDGMENT AND REASONS
+[1]  The Applicant, Teodoro Liclican, seeks judicial review of a decision of the Appeal Division (AD) of the Social Security Tribunal (SST) upholding earlier decisions that he voluntarily left his employment and therefore was not eligble for Employment Insurance (EI) benefits. Mr. Liclican stopped reporting for work and applied for EI benefits.  The Employment Insurance Commission (the Commission) determined he left his job voluntarily and was therefore not entitled to EI benefits.  The SST General Division (GD) upheld the Commission’s decision.
+
+[2]  The AD denied Mr. Liclican’s request for leave to appeal the GD’s decision on the basis that the appeal did not disclose a proper ground of appeal and lacked any reasonable chance of success.  Mr. Liclican asks this Court to set aside the AD decision as being unreasonable.
+
+[3]  For the reasons that follow, this judicial review is dismissed, as I have found that the AD did not make any errors, and it reasonably considered Mr. Liclican’s appeal request.
+Background
+
+[4]  Mr. Liclican was employed with Walmart as a full-time custodian from October 2009 until he was laid off in May 2016 when Walmart contracted out its cleaning services to Modern Cleaning Concepts (Modern).  Mr. Liclican was hired to work as a custodian with Modern the day after his layoff from Walmart.
+
+[5]  Mr. Liclican stopped working for Modern on July 22, 2016.  He says that his did not leave the job voluntarily, but left because he needed to work different hours.  He claims that working at night was aggravating his chronic illnesses.  He did not discuss these concerns with his employer before he stopped working.
+
+[6]  Mr. Liclican applied for EI benefits on July 25, 2016.  In his EI application, he only referenced his work with Walmart, and did not mention that he worked with Modern for two months.
+
+[7]  In May 2017, the Commission determined that Mr. Liclican voluntarily left his job and was not entitled to EI benefits.  The Commission found that Mr. Liclican had reasonable alternatives to quitting and noted that there was no medical documentation indicating that he could not work.  The Commission determined that Mr. Liclican had been overpaid benefits, but upon reconsideration the overpayment penalty was reduced to a letter of warning.
+
+[8]  Mr. Liclican appealed the Commission’s decision to the GD who upheld the Commission decision the he was not entitled to EI benefits.
+
+[9]  Mr. Liclican was late filing his request for appeal to the AD.  As a result, the AD asked Mr. Liclican to provide the following: (1) a reasonable explanation for the delay, (2) arguments in support of his appeal that show it has a reasonable chance of success, (3) an explanation of the steps he had taken that show he always intended to pursue the appeal, and (4) an explanation of why allowing the extension would not be unfair to the other party.
+AD Decision Under Review
+
+[10]  The AD was not satisfied with Mr. Liclican’s explanation for filing his application late because he did not address the nearly 5-month delay between the date of the GD’s decision and the date he filed his initial application.  Due to the lack of explanation, the AD found that he did not have a continuing intention to pursue his appeal or a reasonable explanation for the delay.
+
+[11]  With respect to the merits of his appeal, Mr. Liclican raised two errors with the GD decision, namely: (1) failure to observe a principle of natural justice or a jurisdictional error, and (2) an erroneous finding of fact made in a perverse and capricious manner or without regard for the material before the tribunal.  The AD found that both of these alleged errors arose from the same complaint, namely Mr. Liclican believed the GD relied on a “technical point” by equating his lack of a doctor’s note with a lack of medical advice to quit his job.
+
+[12]  The AD found that there was no breach of natural justice because this refers to procedural fairness and Mr. Liclican did not raise any procedural issues.
+
+[13]  The AD found that there was no errors of fact or law by the GD.  The AD determined that the GD applied the correct legal test to the question of whether Mr. Liclican had reasonable alternatives to leaving his job.  Additionally, the AD found there was no error of fact because Mr. Liclican’s issue with the GD decision was not based on a finding of fact, but rather the weight the GD attributed to the evidence.  The AD noted that it was not its role to reweigh the evidence.
+
+[14]  The AD concluded that it was not in the interests of justice to allow the appeal to proceed as Mr. Liclican did not demonstrate a continuing intention to appeal as he did not provide a reasonable explanation for why the application was late.  In addition, the AD concluded that he did not have an arguable case that the GD erred on any of the possible grounds of review.
+Preliminary Issue
+
+[15]  The Respondent submits that the style of cause should be amended to name the Attorney General of Canada as the sole Respondent as government departments are not legal entities and  should not be named as parties (Gravel v Canada (Attorney General), 2011 FC 832 at para 6).  I agree with the Respondent.  The style of cause shall be amended herewith to name the Attorney General of Canada as the Respondent.
+Issue
+
+[16]  At the hearing of this judicial review, Mr. Liclican’s legal counsel confirmed that he was not pursuing the waiver arguments raised in his Application for judicial review and written submissions.  The Applicant confirmed that the only issue being argued is the reasonableness of the AD decision.
+Standard of Review
+
+[17]  The standard of review for the Social Security Tribunal applying its own statute is reasonableness (Atkinson v Canada (Attorney General), 2014 FCA 187 at para 26).
+
+[18]  The standard of review of an Appeal Division decision granting or denying leave to appeal from a decision of the General Division is reasonableness (Canada (Attorney General) v Hines, 2016 FC 112 at para 28).
+
+[19]  A reasonable decision is one that is intelligible, transparent, and justifiable, and falls within a range of possible, acceptable outcomes defensible in respect of the facts and the law (Dunsmuir v New Brunswick, 2008 SCC 9 at para 47 [Dunsmuir]).  These criteria are met if “the reasons allow the reviewing court to understand why the tribunal made its decision and permit it to determine whether the conclusion is within the range of acceptable outcomes” (Newfoundland and Labrador Nurses’ Union v Newfoundland and Labrador (Treasury Board), 2011 SCC 62 at para 16).
+
+[20]  I have also considered the Supreme Court of Canada’s recent decision in Canada (Minister of Citizenship and Immigration) v Vavilov, 2019 SCC 65), and have concluded that it does not change the application of the foregoing case law to the analysis that follows.
+Analysis
+
+[21]  Mr. Liclican argues that the AD’s decision to uphold the GD’s finding that he voluntarily left his employment without just cause is unreasonable.  He argues that because of the workplace environment and his medical issues, leaving the job was his only reasonable option.
+
+[22]  In considering an appeal request, the AD has a limited mandate.  The AD’s jurisdiction is restricted to determining if the GD committed an error (s. 58(1) (a)-(c) of DESDA) and whether an appeal has a reasonable chance of success (s. 58(2) of DESDA). The AD may only grant leave to appeal when the criteria in ss. 58(1) and (2) are met.
+
+[23]  Here, the AD considered the request for an extension of time and the application for leave to appeal at the same time.  In considering whether to grant an extension of time to file an appeal, the most important factor is “whether it is in the interests of justice that the extension be granted”.  In assessing this, the factors to be considered are: (a) was there a continuing intention to appeal; (b) does the appeal disclose an arguable case; (c) is there a reasonable explanation for the delay; and (d) is there prejudice to the other party (Bossé v Canada (Attorney General), 2015 FC 1142 at para 12).  Therefore, in considering an extension of time request, having an arguable case becomes one of the most important factors.
+
+[24]  Here, Mr. Liclican chose “a failure to observe a principle of natural justice, or a jurisdictional error” (s. 58(1)(a)) and “an error of fact” (s.58(1)(c)) as his grounds of appeal.  Mr. Liclican argued that the GD made an error by relying on a “technical point” when it equated the lack of a doctor’s note with a lack of advice from his doctor.  He argues that he should not be forced to work when it is harmful to his health.
+
+[25]  The AD considered this argument, but concluded that “natural justice” is about fairness in the process and procedural protections.  The AD determined that while Mr. Liclican “may disagree with the conclusions or the result of the General Division hearing, and he may consider the result to be unfair…this would not be considered an error of natural justice”.  As well, the AD noted that disagreeing with the outcome is not an issue of natural justice because it does not relate to process.
+
+[26]  The AD also found that Mr. Liclican’s arguments did not raise any factual errors, but merely his disagreement with the GD’s interpretation of the facts.  Mr. Liclican stated that the GD’s reliance on the absence of a doctor’s note was an error.  However, the AD found that it was not its place to “substitute [its] view of the evidence for that of the General Division” and there was no error of fact upon which Mr. Liclican could rely.
+
+[27]  While Mr. Liclican did not allege any errors of law within s. 58(1)(b),  the AD considered this ground nonetheless.  The AD concluded that the GD applied the correct test from Canada (Attorney General) v Laughland, 2003 FCA 129 at para 9, which is “whether leaving the employment was the only reasonable course of action open to him, having regard to all the circumstances.”  The AD acknowledged that working conditions that pose a danger to health or safety are a relevant consideration and the GD was required to consider them.  The AD found that the GD did consider Mr. Liclican’s health, but was not satisfied that a doctor recommended he quit.  The GD also noted that he did not have a discussion with his employer about possible accommodation of his health problems.  The GD found that Mr. Liclican had not exhausted reasonable alternatives before quitting, and the AD agreed with this assessment.
+
+[28]  The AD considered the arguments Mr. Liclican felt were relevant and also considered a ground of appeal that Mr. Liclican did not raise.  Despite this, the AD concluded that Mr. Liclican had no arguable case and therefore his appeal could not succeed.  Although the AD denied the appeal by refusing to grant an extension of time, the AD also considered the merits of the case and determined that the appeal did not have a reasonable chance of success.  The AD decision is therefore reasonable and there is no basis for this Court to intervene.
+
+[29]  Accordingly, this judicial review is dismissed.
+
+[30]  As the Respondent is not seeking costs, none are awarded.
+
+JUDGMENT in T-2128-18
+THIS COURT’S JUDGMENT is that:
+The style of cause is hereby amended to name the Attorney General of Canada as the sole Respondent;
+The application for judicial review is dismissed; and
+No costs are awarded.
+"Ann Marie McDonald"
+Judge
+
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+DOCKET:
+T-2128-18
+  STYLE OF CAUSE:
+TEODORO LICLICAN v ATTORNEY GENERAL OF CANADA
+PLACE OF HEARING:
+CALGARY, ALBERTA
+DATE OF HEARING:
+NOVEMBER 28, 2019
+  JUDGMENT AND REASONS:
+MCDONALD J.
+  DATED:
+JANUARY 9, 2020
+  APPEARANCES:
+Danica Nguyen
+FOR THE APPLICANT
+Sandra Doucette
+FOR THE RESPONDENT
+SOLICITORS OF RECORD:
+AG Law Office
+Calgary, Alberta
+  FOR THE APPLICANT
+Attorney General of Canada
+Department of Justice
+Gatineau, Quebec
+FOR THE RESPONDENT
+ 

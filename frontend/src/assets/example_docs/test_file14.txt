@@ -1,0 +1,226 @@
+Date: 20200129
+
+Docket: T-2185-18
+T-2184-18
+Citation: 2020 FC 23
+St. John’s, Newfoundland and Labrador, January 29, 2020
+PRESENT:  The Honourable Madam Justice Heneghan
+ADMIRALTY ACTION IN REM AND IN PERSONAM
+Docket: T-2185-18
+BETWEEN:
+ARC-EN-CIEL PRODUCE INC., A BODY POLITIC AND CORPORATE LOCATED AT 122 THE WEST MALL, TORONTO, ONTARIO, CANADA M9C 1B9
+Plaintiff
+and
+THE SHIP "MSC BELLE" AND THE OWNERS AND ALL OTHERS INTERESTED IN THE SHIP “MSC BELLE” AND BELLE INC., A BODY POLITIC AND CORPORATE CARE OF MSC MEDITERRANEAN SHIPPING CO. SA, CHEMIN RIEU, 12-14, 1208 GENEVA, SWITZERLAND, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2 AND GREAT WHITE FLEET, A BODY POLITIC AND CORPORATE OF THE UNITED STATES, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2
+Defendants
+Docket: T-2184-18
+AND BETWEEN:
+ARC-EN-CIEL PRODUCE INC., A BODY POLITIC AND CORPORATE LOCATED AT 122 THE WEST MALL, TORONTO, ONTARIO, CANADA M9C 1B9
+Plaintiff
+and
+THE SHIP "BF LETICIA" AND THE OWNERS AND ALL OTHERS INTERESTED IN THE SHIP “BF LETICIA” AND BF LETICIA FOROOHARI SCHIFFS, A BODY POLITIC AND CORPORATE CARE OF PETER DOEHLE SCHIFFAHRTS-KG, ELBCHAUSSEE 370, 22609, HAMBURG, GERMANY, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2 AND GREAT WHITE FLEET, A BODY POLITIC AND CORPORATE OF THE UNITED STATES, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2
+Defendants
+
+AMENDED ORDER AND REASONS
+I.  INTRODUCTION
+[1]  By a Statement of Claim issued on December 21, 2018, the Plaintiff commenced an action in cause number T-2185-18 against THE SHIP “MSC BELLE,” Belle Inc. and others, including Great White Fleet (“GWF”), for the recovery of damages in respect of a cargo of cassavas and eddoes, to be shipped from Puerto Limon, Costa Rica, for delivery in Etobicoke, Ontario.
+
+[2]  By a Statement of Claim issued on December 21, 2018, Arc-En-Ciel Produce Inc., a body politic and corporate located at 122 The West Mall, Toronto, Ontario, Canada M9C 1B9 (the “Plaintiff”) commenced an action in cause number T-2184-18 against THE SHIP “BF LETICIA” and others for the recovery of damages in respect of a cargo of cassavas, squash, green papayas, green coconut, red malanga, eddoes, and sugar cane, shipped from Puerto Limon, Costa Rica, for delivery in Etobicoke, Ontario.
+
+[3]  The Plaintiff is a Canadian company incorporated under the laws of Ontario, and engaged in the business of importing and distributing fruits and vegetables from all over the world.
+
+[4]  The Defendant ships and their owners will be referred to, collectively, as the Defendants (the “Defendants”).
+
+[5]  By Notice of Motion filed on June 7, 2019, the Defendant GWF seeks an Order to stay the within actions in favour of proceedings to be instituted in the United States District Court, Southern District of New York. GWF bases its request upon the jurisdiction clause contained in the Bill of Lading that is incorporated in the Service Contact made with the Plaintiff. GWF filed a Notice of Motion in each of the within proceedings.
+
+II.  BACKGROUND
+[6]  The following details are taken from the Statements of Claim and the Motion Records of the parties.
+
+[7]  On December 15, 2017 and January 28, 2018, the cargo, carried in containers, was loaded on board the “MSC BELLE” and the “BF LETICIA,” respectively.
+
+[8]  The cargo was discharged and stored at the Port of Puerto Barrios, Guatemala before being loaded onto a new vessel. The transport continued to Wilmington, United States of America, where it was transferred into trucks and carried to Etobicoke, Ontario.
+
+[9]  On January 4, 2018, the Plaintiff received the cargo from the “MSC BELLE.” The cargo from the “BF LETICIA” was delivered to the Plaintiff between February 23, 2018 and February 26, 2018.
+
+[10]  According to the Statements of Claim, the cargo carried on board the “MSC BELLE” and the “BF LETICIA” arrived in damaged condition. The Plaintiff responded by commencing the within actions.
+
+[11]  GWF filed the affidavit of Mr. Luis Rodriguez Contreras in support of its motion.
+
+[12]  The Plaintiff, in its responding materials, filed the affidavit of Mr. Sam Hak.
+
+[13]  Mr. Contreras is a Transportation Claims Analyst employed by Chiquita Fresh North America L.L.C., a corporate affiliate of GWF. He described the contractual relationship between the parties, including the number of contracts signed, dates of contracts, and reference to clauses of the Bills of Lading mentioned in the Service Contract.
+
+[14]  Mr. Contreras also described the typical modus operandi respecting cargo transported under the service contracts. As well, he addressed the use of an Express Release Bill of Lading and the practice of using this Bill of Lading rather than an “ordinary” bill of lading.
+
+[15]  Mr. Hak is the President of the Plaintiff. He deposed that GWF drafted the terms of the Service Contract; the Plaintiff negotiated only the volume of cargo and contract rates.
+
+[16]  Mr. Hak further deposed that GWF did not give a copy of the Bill of Lading. Consequently, the Plaintiff was not provided with the terms of the Bills of Lading.
+
+[17]  Mr. Hak also deposed that the cargo was not insured and that the Plaintiff was assisted in the claim process by Montship Inc., the Montreal-based agent of GWF.
+
+[18]  According to the Statement of Claim in cause number T-2184-18, the cargo was shipped on board the “MSC BELLE” under a clear on board Bill of Lading No. GWFT3033164A.
+
+[19]  According to the Statement of Claim in cause number T-2184-18, the cargo was shipped on board the “BF LETICIA” under clear on board Bill of Lading Nos. GWFT3033275A, GWFT3033778A, GWFT3033277A, GWFT3033779A, and GWFT3033776A.
+
+[20]  The transportation of the goods was subject to a Service Contract dated June 30, 2017. A copy of that Service Contract is attached to Mr. Contreras’ affidavit as Exhibit A. Term 12 of the Service Contract refers to a Bill of Lading as follows “…[t]he Carrier’s bill of lading is incorporated into this contract and will determine the terms and conditions of shipment.…”
+
+[21]  According to the affidavit of Mr. Contreras, the cargo on board the “MSC BELLE” and the “BF LETICIA” was subject to unsigned non-negotiable Express Release Bills of Lading. A copy of the terms and conditions of GWF’s standard Bill of Lading is attached as Exhibit B to the affidavit of Mr. Contreras. GWF relies upon clauses 4, 22, and 23 of those terms and conditions, which provide as follows:
+4. CLAUSE PARAMOUNT (a)(i) During Ocean Carriage, this Bill of Lading and the Carrier’s liability and obligations while acting in any capacity whatsoever, including but not limited to a Carrier, bailee, agent or supplier of a Container, shall be governed by the United States Carriage of Goods by Sea Act, 1936 (COGSA).…
+22. JURISDICTION All claims by the Carrier or causes of action against or disputes with Carrier arising out of and/or by reason of this Bill of Lading and/or relationships created thereby or in connection with the Shipment shall be brought by or against the Carrier exclusively in the United States District Court, Southern District of New York in accordance with the laws of the United States.
+23. APPLICABLE LAW All rights, duties and/or obligations not specifically otherwise described or incorporated herein shall be determined according to the laws of the United States, or, where there is no governing federal law, according to the laws of the State of New York.
+
+III.  SUBMISSIONS
+[22]  GWF argues that, in the absence of a Bill of Lading, there is no “contract for carriage of goods by water,” within the scope of the Marine Liability Act, S.C. 2001, c. 6 (the “Act”), relying by analogy upon the decision in Cami Automotive, Inc. v. Westwood Shipping Lines Inc., 2009 FC 664.
+
+[23]  GWF submits that the transportation of the cargo is governed by the Service Contract and that the carriage of the goods is beyond the scope of section 46 of the Act, with the result that effect should be given to the jurisdiction clause in clause 22 of the terms and conditions of the GWF standard Bill of Lading.
+
+[24]  GWF argues that a stay of the within proceedings should be granted, pursuant to subsection 50(1) of the Federal Courts Act, R.S.C., 1985, c. F-7 (“Federal Courts Act”).
+
+[25]  For its part, the Plaintiff argues that the Bills of Lading are incorporated by reference in the Service Contract and that the Bills of Lading are sufficient to characterize transportation of the cargo as a “contract for carriage of goods by water.”
+
+[26]  The Plaintiff further submits that the Court has the discretion, pursuant to subsection 50(1) of the Federal Courts Act to dismiss GWF’s motion, on the grounds that it has a strong cause to justify non-compliance with the jurisdiction clause set out in clause 22 of the Bill of Lading. In this regard, the Plaintiff relies on the decision in Z.I. Pompey Industrie v. ECU-Line N.V., [2003] 1 S.C.R 450.
+
+[27]  As well, the Plaintiff argues that it would be prejudiced if the present actions were stayed and it were required to continue proceedings in the United States District Court, Southern District of New York because it is out of time to institute proceedings in the United States.
+IV.  DISCUSSION AND DISPOSITION
+[28]  The thrust of the arguments made by GWF in support of its request for a stay of the within proceedings is that the contractual arrangements with the Plaintiff do not constitute a “contract for the carriage of goods by water” within the scope of section 46 of the Act. GWF submits that the service contract, incorporating the terms and conditions of its Bill of Lading, is not a “true” bill of lading since it does not fulfil the usual elements of a bill of lading, that is as evidence of the contract of carriage; a receipt of the goods to be carried; and as a document of title to the goods.
+
+[29]  In my opinion, this argument is premature and should be left until any trial of these actions; see Z.I. Pompey, supra at paragraph 41.
+
+[30]  Here, GWF is seeking a stay of the actions commenced by the Plaintiff in the Federal Court. It is not necessary for me to determine the status of the contractual arrangements in order to dispose of the motion for a stay.
+
+[31]  GWF purports to rely on its Bill of Lading for the purpose of enforcing the jurisdiction clause provided in clause 22 in that document. The Bill of Lading is incorporated by reference in the Service Contract.
+
+[32]  Subsection 46(1) of the Act may be engaged when contractual documents refer to jurisdiction other than Canada. Subsection 46(1) of the Act provides as follows:
+Claims not subject to Hamburg Rules
+Créances non assujetties aux règles de Hambourg
+46 (1) If a contract for the carriage of goods by water to which the Hamburg Rules do not apply provides for the adjudication or arbitration of claims arising under the contract in a place other than Canada, a claimant may institute judicial or arbitral proceedings in a court or arbitral tribunal in Canada that would be competent to determine the claim if the contract had referred the claim to Canada, where
+46 (1) Lorsqu’un contrat de transport de marchandises par eau, non assujetti aux règles de Hambourg, prévoit le renvoi de toute créance découlant du contrat à une cour de justice ou à l’arbitrage en un lieu situé à l’étranger, le réclamant peut, à son choix, intenter une procédure judiciaire ou arbitrale au Canada devant un tribunal qui serait compétent dans le cas où le contrat aurait prévu le renvoi de la créance au Canada, si l’une ou l’autre des conditions suivantes existe:
+(a) the actual port of loading or discharge, or the intended port of loading or discharge under the contract, is in Canada;
+a) le port de chargement ou de déchargement — prévu au contrat ou effectif — est situé au Canada;
+(b) the person against whom the claim is made resides or has a place of business, branch or agency in Canada; or
+b) l’autre partie a au Canada sa résidence, un établissement, une succursale ou une agence;
+(c) the contract was made in Canada.
+c) le contrat a été conclu au Canada.
+
+[33]  In T. Co. Metals LLC v. Vessel "Federal Ems", 2011 FC 291, rev’d in part 2011 FC 1067, aff’d in part [2014] 1 F.C.R. 836, Prothonotary Morneau, at first instance, said the following at paragraph 28:
+Although our Court recently noted again that the language of section 46 of the MLA is somewhat convoluted (see Hitachi Maxco Ltd. v. Dolphin Logistics Company Ltd., 2010 FC 853, at paragraph 29), the following passage from paragraphs 22 and 23 of the defendants’ written representations filed on November 15, 2010, in opposition to this motion by Cosipa (the defendants’ written representations) reasonably identifies the purpose and the key elements of subsection 46(1) of the MLA:
+
+23.  In order for section 46 to apply, it must be shown that:
+a.  there is:
+i) a contract for the carriage of goods by water,
+ii) to which the Hamburg Rules do not apply, and
+iii) the contract provides for the adjudication or arbitration of claims arising under the contract in a place other than Canada, and
+b.  The actual port of loading or discharge, or the intended port of loading or discharge under the contract, is in Canada, or
+c.  The defendant has a place of business or an agency in Canada, or
+d.  The contract was concluded in Canada.
+
+[34]  According to the evidence submitted on the motion, GWF has an agent in Canada. This means that paragraph 46(1)(c) is satisfied.
+
+[35]  In the present case, there is a contract for the carriage of goods by water, as represented by the Service Contract. The Hamburg Rules do not apply, as yet, in Canada.  The Service Contract incorporates by reference the terms and conditions of a GWF Bill of Lading and that document contains a clause providing for the adjudication of claims under the Service Contract in a place other than Canada.
+
+[36]  It is not necessary for me to decide, in this motion, the nature of the Service Contract.
+
+[37]  Section 46 of the Act does not remove the jurisdiction of the Court to grant a stay of proceedings, pursuant to subsection 50(1) of the Federal Courts Act, which provides as follows:
+Stay of proceedings authorized
+Suspension d’instance
+50 (1) The Federal Court of Appeal or the Federal Court may, in its discretion, stay proceedings in any cause or matter
+50 (1) La Cour d’appel fédérale et la Cour fédérale ont le pouvoir discrétionnaire de suspendre les procédures dans toute affair:
+(a) on the ground that the claim is being proceeded with in another court or jurisdiction; or
+a) au motif que la demande est en instance devant un autre tribunal;
+(b) where for any other reason it is in the interest of justice that the proceedings be stayed.
+b) lorsque, pour quelque autre raison, l’intérêt de la justice l’exige.
+
+[38]  The existence of a jurisdiction clause does not mean that a stay will automatically be granted.
+
+[39]  In this regard, I refer to the decision in Hitachi Maxco Ltd. v. Dolphin Logistics Co., 2010 FC 853 at paragraph 43 where Justice Harrington said the following:
+The basic rule, which should not be forgotten, is that the choice of forum rests with the plaintiff. The Court so chosen may decline to proceed with the case; in this instance on the ground of forum non conveniens. However the factors connecting this case to Hong Kong, or for that matter New York, are not clearly more significant than those connecting it with Canada. Given that the impact of a foreign forum selection clause has been significantly reduced by s. 46 of the Marine Liability Act and that there has been no allegation of proceedings in any other Court, unlike in both the OT Africa and The Cougar Ace cases, in the exercise of my discretion under s. 50 of the Federal Courts Act, I dismiss the motion for a stay.…
+
+[40]  In this case, the Plaintiff’s claim lies within the general admiralty jurisdiction of the Court,  pursuant to paragraphs 22(2)(h) and (i) of the Federal Courts Act which provide as follows:
+Maritime jurisdiction
+Compétence maritime
+22(2) Without limiting the generality of subsection (1), for greater certainty, the Federal Court has jurisdiction with respect to all of the following:
+22(2) Il demeure entendu que, sans préjudice de la portée générale du paragraphe (1), elle a compétence dans les cas suivants:
+…
+…
+(h) any claim for loss of or damage to goods carried in or on a ship including, without restricting the generality of the foregoing, loss of or damage to passengers’ baggage or personal effects;
+h) une demande d’indemnisation pour la perte ou l’avarie de marchandises transportées à bord d’un navire, notamment dans le cas des bagages ou effets personnels des passagers;
+(i) any claim arising out of any agreement relating to the carriage of goods in or on a ship or to the use or hire of a ship whether by charter party or otherwise;
+i) une demande fondée sur une convention relative au transport de marchandises à bord d’un navire, à l’usage ou au louage d’un navire, notamment par charte-partie;
+…
+…
+
+[41]  Regardless of the status of the Service Contract as a contract of carriage of goods by water, the evidence shows that GWF transported certain goods on behalf of the Plaintiff and that transportation certainly meets the definition of a “simple” contract of carriage of goods by water.
+
+[42]  Subsection 50(1) of the Federal Courts Act confers a discretion upon the Court to grant a stay of proceedings. In Z.I. Pompey, supra, the Court discussed general principles for granting a stay of proceedings. When a stay is sought upon the basis of a jurisdiction clause, the Court may consider the principle of forum non conveniens.
+
+[43]  Although GWF raised an argument about forum non conveniens in its written submissions, it withdrew reliance on that argument during the oral hearing.
+
+[44]  In Z.I. Pompey, supra, the Supreme Court of Canada said the following at paragraph 37 about the interplay between section 46 of the Act and the discretion conferred by subsection 50(1) of the Federal Courts Act, as follows:
+Section 46(1) of the Marine Liability Act, which entered into force on August 8, 2001, has the effect of removing from the Federal Court its discretion under s. 50 of the Federal Court Act to stay proceedings because of a forum selection clause where the requirements of s. 46(1)(a), (b), or (c) are met. This includes where the actual port of loading or discharge is in Canada. In this case, there would be no question that the Federal Court is an appropriate forum to hear the respondents' claim but for the fact that s. 46 does not apply to judicial proceedings commenced prior to its coming into force: Incremona-Salerno Marmi Affini Siciliani (I.S.M.A.S.) s.n.c. v. Ship Castor (2002), 297 N.R. 151, 2002 FCA 479, at paras. 13-24. Section 46 of the Marine Liability Act is therefore irrelevant in this appeal.
+
+[45]  In my opinion, this statement by the Supreme Court of Canada does not oust the discretion of this Court to grant a motion for a stay, especially when the applicability of section 46 is not clearly in issue. On the basis of the evidence submitted in this motion, I am not satisfied that GWF can wholly rely on subsection 46(1) of the Act to justify its request for a stay.
+
+[46]  The Plaintiff relies on the decision in Z.I.Pompey, supra to argue that it has shown a “strong cause” for this Court to exercise its discretion to deny the motion for a stay.
+
+[47]  In that decision, the Supreme Court of Canada adopted the test developed by the High Court in England in the "Eleftheria" (The) (Cargo Owners) v. "Eleftheria" (The) (1969), [1970] P. 94, [1969] 1 Lloyd's Rep. 237, [1969] 2 All E.R. 641, [1969] 2 W.L.R. 1073, 113 Sol. Jo. 407 (Eng. P.D.A.). In paragraph 24 of Z.I. Pompey, supra, the Supreme Court of Canada said as follows:
+As recently as 1998, Décary J.A., for a unanimous Federal Court of Appeal in Jian Sheng, confirmed at para. 10 the appropriateness of the “strong cause” test in Canada, a case in which the issue was whether the forum selection clause in a bill of lading was void for uncertainty:
+Where, in admiralty matters before this Court, a defendant applies for a stay pursuant to section 50 of the Federal Court Act  . . .  on the basis of a jurisdiction clause found in a bill of lading, the defendant has the burden of persuading the Court that the conditions of application of the clause have been met.  Once the Court is satisfied that the clause applies, the burden of proof then shifts to the plaintiff to show sufficiently strong reasons to support the conclusion that it would not be reasonable or just in the circumstances to keep the plaintiff to the terms of the contract . . . .  These “strong reasons” have been summarized in the often-quoted reasons of Brandon J. (as he then was) in The “Eleftheria” . . . .
+…
+
+[48]  The evidence upon this motion is set out in the affidavits filed by the parties. The affidavits do not address the location of the witnesses nor the application of foreign law, that is American law, should the stay be granted.
+
+[49]  GWF acknowledges that the Plaintiff faces a limitation issue if required now to commence proceedings in the United States. GWF offers to refrain from arguing that defence if the Plaintiff begins an action in the United States District Court, Southern District of New York within a specified period of time.
+
+[50]  In my opinion, the position of GWF in this regard, while admirable, will not be binding upon a foreign Court, so it is of limited benefit at this time.
+
+V.  CONCLUSION
+[51]  Upon the basis of the evidence submitted, the arguments advanced, and the relevant law, including jurisprudence, I am satisfied that the Plaintiff has shown a “strong cause” for the denial of the motions for a stay.
+
+[52]  In the result, the motions are dismissed, with costs to the Plaintiff.
+
+[53]  If the parties are unable to agree on costs, then brief submissions not exceeding three pages may be made, to be served and filed by January 25, 2020.
+
+[54]  These reasons will be filed in cause T-2185-18 and placed on the file in cause T-2184-18.
+
+AMENDED ORDER in T-2185-18 and T-2184-18
+THIS COURT ORDERS that: the motions are dismissed, with costs to the Plaintiff.
+If the parties are unable to agree on costs, then brief submissions not exceeding three pages may be made, to be served and filed by January 25, 2020.
+These reasons will be filed in cause T-2185-18 and placed on the file in cause T-2184-18.
+An extension of time of thirty (30) days from the date of this Amended Order is granted to Great White Fleet to file a Defense in each action pursuant to the Authority of The Federal Court Rules, SOR/98-106, Rule 397(2).
+"E. Heneghan"
+Judge
+
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+  DOCKET:
+T-2185-18, T-2184-18
+    DOCKET:
+T-2185-18
+STYLE OF CAUSE:
+ARC-EN-CIEL PRODUCE INC., A BODY POLITIC AND CORPORATE LOCATED AT 122 THE WEST MALL, TORONTO, ONTARIO, CANADA M9C 1B9 v. THE SHIP "MSC BELLE" AND THE OWNERS AND ALL OTHERS INTERESTED IN THE SHIP “MSC BELLE” AND BELLE INC., A BODY POLITIC AND CORPORATE CARE OF MSC MEDITERRANEAN SHIPPING CO. SA, CHEMIN RIEU, 12-14, 1208 GENEVA, SWITZERLAND, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2 AND GREAT WHITE FLEET, A BODY POLITIC AND CORPORATE OF THE UNITED STATES, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2
+  DOCKET:
+T-2184-18
+STYLE OF CAUSE:
+ARC-EN-CIEL PRODUCE INC., A BODY POLITIC AND CORPORATE LOCATED AT 122 THE WEST MALL, TORONTO, ONTARIO, CANADA M9C 1B9 v. THE SHIP "BF LETICIA" AND THE OWNERS AND ALL OTHERS INTERESTED IN THE SHIP “BF LETICIA” AND BF LETICIA FOROOHARI SCHIFFS, A BODY POLITIC AND CORPORATE CARE OF PETER DOEHLE SCHIFFAHRTS-KG, ELBCHAUSSEE 370, 22609, HAMBURG, GERMANY, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2 AND GREAT WHITE FLEET, A BODY POLITIC AND CORPORATE OF THE UNITED STATES, C/O MONTSHIP INC., 360 ST. JACQUES STREET, SUITE 100, MONTREAL, QUEBEC H2Y 1R2
+  PLACE OF HEARING:
+MONTRÉAL, QUÉBEC
+DATE OF HEARING:
+JULY 11, 2019
+AMENDED ORDER AND REASONS:
+HENEGHAN J.
+DATED:
+JANUARY 29, 2020
+  APPEARANCES:
+Matthew Hammerman
+FOR THE PLAINTIFF
+Katherine Shaughnessy-Chapman
+FOR THE DEFENDANTS
+SOLICITORS OF RECORD:
+De Man Pillet
+Montréal, Québec
+  FOR THE PLAINTIFF
+Brisset Bishop s.e.n.c.
+Montréal, Québec
+  FOR THE DEFENDANTS
+ 
