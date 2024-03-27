@@ -1,10 +1,8 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Node, Text } from 'slate'
+import { Editor, Node } from 'slate';
+import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 
-// Almost all of this is pulled from the Slate documentation, and a tutorial on adding comments to Slate.
-// Reference links here: 
-// Slate docs: https://docs.slatejs.org/concepts/01-interfaces
-// Tutorial: https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/
+import docApi from "@/util/api/document_apis";
 
 const COMMENT_THREAD_PREFIX = "commentThread_";
 const MAYBE_COMMENT = "isMaybeComment";
@@ -74,13 +72,14 @@ export function deleteMaybeComment(editor, setMaybeComment) {
 
 export function insertCommentThread(editor, addCommentThreadToState) {
     const threadID = uuid();
+    const user = getUserById(getCurrentUser());
     const newCommentThread = {
         // comments as added would be appended to the thread here.
         comments: [],
         creationTime: new Date(),
         // Newly created comment threads are OPEN. We deal with statuses
         // later in the article.
-        author: "Soliyana",
+        author: user.name,
         status: "open",
     };
     addCommentThreadToState(threadID, newCommentThread);
@@ -89,36 +88,20 @@ export function insertCommentThread(editor, addCommentThreadToState) {
     return threadID;
 }
 
-export async function initializeStateWithAllCommentThreads(
-    editor,
-    addCommentThread
-) {
-    const textNodesWithComments = Editor.nodes(editor, {
-        at: [],
-        mode: "lowest",
-        match: (n) => Text.isText(n) && getCommentThreadsOnTextNode(n).size > 0,
-    });
+export async function initializeStateWithAllCommentThreads(docId, addCommentThread ) {
 
-    const commentThreads = new Set();
+    const doc = docApi.getDocById(docId);
 
-    let textNodeEntry = textNodesWithComments.next().value;
-    while (textNodeEntry != null) {
-        [...getCommentThreadsOnTextNode(textNodeEntry[0])].forEach((threadID) => {
-            commentThreads.add(threadID);
-        });
-        textNodeEntry = textNodesWithComments.next().value;
+    if(!doc || !doc.comments) {
+        console.log('Document no exist or has no comments.');
+        return;
     }
 
-    Array.from(commentThreads).forEach((id) =>
-        addCommentThread(id, {
-            comments: [
-                {
-                    author: "Soliyana",
-                    text: "Should I redact this?",
-                    creationTime: new Date(),
-                },
-            ],
-            status: "open",
-        })
-    );
+    doc.comments.forEach(comment => {
+        addCommentThread(comment.id, {
+            comments: [comment],
+            status: "open"
+        });
+    })
+
 }

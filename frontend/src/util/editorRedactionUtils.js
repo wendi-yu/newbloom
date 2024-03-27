@@ -1,5 +1,7 @@
 import { v4 as uuid } from "uuid";
-import { Editor, Transforms } from "slate";
+import { Editor } from "slate";
+
+import { setSelectionToCurrNodeEdges } from "@/util/editor_utils";
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -71,15 +73,6 @@ export function insertRedaction(editor, target) {
   return threadID;
 }
 
-export function setSelectionToCurrNodeEdges(editor) {
-  const [start, end] = Editor.edges(editor, editor.selection.anchor.path);
-  // Create a new range that spans the entire editor
-  const range = { anchor: start, focus: end };
-
-  // Update the selection to the new range
-  Transforms.select(editor, range);
-}
-
 export function changeRedaction(editor, mark, target) {
   // removeMark only removes all instances of the mark within the current selection, so select everything then remove
 
@@ -89,16 +82,6 @@ export function changeRedaction(editor, mark, target) {
   setSelectionToCurrNodeEdges(editor);
   Editor.removeMark(editor, mark);
   insertRedaction(editor, target);
-
-  // restore old selection
-  editor.selection = temp;
-}
-
-export function removeRedaction(editor, mark) {
-  const temp = editor.selection;
-
-  setSelectionToCurrNodeEdges(editor);
-  Editor.removeMark(editor, mark);
 
   // restore old selection
   editor.selection = temp;

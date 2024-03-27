@@ -7,7 +7,7 @@ const addDocument = (name, id, state) => {
   let docHashesString = localStorage.getItem(userId);
   const docHashes = docHashesString ? JSON.parse(docHashesString) : {};
   // todo: warning if we''re going to overwrite
-  docHashes[id] = { name: name, state: state, dateAdded: new Date() };
+  docHashes[id] = { name: name, state: state, dateAdded: new Date(), comments:[] };
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -22,7 +22,6 @@ const updateDocumentBody = (docId, state) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-
   docHashes[docId].state = state;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
@@ -43,6 +42,7 @@ const getLocalDocuments = () => {
       dateLastModified: obj.dateAdded,
       owner: userId,
       documentBody: obj.state,
+      comments: obj.comments || [],
     };
   });
 };

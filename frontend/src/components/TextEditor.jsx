@@ -6,12 +6,16 @@ import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
 import { useSetRecoilState } from "recoil";
 
-import Toolbar from "@/components/common/ToolBar/Toolbar";
+import Toolbar from "@/components/common/Toolbar/Toolbar";
+import CommentSideBar from '@/components/document/Comments/CommentSideBar';
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
 import localDocStore from "@/util/localDocStore";
+
+import { useParams } from "react-router-dom";
+import { DOC_ID_PARAM } from "@/util/constants";
 
 export default function TextEditor({
   document = { documentBody: [] },
@@ -30,9 +34,11 @@ export default function TextEditor({
     setMaybeComment
   );
 
+  const docId = useParams()[DOC_ID_PARAM];
+
   useEffect(() => {
-    initializeStateWithAllCommentThreads(editor, addCommentThread);
-  }, [editor, addCommentThread]);
+    initializeStateWithAllCommentThreads(editor, addCommentThread, docId);
+  }, [editor, addCommentThread, docId]);
 
   const onChange = (value) => {
     updateDocumentState({ ...document, documentBody: value });
@@ -56,16 +62,19 @@ export default function TextEditor({
         onChange={onChange}
       >
         <Toolbar />
-        <div className="bg-document-background min-h-full flex flex-row justify-center">
-          <div className=" mx-40 max-w-4xl max-h-[900px] overflow-y-scroll">
-            <div className="mt-20 bg-white">
-              <Editable
-                renderElement={renderElement}
-                onKeyDown={onKeyDown}
-                renderLeaf={renderLeaf}
-                className="flex flex-col p-16 focus:outline-none max-h-full"
-              />
+        <div className="bg-document-background min-h-full justify-center">
+          <div className="overflow-y-scroll flex flex-row">
+            <div className="ml-72 mr-10 max-w-4xl max-h-[1200px]">
+              <div className="mt-20 bg-white">
+                <Editable
+                  renderElement={renderElement}
+                  onKeyDown={onKeyDown}
+                  renderLeaf={renderLeaf}
+                  className="flex flex-col p-16 focus:outline-none max-h-full"
+                />
+              </div>
             </div>
+            <CommentSideBar />
           </div>
         </div>
       </Slate>
