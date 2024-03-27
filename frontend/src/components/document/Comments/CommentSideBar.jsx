@@ -1,32 +1,40 @@
 import SidebarComment from "@/components/document/Comments/SidebarComment";
-import { Row, Col } from 'antd';
-import { useRecoilValue } from "recoil";
-import { commentThreadIDsState } from "@/util/CommentRedactionState"
+import { Row, Col } from "antd";
+import { useEffect, useState } from "react";
 
-function CommentSideBar () {
+import { useParams } from "react-router-dom";
+import { DOC_ID_PARAM } from "@/util/constants";
 
-    const allCommentThreadIDs = useRecoilValue(commentThreadIDsState);
+import { getAllCommentsFromDoc } from "@/util/localDocStore";
 
-    const comment = {
-        author: "Soliyana",
-        text: "Should I redact this?",
-        creationTime: new Date()
+function CommentSideBar({ refresh }) {
+  const docId = useParams()[DOC_ID_PARAM];
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    const allComments = getAllCommentsFromDoc(docId);
+    if (document && allComments) {
+      setComments(allComments);
     }
+  }, [docId, refresh]);
 
-    return (
-        <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
-           {Array.from(allCommentThreadIDs).map((id) => {
-                return (
-                    <Row key={id}>
-                        <Col>
-                            <SidebarComment id={id} comment={comment} />
-                        </Col>
-                    </Row>
-                );
-            })}
-         </div>
-    );
-
+  return (
+    <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
+      {Array.from(comments).map((comment) => {
+        return (
+          <Row key={comment.id}>
+            <Col>
+              <SidebarComment
+                id={comment.id}
+                comment={comment.comment}
+                docId={docId}
+              />
+            </Col>
+          </Row>
+        );
+      })}
+    </div>
+  );
 }
 
-export default CommentSideBar
+export default CommentSideBar;

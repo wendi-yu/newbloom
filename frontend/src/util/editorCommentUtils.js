@@ -89,11 +89,10 @@ export function insertCommentThread(editor, addCommentThreadToState) {
 }
 
 export async function initializeStateWithAllCommentThreads(docId, addCommentThread ) {
-
     const doc = docApi.getDocById(docId);
 
     if(!doc || !doc.comments) {
-        console.log('Document no exist or has no comments.');
+        console.log("Document doesn't exist or has no comments.");
         return;
     }
 
@@ -103,5 +102,5 @@ export async function initializeStateWithAllCommentThreads(docId, addCommentThre
             status: "open"
         });
     })
-
+    
 }
