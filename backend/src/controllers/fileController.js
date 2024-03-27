@@ -14,8 +14,9 @@ export const upload_file = asyncHandler(async (req, res, next) => {
   // TODO: implement other file upload actions (eg assign id, register it)
   const fileId = await fileStringHash(text);
   await db.upsertFile(fileId, redactions).catch((e) => {
-    res.status(400).json({ message: "File registration failed" });
-    next(e);
+    // res.status(400).json({ message: "File registration failed" });
+    // next(e);
+    console.error("file registration failed", e);
   });
   res.send({ redactions: redactions, id: fileId });
   next();

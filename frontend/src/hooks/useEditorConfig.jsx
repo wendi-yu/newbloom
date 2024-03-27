@@ -25,7 +25,13 @@ export default function useEditorConfig(editor, setMaybeComment) {
 
 function renderElement(props) {
   const { children, attributes } = props;
-  return <p {...attributes}>{children}</p>;
+  return (
+    <p {...attributes}>
+      {children}
+      <br />
+      <br />
+    </p>
+  );
 }
 
 function renderLeaf(props) {
