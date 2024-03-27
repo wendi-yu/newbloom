@@ -16,6 +16,8 @@ import PurplePrintSVG from "@/assets/print_fill_purple.svg";
 import PurpleMarkAsDoneSVG from "@/assets/book_check_fill_purple.svg";
 import PurpleRefreshSVG from "@/assets/refresh_purple.svg";
 
+import CheckSVG from "@/assets/check_fill.svg";
+
 import { useSlate } from "slate-react";
 import { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
@@ -26,6 +28,7 @@ import { getTextFromSelection } from "@/util/editor_utils";
 import { insertMaybeComment } from "@/util/editorCommentUtils";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils";
 import { maybeCommentAtom } from "@/util/CommentRedactionState";
+import { notification } from "antd";
 
 export default function Toolbar({ document, onRefresh }) {
   const editor = useSlate();
@@ -40,6 +43,16 @@ export default function Toolbar({ document, onRefresh }) {
   const redact = useCallback(() => {
     insertRedaction(editor, ACCEPTED_PREFIX);
   }, [editor]);
+
+  const [api, contextHolder] = notification.useNotification();
+
+  const openNotificationWithIcon = () => {
+    api.open({
+      message: "Synced successfully",
+      placement: "bottomRight",
+      icon: <img src={CheckSVG} />,
+    });
+  };
 
   return (
     <div className="flex flex-row bg-gray-200 w-full space-x-6 pl-4 py-2 items-center">
@@ -79,15 +92,22 @@ export default function Toolbar({ document, onRefresh }) {
         <HoverableIcon
           SVG={MarkAsDoneSVG}
           SVGonHover={PurpleMarkAsDoneSVG}
-          onClick={() => markAsDone(document)}
+          onClick={() => {
+            markAsDone(document);
+            openNotificationWithIcon();
+          }}
           height={7}
         />
         <HoverableIcon
           SVG={RefreshSVG}
           SVGonHover={PurpleRefreshSVG}
-          onClick={() => refresh(document, onRefresh)}
+          onClick={() => {
+            refresh(document, onRefresh);
+            openNotificationWithIcon();
+          }}
           height={7}
         />
+        {contextHolder}
       </div>
     </div>
   );
