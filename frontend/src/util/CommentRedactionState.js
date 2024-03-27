@@ -31,3 +31,10 @@ export const maybeCommentAtom = atom({
   key: "maybeComment",
   default: null,
 });
+
+//keeps track of the range to ensure so we can check for overlapping comments
+export const maybeCommentRangeAtom = atom({
+  key: 'maybeCommentRange',
+  default: { start: null, end: null, isPopoverRendered: null },
+});
+

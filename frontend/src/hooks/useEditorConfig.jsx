@@ -3,9 +3,15 @@ import { useCallback } from "react";
 import { KeyBindings } from "@/util/editor_utils";
 import { insertMaybeComment } from "@/util/EditorCommentUtils"
 
-import { getTextFromSelection } from "@/util/editor_utils"
+import { getTextFromSelection, getMarkRange } from "@/util/editor_utils"
+import { maybeCommentRangeAtom } from "@/util/CommentRedactionState"
+
+import { useSetRecoilState } from "recoil";
+import { maybeCommentAtom } from "../util/CommentRedactionState";
 
 export default function useEditorConfig(editor, setMaybeComment) {
+
+  const setMaybeCommentRange = useSetRecoilState(maybeCommentRangeAtom);
 
   const onKeyDown = useCallback(
     (event) => {
@@ -14,6 +20,8 @@ export default function useEditorConfig(editor, setMaybeComment) {
         event.preventDefault();
         const selectedText = getTextFromSelection(editor);
         insertMaybeComment(editor, selectedText, setMaybeComment)
+        const range = getMarkRange(editor);
+        setMaybeCommentRange({ ...range, isPopoverRendered: false });
       } else {
         KeyBindings.onKeyDown(editor, event);
       }

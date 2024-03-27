@@ -13,10 +13,10 @@ import {
   REJECTED_PREFIX,
 } from "@/util/editorRedactionUtils";
 import { ifSelectionInTextNode } from "@/util/editor_utils";
-import { activeCommentThreadIDAtom } from "@/util/CommentRedactionState";
+import { activeCommentThreadIDAtom, maybeCommentRangeAtom } from "@/util/CommentRedactionState";
 
 import { useSlate } from "slate-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
 
 import RedactionPopover from "@/components/document/Redactions/RedactionPopover";
@@ -54,6 +54,10 @@ export default function StyledText({
 
   const [activeCommentThreadID, setActiveCommentThreadID] = useRecoilState(
     activeCommentThreadIDAtom
+  );
+
+  const [maybeCommentRange, setMaybeCommentRange] = useRecoilState(
+    maybeCommentRangeAtom
   );
 
   useEffect(() => {
@@ -98,6 +102,14 @@ export default function StyledText({
     isAccepted,
   ]);
 
+  //false if comment popover is already displayed on another maybe comment textnode
+  useEffect(() => {
+    if (maybeComment && maybeCommentRange.isPopoverRendered !==true) {
+      console.log(leaf)
+      setMaybeCommentRange({ ...maybeCommentRange, isPopoverRendered: true });
+    }
+  }, [maybeComment, maybeCommentRange, setMaybeCommentRange]);
+
   const redactionPopover = (
     <RedactionPopover
       onAccept={() => changeRedaction(editor, mark, ACCEPTED_PREFIX)}
@@ -110,11 +122,9 @@ export default function StyledText({
 
   //only modify content if it has a popover
   let textContent = isRedaction ? redactionPopover : <span>{children}</span>;
-  const content = maybeComment ? (
+  let content = maybeComment && !maybeCommentRange.isPopoverRendered ? (
     <CommentPopover ifOpen={true} text={textContent} leaf={leaf} />
-  ) : (
-    textContent
-  );
+  ) : textContent;
 
   if (isSuggestion) {
     return (

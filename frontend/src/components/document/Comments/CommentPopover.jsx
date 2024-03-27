@@ -11,7 +11,7 @@ import {
   deleteMaybeComment,
 } from "@/util/EditorCommentUtils";
 import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
-import { maybeCommentAtom } from "@/util/CommentRedactionState";
+import { maybeCommentAtom, maybeCommentRangeAtom } from "@/util/CommentRedactionState";
 import { useSetRecoilState } from "recoil";
 
 import { addCommentToDocument } from "@/util/localDocStore";
@@ -19,10 +19,20 @@ import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 import { useParams } from "react-router-dom";
 import { DOC_ID_PARAM } from "@/util/constants";
 
-function CommentPopover({ text}) {
+function CommentPopover({ text, ifOpen}) {
   const inputRef = useRef(null);
   const user = getUserById(getCurrentUser());
   const docId = useParams()[DOC_ID_PARAM];
+
+  const [comment, setComment] = useState("");
+  const setMaybeComment = useSetRecoilState(maybeCommentAtom);
+  const setMaybeCommentRange = useSetRecoilState(maybeCommentRangeAtom);
+
+  const [open, setOpen] = useState(ifOpen);
+  const editor = useSlate();
+  const addComment = useAddCommentThreadToState();
+
+  const userName = getUserById(getCurrentUser());
 
   useEffect(() => {
     if (inputRef.current) {
@@ -30,18 +40,9 @@ function CommentPopover({ text}) {
     }
   }, []);
 
-  const [comment, setComment] = useState("");
-  const setMaybeComment = useSetRecoilState(maybeCommentAtom);
-
-  const [open, setOpen] = useState(true);
-  const editor = useSlate();
-  const addComment = useAddCommentThreadToState();
-
-  const userName = getUserById(getCurrentUser());
-
   const deleteComment = () => {
     setComment("");
-    deleteMaybeComment(editor, setMaybeComment);
+    deleteMaybeComment(editor, setMaybeComment, setMaybeCommentRange);
   };
 
   const handleOpenChange = (newOpen) => {
@@ -52,10 +53,18 @@ function CommentPopover({ text}) {
     }
   };
 
+  const handleEscapePress = (event) => {
+    if (event.key === "Escape") {
+      deleteComment();
+      Transforms.deselect(editor);
+      setOpen(false);
+    }
+  };
+
   const submitComment = () => {
     if (comment.length > 0) {
       const newCommentThreadID = insertCommentThread(editor, addComment);
-      deleteMaybeComment(editor, setMaybeComment);
+      deleteMaybeComment(editor, setMaybeComment, setMaybeCommentRange);
       setOpen(false);
 
       const newComment = {
@@ -67,14 +76,6 @@ function CommentPopover({ text}) {
         }]
       };
       addCommentToDocument(docId, newComment);
-    }
-  };
-
-  const handleEscapePress = (event) => {
-    if (event.key === "Escape") {
-      deleteComment();
-      Transforms.deselect(editor);
-      setOpen(false);
     }
   };
 

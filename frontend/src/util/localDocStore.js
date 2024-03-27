@@ -17,7 +17,7 @@ const updateDocumentBody = (docId, state) => {
 
   let docHashesString = localStorage.getItem(userId);
   if (!docHashesString) {
-    console.error(`document ${docId} not found`);
+    // console.error(`document ${docId} not found`);
     return;
   }
 
@@ -32,7 +32,7 @@ export const addCommentToDocument = (docId, newComment) => {
 
   let docHashesString = localStorage.getItem(userId);
   if (!docHashesString) {
-    console.error(`document ${docId} not found`);
+    // console.error(`document ${docId} not found`);
     return;
   }
 
@@ -52,7 +52,7 @@ export const getAllCommentsFromDoc = (docId) => {
 
   let docHashesString = localStorage.getItem(userId);
   if (!docHashesString) {
-    console.error(`document ${docId} not found`);
+    // console.error(`document ${docId} not found`);
     return;
   }
 
@@ -68,7 +68,7 @@ export const deleteCommentFromDocument = (docId, commentId) => {
 
   let docHashesString = localStorage.getItem(userId);
   if (!docHashesString) {
-    console.error(`document ${docId} not found`);
+    // console.error(`document ${docId} not found`);
     return;
   }
 

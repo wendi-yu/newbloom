@@ -12,7 +12,7 @@ import docApi from "@/util/api/document_apis";
 import { useParams } from "react-router-dom";
 import { DOC_ID_PARAM } from "@/util/constants";
 import { RecoilRoot } from "recoil";
-//import { DebugObserver } from '@/components/common/DebugObserver';
+import { DebugObserver } from '@/components/common/DebugObserver';
 
 function Document() {
   const [documentView, setDocumentView] = useState("document");
@@ -73,7 +73,7 @@ function Document() {
         </div>
       </div>
       <RecoilRoot>
-        {/* <DebugObserver /> */}
+        <DebugObserver />
         <ViewComponent className={"flex flex-grow"} />
       </RecoilRoot>
     </div>

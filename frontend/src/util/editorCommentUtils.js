@@ -50,14 +50,15 @@ function isCommentThreadIDMark(mayBeCommentThread) {
 
 export function insertMaybeComment (editor, selectedText, setMaybeComment) {
     setMaybeComment(selectedText);
+
     Editor.addMark(editor, MAYBE_COMMENT, true);
 }
 
 export function ifMaybeCommentOnTextNode(textnode) {
     const keys = Object.keys(textnode)
 
-    if(keys.some(key => key === MAYBE_COMMENT)) {
-        return true
+    if (keys.some(key => key === MAYBE_COMMENT)) {
+        return true;
     }
     
     return false;
@@ -65,9 +66,10 @@ export function ifMaybeCommentOnTextNode(textnode) {
 
 //selection must be on mark to delete maybe comment
 //will hopefully change this in next pr (active comments)
-export function deleteMaybeComment(editor, setMaybeComment) {
+export function deleteMaybeComment(editor, setMaybeComment, setMaybeCommentRange) {
     Editor.removeMark(editor, MAYBE_COMMENT);
     setMaybeComment(null);
+    setMaybeCommentRange(null);
 }
 
 export function insertCommentThread(editor, addCommentThreadToState) {

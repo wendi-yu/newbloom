@@ -18,6 +18,10 @@ export function getTextFromSelection(editor) {
   return Editor.string(editor, editor.selection);
 }
 
+export function getMarkRange(editor) {
+  return Editor.range(editor, editor.selection);
+}
+
 export function ifSelectionInTextNode(editor, leaf) {
   const selection = editor.selection;
   if (!selection) return false;

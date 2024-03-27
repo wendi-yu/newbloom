@@ -20,18 +20,21 @@ import { useSetRecoilState } from "recoil";
 
 import HoverableIcon from "@/components/common/HoverableIcon";
 import { print, markAsDone } from "@/util/toolbar_functions.js";
-import { getTextFromSelection } from "@/util/editor_utils";
+import { getTextFromSelection, getMarkRange } from "@/util/editor_utils";
 import { insertMaybeComment } from "@/util/editorCommentUtils";
 import { insertRedaction, ACCEPTED_PREFIX } from "@/util/editorRedactionUtils";
-import { maybeCommentAtom } from "@/util/CommentRedactionState";
+import { maybeCommentAtom, maybeCommentRangeAtom } from "@/util/CommentRedactionState";
 
 export default function Toolbar() {
   const editor = useSlate();
 
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
+  const setMaybeCommentRange = useSetRecoilState(maybeCommentRangeAtom);
 
   const comment = () => {
     const selectedText = getTextFromSelection(editor);
+    const range = getMarkRange(editor);
+    setMaybeCommentRange({ ...range, isPopoverRendered: false });
     insertMaybeComment(editor, selectedText, setMaybeComment);
   };
 
