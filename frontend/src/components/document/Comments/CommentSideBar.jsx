@@ -14,7 +14,6 @@ function CommentSideBar() {
 
   useEffect(() => {
     const allComments = getAllCommentsFromDoc(docId);
-    console.log(allComments)
     if (document && allComments) {
       setComments(allComments);
     }

@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { withHistory } from "slate-history";
 import { useSetRecoilState } from "recoil";
 
-import Toolbar from "@/components/common/Toolbar/Toolbar";
+import Toolbar from "@/components/common/ToolBar/Toolbar";
 import CommentSideBar from '@/components/document/Comments/CommentSideBar';
 
 import { initializeStateWithAllCommentThreads } from "@/util/editorCommentUtils";
