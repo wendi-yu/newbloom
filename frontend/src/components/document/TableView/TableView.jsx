@@ -15,7 +15,7 @@ const RedactionFilterDropdownMenu = () => {
   );
 };
 
-const TableView = ({ document }) => {
+const TableView = ({ document, popOutToDocView }) => {
   /*We're going to map each redaction to a tuple (paragraph, indexes)
     paragraph: A string of the paragraph
     indexes: (start_index, end_index) of redaction
@@ -70,6 +70,7 @@ const TableView = ({ document }) => {
           <TableEntry
             redaction={redaction}
             updateParentState={updateLocalState}
+            popOutToDocView={popOutToDocView}
           />
         </div>
       );
