@@ -7,10 +7,20 @@ import HoverableIcon from "@/components/common/HoverableIcon"
 import MenuSVG from "@/assets/meatballs_menu.svg"
 import PurpleMenuSVG from "@/assets/meatballs_menu_purple.svg"
 
-function CommentChild() {
+function CommentChild({id, comment}) {
+
+    console.log(id, comment)
+
+    //convert to comment format
+        const formatCreationTime = (creationTimeISO) => {
+        const date = parseISO(creationTimeISO);
+        return format(date, 'MMM dd, yyyy hh:mm aaaa');
+    };
 
     //TODO: resolve child comment
     const handleResolveComment = () => {
+        removeSelectedMark(editor, getMarkForCommentThreadID(id));
+        deleteCommentFromDocument(docId, id);
     }
 
     //TODO: implement menu
@@ -40,13 +50,15 @@ function CommentChild() {
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
                     <div className="flex flex-col">
-                        <p className="font-semibold">Soliyana</p>
-                        <p className="font-light">{format(new Date(), "MMM dd h:mmaa")}</p>
+                        <p className="font-semibold">{comment.author.name}</p>
+                        <p className="font-light">
+                            {formatCreationTime(comment.creationTime)}
+                        </p>
                     </div>
                 </div>
                 {menu}
             </div>
-            Nevermind
+            {comment.text}
         </div>
 
     );

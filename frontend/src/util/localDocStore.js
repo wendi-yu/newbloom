@@ -35,7 +35,7 @@ const updateDocumentBody = (docId, state) => {
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
-export const addCommentToDocument = (docId, newComment) => {
+export const addCommentToDocument = (docId, newComment, parentId=null) => {
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
@@ -51,7 +51,21 @@ export const addCommentToDocument = (docId, newComment) => {
     document.comments = [];
   }
 
-  document.comments.push(newComment);
+  //checks if comment is a response
+  if (parentId) {
+    const parentComment = document.comments.find(comment => comment.id === parentId);
+    if (parentComment) {
+      if (!parentComment.replies) parentComment.replies = [];
+      parentComment.replies.push(newComment);
+    } else {
+      console.error(`Parent comment ${parentId} not found`);
+    }
+  } else {
+    document.comments.push(newComment);
+  }
+
+  console.log(document.comments)
+
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
