@@ -1,0 +1,157 @@
+Date: 20200103
+
+Docket: T-226-18
+Citation: 2020 FC 11
+Ottawa, Ontario, January 3, 2020
+PRESENT:  The Honourable Mr. Justice Manson
+BETWEEN:
+VIIV HEALTHCARE COMPANY,
+SHIONOGI & CO., LTD. AND
+VIIV HEALTHCARE ULC
+Plaintiffs/
+Defendants by Counterclaim
+and
+GILEAD SCIENCES CANADA, INC.
+Defendant/
+Plaintiff by Counterclaim
+
+ORDER AND REASONS
+I.  Introduction
+
+[1]  The Plaintiffs, ViiV Healthcare Company, Shionogi & Co Ltd, and ViiV Healthcare ULC [collectively ViiV] seek to dismiss or adjourn sine die the Defendant Gilead Sciences Canada Inc’s [Gilead] motion for summary trial. In the alternative, ViiV seeks an order adjourning the summary trial until the completion of oral discovery or extending the length of the summary trial from three to five days.
+
+II.  Background
+[2]   This motion arises in the context of a patent infringement action commenced by ViiV on February 7, 2018. ViiV alleges that Gilead has infringed Canadian Patent No. 2,606,282 [the 282 Patent] by making, using, selling, or offering to sell bictegravir as a component in its BIKTARVY product. Gilead has denied all allegations of infringement, and counterclaimed alleging that the 282 Patent is invalid.
+
+A.  Documentary Discovery
+[3]  Pleadings closed on August 27, 2018, and documentary productions are ongoing. Initial productions took place on April 25, 2019, and Gilead has since produced additional documents between September and November 2019 in response to ViiV’s requests. There is no trial date set.
+
+[4]  Following production of certain documents related to the development of bictegravir, ViiV sought production of further underlying data related to experiments and studies referenced in earlier produced documents. Gilead produced the underlying data relevant to bictegravir, but refused to produce underlying data related to other compounds, asserting that this information is not relevant.
+
+[5]  On October 2, 2019, ViiV brought a motion for production of the underlying data related to the other compounds. Prothonotary Milczynski dismissed the motion, finding that the data ViiV sought was not relevant to the issues of claim construction and infringement. ViiV appealed this order, however the appeal was dismissed by the Court on December 10, 2019. Because the Court has not ordered any further productions, Gilead’s position is that its documentary productions are complete.
+
+B.  Motion for Summary Trial
+[6]  On August 6, 2019, Gilead filed a notice of motion for summary trial, seeking a finding of non-infringement of claims 1, 11, and 16 of the 282 Patent. The sole issue for the summary trial is whether “Ring A” in claims 1, 11, and 16, properly construed, includes a bridged ring structure. If not, Gilead’s position is that bictegravir is not covered by the relevant asserted claims of the 282 Patent.
+
+[7]  In support of the motion for summary trial Gilead served ViiV with expert reports of Dr. Mark Lautens and Dr. Brent Stranix on August 2, 2019. Gilead served supplementary reports of both Dr. Lautens and Dr. Stranix on November 4, 2019.
+
+[8]  ViiV served its responding evidence for the summary trial on December 11, 2019. This evidence includes expert reports of Dr. Mamuka Kvaratskhelia, Dr. Peter Williams, and Dr. Jeffrey D. Winkler.
+
+[9]  The summary trial has been set down for three days at the end of January.
+
+C.  Motion to Dismiss the Motion for Summary Trial – The “Meta Motion”
+[10]  On September 24, 2019, ViiV filed a notice of motion seeking an order dismissing or adjourning sine die Gilead’s motion for summary trial. The parties have referred to this as a “meta motion” – a motion to dismiss a different motion.
+
+[11]  In support of its motion, ViiV filed the expert affidavit of Mr. Andrew M. Shaughnessy, dated October 28, 2019. Mr. Shaughnessy is a lawyer with over 25 years of practice experience in the area of patent law.
+
+[12]  The present motion must be considered in light of the fact that both parties have served and filed expert reports addressing the issues raised in the motion for summary trial. ViiV and Gilead filed motion records for this motion on December 9 and 16, 2019, respectively, and it was agreed that the motion was to be considered in writing without a hearing.
+
+III.  Issues
+[13]  The issues are:
+(1) Should the Court dismiss or adjourn sine die Gilead’s motion for summary trial?
+(2) Should the Court adjourn Gilead’s motion for summary trial until after the completion of oral discovery?
+(3) If Gilead’s motion for summary trial is not dismissed or adjourned, should the Court extend the summary trial hearing from three to five days?
+
+[14]  ViiV also raised as an issue whether the motion for summary trial should only occur after Gilead produces any further documents that the Court orders it to produce. Given that ViiV’s appeal of Prothonotary Milczynski’s order was dismissed, this point is moot.
+
+IV.  Relevant Provisions
+[15]   ViiV relies on Rules 3, 216(3) and 216(5) of the Federal Courts Rules, SOR/98-106.
+
+[16]  Rule 3 states that the Rules shall be interpreted and applied so as to secure the just, most expeditious and least expensive determination of every proceeding on its merits.
+
+[17]  The portions of Rule 216 relied on by ViiV relate to the conduct of summary trial, and conditions under which the Court shall dismiss motions for summary trial:
+216 (3) The Court may make any order required for the conduct of the summary trial, including an order requiring a deponent or an expert who has given a statement to attend for cross-examination before the Court.
+
+[…]
+(5) The Court shall dismiss the motion if
+(a) the issues raised are not suitable for summary trial; or
+(b) a summary trial would not assist in the efficient resolution of the action.
+
+[18]  Gilead relies on Rule 213, which gives parties the right to move for summary trial any time after the defence has been filed, but before the time and place for trial have been fixed:
+213(1) A party may bring a motion for summary judgment or summary trial on all or some of the issues raised in the pleadings at any time after the defendant has filed a defence but before the time and place for trial have been fixed.
+
+V.  Analysis
+A.  Preliminary issue: Shaughnessy Affidavit
+
+[19]  As a preliminary point, I find that the Shaughnessy affidavit is inappropriate and should be rejected. As argued by Gilead, the contents of Mr. Shaughnessy’s affidavit are clearly legal opinions that fall within the Court’s domain (Dywidag Systems International, Canada, Ltd v Garford PTY Ltd, 2010 FCA 223 at paras 10-12). In brief, Mr. Shaughnessy outlines his own experience in patent litigation, including summary trials, outlines the case law on summary trial, and opines on whether summary trial is appropriate in these circumstances. His affidavit for the most part constitutes legal opinion and legal argument. Counsel for the Plaintiffs should be making these arguments both in respect of this motion and at the summary trial, not relying on a third party lawyer’s affidavit to do so.
+
+B.  Summary Trial
+(1)  Should the Court dismiss or adjourn sine die Gilead’s motion for summary trial?
+
+[20]  Gilead is entitled to bring a motion for summary trial as of right pursuant to Rule 213. The moving party bears the burden of establishing that summary trial is appropriate in the circumstances, and this determination should be made at the motion for summary trial itself, not by way of a pre-emptive motion such as this (Collins v Canada, 2014 FC 307 at paras 39-41 [Collins FC]; aff’d 2015 FCA 281 [Collins FCA]).
+
+[21]  ViiV relies heavily on the factors considered by the Court in Wenzel Downhole Tools Ltd v National-Oilwell Canada Ltd, 2010 FC 966 [Wenzel]. While these factors are undoubtedly correct for the Court to consider when assessing whether summary trial is appropriate, the context in which they were applied in Wenzel is markedly different from this case. The defendant had moved for summary judgment and the Court was determining whether to direct the parties towards a motion for summary trial pursuant to Rule 215(3).
+
+[22]  Whether summary trial is appropriate should be determined at the motion for summary trial itself (Collins FC at para 41). While the Federal Court of Appeal did not speak to this specific point in affirming the lower Court’s decision, it did hold that completion of discoveries is no precondition to summary trial, and the only stipulation in the Federal Courts Rules is that motions for summary trial must be brought before the place and time for trial has been fixed (Collins FCA, above at paras 44-45). Therefore, on this motion the Court should avoid pre-emptively addressing the Wenzel factors.
+
+[23]  ViiV argues that allowing a meta motion procedure would be consistent with Rule 9-7(11) of the British Columbia Supreme Court Civil Rules (BC Reg 169/2009) [BC Civil Rules] and the practice in the Ontario courts for summary judgment motions (Drywall Acoustic Lathing and Insulation, Local 675 Pension Fund (Trustees of) v SNC-Lavalin Group Inc, 2016 ONSC 5784).
+
+[24]  ViiV also relies on Wenzel for the principle that because the summary trial procedure provided in the Federal Courts Rules is based on the summary trial provisions of the BC Civil Rules, this Court can take guidance from the British Columbia jurisprudence “when there is a similar mechanism in place” (Wenzel, above at para 34).
+
+[25]  While this principle has merit in some cases in this Court, in this case there is no “similar mechanism in place.” Nowhere in the summary trial provisions of the Federal Courts Rules is there a similar mechanism to Rule 9-7(11) of the BC Civil Rules providing for a motion to dismiss the motion for summary trial before the hearing of the summary trial, and the Rules of this Court are comprehensive and do not require a “gap” application of a Provincial Court’s Rules.
+
+[26]  Moreover, this Court has endorsed the principle from Bruce v John Northway & Son Ltd, [1962] OWN 150 (H Ct J Master) that as a general rule, once a notice of motion is filed, any act done afterwards which affects the rights of the moving party will be ignored by the Court (Kornblum v Canada (Human Resources and Skills Development), 2010 FC 656 at para 29; Odyssey Television Network Inc v Ellas TV Broadcasting Inc, 2018 FC 337 at para 42). Gilead filed its notice of motion for summary trial on August 6, 2019, and its right to a summary trial, where it bears the burden of establishing that summary trial is appropriate, crystallized on that day. The present motion seeks to deny Gilead this right, and should not be condoned by this Court.
+
+[27]  Finally, ViiV has continued to assert that the structure of bictegravir is in dispute. ViiV argues that in light of this factual dispute, summary trial is inappropriate because the only relevant fact for determining infringement at the summary trial—the chemical structure of bictegravir—remains in dispute. ViiV pleaded a particular structure of bictegravir in its statement of claim. Gilead denied that bictegravir has the structure included in the statement of claim because it did not include the correct stereochemistry.
+
+[28]  Gilead filed the BIKTARVY product monograph as part of its record for the summary trial.
+
+[29]  The BIKTARVY Product Monograph described that bictegravir used in BIKTARVY has the following chemical structure:
+
+[30]  ViiV alleges that the portion of the bictegravir structure identified by the dashed circle above corresponds to “Ring A” of the asserted claims of the 282 Patent. Gilead’s position is that bictegravir does not infringe because it contains a bridged system that is not encompassed by “Ring A” as defined in independent claims 1 and 11, properly construed. If bictegravir does infringe claim 1, Gilead’s position is that its bridged system does not infringe claim 16 because it contains a bridged system that is not encompassed by “Ring A” as defined in claim 16.
+
+[31]  The product monograph shows the chemical structure, including the appropriate stereochemistry and salt form of bictegravir. ViiV alleges that the product monograph is hearsay, and therefore the structure of bictegravir remains in dispute. ViiV relies on a statement in the 2009 Regulatory Impact Analysis Statement that accompanied the introduction of summary trials to the Federal Courts Rules to the effect that “it would be inappropriate to conduct a summary trial on the basis of hearsay evidence.” This statement was made by the Federal Courts Rules Committee with respect to a corresponding amendment to Rule 81 providing that affidavits based on information and belief are not admissible on motions for summary judgment or summary trial.
+
+[32]  Both parties made arguments about the necessity and reliability of the alleged hearsay evidence and possible exceptions to the rule against hearsay. The hearsay issue should not be addressed at this stage. The admissibility and weight to be given to the product monograph is more appropriately dealt with by the trial judge at the summary trial.
+(2)  Should the Court adjourn Gilead’s motion for summary trial until after the completion of oral discovery?
+
+[33]  As noted above, this issue is simply addressed by the Collins FCA decision, where the Federal Court of Appeal held that completion of discoveries is no precondition to summary trial. Therefore, the Court should not adjourn Gilead’s motion for summary trial until after completion of oral discovery.
+(3)  If Gilead’s motion for summary trial is not dismissed or adjourned, should the Court extend the summary trial hearing from three to five days?
+
+[34]  Gilead does not oppose this request. Gilead also proposes that if the Court does not grant this request but feels that extra time is necessary, the Court could schedule additional time for closing arguments at a later date. I am prepared to grant an extension of time for hearing the summary trial to five days.
+
+[35]  The motion is dismissed. The parties have filed five expert reports between them, and have both invested substantial time preparing for the summary trial on the merits. Given that Gilead does not oppose ViiV’s request to extend the hearing beyond three days, and the Court has the resources to accommodate this request, I hereby extend the hearing date for two more days, such that the hearing shall take place from January 27 to 31, 2020.
+
+ORDER in T-226-18
+THIS COURT ORDERS that
+The motion is dismissed.
+The hearing date for the summary trial is extended by two days, from January 27 to 31, 2020.
+The parties may settle a further day for closing arguments with the trial judge at the hearing.
+Costs to Gilead. The parties shall have until January 10, 2020 to provide an agreed costs award. If no agreement is reached, the parties shall provide the Court with written submissions, not to exceed five (5) pages, with their respective positions on costs by January 15, 2020 at the latest.
+"Michael D. Manson"
+Judge
+
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+  DOCKET:
+T-226-18
+  STYLE OF CAUSE:
+VIIV HEALTHCARE COMPANY, SHIONOGI & CO., LTD. AND VIIV HEALTHCARE ULC v GILEAD SCIENCES CANADA, INC.
+MOTION DEALT WITH IN WRITING, WITHOUT APPEARANCE OF THE PARTIES, AT OTTAWA, ONTARIO
+ORDER AND REASONS:
+MANSON J.
+  DATED:
+JANUARY 3, 2020
+  WRITTEN SUBMISSIONS BY:
+Donald M. Cameron
+R. Scott MacKendrick
+Melanie Szweras
+Michael Fenwick
+Laura MacDonald
+  FOR THE PLAINTIFFS
+  Tim Gilbert
+Nisha Anand
+Andrew Moeser
+Andrea Rico Wolf
+  FOR THE DEFENDANT
+  SOLICITORS OF RECORD:
+Bereskin & Parr LLP
+Barristers and Solicitors
+Toronto, Ontario
+  FOR THE PLAINTIFFS
+  Gilbert’s LLP
+Barristers and Solicitors
+Toronto, Ontario
+FOR THE DEFENDANT
+   

@@ -1,0 +1,100 @@
+Date: 20200108
+
+Docket: IMM-3146-18
+Citation: 2020 FC 20
+Ottawa, Ontario, January 8, 2020
+PRESENT:  Madam Justice Walker
+BETWEEN:
+1397280 ONTARIO LTD.
+Applicant
+and
+THE MINISTER OF EMPLOYMENT AND SOCIAL DEVELOPMENT CANADA/SERVICE CANADA
+Respondent
+
+JUDGMENT AND REASONS
+
+[1]  On May 6, 2019, the Respondent brought a motion in writing pursuant to Rule 369 of the Federal Courts Rules, SOR/98-106, (Rules) to strike the Applicant’s Application for leave and judicial review of a decision of a program officer at Employment and Social Development Canada. The officer refused to issue a positive Labour Market Impact Assessment (LMIA) which would have allowed the Applicant to hire a temporary foreign worker, Mr. Nakamura. The Respondent argues that the Application is now moot.
+
+[2]  For the reasons that follow, the Respondent’s motion will be granted and the Application struck out.
+
+I.  Background
+[3]  The Applicant operates a private English as a Second Language (ESL) institution. On May 3, 2018, the Applicant submitted an LMIA application in order to hire Mr. Nakamura. The LMIA request was refused by the program officer on June 15, 2018 (Original Decision).
+
+[4]  On July 6, 2018, the Applicant filed this Application for leave and judicial review and requested that the Original Decision be set aside and the matter sent back for redetermination by a different program officer.
+
+[5]  On November 7, 2018, the Applicant filed a second LMIA application for Mr. Nakamura for employment in a very similar position. In this second application, the Applicant addressed the deficiencies highlighted by the program officer in the Original Decision. The second LMIA application was approved and a positive LMIA was issued to the Applicant on January 31, 2019 (January 2019 Decision).
+
+[6]  The Respondent submits that the January 2019 Decision renders the remedy sought by the Applicant in the Application moot and that the Application should not be considered by this Court.
+
+II.  The Test on Motions to Strike Applications for Judicial Review
+[7]  I note first that the Respondent relies on Rule 221 in support of its motion. Rule 221(1) permits the Court to strike out a statement of claim on the ground that it discloses no reasonable cause of action. Rule 221 is contained in Part 4 of the Rules, which applies to all proceedings that are not applications or appeals (Rule 169). There is no corresponding rule in Part 5 of the Rules, which governs proceedings brought by way of application. Therefore, the Respondent’s motion to strike cannot be considered by reference to Rule 221.
+
+[8]  Notwithstanding the absence from Part 5 of a rule analogous to Rule 221, in David Bull Laboratories Canada) Inc v Pharmacia Inc, [1995] 1 FC 588 (CA) (David Bull), the Federal Court of Appeal held that the Court has the jurisdiction to strike a notice of application “which is so clearly improper as to be bereft of any possibility of success” (David Bull at page 600).
+
+[9]  Recently, Justice Stratas confirmed that the threshold for striking an application is the same as that for striking an action (Wenham v Canada, 2018 FCA 199 at para 33 (Wenham)):
+
+[33]  … In motions to strike applications for judicial review, this Court uses the same threshold. It uses the “plain and obvious” threshold commonly used in motions to strike actions, sometimes also called the “doomed to fail” standard. Taking the facts pleaded as true, the Court examines whether the application:
+…is “so clearly improper as to be bereft of any possibility of success”: David Bull Laboratories (Canada) Inc. v. Pharmacia Inc., [1995] 1 F.C. 588 at page 600 (C.A.). There must be a “show stopper” or a “knockout punch” – an obvious, fatal flaw striking at the root of this Court’s power to entertain the application: Rahman v. Public Service Labour Relations Board, 2013 FCA 117 at paragraph 7; Donaldson v. Western Grain Storage By-Products, 2012 FCA 286 at paragraph 6; cf. Hunt v. Carey Canada Inc., [1990] 2 S.C.R. 959.
+(Canada (National Revenue) v. JP Morgan Asset Management (Canada) Inc., 2013 FCA 250, [2014] 2 F.C.R. 557 at para. 47.)
+
+[10]  In order to determine whether an application for judicial review discloses a cause of action, the Court must first focus on the notice of application itself to identify its essential character (Wenham at para 34).
+
+III.  Is the Application Moot?
+[11]  The Respondent bases its motion to strike on the premise that the Application is moot, arguing that mootness is a reason for “finding no possibility of success”. The Respondent’s argument is supported by the jurisprudence. In Wenham, Justice Stratas referred to mootness as a preliminary objection that can be fatal to any possibility of success of an application (Wenham at para 36; see also Rahman v Canada (Minister of Citizenship and Immigration), 2002 FCT 137 at paras 9-10). In Lukács v Canada (President, Natural Sciences and Engineering Research Council, 2015 FC 267 (Lukács), Justice MacTavish, as she then was, stated that the Court’s jurisdiction to strike a proceeding for mootness derives from its inherent jurisdiction to control its own process (Lukács at para 24).
+
+[12]  The determination of mootness of an application before the Court involves a two-step process (Borowski v Canada (Attorney-General), [1989] 1 SCR 342 (Borowski)). The first step is the obvious starting point: the consideration of whether a live controversy which affects the rights of the parties continues to exist. If not, the Court will generally decline to hear the case as it is moot. However, the Court retains discretion to hear the case and must consider the exercise of its discretion before finally determining whether or not to proceed. The Supreme Court of Canada (SCC) described the process as follows (Borowski at page 353):
+The approach in recent cases involves a two-step analysis. First it is necessary to determine whether the required tangible and concrete dispute has disappeared and the issues have become academic. Second, if the response to the first question is affirmative, it is necessary to decide if the court should exercise its discretion to hear the case. The cases do not always make it clear whether the term “moot” applies to cases that do not present a concrete controversy or whether the term applies only to such of those cases as the court declines to hear. In the interest of clarity, I consider that a case is moot if it fails to meet the “live controversy” test. A court may nonetheless elect to address a moot issue if the circumstances warrant.
+
+[13]  The SCC identified three factors a court should consider in assessing whether to exercise its discretion to hear a case on its merits even though it is moot: the adversarial system, the concern for judicial economy, and the court’s proper law-making role (Borowski at pages 358‑363). The SCC stated that the factors should not be reviewed mechanically and acknowledged that the factors may weigh differently in any particular case.
+
+[14]  The Applicant submits that the Application is not moot and should be considered by the Court for three reasons: (1) the case addresses novel issues in an area of limited jurisprudence; (2) the Respondent has not “conclusively established that the initial decision was correct or reasonable”; and (3) the Applicant incurred $1000.00 in fees in applying for the second LMIA.
+
+[15]  In order to determine whether the required tangible and concrete dispute between the parties has disappeared, I return to the Applicant’s Notice of Application. In the Notice, the Applicant requested the following relief:
+That the decision of the Program Officer be set aside and sent back to be re-determined by a differently constituted decision maker in accordance with such directions as the Court considers to be appropriate.
+
+[16]  In light of the issuance of the January 2019 Decision, I find that the Application is moot. The Applicant’s purpose in seeking judicial review of the Original Decision was to have its initial LMIA application reconsidered and a positive LMIA issued. The January 2019 Decision approved the Applicant’s second application for an LMIA, for the same individual in a similar position, thereby providing the very relief the Applicant is seeking from this Court in the Application. There remains no tangible and concrete dispute or ‘live controversy’ between the parties. Any consideration of the Original Decision would be academic.
+
+[17]  Turning to the second part of the Borowski process, I find that the circumstances of this case do not warrant the exercise of the Court’s discretion. There clearly remains no adversarial context. The essential issue between the parties, namely the issuance of a positive LMIA for the employment of Mr. Nakamura by the Applicant, has been resolved. No practical purpose would be served by reviewing the Original Decision for reasonableness. An order of the Court granting the remedy sought by the Applicant, that of returning the matter for redetermination, would result in redundancy.
+
+[18]  Despite the Applicant’s brief reference in its motion submissions to the presence of novel issues and to a paucity of jurisprudence, in its Memorandum of Fact and Law in support of the Application, the Applicant makes note of “numerous” decisions of this Court regarding the flaws it identifies in the Original Decision. In addition, the Applicant’s arguments in support of the Application relate only to the specific facts of its case. The Application raises no legal issues of general importance which would overcome the principle of judicial economy.
+
+[19]  Finally, the Applicant argues that the Court should exercise its jurisdiction to hear the Application because the Applicant had to pay a second LMIA application fee to obtain the January 2019 Decision. I do not agree. The Applicant chose to submit a second LMIA application, and to pay a second application fee, rather than to wait and pursue the Application to its conclusion. The fact that the Applicant elected to proceed in this manner does not warrant the exercise of the Court’s discretion to consider the substance of the arguments raised in the Application.
+
+IV.  Conclusion
+[20]  The Motion is granted.
+
+[21]  I make no award of costs in this matter.
+
+JUDGMENT IN IMM-3146-18
+THIS COURT’S JUDGMENT is that:
+The Respondent’s motion to strike is granted and this application for leave and judicial review is struck out.
+There is no award of costs.
+"Elizabeth Walker"
+Judge
+
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+DOCKET:
+IMM-3146-18
+  STYLE OF CAUSE:
+1397280 ONTARIO LTD. v THE MINISTER OF EMPLOYMENT AND SOCIAL DEVELOPMENT CANADA/SERVICE CANADA
+  MOTION IN WRITING CONSIDERED AT OTTAWA, ONTARIO PURSUANT TO RULE 369 OF THE FEDERAL COURTS RULES
+JUDGMENT AND REASONS:
+WALKER J.
+  DATED:
+JANUARY 8, 2020
+  WRITTEN REPRESENTATIONS BY:
+Matthew Wang
+  FOR THE APPLICANT
+  Wendy Wright
+  FOR THE RESPONDENT
+  SOLICITORS OF RECORD:
+Orange LLP
+Barristers and Solicitors
+Toronto, Ontario
+  FOR THE APPLICANT
+  Attorney General of Canada
+Toronto, Ontario
+  FOR THE RESPONDENT
+   
