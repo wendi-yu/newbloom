@@ -62,7 +62,7 @@ export default function TextEditor({
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-100">
       <Slate
         editor={editor}
         initialValue={document.documentBody}
