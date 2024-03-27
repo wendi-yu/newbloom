@@ -49,7 +49,6 @@ export const addCommentToDocument = (docId, newComment) => {
   }
 
   document.comments.push(newComment);
-  console.log(docHashes);
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 

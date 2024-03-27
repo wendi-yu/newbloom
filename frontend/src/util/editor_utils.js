@@ -70,7 +70,6 @@ export function getPreviousRedaction(editor, redactions) {
 
 export function selectNode(editor, node) {
   //this selects the node but doesn't click it
-  console.log(node)
   const range = Editor.range(editor, node.path);
   Transforms.setSelection(editor, range);
 }
@@ -85,7 +84,6 @@ export function setSelectionToCurrNodeEdges(editor) {
 }
 
 export function removeSelectedMark(editor, mark) {
-  console.log(mark)
   const temp = editor.selection;
 
   setSelectionToCurrNodeEdges(editor);

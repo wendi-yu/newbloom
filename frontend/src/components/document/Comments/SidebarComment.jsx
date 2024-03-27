@@ -48,7 +48,6 @@ function SidebarComment({ id, comment, docId }) {
 
   //TODO: implement menu
   const handleClickMenu = () => {
-    //console.log("menu")
   };
 
   //TODO: for now, you can only focus on comments when you click the corresponding comments
