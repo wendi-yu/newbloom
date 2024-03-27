@@ -32,7 +32,6 @@ function CommentPopover({ text}) {
 
   const [comment, setComment] = useState("");
   const setMaybeComment = useSetRecoilState(maybeCommentAtom);
-  //const setActiveCommentThreadID = useSetRecoilState(activeCommentThreadIDAtom);
 
   const [open, setOpen] = useState(true);
   const editor = useSlate();
@@ -95,6 +94,7 @@ function CommentPopover({ text}) {
         handleValueChange={(e) => setComment(e.target.value)}
         submitComment={submitComment}
         inputRef={inputRef}
+        placeholder="Comment"
       />
     </div>
   );
