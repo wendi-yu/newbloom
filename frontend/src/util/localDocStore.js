@@ -9,7 +9,12 @@ const addDocument = (name, id, state) => {
   let docHashesString = localStorage.getItem(userId);
   const docHashes = docHashesString ? JSON.parse(docHashesString) : {};
   // todo: warning if we''re going to overwrite
-  docHashes[id] = { name: name, state: state, dateAdded: new Date(), comments:[] };
+  docHashes[id] = {
+    name: name,
+    state: state,
+    dateAdded: new Date(),
+    comments: [],
+  };
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -50,6 +55,21 @@ export const addCommentToDocument = (docId, newComment) => {
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
+export const setDocumentComments = (docId, comments) => {
+  const userId = getCurrentUser();
+
+  let docHashesString = localStorage.getItem(userId);
+  if (!docHashesString) {
+    console.error(`document ${docId} not found`);
+    return;
+  }
+
+  const docHashes = JSON.parse(docHashesString);
+  docHashes[docId].comments = comments;
+
+  localStorage.setItem(userId, JSON.stringify(docHashes));
+};
+
 export const getAllCommentsFromDoc = (docId) => {
   const userId = getCurrentUser();
 
@@ -62,7 +82,7 @@ export const getAllCommentsFromDoc = (docId) => {
   const docHashes = JSON.parse(docHashesString);
   const document = docHashes[tempDocID];
 
-  if (!document.comments) return null;
+  if (!document || !document.comments) return null;
   return document.comments;
 };
 

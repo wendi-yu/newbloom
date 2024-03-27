@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS files (
     accepts JSON,
     rejects JSON,
     comments JSON,
+    comment_indices JSON,
     created_at TIMESTAMP DEFAULT current_timestamp,
     modified_at TIMESTAMP DEFAULT current_timestamp
 );

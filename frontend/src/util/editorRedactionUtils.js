@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 import { Editor } from "slate";
 
 import { setSelectionToCurrNodeEdges } from "@/util/editor_utils";
+import { COMMENT_THREAD_PREFIX } from "./editorCommentUtils";
 
 export const SUGGESTION_PREFIX = "suggestion_";
 export const REJECTED_PREFIX = "rejected_";
@@ -31,7 +32,12 @@ export function isRedactionFromMark(mark) {
 
 export function getTargetFromMark(mark) {
   let res = null;
-  [ACCEPTED_PREFIX, SUGGESTION_PREFIX, REJECTED_PREFIX].forEach((pre) => {
+  [
+    ACCEPTED_PREFIX,
+    SUGGESTION_PREFIX,
+    REJECTED_PREFIX,
+    COMMENT_THREAD_PREFIX,
+  ].forEach((pre) => {
     if (mark.includes(pre)) {
       res = pre;
     }
@@ -40,8 +46,8 @@ export function getTargetFromMark(mark) {
 }
 
 export function getMarkFromLeaf(leaf) {
-  const key = Object.keys(leaf);
-  return key[1];
+  const keys = Object.keys(leaf);
+  return keys.filter((key) => key !== "text")[0];
 }
 
 export function replaceRedactionWithX(leaf) {
@@ -66,9 +72,13 @@ export function getMarkForRedactionID(threadID, target) {
   return `${target}${threadID}`;
 }
 
-export function insertRedaction(editor, target) {
+export function insertRedaction(editor, target, threadID) {
+  if (!threadID) {
+    threadID = uuid();
+  }
+
   //check if editor already has a redaction
-  const threadID = uuid();
+
   Editor.addMark(editor, getMarkForRedactionID(threadID, target), true);
   return threadID;
 }

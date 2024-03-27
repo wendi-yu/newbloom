@@ -34,7 +34,7 @@ const getDocById = (id) => {
 };
 
 const postDoc = async (docText) => {
-  const url = `http://${API_DOMAIN}/upload`;
+  const url = `http://${API_DOMAIN}/file/upload`;
   const config = {
     headers: {
       // Overwrite Axios's automatically set Content-Type
@@ -53,7 +53,52 @@ const postDoc = async (docText) => {
   return data;
 };
 
+const updateDoc = async (fileId, state) => {
+  const url = `http://${API_DOMAIN}/file/update`;
+  const config = {
+    headers: {
+      // Overwrite Axios's automatically set Content-Type
+      "Content-Type": "application/json",
+    },
+  };
+
+  let data;
+  try {
+    const resp = await axios.post(
+      url,
+      { fileId: fileId, state: state },
+      config
+    );
+    data = resp.data;
+  } catch (error) {
+    console.log("Error uploading files: ", error);
+  }
+
+  return data;
+};
+
+const getDoc = async (fileId) => {
+  const url = `http://${API_DOMAIN}/file`;
+  const config = {
+    params: {
+      fileId: fileId,
+    },
+  };
+
+  let data;
+  try {
+    const resp = await axios.get(url, config);
+    data = resp.data;
+  } catch (error) {
+    console.log("Error uploading files: ", error);
+  }
+
+  return data;
+};
+
 export default {
+  getDoc,
+  updateDoc,
   postDoc,
   getAllDocs,
   getAllDocsMetadata,
