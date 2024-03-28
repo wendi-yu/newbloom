@@ -16,7 +16,7 @@ const addDocument = (name, id, state) => {
   docHashes[id] = {
     name: name,
     state: state,
-    status: DOC_STATUS.New, 
+    status: DOC_STATUS.New,
     dateAdded: new Date(),
     comments: [],
   };
@@ -57,6 +57,16 @@ export const addCommentToDocument = (docId, newComment) => {
   }
 
   document.comments.push(newComment);
+  localStorage.setItem(userId, JSON.stringify(docHashes));
+};
+
+export const markDocAsDone = (docId) => {
+  const userId = getCurrentUser();
+
+  let docHashesString = localStorage.getItem(userId);
+  const docHashes = JSON.parse(docHashesString);
+
+  docHashes[docId].status = DOC_STATUS.Completed;
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
