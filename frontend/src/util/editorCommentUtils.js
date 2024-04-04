@@ -103,7 +103,6 @@ export async function initializeStateWithAllCommentThreads(
   const doc = docApi.getDocById(docId);
 
   if (!doc || !doc.comments) {
-    console.log("Document doesn't exist or has no comments.");
     return;
   }
 

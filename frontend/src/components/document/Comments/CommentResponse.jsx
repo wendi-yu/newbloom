@@ -1,9 +1,7 @@
 import CommentInput from "@/components/document/Comments/CommentInput"
 import { useState, useRef, useEffect } from "react";
 
-import { useSlate } from "slate-react";
 import { v4 as uuid } from "uuid";
-import useAddCommentThreadToState from "@/hooks/useAddCommentThreadToState";
 import { getUserById, getCurrentUser } from "@/util/api/user_apis";
 import { addCommentToDocument } from "@/util/localDocStore";
 
@@ -35,7 +33,8 @@ function CommentResponse ({parentId}) {
               }]
             };
             addCommentToDocument(docId, newReply, parentId);
-          }
+            setComment("");
+        }
     };
 
     return (

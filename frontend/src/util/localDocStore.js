@@ -30,7 +30,7 @@ const updateDocumentBody = (docId, state) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  docHashes[docID].state = state;
+  docHashes[tempDocID].state = state;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -45,28 +45,27 @@ export const addCommentToDocument = (docId, newComment, parentId=null) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[tempDocID];
 
   if (!document.comments) {
     document.comments = [];
   }
 
-  //checks if comment is a response
+  const currentComments = document.comments;
+
   if (parentId) {
-    const parentComment = document.comments.find(comment => comment.id === parentId);
-    if (parentComment) {
-      if (!parentComment.replies) parentComment.replies = [];
-      parentComment.replies.push(newComment);
-    } else {
-      console.error(`Parent comment ${parentId} not found`);
-    }
+    document.comments = currentComments.map(comment => 
+      comment.id === parentId 
+      ? { ...comment, replies: [...(comment.replies || []), newComment] }
+      : comment
+    );
+    
   } else {
-    document.comments.push(newComment);
+    document.comments = [...currentComments, newComment];
   }
 
-  console.log(document.comments)
-
   localStorage.setItem(userId, JSON.stringify(docHashes));
+
 };
 
 export const setDocumentComments = (docId, comments) => {
@@ -79,7 +78,7 @@ export const setDocumentComments = (docId, comments) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  docHashes[docId].comments = comments;
+  docHashes[tempDocID].comments = comments;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -94,7 +93,7 @@ export const getAllCommentsFromDoc = (docId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[tempDocID];
 
   if (!document || !document.comments) return null;
   return document.comments;
@@ -110,7 +109,7 @@ export const deleteCommentFromDocument = (docId, commentId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[tempDocID];
 
   if (!document) {
     return;

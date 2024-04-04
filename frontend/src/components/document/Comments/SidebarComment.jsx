@@ -20,15 +20,15 @@ import { useSlate } from "slate-react";
 
 import { format, parseISO } from 'date-fns';
 
-function SidebarComment({ id, comment, docId, replies}) {
-
-  console.log(replies)
+function SidebarComment({ id, replies, comment, docId}) {
 
   const [isFocus, setIsFocus] = useState(false);
   const [isViewReply, setIsViewReply] = useState(true)
 
   const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
   const editor = useSlate();
+
+  if(replies) console.log(comment, replies)
 
   const toggleViewReply = () => {
     setIsViewReply(!isViewReply);
@@ -50,7 +50,7 @@ function SidebarComment({ id, comment, docId, replies}) {
       setIsFocus(false);
       setIsViewReply(false)
     }
-  }, [activeCommentThreadID, id]);
+  }, [activeCommentThreadID, id, replies]);
 
   const handleResolveComment = () => {
     removeSelectedMark(editor, getMarkForCommentThreadID(id));
@@ -89,7 +89,7 @@ function SidebarComment({ id, comment, docId, replies}) {
 
   return (
     <div onClick={handleOnClick} className={`flex flex-col bg-none justify-left rounded-2xl ${isFocus ? 'shadow-xl -ml-2.5 transform -translate-x-2.5' : ''}`}>
-        <div className={`flex flex-col bg-white p-5 w-64 ${isFocus && isViewReply ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'}`}>
+        <div className={`flex flex-col bg-white p-5 ${isFocus ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'}`}>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
@@ -109,12 +109,19 @@ function SidebarComment({ id, comment, docId, replies}) {
                 </p>
             </div>
         </div>
-        { isFocus && 
+        { isFocus &&
             <div className="flex flex-col">
-                {replies && replies.map((reply) => (
-                    <CommentChild key={reply.id} comment={reply} />
-                ))}
-                <CommentResponse parentId={id}/>
+              {isViewReply && replies && replies.map((reply) => (
+                <div key={reply.id}>
+                  <CommentChild
+                    id={reply.id}
+                    comment={reply.comment} 
+                    docId={docId}
+                    />
+                </div>
+
+              ))}
+              <CommentResponse parentId={id}/>
             </div>
         }
     </div>
