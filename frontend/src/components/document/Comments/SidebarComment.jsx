@@ -105,7 +105,8 @@ function SidebarComment({ id, replies, comment, docId}) {
             {comment[0].text}
             <div onClick={toggleViewReply}>
                 <p className="text-xs mt-2 font-light text-dark-grey underline decoration-light-gray-background">
-                    {replies && isFocus ? (isViewReply ? "Hide Reply" : "View Reply") : ''}
+                    {replies && isFocus ? (
+                      isViewReply ? "Hide Reply" : (replies.length>1 ? "View Replies" : "View Reply")) : ''}
                 </p>
             </div>
         </div>
