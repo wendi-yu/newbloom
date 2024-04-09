@@ -1,0 +1,149 @@
+Date: 20200109
+
+Docket: IMM-3369-19
+Citation: 2020 FC 21
+Ottawa, Ontario, January 9, 2020
+PRESENT:  The Honourable Mr. Justice Gleeson
+BETWEEN:
+RAMONA ADNANI
+Applicant
+and
+THE MINISTER OF
+CITIZENSHIP AND IMMIGRATION
+Respondent
+
+JUDGMENT AND REASONS
+
+I.  Overview
+[1]  The Applicant, Ramona Adnani, was born in Iran and is a citizen of that country. She is also a citizen of Uruguay, where she moved with her family as a teenager. She arrived in Canada in 2014 on visitor’s visa. In 2016 she claimed protection on the basis that she feared her ex-brother-in-law.
+
+[2]  The Refugee Protection Division of the Immigration and Refugee Board [RPD] accepted that the Applicant, as a Baha’i woman with liberal views, would face persecution in Iran. However, the RPD refused her claim citing credibility concerns and the availability of state protection and an internal flight alternative in Uruguay. The Refugee Appeal Division [RAD] confirmed the RPD decision on the basis that the Applicant had failed to rebut the presumption that she would receive adequate state protection in Uruguay. She now seeks review of the RAD decision pursuant to subsection 72(1) of the Immigration and Refugee Protection Act, SC 2001 c 27.
+
+[3]  For the reasons that follow, I am unable to conclude that the RAD committed any error warranting the Court’s intervention. The application is dismissed.
+
+II.  Background
+[4]  The Applicant claims that she fears her ex-brother-in-law, who she described as abusive, controlling, and well-connected. In 2002, while her sister and ex-brother-in-law were living in Mexico, he left the Applicant’s sister, kidnapping her daughter. He told the Applicant’s sister that he would harm her and her family if they made efforts to find him
+
+[5]  In 2016, the Applicant’s niece travelled to Canada from Mexico. Upon arrival, she told the Applicant that her father had threatened to kill her and had previously affirmed his intent to harm other family members, including the Applicant, should the niece attempt to leave him.
+
+III.  Issues
+[6]  The application raises the following issues:
+Did the RAD breach the Applicant’s right to procedural fairness by failing to consider current country condition documentation?
+Did the RAD unreasonably conclude that the Applicant had failed to provide clear and convincing evidence rebutting the presumption of state protection?
+
+IV.  Standard of Review
+[7]  This application was argued prior to the Supreme Court of Canada’s decisions in Canada (Minister of Citizenship and Immigration) v Vavilov, 2019 SCC 65 [Vavilov] and Bell Canada v Canada (Attorney General), 2019 SCC 66. The parties relied on the Dunsmuir framework in advancing submissions on standard of review. I have applied the Vavilov framework here.
+
+[8]  In Canada Post Corp. v. Canadian Union of Postal Workers, 2019 SCC 67 [Canada Post] Justice Rowe applied Vavilov in determining the standard of review even though the parties made submissions on the issue on the basis of Dunsmuir. Justice Rowe held that submissions from the parties need not be sought and that no unfairness arises where in applying Vavilov the applicable standard of review and outcome would have been the same under Dunsmuir (Canada Post at para 24).
+
+[9]  The parties both submit that the second issue is reviewable against the standard of reasonableness (Canada (Citizenship and Immigration) v. Huruglica, 2016 FCA 93 at para 35). I agree. The presumptive standard of reasonableness applies to the review of the second issue under either Dunsmuir or Vavilov.
+
+[10]  Justice Rowe summarizes the attributes of a reasonable decision in Canada Post:
+
+[31]  A reasonable decision is “one that is based on an internally coherent and rational chain of analysis and that is justified in relation to the facts and law that constrain the decision maker” (Vavilov, at para. 85). Accordingly, when conducting reasonableness review “[a] reviewing court must begin its inquiry into the reasonableness of a decision by examining the reasons provided with ‘respectful attention’ and seeking to understand the reasoning process followed by the decision maker to arrive at [the] conclusion” (Vavilov, at para. 84, quoting Dunsmuir, at para. 48). The reasons should be read holistically and contextually in order to understand “the basis on which a decision was made” (Vavilov, at para. 97, citing Newfoundland Nurses).
+
+[32]  A reviewing court should consider whether the decision as a whole is reasonable: “what is reasonable in a given situation will always depend on the constraints imposed by the legal and factual context of the particular decision under review” (Vavilov, at para. 90). The reviewing court must ask “whether the decision bears the hallmarks of reasonableness — justification, transparency and intelligibility — and whether it is justified in relation to the relevant factual and legal constraints that bear on the decision” (Vavilov, at para. 99, citing Dunsmuir, at paras. 47 and 74, and Catalyst Paper Corp. v. North Cowichan (District), 2012 SCC 2, [2012] 1 S.C.R. 5, at para. 13).
+
+[33]  Under reasonableness review, “[t]he burden is on the party challenging the decision to show that it is unreasonable” (Vavilov, at para. 100). The challenging party must satisfy the court “that any shortcomings or flaws relied on . . . are sufficiently central or significant to render the decision unreasonable” (Vavilov, at para. 100). In this case, that burden lies with the Union.
+
+[11]  I am also satisfied that my conclusions on the merits of the application would be the same under either framework. I am therefore of the view, having considered the facts, circumstances, and the current sate of the law, that there is no uncertainty as to how the Vavilov decision relates to this application (Vavilov para 144). As in Canada Post, further submissions from the parties are not required to determine the application. I note that neither party has sought to make further submissions.
+
+[12]  The standard of review to be applied in considering the procedural fairness issue—whether the RAD breached the Applicant’s right to procedural fairness by failing to consider current country condition documentation—is best reflected in the correctness standard. However the true nature of this analysis is a consideration of whether the procedure was fair having regard to all of the circumstances (Canadian Pacific Railway Company v Canada (Attorney General), 2018 FCA 69 at para 54).
+
+V.  Analysis
+A.  Did the RAD breach the Applicant’s right to procedural fairness by failing to consider current country condition documentation?
+(1)  New evidence
+
+[13]  The Applicant argues that in rendering its decision in 2019 the RAD unfairly considered and relied upon a 2016 National Document Package [NDP] instead of the updated NDPs released in 2017, 2018, and 2019, respectively. The Applicant has placed the updated NDP before me as new evidence relevant to the alleged breach of fairness. The Respondent did not object to this evidence.
+
+[14]  The additional evidence has been filed in support of an alleged breach of procedural fairness. It is admissible as an exception to the general rule that the evidentiary record on judicial review is restricted to the record before the decision maker (Association of Universities and Colleges of Canada v. Canadian Copyright Licensing Agency (Access Copyright), 2012 FCA 22 at paras 19 and 20). The evidence has been considered.
+(2)  There was no breach of fairness
+
+[15]  The Applicant argues that in failing to address the updated NDPs the RAD acted in a manner that was inconsistent with RAD policy and practice under which members must keep informed of current country conditions by familiarizing themselves with the latest NDPs. The Applicant submits that the updated NDPs contained evidence that was relevant to the issue of state protection. She cites Zheng v Canada (Minister of Citizenship and Immigration), 2011 FC 1359 [Zheng] as authority for the argument that reliance on an out-of-date NDP is a breach of procedural fairness. Specifically, she states that, by relying on an out-of-date NDP, the RAD failed to consider relevant factors, and that had the RAD considered those factors, it may have reached a different conclusion.
+
+[16]  The Applicant states that the RAD failed to consider the following relevant factors:
+local police lack the training and staff to enforce restraining orders; more generally, judicial decisions arising out of civil disputes are sometimes ineffectively enforced;
+·  62 percent of homicides in Uruguay result from domestic violence;
+·  victims of domestic violence without severe physical injuries often do not file complaints;
+·  laws aimed at preventing gender violence are not being fully implemented due to logistical barriers; and
+·  law enforcement and social services for victims of gender violence in Uruguay are inadequate.
+
+[17]  Having reviewed the RAD decision, I am not persuaded that relevant circumstances or factors were not considered, including those cited by the Applicant. The RAD recognized that “country documentation regarding domestic violence is somewhat mixed”, that “violence against women is a significant social problem in Uruguay”, and that “the laws protecting women from violence have notable limitations”. The RAD acknowledged the very factors the Applicant has flagged. In addition, the RAD acknowledged that restraining orders are difficult to enforce in Uruguay and that victims of domestic violence often do not file complaints.
+
+[18]  In Zheng the breach of fairness arose and relief was granted because the Board failed to disclose an updated version of the NDP that was less favourable to the decision maker’s position. On these facts Justice Richard Mosely concluded that changes to the documents were not so trivial as to allow him to conclude the decision maker would have reached the same result notwithstanding the nondisclosure.
+
+[19]  Although the RAD cites the 2016 NDP in this instance, it is evident that the RAD was aware of, acknowledged and addressed the factors and circumstances the Applicant has pointed to in advancing the fairness argument. The factors and circumstances relevant to the RAD’s state protection analysis have been worded differently in the updated country condition documents. However, I am not convinced the wording changes reflect any change in substance. The differences between the 2016 NDP and the updates in this case are trivial and accordingly I am not prepared to set aside the RAD decision on the basis of a breach of procedural fairness. 
+B.  Did the RAD unreasonably conclude that the Applicant had failed to provide clear and convincing evidence rebutting the presumption of state protection?
+(1)  The RAD’s treatment of similarly situated individuals’ evidence was reasonable
+
+[20]  In its analysis, the RAD first noted that absent a complete breakdown, states are presumed to be capable of protecting their citizens and that a claimant must bring clear and convincing evidence to rebut this presumption.
+
+[21]  The RAD then considered two incidents recounted by the Applicant where victims of domestic violence had sought state protection. Both involved women who called the police alleging violence by their romantic partners. In both cases, the police responded to the calls. In one of the incidents, the couple was reportedly told to “kiss and make up” and the female victim was advised that she could file a police report but the police would not do so automatically. 
+
+[22]  In considering the examples provided the RAD noted that the circumstances of the Applicant differed. In the recounted instances the violence was perpetrated by a romantic partner. By contrast, the Applicant in the present case feared violence from her ex-brother-in-law. The RAD then noted that the Chairperson’s guidelines broadly define domestic violence as including violence perpetrated against women by family members and accepted that the Applicant’s sister had been a victim of domestic violence that impacted upon the entire family, including the Applicant. However, the RAD also noted that the Applicant’s ex-brother-in-law has been living outside Uruguay for the past 19 years and has never directly threatened or harmed the Applicant.
+
+[23]  The Applicant argues that the RAD erred in distinguishing her circumstances from those of the victims in the examples she provided. She submits that the definition includes conjugal and other family violence and that the examples demonstrated that the Uruguayan police were not able to protect women from domestic violence. I disagree. The RAD did not discount the broad definition of domestic violence. Instead it recognized that domestic violence extends to family members and then considered the Applicant’s specific circumstances: she was not threatened by a romantic partner; she did not live with her ex-brother-in-law; she had never been directly threatened or harmed by him; and he had been living outside Uruguay for almost 20 years. The RAD’s reasoning process is transparent and easily understood.
+(2)  Failure to test state protection
+
+[24]  The Applicant also argues that the RAD unreasonably relied upon her failure to test state protection in Uruguay as she was in Canada at the time her fear arose.
+
+[25]  The RAD does state that the Applicant had testified that she had never sought the protection of the authorities in Uruguay. The statement is made immediately after the RAD notes that simply doubting state protection is insufficient to rebut the presumption. The RAD makes no further reference to the Applicant not having sought protection in its analysis. Considering the decision holistically and reading the RAD’s reference to the Applicant having never sought protection in context, I am not persuaded that the RAD relied on the Applicant’s failure to seek protection as a determinative factor in concluding she had failed to rebut the presumption of state protection.
+(3)  The RAD did not ignore material evidence
+
+[26]  The Applicant further argues that the RAD ignored material evidence rebutting the state protection presumption.
+
+[27]  The evidence the Applicant asserts was ignored is the information contained in the updated NDPs and identified above at paragraph 16 above. The Applicant acknowledges that the RAD benefits from a presumption that it considered all the evidence before it. However, she argues that the evidence in issue directly contradicts the RAD’s conclusions, and that the failure to address it renders the decision unreasonable.
+
+[28]  While a reviewing court may intervene where a decision maker fails to refer to evidence that directly contradicts its conclusion, in this case the RAD did not ignore the information. As I have already concluded, the evidence was reflected in the 2016 NDP in words that may have differed in form but not substance.  In addition, most of the factors the Applicant relies upon in advancing this argument were expressly or implicitly reflected in the RAD decision.
+(4)  The RAD’s analysis was more than a regurgitation of country condition documentation followed by a conclusion
+
+[29]  Finally, the Applicant argues the RAD failed to engage in an analysis of the evidence but instead “merely regurgitated” the country condition evidence it references in its decision.
+
+[30]  In advancing this argument the Applicant relies on the reasons of Justice Donald Rennie in Navarrete Andrade v Canada (Citizenship and Immigration), 2013 FC 436 [Navarrete Andrade]. There, Justice Rennie states that “[i]t is insufficient to merely summarise large volumes of evidence and then state a conclusion that state protection is adequate”. Instead the evidence must be connected to the conclusion by a line of reasoning (Navarrete Andrade at para 28).
+
+[31]  In support of its conclusion that the Applicant had failed to establish that state protection in Uruguay is inadequate, the RAD first engaged in a review of the country condition evidence. Unlike the situation in Ruszo v Canada (Citizenship and Immigration), 2019 FC 397, the RAD did not simply regurgitate documentary evidence. Instead, it summarized in bulleted form what the documentary evidence disclosed on matters relevant to state protection including the protections provided to women confronted with domestic violence. The RAD’s summary addressed both efforts and the effectiveness of state efforts to provide protection. The RAD also addressed the Applicant’s documentary evidence. The RAD acknowledged the evidence was mixed.
+
+[32]  Having engaged in this review, it was open to the RAD to conclude, as it did, that the objective evidence did not indicate a failure of state protection. It was similarly open to the RAD, in the context of a decision where the Applicant’s personal circumstances had previously been reviewed and considered, to conclude that the Applicant had failed to demonstrate with clear and convincing evidence that it was objectively unreasonable for her to seek state protection or that that state protection would not be forthcoming should she seek it.
+
+[33]  Reading the RAD’s reasons holistically and contextually I understand the basis upon which it reached its conclusions.
+
+VI.  Conclusion
+[34]  The application is dismissed. The parties have not identified a serious question of general importance for certification and none arises.
+ 
+JUDGMENT IN IMM-3369-19
+THIS COURT’S JUDGMENT is that:
+The application is dismissed; and
+No question is certified.
+"Patrick Gleeson"
+Judge
+ 
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+DOCKET:
+IMM-3369-19
+  STYLE OF CAUSE:
+RAMONA ADNANI v THE MINISTER OF CITIZENSHIP AND IMMIGRATION
+  PLACE OF HEARING:
+OTTAWA, ONTARIO
+  DATE OF HEARING:
+NOVEMBER 6, 2019
+  JUDGMENT AND REASONS:
+GLEESON J.
+  DATED:
+JANUARY 9, 2020
+  APPEARANCES:
+Élaine Simon
+  FOR THE APPLICANT
+  Fraser Harland
+  FOR THE RESPONDENT
+  SOLICITORS OF RECORD:
+Élaine Simon
+Barrister and Solicitor
+South Office, Community Legal Services of Ottawa
+Ottawa, Ontario
+  FOR THE APPLICANT
+  Attorney General of Canada
+Ottawa, Ontario
+  FOR THE RESPONDENT
+   

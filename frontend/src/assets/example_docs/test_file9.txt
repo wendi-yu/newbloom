@@ -1,0 +1,103 @@
+Date: 20200106
+
+Docket: IMM-1761-19
+Citation: 2020 FC 17
+
+[UNREVISED CERTIFIED ENGLISH TRANSLATION]
+Ottawa, Ontario, January 6, 2020
+Present: The Honourable Mr. Justice McHaffie
+BETWEEN:
+NAWRAS TAMAN
+Applicant
+And
+THE MINISTER OF CITIZENSHIP AND IMMIGRATION
+Respondent
+
+
+JUDGMENT AND REASONS
+I.  Overview
+[1]  The immigration officer who refused Nawras Taman’s permanent residence application relied on the incorrect provision in the Immigration and Refugee Protection Regulations, SOR/2002-227 [IRPR], and did not rule on the questions required to process the application. As a result, the decision is not reasonable, and must be reversed.
+
+[2]  Mr. Taman applied for permanent residence as a member of the “Convention refugees abroad” class. To determine whether he belongs to this class, sections 139, 144 and 145 of the IRPR require the officer to determine: (i) whether Mr. Taman is a refugee within the meaning of the United Nations Convention Relating to the Status of Refugees, in accordance with section 96 of the Immigration and Refugee Protection Act, SC 2001, c 27 [IRPA], and (ii) whether there is a reasonable prospect of a durable solution in a country other than Canada. However, the officer only analyzed whether Mr. Taman belonged to the “country of asylum” class, and his analysis was limited to the criteria in section 147 of the IRPR, which do not even apply.
+
+[3]  As the officer applied the incorrect provision of the IRPR and did not analyze the correct provisions, the decision is not reasonable. The application for judicial review is therefore allowed, and the case is referred back for reconsideration.
+
+II.  Mr. Taman’s application
+[4]  Mr. Taman is a citizen of Syria. His father is Syrian, and his mother is Lebanese. His parents divorced in 1996. In 1998, he moved to Lebanon with his mother. He has had permanent resident status in Lebanon since 2011, and renews his permit annually.
+
+[5]  In August 2016, Mr. Taman applied for permanent residence in Canada, claiming protection in Canada as a “refugee outside Canada” or a “refugee abroad”. He holds a registration certificate issued by the United Nations High Commissioner for Refugees, and his application for permanent residence was sponsored in the refugee category by a Canadian Jesuit group. Mr. Taman submitted his protection application as he fears his return to Syria should Lebanon refuse to renew his permanent resident status. In particular, he would be asked to join the Syrian army since he has not completed his mandatory military service.
+
+III.  Relevant provisions
+[6]  Under subsection 11(1) of the IRPA, every foreign national must, before entering Canada, apply to an officer for a visa following an examination. A foreign national outside Canada who applies for refugee protection in Canada may submit an application for permanent residence if they meet the definition of refugee within the meaning of section 96 of the IRPA.
+
+[7]  To this end, subsection 139(1) of the IRPR states that a permanent resident visa shall be issued to the foreign national who shows that they meet the requirements of this section. In particular, a foreign national must establish that they are outside Canada, that they are seeking entry to Canada to reside permanently, and that they comply with paragraphs 139(1)(d) and (e):
+(d) the foreign national is a person in respect of whom there is no reasonable prospect, within a reasonable period, of a durable solution in a country other than Canada, namely
+d) aucune possibilité raisonnable de solution durable n’est, à son égard, réalisable dans un délai raisonnable dans un pays autre que le Canada, à savoir :
+(i) voluntary repatriation or resettlement in their country of nationality or habitual residence, or
+(i) soit le rapatriement volontaire ou la réinstallation dans le pays dont il a la nationalité ou dans lequel il avait sa résidence habituelle,
+(ii) resettlement or an offer of resettlement in another country;
+(ii) soit la réinstallation ou une offre de réinstallation dans un autre pays;
+(e) the foreign national is a member of one of the classes prescribed by this Division;
+e) il fait partie d’une catégorie établie dans la présente section; [Emphasis added.] [Je souligne.]
+
+[8]  Several categories are established in this division (Division 1, Part 8 of the IRPR), including the “Convention refugees abroad” class, which is addressed in sections 144 and 145 of the IRPR, and “country of asylum” class, which is addressed in sections 146 and 147 of the IRPR.
+
+[9]  A foreign national is a “Convention refugee abroad” when an officer determines that the foreign national is a Convention refugee: IRPR, s 145. Section 96 of the IRPA adopts the Convention’s definition of refugee. As a result, section 145 of the IRPR requires the foreign national outside Canada to show that they meet the requirements of section 96 of the IRPA to be eligible as a Convention refugee: Saifee v Canada (Citizenship and Immigration), 2010 FC 589 at para 37.
+
+[10]  The “country of asylum” class is distinct. To be included in this class, a foreign national must need to relocate because: (a) “they are outside all of their countries of nationality and habitual residence”, and (b) “they have been, and continue to be, seriously and personally affected by civil war, armed conflict or massive violation of human rights in each of those countries” [emphasis added]: IRPR, ss 147(a), (b); see also Saifee at para 38.
+
+IV.  Refusal of application
+[11]  Following an interview with an immigration officer in February 2019, Mr. Taman received a letter informing him that his application for permanent residence was rejected. According to the officer, Mr. Taman was not a refugee under the IRPA and was ineligible under a “class established” in the IRPR. After reproducing section 96 of the IRPA, and sections 145, 147 and 139(1)(d) and (e) of the IRPR, the officer’s only analysis is the following:
+
+[translation]
+After carefully assessing your application, I have determined that you do not meet the requirements of A96 [section 96 of the IRPA] or R147 [section 147 of the RIPR], and that you therefore do not meet the requirements under paragraph 139(1)(e) of the Regulations.
+You have been in Lebanon since the hostilities in Syria began and long enough so that Lebanon is considered your country of habitual residence. There is no reason at the moment to believe that your ability to remain in this country of habitual residence will not continue to be viable. Given that you have been outside Syria since the hostilities began (or civil war, armed conflict or massive violation of human rights), I am not convinced that you are seriously and personally affected by civil war, armed conflict or massive violation of human rights, or that you otherwise meet the definition required for this class of application.
+[Emphasis added.]
+
+[12]  It is clear from this excerpt, especially the second paragraph with the two references to habitual residence and the civil war, armed conflict or massive violation of human rights, that the officer analyzed the requirements of section 147 of the IRPR, namely the section on the “country of asylum” class. This section and this class do not apply to Mr. Taman’s application, which was presented under the “Convention refugee abroad” class.
+
+[13]  There is no analysis in the officer’s decision of the requirements in section 145 of the IRPR or section 96 of the IRPA. He only states that [translation] “you do not meet the requirements of A96”, which is clearly insufficient to support such a conclusion. On the contrary, it seems he simply erred with regard to the section of the IRPR that applied in the present case. Instead of considering whether Mr. Taman was a “Convention refugee”, the officer determined whether he was a member of the “country of asylum” class.
+
+[14]  I note that in his analysis, the officer referred to Mr. Taman’s ability to “remain in this country of habitual residence”. Although the sustainability of a solution in a country other than Canada is relevant for paragraph 139(1)(d), this short reference does not constitute an analysis of paragraph 139(1)(d) of the IRPR, or a rejection of Mr. Taman’s application on this basis. The officer included paragraph 139(1)(d) in the provisions in his letter to Mr. Taman, but there is nothing else that suggests he was rejecting Mr. Taman’s application based on this paragraph. On the contrary, the officer specifically indicated in his reasons that he was rejecting the application pursuant to paragraph 139(1)(e) rather than 139(1)(d) of the IRPR. This conclusion was confirmed by the Minister’s representative during the hearing, when he admitted that the officer did not conduct a paragraph 139(1)(d) analysis.
+
+V.  Conclusion
+[15]  Since it was based on the incorrect provision of the IRPR, the officer’s decision is not reasonable and cannot be upheld. The application for judicial review is allowed. No party proposed that a question be certified, and none is certified.
+
+JUDGMENT in IMM‑1761‑19
+THIS COURT DECIDES as follows:
+The application for judicial review is allowed, and the decision is referred back to another officer for reconsideration.
+No question is certified.
+ “Nicholas McHaffie”
+Judge
+Certified true translation
+This 15th day of January 2020.
+Michael Palles, Reviser
+
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+DOCKET:
+IMM-1761-19
+  STYLE OF CAUSE:
+NAWRAS TAMAN v MINISTER OF CITIZENSHIP AND IMMIGRATION
+  PLACE OF HEARING:
+MONTRÉAL, QUEBEC
+  DATE OF HEARING:
+OCTOBER 23, 2019
+  JUDGMENT AND REASONS BY:
+MCHAFFIE J.
+  DATE OF REASONS:
+JANUARY 6, 2020
+  APPEARANCES:
+Jacques Beauchemin
+-  FOR THE APPLICANT
+Evan Liosis
+  FOR THE RESPONDENT
+SOLICITORS OF RECORD:
+Beauchemin, Lawyer
+Montréal, Quebec
+  FOR THE APPLICANT
+Attorney General of Canada
+Montréal, Quebec
+  FOR THE RESPONDENT
+   

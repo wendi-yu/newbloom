@@ -1,0 +1,280 @@
+Date: 20200122
+Docket: IMM-2069-19
+Citation: 2020 FC 19
+Citation: 2020 FC 19
+Ottawa, Ontario, January 22 2020
+PRESENT:  The Honourable Mr. Justice Annis
+BETWEEN:
+A.B.
+Applicant
+and
+MINISTER OF CITIZENSHIP AND IMMIGRATION
+Respondent
+and
+HIV AND AIDS LEGAL CLINIC ONTARIO
+Intervener
+
+JUDGMENT AND REASONS
+I.  Introduction
+[1]  A.B. [the Applicant], a Canadian citizen originally from India, seeks judicial review of the Immigration Appeal Division [IAD]’s decision [Decision] to dismiss her sponsorship appeal. Her appeal concerned an immigration officer’s [the Officer] refusal to issue a permanent resident visa to her husband[the spouse].
+
+[2]  The IAD made a confidentiality order, requiring the names of the Applicant and other family members, and identifying characteristics to be redacted from its reasons and decision, in accordance with section 166(b) of the Immigration and Refugee Protection Act, SC 2001, c 27 [IRPA]. The IAD issued this order because the Applicant’s spouse is from a vulnerable community in India, and will face prosecution for being HIV positive should his identity be revealed.  These reasons and the materials on file in support of the application are subject to a similar confidentiality order.
+
+[3]  The HIV and AIDS Legal Clinic Ontario [the Clinic] has been given leave to intervene in this matter. The Clinic submits that the IAD’s decision perpetuates HIV-related stigma by relying on discriminatory stereotypes of people living with HIV, and other related submissions.
+
+[4]  For the reasons that follow, the application is dismissed.
+
+II.  Facts
+A.  Factual context
+[5]  The Applicant is a naturalized citizen of Canada, originating from India. In April, 1997, she arrived to Canada as a sponsored spouse by her first husband. However, they divorced the same year. They did not have children together. In 2003, the Applicant received her citizenship.
+
+[6]  The Applicant then sponsored her second husband but in 2011, their marriage ended. They had two children, one who is a young adult who lives with his father, and a teenage boy who lives with the Applicant.
+
+[7]  The spouse, the Applicant’s current husband, was previously married with another woman in an arranged marriage. This woman also sponsored the Applicant’s husband to Canada as a spouse. Upon completing his immigration medical exam, the spouse discovered that he was HIV-positive.
+
+[8]  In 2010, the spouse was denied entry upon arriving in Canada, because his ex wife had withdrawn her sponsorship. The spouse alleges that at that time he met a lawyer at the airport who advised him to make a refugee claim, claiming that his life was at risk in India, and that everything would “normalize.” He followed the lawyer’s advice despite being of the opinion that he was not a legitimate refugee claimant.
+
+[9]  In 2011, the spouse withdrew his claim at the hearing before the RPD. He alleges that his lawyer advised him that he could not do so before that time.
+
+[10]  After withdrawing his refugee claim in 2011, the spouse then made a Pre-Removal Risk Assessment (PRRA) application based on the risk to his life or lack of proper medical care for his medical condition, along with a Humanitarian and Compassionate application (H&C).
+
+[11]  In 2012, the spouse’s marriage with his ex wife ended in divorce without any children.
+
+[12]  In 2013, after the spouse’s PRRA and H&C claims were dismissed, the spouse received his removal order to leave Canada two or three weeks later. However, he did not attend that appointment and did not leave Canada. Instead, he quit his job and went into hiding.
+
+[13]  Later in 2013, the Applicant married the spouse whom she had first met two months previously. This is the Applicant’s’ third marriage and the spouse’s second marriage.
+
+[14]  At the end of the same year, in 2013, the couple submitted an In-Canada Spousal Sponsorship application. They claim a lawyer advised them (erroneously) that they could avoid the spouse’s removal if they submitted the sponsorship application. They were further advised that they should remain in Canada throughout the processing of this application.
+
+[15]  The spouse was arrested in 2014 on a removal warrant and was deported to India a month later. However, the Applicant and spouse have remained married to date and conducted themselves as married despite the geographical separation. They have no children together.
+
+[16]  The Applicant applied to sponsor the spouse as a permanent resident, but the Officer refused the application in 2016. The Officer concluded that the marriage is not genuine, and was entered into by the spouse primarily for the purpose of acquiring status or privilege per section 4 of the Immigration and Refugee Protection Regulations, SOR/2002-227 [Regulations].
+
+[17]  The Applicant appealed the decision to the IAD, which dismissed the appeal in 2019.
+
+  B.  The IAD Decision
+[18]  The IAD dismissed the appeal after concluding that the Applicant failed to prove that the marriage was not entered into primarily for the purpose of the spouse acquiring a status or privilege under the IRPA. The IAD acknowledged that their marriage now appears genuine, but that the test under section 4 of the Regulations is disjunctive.
+
+[19]  The IAD concluded that overall, the Applicant’s evidence was credible, but that the spouse was not. She found on a balance of probabilities that, while the marriage was genuine, the spouse entered into it primarily for the purpose of acquiring a benefit under the IRPA, thereby dismissing the appeal.
+
+[20]  The IAD considered that the marriage is genuine on a balance of probabilities for two main reasons: (1) the solid documentary evidence from the five years of marriage submitted by the Applicant and; (2) the spouse’s daily interaction with both the Applicant and her son, who refers to him as his father.
+
+[21]  The IAD then noted that the spouse’s motivation to marry was to acquire any status or privilege under the IRPA (gaining permanent residency), based on his significant immigration history in Canada, his ongoing serious medical condition, and the timing of his marriage. In reaching this conclusion, after setting out the factors generally considered in the manner of their determining, the IAD considered the following six factors:
+  The spouse demonstrated a desire to stay in Canada starting from his arrival: The IAD considered that the spouse’s decision to file a refugee claim upon his first arrival to Canada weighed against his credibility, including allegations of relying upon his lawyer for these decisions. The IAD found there was no persuasive answer for her question as to why he did not return to India. This evidence weighed against the spouse’s credibility and supported a finding that he desired to stay in Canada regardless of whether he was with his then-spouse or not.
+The spouse stayed in Canada despite having no contact with his then-spouse: The lack of involvement by family members to attempt to unite the couple in an arranged marriage called into question its genuineness. He failed to see his then-spouse again after meeting her in the airport until the refugee hearing. The IAD concluded when it was clear that there was no reconciliation with his first sponsor, the decision of the spouse to remain in Canada supported the finding that the prioritized remaining in Canada despite not having a spouse here.
+The spouse’s further attempts to stay in Canada: The IAD concluded that the spouse’s failure to withdraw his refugee claim until 2011 on the unsupported advice of his lawyer, and thereafter by commencing is PRRA and H&C applications were further evidence of the spouse’s determination to stay in Canada and weighed against his credibility. The IAD also considered that his “flagrant disregard” for Canada’s immigration laws by not leaving 2013 and going into hiding was further evidence of his determination to stay in Canada. The RAD found these actions to weigh in favour a finding the spouse’s primary purpose for his marriage to the Applicant was to stay in Canada.
+The timing of the decision to marry and the marriage date: The IAD concluded that the Applicant and spouse had only been together for about two months. They were married few weeks after he advised her of his removal order of2013. The spouse admitted that the marriage proposal was rushed and was to ensure that he could stay in Canada, as a way to continue develop his relationship with the Applicant. The IAD did not accept his claim that he was not pressuring the Applicant to marry him. He further explained that another lawyer erroneously advised him that he could avoid the removal order if the couple submitted an In-Canada Spousal Sponsorship application, even though at large and in violation of the immigration laws. The IAD did not believe in a balance of probabilities that the decision to marry was made after the consultation with the lawyer. The IAD also noted that the fact that the marriage was entered into rather hastily, given that they are entering to their second and third marriages respectively, also weighed in favour of the Applicant’s primary purpose of the marriage being to stay in Canada.
+The spouse considered marrying another Canadian woman: The IAD concluded that the timing of his search for another mate was indicative on a balance of probabilities that he was looking for a way to stay in Canada rather than to marry to be a spouse. This came after the first sponsorship was over, and after the withdrawal of the refugee claim, while awaiting the PRRA and H&C decisions. Similarly, his focus on finding a Canadian partner so that he could stay in Canada was corroborated by his testimony that he also considered marrying another Canadian woman he had met.
+The spouse’s motivation to access treatment and medication for his HIV:
+The IAD found that spouse was highly motivated to stay in Canada because he believed he was saving his own life. This conclusion was fortified by the spouse’s testimony that there was no treatment for his HIV in India available to him until he showed more symptoms of illness, and that the medications received in Canada were not available to him in India. In addition, the IAD considered that the spouse’s working to fund his medical needs further supports the finding that he was motivated to do what it took to stay in Canada.
+
+III.  Issues
+[22]  The Court accepts the following issues raised by the Applicant and the Intervener:
+What is the standard of review?
+Was the IAD’s assessment of the primary purpose of the spouse’s marriage unreasonable?
+Did the IAD unreasonably rely on the spouse’s medical condition to undermine the primary purpose of the marriage?
+Did the IAD err by making speculative findings that were unfounded and contradicted by the evidentiary record?
+Should the Court permit a new issue to be raised not before the IAD concerning whether the disjunctive test in s. 4(1) of Regulations is ultra vires the enabling statute, namely s. 3(1)(d) of IRPA, and if so whether the test is ultra vires?
+Does the IAD decision perpetuate HIV-related stigma by relying on discriminatory stereotypes of people living in HIV, whether the decision creates a discriminatory evidentiary burden of people living with HIV, and whether the IDA erred in failing to conduct an individualized assessment of the Applicant’s ability to access medical care?
+
+IV.  Standard of Review
+[23]  By the revised principles in Canada (Minister of Citizenship and Immigration) v Vavilov, 2019 SCC 65, [2019] S.C.J. No. 65 at para. 26 [Vavilov], reasonableness is presumed to be the applicable standard of review for all aspects of the decision. None of the exceptions described in Vavilov would affect the presumption that the reasonableness standard should apply in this matter.
+
+[24]  The reviewing court no longer attempts to ascertain the "range" of possible reasonable conclusions that would have been open to the decision maker. Instead, a reasonable decision is concerned with the decision-making process and its outcomes. A reasonable decision is also based both on an internally coherent reasoning, and justified in light of the legal and factual constraints that bear on the decision such that the decision as a whole is transparent, intelligible and justified. Therefore, “it is not enough for the outcome of a decision to be justifiable... the decision must also be justified.” (Vavilov, paras. 15, 83 and 86).  
+
+[25]  Regarding the first factor, the reasoning must be both rational and logical, allowing the reviewing court to trace the decision maker’s reasoning without encountering any fatal flaws in its overarching logic and following a line of analysis that could reasonably lead the tribunal from the evidence before it to the conclusion at which it arrived, (Vavilov, para 102). It is not enough for the outcome of a decision to be justifiable. ... the decision must also be justified” (Vavilov, para 86).
+
+[26]  In the second instance, a reasonable decision is justified in light of the particular legal and factual constraints that bear on the decision (Vavilov, para 83). It is not possible to catalog all of the legal and factual considerations that could constrain an administrative decision-maker in a particular case. However, elements that are relevant in this matter in evaluating whether a given decision is reasonable include the governing statutory scheme; other relevant statutory or common law; the evidence before the decision maker; the submissions of the parties; and the potential impact of the decision on the individual to whom it applies.
+
+[27]  With respect to the constraints on assessed factual findings, which extends to the drawing of inferences of fact: (1) applicants must demonstrate; that (2) exceptional circumstances apply, which would permit the reviewing court to interfere with factual findings; and that (3) they are not requesting the court to re-weigh and reassess the evidence considered by the decision-maker(Vavilov, paras 77 & 125, Canada (Canadian Human Rights Commission) v Canada (Attorney General), 2018 SCC 31, [2018] 2 S.C.R. 230, at para 55; Canada (Citizenship and Immigration) v Khosa, 2009 SCC 12 (CanLII), [2009] 1 SCR 339 at para 64, or where it concludes that the decision-maker’s factual conclusion cannot be said to be based on some evidence: Dr. Q. v College of Physicians and Surgeons of British Columbia, 2003 SCC 19 (CanLII), [2003] 1 SCR 226, at para. 41.
+
+[28]  The need for deference is greatly heightened by the nature of the problem. Assessments of credibility are quintessentially questions of fact.  The relative advantage enjoyed by the Committee, who heard the viva voce evidence, must be respected; Vavilov, para. 125, citing Dr. Q. v College of Physicians and Surgeons of British Columbia, 2003 SCC 19 (CanLII), [2003] 1 SCR 226, at para 38.
+
+[29]  The Court further noted at paragraph 125 in Vavilov in referencing Housen v. Nikolaisen, 2002 SCC 33 (CanLII), [2002] 2 SCR 235, at paras. 15-18 [Housen] that appellate courts’ deference owed to a lower court's factual findings, including the need for judicial efficiency, the importance of preserving certainty and public confidence, and the relatively advantageous position of the first instance decision maker, apply equally in the context of judicial review. The ratio decidendi of Housen at paragraphs 22 & 23 that appellate courts are not to reweigh the primary evidence to substitute their conclusion for that of the decision maker in the drawing of an inferred fact, would similarly apply to inferences drawn by administrative tribunals.
+
+[30]  Otherwise based on Vavilov at paragraphs 77 and 126, and the jurisprudence it cites, applicants must demonstrate that the decision is not reasonable because it is not justified in light of the facts based on the evidence that was actually before the decision-maker. This would include where the decision maker has not taken the evidentiary record and the general factual matrix that bears on its decision into account. Examples include where there is a flawed logical process by which the fact is drawn from the evidence, or where the decision maker has fundamentally misapprehended or failed to account for the relevant evidence, or made a finding that was contrary to the overwhelming weight of the evidence, : Vavilov at para. 77 &126; Dunsmuir v New Brunswick, 2008 SCC 9 (CanLII), [2008] 1 SCR 190, at para 47; Baker v Canada (Minister of Citizenship and Immigration), 1999 CanLII 699 (SCC), [1999] 2 SCR 817 at para 48; Canada (Director of Investigation and Research) v Southam Inc., 1997 CanLII 385 (SCC), [1997] 1 SCR 748, at para 56; Dr. Q. para. 41.
+
+[31]  With respect to questions of mixed fact and law, logically if any identifiable underlying factual findings are not overturned and overriding in effect, applicants must demonstrate an unreasonable error in their consideration and application, per Vavilov para. 127. Given the general deference owed the factual component of the question, the Court infers that such errors are most likely the absence of justified reasoning, the deficiencies of the reasoning process applied, or an error in the extricable legal principle, such as misstating or applying the wrong test. See the general discussion on questions of mixed fact and law in Housen at paras. 26 to 31.
+
+V.  Analysis
+A.  Introduction
+[32]  This matter is highly fact determinative in the sense that the Applicant’s submissions are rejected in most instances based upon the facts.
+
+[33]  First, the Member found that the spouse was highly motivated to obtain permanent resident status for the purpose of accessing Canada’s HIV treatment and medication resources, over many years prior to the marriage with the Applicant. This includes the following: gaining entry to Canada on the basis of a spousal sponsorship claim that ended upon his arrival in the country; falsely claiming refugee status; discontinuing the application a year later at the hearing on the unfounded premise that he was following his lawyer’s instructions; further failed PRRA and H&C applications; thereafter remaining unlawfully at large due to his refusal to return to his country of origin; further consideration of a marriage with another Canadian citizen; ultimately meeting the Applicant with the marriage concluded two months later; and, thereafter, the Applicant making a sponsorship application for the spouse when unlawfully in the country on the unfounded premise that the lawyer advised that it would allow him to remain in the country.
+
+[34]  Second, the Member concluded that the marriage was not genuine when first entered into, but was genuine at the time when considered by the IAD.
+
+[35]  Third, the Member found that the Applicant’s spouse was not credible.
+
+[36]  The Court further finds nothing to suggest that the reasons were not rational and logical, allowing the reviewing court to trace the decision maker’s reasoning without encountering any fatal flaws in its overarching logic and following a line of analysis that could reasonably lead the tribunal from the evidence before it to the conclusion at which it arrived.
+B.  The IAD’s assessment of the primary purpose of the Applicant’s marriage is reasonable and is not constrained by any of the allegations and submissions considered below
+(1)  The IAD is not constrained by an alleged misunderstanding of the applicable legal framework for assessing the primary purpose of the marriage in failing to consider the genuineness of the marriage
+
+[37]  The Applicant’s first argument is that the IAD’s assessment of the primary rational purpose of marriage was unreasonable because the Member applied the wrong legal framework. He states that the IAD having found that the marriage was genuine, erred in not logically considering this conclusion as proof that the couple was not seeking immigration status. He relies upon the statement in Parminder Kaur Gill v Canada (Citizenship and Immigration), 2014 FC 902 at para 15 [the 2014 Gill decision] that “[t]he more compelling the proof that the couple was seeking immigration status, the more likely it will be that the marriage was not genuine.”
+
+[38]  With respect, it is recognized that there may be a wide range of different circumstances pertaining to each marriage. It is always a question therefore, whether the facts support a conclusion that a genuine marriage for instance would be proof that the spouse was not seeking immigration status.
+
+[39]  In this matter, the facts do not indicate any significant relation between the two factors. As indicated, the most highly probative evidence that the spouse was seeking an immigration status for the purpose of accessing Canadian health resources was that which preceded the date of the marriage by many years. Furthermore, the unrelenting attempts by the spouse to obtain permanent residency status described above, including going so far as violating Canadian immigration law to obtain that objective, strongly support the conclusion that the spouse’s primary purpose of the marriage was to acquire permanent residency status.
+
+[40]  Conversely, the IAD concluded that the genuine marriage was only established over many years up to the time of the hearing. It is well recognized that the most significant time to consider the primary purpose of the marriage is before it occurs. Accordingly, the conclusion that the marriage was not genuine without the passage of time would provide little probative proof that the marriage was not entered into primarily for immigration purposes.
+
+[41]  Moreover, with respect, I conclude that the decision of the Chief Justice Crampton in Depinder Kaur Gill v Canada (Citizenship and Immigration), 2012 FC 1522 [the 2012 Gill decision] better represents the applicable law. The Chief Justice specifically rejected a similar submission made by the Applicant at paragraphs 28 and 29:
+
+[28]  Ms. Kaur Gill submits that it was unreasonable for the IAD to find that her marriage with Mr. Gill was genuine, and then to conclude that she had not established that the primary purpose of the marriage was other than to gain status or privilege under the IRPA.
+ [29]  I disagree. A plain reading of section 4 of the Regulations reflects that these are two distinct tests. If a finding that a marriage is genuine precluded the possibility of a finding that the marriage was entered into primarily for the purpose of acquiring any status or privilege under the IRPA, the latter test would be superfluous. This would offend the presumption against statutory surplusage. (R v Proulx, 2000 SCC 5 (CanLII), at para 28, [2000] 1 SCR 61).
+
+[42]  The Chief Justice’s conclusion is confirmed by the Regulatory Impact Analysis Statement (“RIAS”) concerning the “Bad Faith Regulations”, which explains why the section was amended to create a disjunctive test in the Canada Gazette, September 30, 2010:
+... The intent of R4 is to protect the integrity of the immigration program by preventing individuals from using relationships of convenience or bad faith relationships to circumvent immigration law. Prior to this amendment, the provision stated that a foreign national would not be considered a spouse, a common-law partner, a conjugal partner or an adopted child of a person if the relationship was not genuine and was entered into primarily for immigration purposes.
+Under the previous provision, it was difficult to properly identify relationships of convenience. This is because R4, as it formerly read, specified two mandatory elements for determining “bad faith” relationships: (a) that a relationship is not genuine and (b) that it was entered into primarily for the purpose of acquiring any status or privilege under the Act. This led to a requirement that CIC be satisfied that both elements have not been met when refusing a case under this regulation and supporting that decision on appeal. However, a “bad faith” relationship is present when either of these related factors is apparent.
+
+[43]  I therefore reject the contention that the IAD misapplied the applicable legal framework for assessing the primary purpose of the marriage.
+(2)  The Board’s decision is not constrained by a failure to consider significant evidence that the Applicant claims directly contradicted the primary purpose of the marriage being for immigration advantages
+
+[44]  The Applicant contends that the IAD failed to consider evidence that contradicted the primary purpose of the marriage being for immigration purposes. This is reviewed on a standard of reasonableness. She refers to evidence in the two months prior to the marriage that purport to reveal the intentions and motivations of the couple. These include how the relationship started, the involvement of extended families, disclosure of his medical condition, moving in together before marriage, the holding of a wedding party attended by 80 members of the families, etc.
+
+[45]  The IAD indicated that it had considered this evidence, but did not specifically mention it in its reasons. The principle in Newfoundland and Labrador Nurses' Union v. Newfoundland and Labrador (Treasury Board), 2011 SCC 62 would apply in the circumstances of not requiring that all submissions be considered, particularly inasmuch as there is extensive probative evidence upon which the decision of bad faith purpose is based. The events referred to occurred in a short period of two months after they met. They are subject to crafting, with little or no commitment on the part of the Applicant apparent. Given the preceding immigration history and a search for other spouses that could sponsor him, which demonstrate a long-sought immigration advantage from gaining permanent residency status in Canada, there is no basis for the Court to intervene and rejects this submission.
+(3)  The IAD is not constrained by any allegation that it did not reasonably rely on the Applicant’s medical condition as a factor supporting its conclusion of an immigration purpose
+
+[46]  The Applicant argues that the IAD was unreasonable by the weight it assigned to the Applicant’s medical condition, which undermined the primary purpose of the marriage. The Court is being asked to reweigh the evidence when there is some evidence to support the finding of fact.
+
+[47]  The submission is different from that originally advanced in the leave memorandum. The Applicant argued that IAD’s assessment of the primary purpose of the marriage was discriminatory towards the Applicant’s HIV status, which violated section 15 of the Canadian Charter of Rights and Freedom, Part 1 of the Constitution Act, 1982, being Schedule B to the Canada Act 1982 (UK), 1982. The intervener has now taken up this issue, although no Charter argument is advanced.
+
+[48]  Along somewhat the same lines of his previous discrimination argument, the Applicant submits that when an HIV positive individual marries a Canadian, access to better treatment will normally result, regardless of their true intentions for entering into the marriage. She therefore argues that access to treatment for HIV is a motivation connected to an individual’s immutable characteristics, which the IDA should not employ to undermine the genuine intentions of the parties entering into the marriage. She stipulates that “[t]his reasoning flows from the notion that such motivation will always exist for an individual with positive HIV status, even if the primary purpose of the marriage is for love.”
+
+[49]  The problem with the submission is that there is significant evidence of the spouse’s predisposition to obtain an immigration status prior to any marriage for genuine purposes arising with the Applicant. Someone having an immutable characteristic does not detract from the fact that it may be the primary purpose for entering into the marriage for an immigration purpose, as the Applicant has acknowledged was a motivation for marriage.
+
+[50]  I also note that access to medical resources is a corollary purpose that is external to the marriage relationship. It lacks mutuality and does not fit into the norm of what would constitute reciprocal exchanges such as love and compatibility that constitute a genuine marriage. Rather accessing medical resources is an external benefit that immigration provides by obtaining permanent resident status.
+
+[51]  There is no basis to conclude a primary motivation prior to the relationship being entered into should became a secondary motivation upon meeting the Applicant, especially when the marriage conveniently provides an avenue long-sought by the spouse to obtain Canadian permanent residency. I find no unreasonableness in the decision by relying on circumstances prior to the marriage that are sufficiently probative to demonstrate its primary purpose and up to the occurrence of the marriage. It is not the Court’s function to reweigh or second-guess this finding.
+
+[52]  Alternatively, the Applicant asserts that if an “immutable motivation” undermines the primary purpose of the marriage, the IAD must clearly explain that this motivation was the primary purpose of the marriage. This submission would relate to the requirement to provide intelligible, transparent and justified reasons. I reject the submission as I find the reasons to be thorough and detailed in explaining why the application was rejected. I am also not aware of any submission being made to IAD about “immutable characteristics”, which might have entailed a specific comment on the point.
+
+[53]  The examples in the case law cited by the Applicant have no application to this matter. The decision in Bautista v Canada (Citizenship and Immigration), 2001 CanLII 26760 (FCA IRB) relates to an adoption where the adoptive parents in Canada are able to offer an improved standard of living and opportunities beyond the reach of the natural parents. The Court pointed out that the adoption of any child other than an orphan is almost always based on the premise that the adoptive parents will be able to provide something for the adopted child which the natural parents, for whatever reason, are unable or unwilling to provide. The case also contains no suggestion that the adopted child or parents acted in bad faith for an immigration purpose such as entering into a marriage followed by a sponsorship application by the spouse as a result of being unlawfully present in Canada.
+
+[54]  Similarly, in the matter of Tamber v Canada (Citizenship and Immigration), 2008 FC 951, the Judge noted that “most individuals seeking to come to Canada are highly motivated to do so.” Again, the case bears no resemblance to this matter. The main complaint in that decision was the failure of the Board to consider relevant evidence bearing directly on the issue at hand. More to the point, there was no previous litany of applications seeking to obtain permanent residency, nor any bad faith activity of the spouse found throughout his conduct in Canada.
+(4)  The decision is not constrained as alleged that the Member rendered speculative findings there were unfounded and contradicted by the evidence on the record
+
+[55]  For the most part, the submissions under this title are incidental to the primary facts relied upon by the IAD demonstrating a primary immigration purpose. They are mostly based upon the lengths that the Applicant went to in the different processes, refugee, PRRA and H&C, before finally trying the spousal’s sponsorship route as a means to obtain Canadian residency, and the credibility issues relating to this aspect of the case. These in addition to the Applicant’s admission that obtaining medication and treatment for his HIV condition was an overriding concern that formed the basis for the RAD’s conclusion. The criticisms of these findings in her decision are unfounded, while they logically and reasonably support the reasonableness of the decision.
+(a)  Misapprehending evidence regarding the Applicant’s family’s involvement in the introduction of the couple
+
+[56]  Misapprehending evidence, if proven and serious, may be grounds to set aside a finding of fact that, if overriding, could be sufficient to set aside the decision. The misapprehension of evidence is an error that is plainly seen. However, in no manner could what appears to be an incorrect naming of a person who introduced the couple be considered an overriding error rendering the decision unreasonable.
+
+[57]  The Applicant submits that this mistake is “one of the main reasons for concluding the primary purpose of the marriage was to obtain immigration status.” A claim as to who introduced the couple in the first instance is such a minor matter that to declare it as one of the main reasons for rejecting the application is a serious exaggeration and untenable submission. There is almost no connexion between the misapprehension about how the couple met at paragraph 34 of the decision, and the IAD’s findings eight paragraphs later at paragraph 42 setting out the various reasons for dismissing the application.
+(b)  The adverse credibility findings are reasonable concerning the Applicant’s decision to make a false refugee claim, thereafter delaying its withdrawal and subsequently advancing a sponsorship application when illegally in Canada, all allegedly justified as being based on lawyers’ advice
+
+[58]  These issues concern factual findings relating to the Applicant’s credibility. They relate to the weighing of evidence and are not subject to being overturned if supported by some evidence, particularly given the respect required to be given to the decision by the fact that the Board heard viva voce evidence. I find that the IAD’s conclusion is supported by considerable evidence and no reviewable error is demonstrated.
+
+[59]  The spouse claims that he filed his refugee claim in the first instance based upon the advice of a lawyer when first arriving to Canada. He states that the lawyer advised him to make a refugee claim claiming that his life was at risk in India, and that everything would “normalize.” He also blamed his lawyer who advised him that he could not withdraw his refugee application except at the hearing. In the third instance, he alleges having relied upon his lawyer’s evidence that he should marry the Applicant and file a sponsorship application, which would prevent his removal, and which he acknowledges turns out to be erroneous.
+
+[60]  Any claim by witnesses that justifies their wrongful or unlawful conduct based upon legal advice has little or no probative value without corroboration in the form of putting the lawyer on notice in order to provide an opportunity for the person to defend attacks on his or her professional reputation. The IAD reasonably concluded that there was no persuasive reason given to support reliance upon lawyer’s advice in the first two instances. This is supported by some evidence. For the third circumstance of an alleged lawyer-driven behaviour, the Member concluded that the Applicant and spouse had decided to marry prior to obtaining the legal advice. Expressed in this fashion, the Applicant and spouse claim that the IAD made a speculative adverse inference pertaining to their credibility.
+
+[61]  In the first two instances, the adverse credibility findings were supported by the conclusion that there is no persuasive evidence justifying reliance on the lawyers. It is not clear why the same reasoning did not apply with respect to the third instance, except perhaps that she found the Applicant to be credible and she supported the spouse’s story.
+
+[62]  In any event, I have indicated on several occasions that the case law referred to that adverse credibility findings are permissible only in the clearest of cases and must be made based on clear evidence and a clear rationalization process is not good law. The Applicant referred to Santos v Canada (MCI), 2004 FC 937, which decision relates back to that of Valtchev v Canada (Citizenship and Immigration), 2001 FCT 776, [2001] FCJ No. 1131 (TD) at para 7 [Valtchev]. I have criticized Valtchev as being entirely erroneous from every perspective, the most extensive reasons being provided in my recent decision in Kallab v Canada (Citizenship and Immigration), 2019 FC 706, at paras 133 to 157 [Kallab]. With respect, such an evidentiary rule, with its resulting effect on the standard of review rule of factual findings, does not exist in any other jurisdiction in Canada. Even the term “implausibility” is confusing and to my knowledge not used to describe inferences in any other Canadian jurisdiction. The appropriate term for an unreasonable inference would be an “improbability”, as Canadian evidence regimes only work with probabilities, unless no other option exists.
+
+[63]  All of this reasoning aside, Valtchev is also irreconcilable with the prescriptions in Vavilov at paragraphs 126 and 127 applying to factual findings, including inferential and credibility findings described above, the most patent being the lack of deference owed credibility factual findings of administrative decision makers.  
+
+[64]  In this matter, the foundational facts that support the inference in question reside in the insufficiency of corroborating evidence regarding the alleged lawyer’s advice, as described above. Moreover, given the training, professionalism and general high standards of Ontario lawyers, it is not speculative to suggest that it is highly unlikely that members of the Ontario bar would provide such erroneous advice, unless somehow misled about the spouse illegally residing in Canada.
+
+[65]  With respect to the principle in Maldonado v MEI, [1980] 2 FC 302 (CA) [Maldonado] that sworn statements carry a presumption of truthfulness, the rule only applies in refugee proceedings, although it is cited in many other circumstances, including those involving purely paper processes. Its true function is to excuse a refugee claimant from having to corroborate sworn testimony. In refugee matters, the presumption may be justified by circumstances of flight and an uncooperative State which both make obtaining corroborative evidence highly problematic.
+
+[66]  Nonetheless, I have raised concerns in Kallab regarding the overreach of Maldonado. There is no general rule presuming the testimony of a witness to be truthful(R v Thain (2009), 243 CCC (3d) 230 at para 32. (Ont CA)). Concerns include whether it fetters the RPD’s jurisdiction pursuant to section 170(h) of the IRPA that establishes the Board’s authority to “receive and base a decision on evidence that is adduced in the proceedings and considered credible or trustworthy in the circumstances.” I further concluded that Maldonado should be limited to credibility issues, and not apply to the second factor of “trustworthiness” stated in section 170(h) of the Act to avoid fettering issues. Rule 11 of the RPD Rules also requires corroboration. Finally, I submitted that the preferred corroboration principle should be similar to “benefit of the doubt rule” in the UNCHR Handbook and Guidelines on Procedures and Criteria for Determining Refugee Status under the 1951 Convention and the 1967 Protocol relating to the Status of Refugees, Reissued Geneva, December 2011, at paragraphs 203 to 205. It provides that only if the refugee claimant has demonstrated having made a genuine effort to substantiate the sworn statement, should the benefit of the doubt of its truthfulness be accepted, as opposed to being presumed.
+(c)  The findings that the Applicant’s proposal pressured the spouse to agree to the marriage and that they were not ready to get married are reasonable
+
+[67]  The Applicant argues that the finding of fact that he pressured spouse into the marriage is speculative and not supported by the record. This is a fact assessment issue related to the sufficiency of the evidence and subject to the reasonableness standard. She sets out passages from the evidence that the Court is requested to review to determine whether the fact is supported by some evidence. It includes one statement by the spouse as follows:
+Okay. Aman had asked me do you want to marry me, tell me yes or no. If not, then I have to go to India will stop because the date was in October. On fourth of October. If you say no, then I will go to India. Then if you say yes then we will get married.
+
+[68]  This evidence is sufficient to support a conclusion that the Applicant pressured the spouse to either marry him or he would leave.
+
+[69]  I do not find the inference speculative that the history of failed marriages would lead the couple to be “more cautious about jumping into their second and third marriages respectively”, particularly with a child involved. An inference is drawn from the uniformity of prior human experience based upon foundational facts (R. v Munoz, 86 OR (3d) 134, 2006 CanLII 3269 (ON SC) at para 23). Here the foundational facts are that between the two spouses, they have experienced five failed marriages.
+
+[70]  The adage “once burned, twice shy” expresses a common sense rule based on prior human experience that would apply in these circumstances. Marriages involve serious consequences. It is not speculation that persons who have been the subject of five failed marriages between them, including one involving a child, would approach their next marriage with some degree of caution, as opposed to marrying two months after first meeting. It is a reasonable inference that these foundational facts support a conclusion, along with the extensive other evidence referred to by the IDA, that the marriage was not originally genuine and was entered into by the Applicant for an immigration purpose.
+C.  The reasonableness of the decision is not constrained by the disjunctive element of subsection 4(1) of the IRPR being ultra viries its enabling statute, specifically section 3(1)(d) of the IRPA as the Court refuses to hear the issue raised the first time at the further memorandum of argument stage which lacks little strength
+
+[71]  In her further memorandum, the Applicant argues that s. 4(1) of the Regulations is ultra vires the enabling statute, as that section prohibits sponsorship of genuine spouses contrary to the aims and objectives of the IRPA, namely s. 3(1)(d), “to see that families are reunited in Canada.” The Applicant submits that the operation of the disjunctive test of s. 4(1) of the Regulations in the case at bar results in an almost certain permanent separation of genuine spouses and a separation between a young Canadian child and his stepfather, which is contrary to the stated objective of family reunification in the IRPA. Accordingly, s. 4 of the Regulations ought to be inoperative.
+
+[72]  The Respondent submits that the Court should refuse to hear the matter as its jurisprudence is consistent in declining to hear new arguments raised the first time at the further memorandum of argument stage: Aguirre Garcia v Canada (M.C.I.), 2006 FC 645 (CanLII); See also Arora v Canada (M.C.I.), [2001] F.C.J. No. 24 at para 9. While there is a discretion to consider new issues, the Respondent argues that in these circumstances all the facts and matters relevant to the new issue or issues were known to the Applicant at the time of the application for leave and the file perfected, such that the new issue could have been raised on a timely basis at the leave stage (Al Mansuri v. MPSEP & Solicitor General, 2007 FC 22 (CanLII), 2007 FC 22 at para 12).
+
+[73]  Moreover, the Respondent argues that there is little strength to the Applicant’s argument, inasmuch as the jurisprudence of the Court as already found that it is not ultra vires (Singh v M.C.I., 2014 FC 1077, at para. 28; Burton v Canada (Citizenship and Immigration), 2016 FC 345 (CanLII), at paras. 32-34 [Burton]).
+
+[74]  I agree that the Court should decline to hear this new argument. In particular, I am in agreement with reasoning of my colleague Justice McDonald in Burton at paragraph 33, as follows, with my emphasis:
+
+[33]  While I acknowledge the Court in Singh went on to certify a question, I am in agreement with its analysis and am moreover bound by the Federal Court of Appeal authorities upon which the Court relied: Azizi v Canada (Minister of Citizenship and Immigration), 2005 FCA 406 (CanLII) at paras 27-32; dela Fuente v Canada (Citizenship and Immigration), 2006 FCA 186 (CanLII)at para 48. As the Federal Court of Appeal noted in Azizi, the objective of family reunification must be considered in light of the objective of maintaining the integrity of the immigration system. The proposed questions do not transcend the interests of the parties.
+
+[75]  The objective of maintaining the integrity of the immigration system is even more significant in this matter where the spouse of the Applicant has acted in flagrant disregard for Canadian immigration laws and benefited by doing so in being able to have the within sponsorship application brought forward as a result.
+
+[76]  I therefore decline to entertain this new issue.
+D.  The reasonableness of the decision is not constrained by perpetuating HIV-related stigma by relying on discriminatory stereotypes of people living with HIV
+
+[77]  The HIV and AIDS Legal Clinic Ontario (“HALCO“ or the Intervener) obtained leave to intervene in this matter to provide submissions with respect to supporting HIV and AIDS persons in protecting their interests in this matter where relevant.
+
+[78]  The Intervener’s overall submission is that the IAD’s decision perpetuates HIV-related stigma by relying on discriminatory stereotypes of people living with HIV. The issue at hand as described by the Respondent, which I accept, is whether the Intervener has demonstrated that the IAD’s treatment of the spouse’s HIV status relied on discriminatory stereotypes of people living with HIV. I disagree.
+
+[79]  I repeat my initial remarks that the facts in this matter do not permit much scope for any positive submission on behalf of the Applicant and particularly the spouse. Long before the spouse contemplated any marriage with the Applicant, he demonstrated in the most probative fashion possible, that his singular motivation throughout was to find some way to live in Canada permanently, even to the point of flagrantly violating Canadian immigration law as a means to do so. His HIV status is irrelevant and cannot justify or excuse this behaviour.
+
+[80]  Even were these not the facts facing the Applicant and intervener, there is no basis to conclude that the spouse was stigmatized and suffered discrimination in the course of these proceedings. These are not issues of discriminatory public services or treatment by other citizens and entities in Canada. Specialized decision-makers knowledgeable of factors that are relevant to genuine marriages and their primary purposes have performed their duties to implement the law, which in these limited circumstances is to ensure that there is no abuse of marriages or similar intended long-term relationships, when the purpose is to gain immigration advantages, principally by attaining Canadian permanent resident status.
+
+[81]  Discrimination is generally understood to be some form of prejudicial treatment applied to the discriminated person because of his or her specific characteristic that is not applied to others in the specific circumstances where it is being alleged. Section 4(1) of the Regulation is generic in its requirements such that it provides little scope for discrimination. All sponsored spouses must demonstrate that the primary purpose of the marriage is not for acquiring any status or immigration privilege and the marriage is genuine. Purpose and motivation are qualities shared by all spouses with no inherent bias or distinction built into the provisions based upon the specific characteristics or intrinsic differences between applicants and spouses.
+
+[82]  The Applicant’s argument is that the IAD’s decision creates a discriminatory evidentiary burden for people living with HIV to demonstrate that their marriages to Canadian citizens have not been entered into primarily for immigration purposes, in addition to demonstrating that their marriages are genuine, although the latter issue is not relevant in this matter. The argument, as I understand it, is that because the spouse living with HIV has a need for lifesaving treatment obtained in Canada, as accepted by the Member, his primary purpose will be assessed differently from other spouses without HIV, but who are suffering equally significant health issues such as cancer. There is no basis to differentiate the situations in terms of the primary purpose of the marriage being that of gaining an immigration advantage of medical treatment.
+
+[83]  While there may be compassionate sympathy for persons with serious health problems, it is nonetheless fair to conclude that Section 4(1) of the Regulation was created with this type of situation in mind as one of many to ensure that obtaining superior health services is not the primary purpose of the marriage from the sponsored spouse’s perspective.
+
+[84]  There is no question that person suffering HIV are often stigmatized and discriminated against and that appropriate measures should be taken where this results in their different and prejudicial treatment. But Section 4(1) of the Regulation was not drafted with the purpose of favouring discriminated persons to have their health concerns considered differentially to health concerns of similar severity of other persons. All that they can ask is to be treated in the same manner vis-à-vis comparable health issues as everyone else.
+
+[85]  However, I agree with the Applicant’s complaint that persons questioning a sponsoring spouse about why he or she would accept the responsibility of caring for someone with AIDS, should emphasize that the question is directed at having to care for anyone with a serious health problem, and not reflecting that the cause of health problem being AIDS. However, I do not conclude that this line of questioning has had any impact on the outcome of the decision.
+
+[86]  With regard to other points raised by the Intervener, I disagree with her submissions concerning aspects of the IAD’s assessment of evidence. An example is the Intervener’s criticism of the Member’s reliance upon objective evidence detailing the spouse’s misconduct prior to the marriage that the intervener complains “outweighed his sworn testimony” and “is presumed to be true.” This appears to be a reference to the principal in Maldonado, which I have pointed out has no application outside of refugee claims. The Intervener’s submission also ignores the fact that there were serious adverse credibility problems encountered by the spouse, not to mention his “flagrant disregard for Canada process immigration laws”. The spouse has demonstrated his bad faith and a lack of clean hands by intentionally violating Canadian immigration law for the purpose of obtaining permanent residency status, which seriously detracts from his credibility on similar matters and is very probative evidence of a primary purpose of gaining an immigration advantage whatever the means.
+VI.  Certified questions
+
+[87]  The Applicant proposed questions for certification on appeal. I find no grounds to do so because the questions do not satisfy the requirements of s. 74(d) of the IRPA according to the test set out in Liyanagamage v Canada (Secretary of State) (1994), 176 NR 4 and recently affirmed in Zhang v Canada (MCI), 2013 FCA 168 at para 9, and Zazai v Canada (MCI), 2004 FCA 89 at para 11. In a nutshell, a certified question must be (i) determinative of the appeal and (ii) one which transcends the interests of the immediate parties to the litigation and contemplates issues of broad significance or general application, sometimes stated as “a serious issue of general importance.”
+
+[88]  The Applicant proposes the following three questions:
+1.  How is the assessment of the primary purpose of marriage under subsection 4(1) of the Regulations impacted, when a purpose is connected to an individual’s immutable characteristic such as disability, sexual-orientation, race and other similar grounds?
+2.  Is the disjunctive element of subsection 4(1) of the IRPR ultra vires the enabling statute, the IRPA, because subsection 4(1) would prohibit the sponsorship of a spouse when the marriage was found to be entered into primarily for the purpose of gaining status, notwithstanding a finding that the marriage always was or subsequently became genuine, and would therefore frustrate the aims and objectives of the Act, in particular section 3(1)(d), “to see that families are reunited in Canada?”
+3.  In assessing the primary purpose of marriage under section 4(1) the Regulation, what factors are indicia of the primary purpose as opposed to collateral purposes?
+
+[89]  I find that all three questions tend to be limited by their factual underpinning, and for the first and third questions, not being serious ones of general importance, being related very much to the factual assessments under pinning them.
+
+[90]  With respect to the first question, any “immutable characteristic” of the individual relating to HIV as the source of the immigration benefit he would obtain from access to Canadian health services, this is no different than a similar health need of a foreign national claimant who suffers from some other malady, such as cancer, and would similarly obtain an immigration benefit from access to Canadian health services.
+
+[91]  With respect to the second question, although a similar question was certified in the matter of Singh, I am in agreement with the reasoning in Burton referred to above. In particular, reliance upon the Federal Court of Appeal decisions in terms of protecting the integrity of Canada’s immigration regime figures strongly this matter, where there are additional bad-faith circumstances relating to Applicant’s conduct described above.
+
+[92]  With respect to the Applicant’s third question pertaining to assessment factors that distinguish the primary immigration purpose from a secondary purpose, this is a contextual factual determination, and it is not possible to state a general rule in their application. As already indicated, the question certainly as framed would not be determinative of the outcome, besides which it does not raise a serious issue of general importance.
+VII.  Conclusion
+
+[93]  The Court concludes that the decision is reasonable being justified based both on its internally coherent transparent and intelligible reasoning and in light of the legal and factual constraints that bear on the decision. Accordingly the application is dismissed with no questions certified for appeal.
+
+  JUDGMENT IN IMM-2069-19
+  The Application is dismissed.
+No questions certified for appeal
+blank
+“Peter Annis”
+blank
+ Judge
+ 
+FEDERAL COURT
+SOLICITORS OF RECORD
+DOCKET:
+IMM-2069-19
+STYLE OF CAUSE:
+A.B. v MCI
+PLACE OF HEARING:
+TORONTO, ONTARIO
+DATE OF HEARING:
+OCTOBER 31, 2019
+JUDGMENT AND REASONS:
+ANNIS J.
+DATED:
+JANUARY 21, 2020
+    APPEARANCES
+  Esnaashari Ali, Hirji Aslya
+FOR THE APPLICANT
+Prathima Prashad, Megan Johnston, Debora Rachlis
+FOR THE RESPONDENT
+    SOLICITORS OF RECORD
+  Esnaashari Ali, Hirji Aslya
+FOR THE APPLICANT
+Prathima Prashad, Megan Johnston, Debora Rachlis
+FOR THE RESPONDENT
+   

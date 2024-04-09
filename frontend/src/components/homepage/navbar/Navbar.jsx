@@ -1,12 +1,12 @@
 import UserProfile from "@/components/document/Header/UserProfile";
 import NavbarSection from "@/components/homepage/navbar/NavbarSection";
 import LogoIcon from "@/assets/new_logo.svg";
+import LocalStore from "@/util/localDocStore";
 
-const Navbar = () => {
+const Navbar = ({updateDocSection}) => {
   const sections = {
     // TODO: When you implement the actions for clicking the subsections, change this structure
-    'My Documents': ['To Redact', 'In Progress'],
-    'Shared': ['Review', 'Completed'],
+    'My Documents': [LocalStore.DOC_STATUS.New, LocalStore.DOC_STATUS.InProgress, LocalStore.DOC_STATUS.Completed],
   }
 
   return (
@@ -18,8 +18,8 @@ const Navbar = () => {
             newbloom
           </div>
         </div>
-        {Object.entries(sections).map(([key, value]) => {
-          return <NavbarSection key={key} title={key} subsections={value} />
+        {Object.entries(sections).map(([sectionTitle, subsection]) => {
+          return <NavbarSection key={sectionTitle} title={sectionTitle} subsections={subsection} updateDocSection={(section) => {updateDocSection(section)}}/>
         })}
       </div>
       <footer className='absolute bottom-2 inset-x-2'>

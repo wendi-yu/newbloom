@@ -1,6 +1,10 @@
 import { getCurrentUser } from "./api/user_apis";
 
-const tempDocID = "d02dd6a363df05a1ded4aa8150c58d62d7baf0396bfc66a1dd38efa98cf00072"
+const DOC_STATUS = {
+  New: "New",
+  InProgress: "InProgress",
+  Completed: "Completed",
+};
 
 const addDocument = (name, id, state) => {
   const userId = getCurrentUser();
@@ -12,6 +16,7 @@ const addDocument = (name, id, state) => {
   docHashes[id] = {
     name: name,
     state: state,
+    status: DOC_STATUS.New,
     dateAdded: new Date(),
     comments: [],
   };
@@ -30,7 +35,8 @@ const updateDocumentBody = (docId, state) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  docHashes[docID].state = state;
+  docHashes[docId].state = state;
+  docHashes[docId].status = DOC_STATUS.InProgress;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -66,6 +72,16 @@ export const addCommentToDocument = (docId, newComment, parentId=null) => {
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 
+};
+
+export const markDocAsDone = (docId) => {
+  const userId = getCurrentUser();
+
+  let docHashesString = localStorage.getItem(userId);
+  const docHashes = JSON.parse(docHashesString);
+
+  docHashes[docId].status = DOC_STATUS.Completed;
+  localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
 export const setDocumentComments = (docId, comments) => {
@@ -144,6 +160,7 @@ export const getLocalDocuments = () => {
       owner: userId,
       documentBody: obj.state,
       comments: obj.comments || [],
+      status: obj.status ? obj.status : DOC_STATUS.New,
     };
   });
 };
@@ -165,6 +182,7 @@ const saveUserCustomKeyBind = (userId, newKeyBinds) => {
 };
 
 export default {
+  DOC_STATUS,
   saveUserCustomKeyBind,
   addDocument,
   updateDocumentBody,

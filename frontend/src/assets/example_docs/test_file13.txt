@@ -1,0 +1,159 @@
+Date: 20200109
+
+Docket: IMM-2076-19
+Citation: 2020 FC 22
+Ottawa, Ontario, January 9, 2020
+PRESENT:  The Honourable Mr. Justice Gleeson
+BETWEEN:
+YENNY DANIELA CRUZ
+Applicant
+and
+THE MINISTER OF
+CITIZENSHIP AND IMMIGRATION
+Respondent
+
+JUDGMENT AND REASONS
+I.  Overview
+[1]  The Applicant is a citizen of Honduras. The Refugee Protection Division [RPD] of the Immigration and Refugee Board refused her claim for protection on the basis that she has an Internal Flight Alternative [IFA] in Honduras. On appeal, the Refugee Appeal Division [RAD] confirmed the decision of the RPD.
+
+[2]  She now seeks judicial review of the RAD decision pursuant to subsection 72(1) of the Immigration and Refugee Protection Act, SC 2001, c 27, [IRPA].
+
+[3]  For the reasons that follow, the application is dismissed.
+
+II.  Background
+[4]  The Applicant reports that in 2010, while taking a bus to work she witnessed a murder. She believes the assailant saw her and recognized her and now fears that her life is at risk.
+
+[5]  In the days following the murder she resigned from her factory work and travelled to another city in Honduras to visit her two children who were being cared for by her grandmother. She then fled Honduras arriving in the United States in 2011 where she gave birth to a son in 2014. In 2017 she left the United States and came to Canada claiming protection for herself and her son.
+
+III.  The Decision under Review
+[6]  The RAD noted that the issue raised on appeal was whether the RPD had erred in concluding, on a balance of probabilities, that there is no serious possibility of the Applicant being harmed in the proposed IFAs of Choluteca or Yuscarán. The RAD then briefly reviewed the facts as disclosed in the Applicant’s narrative and stated that it agreed with the RPD’s conclusion that the Applicant did not have a well-founded fear of persecution on a Convention ground and that her risk was to be assessed pursuant to section 97 of the IRPA.
+
+[7]  In assessing the possibility of harm in the identified IFAs, the RAD noted that the individual the Applicant feared had made no contact with the Applicant’s family, had not attempted to locate the Applicant, and is not alleged to have any criminal associations that would improve his ability to locate the Applicant.
+
+[8]  The RAD acknowledged the possibility of a chance encounter with the individual should the Applicant return to Honduras but concluded that there was little likelihood “of a chance of such an encounter where the assailant also recognizes the Appellant given the time that has passed”. The RAD also acknowledged the possibility that the assailant would be motivated to silence the Applicant but found there was no evidence to indicate an intent to harm or an ability to locate her in the identified IFAs. In considering the Applicant’s evidence to the effect that the proposed IFAs would not be reasonable because she did not have family in these locations, the RAD noted that she had previously lived alone in Honduras and had resided in the United States and Canada for many years without close proximity to family.
+
+IV.  Issues
+[9]  I have framed the issues as follows:
+Did the RAD err in its IFA analysis by:
+not clearly articulating the applicable standard of proof?
+failing to consider and address relevant factors?
+Is the decision reasonable?
+
+V.  Standard of Review
+[10]  This application was argued just prior to the Supreme Court of Canada’s recent decisions in Canada (Minister of Citizenship and Immigration) v Vavilov, 2019 SCC 65 [Vavilov] and Bell Canada v Canada (Attorney General), 2019 SCC 66. The parties submissions on the standard of review were therefore made under the Dunsmuir framework. However, I have applied the Vavilov framework in my consideration of the application. (Dunsmuir v New Brunswick, 2008 SCC 9, [Dunsmuir].)
+
+[11]  In Canada Post Corp. v Canadian Union of Postal Workers, 2019 SCC 67 [Canada Post] Justice Rowe addressed the circumstance where submissions had been made on the basis of the Dunsmuir framework yet the Court applied the Vavilov framework in determining the matter. Justice Rowe held that submissions from the parties need not be sought and that no unfairness arises where, in applying Vavilov, the applicable standard of review and outcome would have been the same under Dunsmuir (Canada Post at para 24).
+
+[12]  The parties have taken the position that the decision is reviewable against the standard of reasonableness (Singh v Canada (Citizenship and Immigration), 2017 FC 719 at para 9). I agree. The presumptive standard of reasonableness applies under either Dunsmuir or Vavilov.
+
+[13]  The attributes of a reasonable decision were summarized by Justice Rowe in Canada Post where he states:
+
+[31]  A reasonable decision is “one that is based on an internally coherent and rational chain of analysis and that is justified in relation to the facts and law that constrain the decision maker” (Vavilov, at para. 85). Accordingly, when conducting reasonableness review “[a] reviewing court must begin its inquiry into the reasonableness of a decision by examining the reasons provided with ‘respectful attention’ and seeking to understand the reasoning process followed by the decision maker to arrive at [the] conclusion” (Vavilov, at para. 84, quoting Dunsmuir, at para. 48). The reasons should be read holistically and contextually in order to understand “the basis on which a decision was made” (Vavilov, at para. 97, citing Newfoundland Nurses).
+
+[32]  A reviewing court should consider whether the decision as a whole is reasonable: “what is reasonable in a given situation will always depend on the constraints imposed by the legal and factual context of the particular decision under review” (Vavilov, at para. 90). The reviewing court must ask “whether the decision bears the hallmarks of reasonableness — justification, transparency and intelligibility — and whether it is justified in relation to the relevant factual and legal constraints that bear on the decision” (Vavilov, at para. 99, citing Dunsmuir, at paras. 47 and 74, and Catalyst Paper Corp. v. North Cowichan (District), 2012 SCC 2, [2012] 1 S.C.R. 5, at para. 13).
+
+[33]  Under reasonableness review, “[t]he burden is on the party challenging the decision to show that it is unreasonable” (Vavilov, at para. 100). The challenging party must satisfy the court “that any shortcomings or flaws relied on . . . are sufficiently central or significant to render the decision unreasonable” (Vavilov, at para. 100). In this case, that burden lies with the Union.
+
+[14]  In this instance I am also satisfied that my conclusions on the merits of the application would be the same under either framework. I am therefore of the view, having considered the facts, circumstances and the current state of the law that there is no uncertainty as to how the Vavilov decision relates to this application (Vavilov para 144). As was the case in Canada Post, further submissions from the parties are not required to determine the application. I also note that neither party has sought to make further submissions
+
+VI.  Analysis
+A.  Did the RAD err in its IFA analysis?
+
+[15]  The Applicant submits that the RAD’s IFA analysis is unreasonable because the RAD’s articulation of the standard of proof used in assessing the first prong of the IFA test is confused, rendering it impossible to determine what standard of proof was applied. The Applicant further argues that the RAD’s failure to address relevant factors in the IFA analysis renders the decision unreasonable.
+(1)  Did the RAD commit a reviewable error by not clearly articulating the standard of proof being applied in its IFA analysis?
+
+[16]  When assessing an IFA a two prong test is to be applied (Rasaratnum v Canada (Minister of Employment and Immigration), [1992] 1 FC 706 at para 13):
+the RAD must be satisfied on a balance of probabilities that there is no serious possibility of the claimant being persecuted in the part of the country in which it finds an IFA exists and/or the claimant would not be personally subject to a risk to life or a risk of cruel and unusual treatment or punishment or a danger, believed on substantial grounds to exist, of torture in the IFA; and
+the conditions in the part of the country considered to be an IFA must be such that it would not be unreasonable, in all the circumstances, including those particular to the claim, for the claimant to seek refuge there.
+
+[17]  At the outset of its IFA analysis the RAD accurately articulated the first prong of the IFA test stating:
+
+[8]  In order to evaluate the possibility that an IFA exists in Choluteca or Yuscarán […] I must evaluate, on a balance of probabilities, the likelihood that the [Applicant’s] life would be at risk or that she would be subject to cruel and unusual treatment or punishment in these cities. [Emphasis added.]
+
+[18]  This test is again accurately restated in the following paragraph:
+
+[9]  While the possibility of a chance encounter between the [Applicant] and the assailant in another part of Honduras is real, on the balance of probabilities, there is little likelihood of a chance of such an encounter where the assailant also recognizes the [Applicant] given the time that has passed. [Emphasis added.]
+
+[19]  The RAD then states:
+
+[10]  I find that, on a balance of possibilities, the [Applicant] does not face a risk to her life or a risk of cruel and unusual treatment or punishment in Choluteca or Yuscaran. [Emphasis added.]
+
+[20]  The Applicant submits that this final misstatement of the burden of proof, “on a balance of possibilities”, is fatal to the reasonableness of the decision because the burden of proof is “the prism through which the whole claim is examined”. A number of cases are cited to support the Applicant’s view that a misstatement of a legal test is a basis upon which this Court has previously intervened on judicial review (Begollari v. Canada (Minister of Citizenship and Immigration), 2004 FC 1340 at para 21, Alam v. Canada (Minister of Citizenship and Immigration), 2005 FC 4 at para 16).
+
+[21]  I take no issue with the principle reflected in the above jurisprudence: where a reviewing court is unable to determine what legal test a decision maker applied or where it is clear that an incorrect test was adopted, intervention will normally be warranted. That is not the situation here.
+
+[22]  As I have set out above, the RAD’s decision, including the RAD’s reference to a “balance of possibilities” must be assessed within the context of the whole decision (Vavilov at paras 90, 97 and 100, Newfoundland and Labrador Nurses’ Union v. Newfoundland and Labrador (Treasury Board), 2011 SCC 62 at para 14 [Newfoundland Nurses’]). The RAD correctly set out the applicable test, including the standard of proof, when identifying what was to be evaluated, and when applying the test to the circumstances the Applicant indicated she feared: being recognized by the assailant in a chance encounter. I am satisfied that the RAD both understood and applied the proper test in this instance. When read in context the RAD’s misstatement is an error in form, not substance. The error does not undermine the reasonableness of the decision (Singh v. Canada (Citizenship and Immigration), 2019 FC 946 at para 26, citing Martinez Gonzales v Canada (Citizenship and Immigration), 2011 FC 1504 at para 20).
+(2)  Did the RAD commit a reviewable error by failing to consider and address relevant factors in its IFA analysis?
+
+[23]  The Applicant submits that the RAD’s failure to address the small size of Honduras and gender specific country conditions renders the decision unreasonable. I disagree.
+(a)  Size of Honduras
+
+[24]  The size of Honduras within the context of the RAD’s IFA analysis is relevant for two reasons: firstly because the assailant will be able to locate the Applicant with ease and secondly because the assailant and the Applicant may have a “chance encounter”.
+
+[25]  The RAD does not expressly address the size of the country in considering the IFA issue. However, the RAD benefits from the presumption that it is aware of and has considered all the material before it. This included the RPD’s consideration of Honduras’ size. In addition, the size of the country was not explicitly raised in the Applicant’s submissions to the RAD. Instead, the Applicant challenged the RPD’s conclusions relating to either a chance or deliberate encounter with the assailant, arguments that did not expressly address the size of Honduras.
+
+[26]  Not surprisingly, the RAD considered the risk of the assailant locating the Applicant in the IFAs and the likelihood of a chance encounter. The RAD turned its mind to the possibility of the assailant becoming aware of her presence in the IFAs, noting the absence of any evidence indicating the assailant had made efforts or had any means to locate her within the IFAs. The RAD acknowledged the possibility of a chance encounter but noted that it was unlikely such an encounter would lead to recognition, given the passage of time. Although the Applicant disagrees with this assessment, I am satisfied that it is was not unreasonable for the RAD to rely on the passage of time in reaching its conclusion.
+
+[27]  In conducting its analysis, the RAD addressed the very issues that underlie the Applicant’s concerns relating to country size. Having done so, and having recognized and addressed the possibility of a chance encounter in Honduras, it was not unreasonable for the RAD to have not expressly considered the size of the country.
+(b)  Gender specific country conditions
+
+[28]  The Applicant submits the RAD erred in not addressing gender specific country conditions in its IFA analysis.
+
+[29]  Before the RPD the Applicant made brief submissions in support of a gender based claim. Those submissions were addressed by the RPD in its decision. The Applicant took no issue with the RPD’s analysis in her appeal to the RAD. In the course of oral submissions on this application counsel for the Applicant stated that the RPD’s consideration of the gender based claim was not raised on appeal because the RPD dealt with the issue in a satisfactory manner. However, the Applicant now argues the RAD unreasonably failed to address this issue in the context of its IFA analysis.
+
+[30]  An appellant before the RAD must provide full and detailed submissions regarding those errors forming the grounds of appeal and identify where those errors are located in the RPD’s decision (Rule 3(3)(g) of the Refugee Appeal Division Rules, SOR/2012-257). Where an appellant fails to do so the RAD cannot be faulted on judicial review for not having considered or addressed arguments not raised (Adams v. Canada (Citizenship and Immigration), 2018 FC 524 at paragraphs 24 – 29, citing Ghauri v Canada (Citizenship and Immigration), 2016 FC 548 at para 34). The Applicant did not identify the RPD’s gender based claim analysis as an issue on appeal and, in my opinion, this disposes of the matter. However, and although I had some difficulty in following the argument made, I will comment on the oral submissions by counsel on this issue.
+
+[31]  As I understand the Applicant’s position, the RAD is not limited to a consideration of the specific issues raised on appeal. Instead, the RAD has the ability to engage in a broad based reconsideration of any issue. In this case, the RAD was not limited to the expressly identified errors in the RPD’s IFA analysis. If I have followed the argument, the Applicant submits that the ability to engage in a broader review allows an applicant to argue on judicial review that failing to engage in that broader analysis is unreasonable and forms a basis upon which to impugn a RAD decision.
+
+[32]  The RAD is to review decisions of the RPD on a correctness standard (Canada (Citizenship and Immigration) v. Huruglica, 2016 FCA 93 at para 78 [Huruglica]). This does not mean that RAD appeals constitute de novo hearings. Rather, the RAD’s role is to correct the RPD’s errors (Huruglica at para 79). As Justice Alan Diner expressed at para 99 of Rozas del Solar v Canada (Citizenship and Immigration), 2018 FC 1145, “the RAD is tethered to the RPD’s decision”. A RAD decision is not unreasonable merely because it did not canvas each issue canvassed by the RPD. To the contrary, the RAD is deemed to have taken notice of the RPD’s decision in its entirety.
+
+[33]  The RPD dedicated six paragraphs to the possibility that the Applicant has a gender based claim. If the Applicant felt that the RPD erred in doing so, she should have made submissions to that effect before the RAD (Ghauri v Canada (Citizenship and Immigration), 2016 FC 548 at para 34). She did not. She cannot now argue that the RAD acted unreasonably by not conducting a gender analysis of its own. On these facts, the Applicant’s argument cannot succeed.
+B.  Is the decision reasonable?
+
+[34]  The Applicant argues that the RAD’s analysis lacks coherence. She submits that in concluding that “there is little likelihood of a chance encounter where the assailant recognizes the [Applicant],” it is not clear whether the encounter, the recognition, or both, are unlikely. She also argues that the RAD’s statement that there is no evidence the assailant intends to harm her is inconsistent with its finding that he is motivated to do so—motivation, it is argued, is evidence of intent.
+
+[35]  The Supreme Court has instructed that reasons need not be perfect (Vavilov at para 91, Newfoundland Nurses’ at para 16) and that judicial review is not a line-by-line treasure hunt for errors; the decision should be approached as an organic whole (Communications, Energy and Paperworkers Union of Canada, Local 30 v Irving Pulp & Paper, Ltd, 2013 SCC 34 at para 54).
+
+[36]  The decision in this instance is not perfect; however, I am not persuaded that it lacks in coherence or that the RAD’s findings are inconsistent. The RAD found there to be little likelihood of a chance encounter where the assailant recognizes the Applicant given the passage of time. In my opinion, this finding is clear.
+
+[37]  Similarly, it is not inconsistent for the RAD to have concluded that the assailant might still have a motivation to harm on the one hand and also note the absence of any evidence of intent to harm on the other. Contrary to what the Applicant has argued motivation to act can exist in the absence of any intent to do so. One need not equate to or follow the other.
+
+VII.  Conclusion
+[38]  The application is dismissed. The parties have not identified a serious question of general importance for certification and none arises.
+ 
+JUDGMENT IN IMM-2288-19
+THIS COURT’S JUDGMENT is that:
+The application is dismissed; and
+No question is certified.
+"Patrick Gleeson"
+Judge
+ 
+FEDERAL COURT
+SOLICITORS OF RECORD
+
+DOCKET:
+IMM-2076-19
+  STYLE OF CAUSE:
+YENNY DANIELA CRUZ v THE MINISTER OF CITIZENSHIP AND IMMIGRATION
+  PLACE OF HEARING:
+WINNIPEG, MANITOBA
+  DATE OF HEARING:
+DECEMBER 18, 2019
+  JUDGMENT AND REASONS:
+GLEESON J.
+  DATED:
+JANUARY 9, 2020
+  APPEARANCES:
+David Matas
+  FOR THE APPLICANT
+  Brendan Friesen
+  FOR THE RESPONDENT
+  SOLICITORS OF RECORD:
+David Matas
+Barrister and Solicitor
+Winnipeg, Manitoba
+  FOR THE APPLICANT
+  Attorney General of Canada
+Winnipeg, Manitoba
+  FOR THE RESPONDENT
+   

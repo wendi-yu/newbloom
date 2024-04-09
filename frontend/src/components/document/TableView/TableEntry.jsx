@@ -130,7 +130,7 @@ export const TableEntry = ({
       }`}
     >
       <SentenceWithRedaction className="m-2" />
-      <SentenceVisibilityScale min={0} max={words.length} />
+      <SentenceVisibilityScale min={0} max={Math.min(words.length, 30)} />
       <TableActionButtons
         onSelect={updateLocalState}
         popOutToDocView={popOutToDocView}
