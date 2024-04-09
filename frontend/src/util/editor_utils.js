@@ -169,7 +169,19 @@ export const KeyBindings = {
       handleChangeRedaction(editor, "DELETE");
     }
 
+    //TODO: CHANGE BACK
     //handle highlight w arrow keys
+    // else if (event.shiftKey && (event.ctrlKey || event.metaKey)) {
+    //   if (
+    //     event.key == userHotkeys.highlightRight ||
+    //     event.key == userHotkeys.highlightLeft
+    //   ) {
+    //     const direction =
+    //       event.key === userHotkeys.highlightRight ? "right" : "left";
+    //     extendSelectionByWord(editor, direction);
+    //   }
+    // }
+
     else if (event.shiftKey && (event.ctrlKey || event.metaKey)) {
       if (
         event.key == userHotkeys.highlightRight ||
@@ -180,5 +192,6 @@ export const KeyBindings = {
         extendSelectionByWord(editor, direction);
       }
     }
+
   },
 };

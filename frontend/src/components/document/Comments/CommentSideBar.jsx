@@ -9,31 +9,48 @@ import { getAllCommentsFromDoc } from "@/util/localDocStore";
 
 function CommentSideBar({ refresh }) {
   const docId = useParams()[DOC_ID_PARAM];
-  const [comments, setComments] = useState([]);
+  const allComments = getAllCommentsFromDoc(docId);
+  const [comments, setComments] = useState(allComments);
 
   useEffect(() => {
-    const allComments = getAllCommentsFromDoc(docId);
-    if (document && allComments) {
-      setComments(allComments);
-    }
+    const fetchComments = async () => {
+      try {
+        const allComments = await getAllCommentsFromDoc(docId);
+        setComments([...allComments])
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+      }
+    };
+
+    fetchComments();
   }, [docId, refresh]);
-  console.log(comments);
+
+  console.log(comments)
 
   return (
     <div className="flex flex-col mt-20 mb-7 space-y-4 w-72">
-      {Array.from(comments).map((comment) => {
-        return (
-          <Row key={comment.id}>
-            <Col>
+      {comments.map((comment) => (
+        <Row key={comment.id}>
+          <Col>
+            {comment.replies ? (
               <SidebarComment
-                id={comment.id}
-                comment={comment.comment}
+                id = {comment.id}
+                replies = {comment.replies}
+                comment={comment.comment} 
                 docId={docId}
               />
-            </Col>
-          </Row>
-        );
-      })}
+
+            ) : (
+              <SidebarComment
+                id = {comment.id}
+                comment={comment.comment} 
+                docId={docId}
+              />
+            )}
+
+          </Col>
+        </Row>
+      ))}
     </div>
   );
 }

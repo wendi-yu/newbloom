@@ -20,12 +20,15 @@ import { useSlate } from "slate-react";
 
 import { format, parseISO } from 'date-fns';
 
-function SidebarComment({ id, comment, docId }) {
+function SidebarComment({ id, replies, comment, docId}) {
+
   const [isFocus, setIsFocus] = useState(false);
   const [isViewReply, setIsViewReply] = useState(true)
 
   const activeCommentThreadID = useRecoilValue(activeCommentThreadIDAtom);
   const editor = useSlate();
+
+  if(replies) console.log(comment, replies)
 
   const toggleViewReply = () => {
     setIsViewReply(!isViewReply);
@@ -47,7 +50,7 @@ function SidebarComment({ id, comment, docId }) {
       setIsFocus(false);
       setIsViewReply(false)
     }
-  }, [activeCommentThreadID, id]);
+  }, [activeCommentThreadID, id, replies]);
 
   const handleResolveComment = () => {
     removeSelectedMark(editor, getMarkForCommentThreadID(id));
@@ -84,10 +87,9 @@ function SidebarComment({ id, comment, docId }) {
     </div>
   );
 
-
   return (
     <div onClick={handleOnClick} className={`flex flex-col bg-none justify-left rounded-2xl ${isFocus ? 'shadow-xl -ml-2.5 transform -translate-x-2.5' : ''}`}>
-        <div className={`flex flex-col bg-white p-5 w-64 ${isFocus && isViewReply ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'}`}>
+        <div className={`flex flex-col bg-white p-5 ${isFocus ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'}`}>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-row items-center space-x-2.5 mb-3">
                     <img src={ProfileIcon} alt="Profile Pic" className="h-10"/>
@@ -103,14 +105,24 @@ function SidebarComment({ id, comment, docId }) {
             {comment[0].text}
             <div onClick={toggleViewReply}>
                 <p className="text-xs mt-2 font-light text-dark-grey underline decoration-light-gray-background">
-                    {isFocus ? (isViewReply ? "Hide Reply" : "View Reply") : ''}
+                    {replies && isFocus ? (
+                      isViewReply ? "Hide Reply" : (replies.length>1 ? "View Replies" : "View Reply")) : ''}
                 </p>
             </div>
         </div>
-        {isViewReply && isFocus && 
+        { isFocus &&
             <div className="flex flex-col">
-                <CommentChild />
-                <CommentResponse />
+              {isViewReply && replies && replies.map((reply) => (
+                <div key={reply.id}>
+                  <CommentChild
+                    id={reply.id}
+                    comment={reply.comment} 
+                    docId={docId}
+                    />
+                </div>
+
+              ))}
+              <CommentResponse parentId={id}/>
             </div>
         }
     </div>

@@ -28,6 +28,7 @@ const updateDocumentBody = (docId, state) => {
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
+  
   if (!docHashesString) {
     console.error(`document ${docId} not found`);
     return;
@@ -40,7 +41,7 @@ const updateDocumentBody = (docId, state) => {
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
 
-export const addCommentToDocument = (docId, newComment) => {
+export const addCommentToDocument = (docId, newComment, parentId=null) => {
   const userId = getCurrentUser();
 
   let docHashesString = localStorage.getItem(userId);
@@ -56,8 +57,21 @@ export const addCommentToDocument = (docId, newComment) => {
     document.comments = [];
   }
 
-  document.comments.push(newComment);
+  const currentComments = document.comments;
+
+  if (parentId) {
+    document.comments = currentComments.map(comment => 
+      comment.id === parentId 
+      ? { ...comment, replies: [...(comment.replies || []), newComment] }
+      : comment
+    );
+    
+  } else {
+    document.comments = [...currentComments, newComment];
+  }
+
   localStorage.setItem(userId, JSON.stringify(docHashes));
+
 };
 
 export const markDocAsDone = (docId) => {
