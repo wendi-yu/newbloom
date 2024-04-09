@@ -51,7 +51,7 @@ export const addCommentToDocument = (docId, newComment, parentId=null) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[docId];
 
   if (!document.comments) {
     document.comments = [];
@@ -94,7 +94,7 @@ export const setDocumentComments = (docId, comments) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  docHashes[docID].comments = comments;
+  docHashes[docId].comments = comments;
 
   localStorage.setItem(userId, JSON.stringify(docHashes));
 };
@@ -109,7 +109,7 @@ export const getAllCommentsFromDoc = (docId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[docId];
 
   if (!document || !document.comments) return null;
   return document.comments;
@@ -125,7 +125,7 @@ export const deleteCommentFromDocument = (docId, commentId) => {
   }
 
   const docHashes = JSON.parse(docHashesString);
-  const document = docHashes[docID];
+  const document = docHashes[docId];
 
   if (!document) {
     return;
